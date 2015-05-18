@@ -20,7 +20,6 @@
 		971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B31B09FEE400E25C2E /* OtherViewController.swift */; };
 		971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B41B09FEE400E25C2E /* OtherViewController.xib */; };
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
-		971240BA1B0A116900E25C2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B91B0A116900E25C2E /* LaunchScreen.xib */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -50,7 +49,6 @@
 		971240B31B09FEE400E25C2E /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		971240B41B09FEE400E25C2E /* OtherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherViewController.xib; sourceTree = "<group>"; };
 		971240B71B0A016300E25C2E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		971240B91B0A116900E25C2E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
 				971240B41B09FEE400E25C2E /* OtherViewController.xib */,
 				971240B71B0A016300E25C2E /* TabBarController.swift */,
-				971240B91B0A116900E25C2E /* LaunchScreen.xib */,
 				C779ADCD1B0379AB000F585A /* Images.xcassets */,
 				C779ADC21B0379AB000F585A /* Supporting Files */,
 			);
@@ -229,7 +226,6 @@
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
 				971240B21B09FED400E25C2E /* DetailViewController.xib in Resources */,
 				971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */,
-				971240BA1B0A116900E25C2E /* LaunchScreen.xib in Resources */,
 				971240AA1B09FE8400E25C2E /* FollowerRankingViewController.xib in Resources */,
 				971240A61B09FE6F00E25C2E /* SearchViewController.xib in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,

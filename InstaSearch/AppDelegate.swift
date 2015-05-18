@@ -15,7 +15,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window!.backgroundColor = UIColor.whiteColor()
+        
+        let tab: TabBarController = TabBarController()
+        
+        var top : TopViewController = TopViewController(nibName: "TopViewController", bundle: nil)
+        var search : SearchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        var followerRank : FollowerRankingViewController = FollowerRankingViewController(nibName: "FollowerRankingViewController", bundle: nil)
+        var likeRank : LikeRankingViewController = LikeRankingViewController(nibName: "LikeRankingViewController", bundle: nil)
+        var other : OtherViewController = OtherViewController(nibName: "OtherViewController", bundle: nil)
+        
+        var navi0:UINavigationController = UINavigationController(rootViewController:top)
+        var navi1:UINavigationController = UINavigationController(rootViewController:search)
+        var navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
+        var navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
+        var navi4:UINavigationController = UINavigationController(rootViewController:other)
+        var naviControllerList:Array<UINavigationController> =
+        [
+            navi0,
+            navi1,
+            navi2,
+            navi3,
+            navi4
+        ]
+        
+        tab.setViewControllers(naviControllerList, animated: true)
+        
+        self.window!.rootViewController = tab
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 

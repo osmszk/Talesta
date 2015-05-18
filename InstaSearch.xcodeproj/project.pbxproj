@@ -19,12 +19,10 @@
 		971240B21B09FED400E25C2E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B01B09FED400E25C2E /* DetailViewController.xib */; };
 		971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B31B09FEE400E25C2E /* OtherViewController.swift */; };
 		971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B41B09FEE400E25C2E /* OtherViewController.xib */; };
+		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
+		971240BA1B0A116900E25C2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B91B0A116900E25C2E /* LaunchScreen.xib */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
-		C779ADC71B0379AB000F585A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC61B0379AB000F585A /* FirstViewController.swift */; };
-		C779ADC91B0379AB000F585A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC81B0379AB000F585A /* SecondViewController.swift */; };
-		C779ADCC1B0379AB000F585A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCA1B0379AB000F585A /* Main.storyboard */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
-		C779ADD11B0379AB000F585A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCF1B0379AB000F585A /* LaunchScreen.xib */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,14 +49,12 @@
 		971240B01B09FED400E25C2E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		971240B31B09FEE400E25C2E /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		971240B41B09FEE400E25C2E /* OtherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherViewController.xib; sourceTree = "<group>"; };
+		971240B71B0A016300E25C2E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		971240B91B0A116900E25C2E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C779ADC61B0379AB000F585A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C779ADC81B0379AB000F585A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		C779ADCB1B0379AB000F585A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C779ADCD1B0379AB000F585A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C779ADD01B0379AB000F585A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C779ADD61B0379AB000F585A /* InstaSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADDB1B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaSearchTests.swift; sourceTree = "<group>"; };
@@ -104,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				C779ADC41B0379AB000F585A /* AppDelegate.swift */,
-				C779ADC61B0379AB000F585A /* FirstViewController.swift */,
 				9712409F1B09FE3200E25C2E /* TopViewController.swift */,
 				971240A01B09FE3200E25C2E /* TopViewController.xib */,
 				971240A31B09FE6F00E25C2E /* SearchViewController.swift */,
@@ -117,10 +112,9 @@
 				971240B01B09FED400E25C2E /* DetailViewController.xib */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
 				971240B41B09FEE400E25C2E /* OtherViewController.xib */,
-				C779ADC81B0379AB000F585A /* SecondViewController.swift */,
-				C779ADCA1B0379AB000F585A /* Main.storyboard */,
+				971240B71B0A016300E25C2E /* TabBarController.swift */,
+				971240B91B0A116900E25C2E /* LaunchScreen.xib */,
 				C779ADCD1B0379AB000F585A /* Images.xcassets */,
-				C779ADCF1B0379AB000F585A /* LaunchScreen.xib */,
 				C779ADC21B0379AB000F585A /* Supporting Files */,
 			);
 			path = InstaSearch;
@@ -232,11 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				971240A21B09FE3200E25C2E /* TopViewController.xib in Resources */,
-				C779ADCC1B0379AB000F585A /* Main.storyboard in Resources */,
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
 				971240B21B09FED400E25C2E /* DetailViewController.xib in Resources */,
 				971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */,
-				C779ADD11B0379AB000F585A /* LaunchScreen.xib in Resources */,
+				971240BA1B0A116900E25C2E /* LaunchScreen.xib in Resources */,
 				971240AA1B09FE8400E25C2E /* FollowerRankingViewController.xib in Resources */,
 				971240A61B09FE6F00E25C2E /* SearchViewController.xib in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,
@@ -258,12 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				971240A51B09FE6F00E25C2E /* SearchViewController.swift in Sources */,
+				971240B81B0A016300E25C2E /* TabBarController.swift in Sources */,
 				971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
-				C779ADC91B0379AB000F585A /* SecondViewController.swift in Sources */,
 				971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */,
 				C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */,
-				C779ADC71B0379AB000F585A /* FirstViewController.swift in Sources */,
 				971240AD1B09FEA400E25C2E /* LikeRankingViewController.swift in Sources */,
 				971240B11B09FED400E25C2E /* DetailViewController.swift in Sources */,
 			);
@@ -286,25 +278,6 @@
 			targetProxy = C779ADD71B0379AB000F585A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C779ADCA1B0379AB000F585A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C779ADCB1B0379AB000F585A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C779ADCF1B0379AB000F585A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C779ADD01B0379AB000F585A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C779ADDE1B0379AB000F585A /* Debug */ = {

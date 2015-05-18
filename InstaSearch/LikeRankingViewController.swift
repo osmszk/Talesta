@@ -14,6 +14,7 @@ class LikeRankingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Like"
     }
 
     override func didReceiveMemoryWarning() {

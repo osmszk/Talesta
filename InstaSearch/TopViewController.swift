@@ -10,10 +10,16 @@ import UIKit
 
 class TopViewController: UIViewController {
 
+//    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        self.initLabel()
+        
+//        label?.text = "teststs"
+        
+//        NSLog("%@",label);
+        self.title = "top"
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +27,27 @@ class TopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+//    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        
+//    }
+//    
+//    required init(coder aDecoder: NSCoder){
+//        super.init(coder: aDecoder)
+//    }
+    
+//    func initLabel(){
+//        
+//        let helloLabel: UILabel = UILabel(frame: CGRectMake(60, 100, 200, 30))
+//        
+//        helloLabel.text = "Hello World!"
+//        helloLabel.textAlignment = NSTextAlignment.Center
+//        helloLabel.textColor = UIColor.whiteColor()
+//        helloLabel.backgroundColor = UIColor.orangeColor()
+//        
+//        self.view.addSubview(helloLabel)
+//        
+//    }
 
     /*
     // MARK: - Navigation

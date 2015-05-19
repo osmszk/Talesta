@@ -16,6 +16,9 @@
 #import "AFNetworking.h"
 //#import "AFNetworkActivityLogger.h"
 
+#import <libxml/HTMLtree.h>
+#import <libxml/xpath.h>
+
 #endif
 
 #endif

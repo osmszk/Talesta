@@ -38,6 +38,9 @@
 		C70204FC1B0A2070004FAD19 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204E91B0A2070004FAD19 /* UIProgressView+AFNetworking.m */; };
 		C70204FD1B0A2070004FAD19 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204EB1B0A2070004FAD19 /* UIRefreshControl+AFNetworking.m */; };
 		C70204FE1B0A2070004FAD19 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204ED1B0A2070004FAD19 /* UIWebView+AFNetworking.m */; };
+		C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205011B0AEA88004FAD19 /* HTMLNode.swift */; };
+		C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205021B0AEA88004FAD19 /* HTMLParser.swift */; };
+		C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C70205061B0AEAFB004FAD19 /* libxml2.dylib */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -105,6 +108,10 @@
 		C70204EC1B0A2070004FAD19 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		C70204ED1B0A2070004FAD19 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		C70204FF1B0A20EE004FAD19 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		C70205011B0AEA88004FAD19 /* HTMLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLNode.swift; sourceTree = "<group>"; };
+		C70205021B0AEA88004FAD19 /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		C70205031B0AEA88004FAD19 /* Swift-HTML-Parser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-HTML-Parser-Bridging-Header.h"; sourceTree = "<group>"; };
+		C70205061B0AEAFB004FAD19 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +143,7 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C70205001B0AEA88004FAD19 /* Swift-HTML-Parser */,
 				C70204C81B0A2070004FAD19 /* AFNetworking */,
 				C70204DC1B0A2070004FAD19 /* UIKit+AFNetworking */,
 			);
@@ -191,9 +200,20 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		C70205001B0AEA88004FAD19 /* Swift-HTML-Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C70205011B0AEA88004FAD19 /* HTMLNode.swift */,
+				C70205021B0AEA88004FAD19 /* HTMLParser.swift */,
+				C70205031B0AEA88004FAD19 /* Swift-HTML-Parser-Bridging-Header.h */,
+			);
+			path = "Swift-HTML-Parser";
+			sourceTree = "<group>";
+		};
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
+				C70205061B0AEAFB004FAD19 /* libxml2.dylib */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,
 				C779ADD91B0379AB000F585A /* InstaSearchTests */,
 				C779ADC01B0379AB000F585A /* Products */,
@@ -374,6 +394,7 @@
 				971240A51B09FE6F00E25C2E /* SearchViewController.swift in Sources */,
 				C70204F91B0A2070004FAD19 /* UIAlertView+AFNetworking.m in Sources */,
 				C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */,
+				C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */,
 				971240B81B0A016300E25C2E /* TabBarController.swift in Sources */,
 				971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */,
 				C70204FB1B0A2070004FAD19 /* UIImageView+AFNetworking.m in Sources */,
@@ -389,6 +410,7 @@
 				C70204F11B0A2070004FAD19 /* AFNetworkReachabilityManager.m in Sources */,
 				C70204FE1B0A2070004FAD19 /* UIWebView+AFNetworking.m in Sources */,
 				C70204F51B0A2070004FAD19 /* AFURLResponseSerialization.m in Sources */,
+				C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */,
 				971240B11B09FED400E25C2E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +470,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -487,6 +514,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;

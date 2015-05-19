@@ -9,16 +9,10 @@
 #ifndef InstaSearch_Bridging_Header_h
 #define InstaSearch_Bridging_Header_h
 
-
-#ifndef AFNetworkSample_Bridging_Header_h
-#define AFNetworkSample_Bridging_Header_h
-
 #import "AFNetworking.h"
 //#import "AFNetworkActivityLogger.h"
 
 #import <libxml/HTMLtree.h>
 #import <libxml/xpath.h>
-
-#endif
 
 #endif

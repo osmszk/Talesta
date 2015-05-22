@@ -1,6 +1,6 @@
 //
 //  PLCommon.h
-//  KurakuraTube
+//  InstaSearch
 //
 //  Created by Osamu Suzuki on 2015/01/05.
 //  Copyright (c) 2014年 Plegineer, Inc. All rights reserved.

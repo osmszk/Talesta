@@ -169,6 +169,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9720D53E1B0F513400E258CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */,
+				C70205061B0AEAFB004FAD19 /* libxml2.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,10 +252,9 @@
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
-				9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */,
-				C70205061B0AEAFB004FAD19 /* libxml2.dylib */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,
 				C779ADD91B0379AB000F585A /* InstaSearchTests */,
+				9720D53E1B0F513400E258CE /* Frameworks */,
 				C779ADC01B0379AB000F585A /* Products */,
 			);
 			sourceTree = "<group>";

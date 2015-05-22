@@ -35,6 +35,7 @@ class TopViewController: UIViewController {
             println("error")
         }
         
+        
     }
 
     override func didReceiveMemoryWarning() {

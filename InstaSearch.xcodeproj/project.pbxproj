@@ -20,6 +20,9 @@
 		971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B31B09FEE400E25C2E /* OtherViewController.swift */; };
 		971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B41B09FEE400E25C2E /* OtherViewController.xib */; };
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
+		9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D5351B0F4B4A00E258CE /* Reachability.m */; };
+		9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */; };
+		9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D53B1B0F4C0C00E258CE /* PLUtil.m */; };
 		C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */; };
 		C70204EE1B0A2070004FAD19 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */; };
 		C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CC1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m */; };
@@ -70,6 +73,12 @@
 		971240B31B09FEE400E25C2E /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		971240B41B09FEE400E25C2E /* OtherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherViewController.xib; sourceTree = "<group>"; };
 		971240B71B0A016300E25C2E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9720D5341B0F4B4A00E258CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9720D5351B0F4B4A00E258CE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9720D53A1B0F4C0C00E258CE /* PLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLUtil.h; sourceTree = "<group>"; };
+		9720D53B1B0F4C0C00E258CE /* PLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLUtil.m; sourceTree = "<group>"; };
+		9720D53D1B0F4C7D00E258CE /* PLCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLCommon.h; sourceTree = "<group>"; };
 		C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C70204C91B0A2070004FAD19 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -126,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,9 +150,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9720D5331B0F4B4A00E258CE /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9720D5341B0F4B4A00E258CE /* Reachability.h */,
+				9720D5351B0F4B4A00E258CE /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		9720D5391B0F4BEF00E258CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9720D53D1B0F4C7D00E258CE /* PLCommon.h */,
+				9720D53A1B0F4C0C00E258CE /* PLUtil.h */,
+				9720D53B1B0F4C0C00E258CE /* PLUtil.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				9720D5331B0F4B4A00E258CE /* Reachability */,
 				C70205001B0AEA88004FAD19 /* Swift-HTML-Parser */,
 				C70204C81B0A2070004FAD19 /* AFNetworking */,
 				C70204DC1B0A2070004FAD19 /* UIKit+AFNetworking */,
@@ -213,6 +243,7 @@
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
+				9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */,
 				C70205061B0AEAFB004FAD19 /* libxml2.dylib */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,
 				C779ADD91B0379AB000F585A /* InstaSearchTests */,
@@ -233,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				C70204C71B0A2070004FAD19 /* Library */,
+				9720D5391B0F4BEF00E258CE /* Model */,
 				C779ADC41B0379AB000F585A /* AppDelegate.swift */,
 				9712409F1B09FE3200E25C2E /* TopViewController.swift */,
 				971240A01B09FE3200E25C2E /* TopViewController.xib */,
@@ -395,9 +427,11 @@
 				C70204F91B0A2070004FAD19 /* UIAlertView+AFNetworking.m in Sources */,
 				C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */,
 				C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */,
+				9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */,
 				971240B81B0A016300E25C2E /* TabBarController.swift in Sources */,
 				971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */,
 				C70204FB1B0A2070004FAD19 /* UIImageView+AFNetworking.m in Sources */,
+				9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */,
 				C70204F01B0A2070004FAD19 /* AFHTTPSessionManager.m in Sources */,
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,

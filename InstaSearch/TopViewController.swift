@@ -20,6 +20,21 @@ class TopViewController: UIViewController {
         
 //        NSLog("%@",label);
         self.title = "top"
+        
+        let manager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
+        let serializer: AFJSONRequestSerializer =   AFJSONRequestSerializer()
+        manager.requestSerializer = serializer
+        let url = "https://www.googleapis.com/youtube/v3/search?part=snippet,id&q=clash+of+clans+commercial%7Ccomedy&maxResults=20&key=AIzaSyAEUijSNYxVgVwI6Xpkp9cw1l1wFL8azCA"
+        
+        manager.GET(url, parameters: nil,
+            success:{(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) -> Void in
+            println("success")
+            println(responsobject)
+                
+            }) { ( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
+            println("error")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

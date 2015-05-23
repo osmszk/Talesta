@@ -44,6 +44,8 @@
 		C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205011B0AEA88004FAD19 /* HTMLNode.swift */; };
 		C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205021B0AEA88004FAD19 /* HTMLParser.swift */; };
 		C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C70205061B0AEAFB004FAD19 /* libxml2.dylib */; };
+		C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C702050B1B108165004FAD19 /* SVProgressHUD.bundle */; };
+		C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C702050D1B108165004FAD19 /* SVProgressHUD.m */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -121,6 +123,10 @@
 		C70205021B0AEA88004FAD19 /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		C70205031B0AEA88004FAD19 /* Swift-HTML-Parser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-HTML-Parser-Bridging-Header.h"; sourceTree = "<group>"; };
 		C70205061B0AEAFB004FAD19 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		C702050A1B108165004FAD19 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		C702050B1B108165004FAD19 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		C702050C1B108165004FAD19 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		C702050D1B108165004FAD19 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C70205091B108165004FAD19 /* SVProgressHUD */,
 				9720D5331B0F4B4A00E258CE /* Reachability */,
 				C70205001B0AEA88004FAD19 /* Swift-HTML-Parser */,
 				C70204C81B0A2070004FAD19 /* AFNetworking */,
@@ -247,6 +254,17 @@
 				C70205031B0AEA88004FAD19 /* Swift-HTML-Parser-Bridging-Header.h */,
 			);
 			path = "Swift-HTML-Parser";
+			sourceTree = "<group>";
+		};
+		C70205091B108165004FAD19 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C702050A1B108165004FAD19 /* SVProgressHUD-Prefix.pch */,
+				C702050B1B108165004FAD19 /* SVProgressHUD.bundle */,
+				C702050C1B108165004FAD19 /* SVProgressHUD.h */,
+				C702050D1B108165004FAD19 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		C779ADB61B0379AB000F585A = {
@@ -401,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				971240A21B09FE3200E25C2E /* TopViewController.xib in Resources */,
+				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
 				971240B21B09FED400E25C2E /* DetailViewController.xib in Resources */,
 				971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */,
@@ -442,6 +461,7 @@
 				9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */,
 				C70204F01B0A2070004FAD19 /* AFHTTPSessionManager.m in Sources */,
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
 				971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */,

@@ -118,7 +118,6 @@ static CGFloat const AD_ICON_W = 50.0f;
 static CGFloat const TAB_H = 49.0f;
 static CGFloat const TABLE_VIEW_FOOTER_HEIGHT = 50.0f;
 static CGFloat const TIME_OUT_INTERVAL = 10.0f;
-#define API_YOUTUBE_KEY @"AIzaSyAEUijSNYxVgVwI6Xpkp9cw1l1wFL8azCA"
 
 //ref: flv -> mp4??? Library
 //https://wiki.videolan.org/VLCKit/

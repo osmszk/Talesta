@@ -54,10 +54,18 @@ class FollowerRankingViewController: UIViewController {
                 //ref:http://blog.f60k.com/objective-c%E3%81%A8swift%E3%81%AE%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/
                 println("success")
                 
-                let html : NSString = NSString(data: responsobject as! NSData, encoding: NSJapaneseEUCStringEncoding)!
+                let html : NSString? = NSString(data: responsobject as! NSData, encoding: NSJapaneseEUCStringEncoding)
 //                println("responsobject:\(responsobject)")
 //                println("operation:\(operation)")
                 println("html:\(html)")
+                
+                var articles = NSMutableArray()
+                var error : NSError? = nil
+                var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)
+                let bodyNode :HTMLNode? = parser?.body
+                
+                
+                
         
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in

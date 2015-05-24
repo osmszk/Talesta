@@ -13,6 +13,7 @@
 //#import "AFNetworkActivityLogger.h"
 #import "Reachability.h"
 #import "SVProgressHUD.h"
+#import "AFHTTPRequestOperationManager+TimeoutCategory.h"
 
 #import <libxml/HTMLtree.h>
 #import <libxml/xpath.h>

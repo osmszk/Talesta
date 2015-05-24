@@ -41,32 +41,30 @@ class FollowerRankingViewController: UIViewController {
     func requestToGetRanking(){
         
         let manager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
-//        let serializer: AFJSONRequestSerializer =   AFJSONRequestSerializer()
-//        manager.requestSerializer = serializer
+        manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
         manager.responseSerializer = AFHTTPResponseSerializer()
-//        manager.responseSerializer.acceptableContentTypes = S
-        //[String: AnyObject]
-//        let url = "http://www.talentinsta.com/follower/99/"
-        let url = "http://sports.yahoo.co.jp/nba/news/list/"
+        let url = "http://www.talentinsta.com/follower/99/"
         manager.GET(url,
             parameters: nil,
-            success:{(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) -> Void in
+            timeoutInterval: 10,
+            success: { (operation : AFHTTPRequestOperation!, responsobject: AnyObject!) -> Void in
                 
                 SVProgressHUD.dismiss()
                 
                 //ref:http://blog.f60k.com/objective-c%E3%81%A8swift%E3%81%AE%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/
                 println("success")
                 
-                let html = NSString(data: responsobject as! NSData, encoding: NSUTF8StringEncoding)
+                let html : NSString = NSString(data: responsobject as! NSData, encoding: NSJapaneseEUCStringEncoding)!
+//                println("responsobject:\(responsobject)")
+//                println("operation:\(operation)")
                 println("html:\(html)")
-                
-                
-                
-            }) { ( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
+        
+            },
+            failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
                 SVProgressHUD.dismiss()
                 println("error \(error)")
                 println("error \(error.localizedDescription)")
-        }
+        })
         
     }
 

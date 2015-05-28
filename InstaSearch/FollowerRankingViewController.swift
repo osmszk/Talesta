@@ -64,7 +64,120 @@ class FollowerRankingViewController: UIViewController {
                 var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)
                 let bodyNode :HTMLNode? = parser?.body
                 
+                let trNodes = bodyNode?.findChildTags("tr")
+                var k = 0
+                var trStartIndex  =  0
+            
+//                for node in trNodes {
+//                    let tdNodes = node
+//                }
+//                
+//                //通信結果などのデータでArrayの要素が混在する可能性がある場合
+//                //Optional Bindingで全ての要素が特定のObjectかどうかを判定
+//                if let nodes = trNodes as? HTMLNode[] {
+//                    //全ての要素がString確定
+//                    for object : HTMLNode in nodes {
+//                        
+//                    }
+//                }
+//                
+//                //****
+//                
+//                //要素ごとに判定しなければいけないならfor in文は使えなさそう
+//                for (var k = 0; k < trNodes!.count; k++) {
+//                    //要素ごとに確定させていく
+//                    if let n = trNodes[k] as? HTMLNode {
+//                        println(n)
+//                    }
+//                }
+//                
                 
+                /*
+                NSArray *trNodes = [bodyNode findChildTags:@"tr"];
+                int k = 0;
+                int trStartIndex = 0;
+                for (HTMLNode *node in trNodes) {
+                    NSArray *tdNodes = [node findChildTags:@"td"];
+                    for (HTMLNode *nod in tdNodes) {
+                        if([[nod contents] isEqualToString:@"フォロワー数"]){
+                            trStartIndex = k+1;
+                        }
+                    }
+                    k++;
+                }
+                
+                for (NSInteger i=0; i<50; i++) {
+                    HTMLNode *node0 = trNodes[trStartIndex+i];
+                    NSArray *tdNodes = [node0 findChildTags:@"td"];
+                    
+                    HTMLNode *rankingNumNode = tdNodes[0];
+                    HTMLNode *nameNode = [[tdNodes[1] findChildTag:@"a"] findChildTag:@"b"];
+                    HTMLNode *junreNode = tdNodes[2];
+                    HTMLNode *followerNumNode = tdNodes[tdNodes.count-1];
+                    NSString *followerNum = [followerNumNode contents];
+                    NSLog(@"%@ %@ %@ %@",[rankingNumNode contents],[nameNode contents],[junreNode contents],followerNum);
+                }
+                */
+
+                
+                
+                
+                /*
+                NSMutableArray *articleUrls = [[NSMutableArray alloc] init];
+                NSMutableArray *imgUrls = [[NSMutableArray alloc] init];
+                NSMutableArray *sources = [[NSMutableArray alloc] init];
+                NSMutableArray *dates = [[NSMutableArray alloc] init];
+                NSArray *nodes = [bodyNode findChildrenOfClass:@"pickup_list pb20p"];
+                for (HTMLNode *node in nodes) {
+                    NSArray *aNodes = [node findChildTags:@"a"];
+                    HTMLNode *aNode = (HTMLNode*)aNodes[0];
+                    NSString *articleUrl = [aNode getAttributeNamed:@"href"];
+                    
+                    NSArray *grayNodes = [node findChildrenOfClass:@"yjSt f_gray01"];
+                    HTMLNode *grayNode = (HTMLNode*)grayNodes[0];
+                    
+                    NSArray *imgNodes = [node findChildTags:@"img"];
+                    HTMLNode *imgNode = (HTMLNode*)imgNodes[0];
+                    
+                    NSArray *titleNodes = [node findChildrenOfClass:@"lh14 pb5p"];
+                    HTMLNode *titleNode = [titleNodes count]>0 ? (HTMLNode*)titleNodes[0] : nil;
+                    
+                    NSMutableString *style = [[imgNode getAttributeNamed:@"style"] mutableCopy];
+                    //background:url(http://amd.c.yimg.jp/im_siggk5Vfp06zvuo6YuR7V9weoA---x67-y100-q90/amd/20150313-00000313-ism-000-0-thumb.jpg) no-repeat; width:67; height:100;
+                    NSString *text1 = [style stringByReplacingOccurrencesOfString:@"background:url(" withString:@""];
+                    NSArray *texts = [text1 componentsSeparatedByString:@")"];
+                    NSString *imgUrl = texts[0];
+                    
+                    NSString *grayText = [grayNode contents];
+                    NSArray *grays = [grayText componentsSeparatedByString:@"-"];
+                    NSString *source = [grays[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                    NSString *dateStr = [grays[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                    
+                    NSString *title = [titleNode.children[0] contents];
+                    
+                    [articleUrls addObject:articleUrl];
+                    [imgUrls addObject:imgUrl];
+                    [sources addObject:source];
+                    [dates addObject:dateStr];
+                    
+                    PLArticle *article = [[PLArticle alloc]init];
+                    article.url = articleUrl;
+                    article.imageURL = imgUrl;
+                    article.sourceName = source;
+                    article.dateStr = dateStr;
+                    article.title = title;
+                    
+                    DEBUGLOG(@"articleUrl:%@",articleUrl);
+                    DEBUGLOG(@"imgUrl:%@",imgUrl);
+                    DEBUGLOG(@"src:%@ dat:%@",source,dateStr);
+                    DEBUGLOG(@"title:%@",title);
+                    
+                    [articles addObject:article];
+                }
+                */
+
+
+
                 
         
             },

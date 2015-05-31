@@ -59,7 +59,7 @@ class FollowerRankingViewController: UIViewController {
 //                println("operation:\(operation)")
                 println("html:\(html)")
                 
-                var articles = NSMutableArray()
+                var followerRankings = NSMutableArray()
                 var error : NSError? = nil
                 var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)//parse error
                 let bodyNode :HTMLNode? = parser?.body
@@ -67,11 +67,9 @@ class FollowerRankingViewController: UIViewController {
                 let trNodes : Array<HTMLNode>? = bodyNode?.findChildTags("tr")
                 var k = 0
                 var trStartIndex  =  0
-            
                 
-                //
+                //オプショナルのオブジェクト郡をfor-inでつかうときはアンラップしてからつかう
                 //ref:http://stackoverflow.com/questions/26852656/loop-through-anyobject-results-in-does-not-have-a-member-named-generator
-                //オプショナルのオブジェクトをfor-inでつかうときはアンラップしてからつかう
                 if let trNodesUnwrap = trNodes{
                     for trNode in trNodesUnwrap{
                         let tdNodes : Array<HTMLNode>? = trNode.findChildTags("td")
@@ -98,10 +96,16 @@ class FollowerRankingViewController: UIViewController {
                         if let tdNodesUnwap = tdNodes {
                             let rankingNumNode : HTMLNode? = tdNodesUnwap[0]
                             let nameNode : HTMLNode? = tdNodesUnwap[1].findChildTag("a")?.findChildTag("b")
-                            println("\(rankingNumNode?.contents) \(nameNode?.contents)")
+                            let junreNode : HTMLNode? = tdNodesUnwap[2]
+                            let followerNumNode : HTMLNode? = tdNodesUnwap[tdNodes!.count-1]
+                            
+                            println("\(rankingNumNode!.contents) \(nameNode!.contents) \(junreNode!.contents) \(followerNumNode!.contents)")
+                            
+                            let ranking : Int! = rankingNumNode!.contents.toInt()
+                            let followerRanking = FollwerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, follower: followerNumNode!.contents)
+                            
+                            followerRankings.addObject(followerRanking)
                         }
-//
-                        //                    let nameNode : HTMLNode? =
                     }
                 }
                 

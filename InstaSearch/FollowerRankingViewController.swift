@@ -61,36 +61,49 @@ class FollowerRankingViewController: UIViewController {
                 
                 var articles = NSMutableArray()
                 var error : NSError? = nil
-                var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)
+                var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)//parse error
                 let bodyNode :HTMLNode? = parser?.body
                 
-                let trNodes = bodyNode?.findChildTags("tr")
+                let trNodes : Array<HTMLNode>? = bodyNode?.findChildTags("tr")
                 var k = 0
                 var trStartIndex  =  0
             
-//                for node in trNodes {
-//                    let tdNodes = node
-//                }
-//                
-//                //通信結果などのデータでArrayの要素が混在する可能性がある場合
-//                //Optional Bindingで全ての要素が特定のObjectかどうかを判定
-//                if let nodes = trNodes as? HTMLNode[] {
-//                    //全ての要素がString確定
-//                    for object : HTMLNode in nodes {
-//                        
-//                    }
-//                }
-//                
-//                //****
-//                
-//                //要素ごとに判定しなければいけないならfor in文は使えなさそう
-//                for (var k = 0; k < trNodes!.count; k++) {
-//                    //要素ごとに確定させていく
-//                    if let n = trNodes[k] as? HTMLNode {
-//                        println(n)
-//                    }
-//                }
-//                
+                
+                //
+                //ref:http://stackoverflow.com/questions/26852656/loop-through-anyobject-results-in-does-not-have-a-member-named-generator
+                //オプショナルのオブジェクトをfor-inでつかうときはアンラップしてからつかう
+                if let trNodesUnwrap = trNodes{
+                    for trNode in trNodesUnwrap{
+                        let tdNodes : Array<HTMLNode>? = trNode.findChildTags("td")
+                        if let tdNodesUnwap = tdNodes{
+                            for tdNode in tdNodesUnwap{
+                                let contents : String = tdNode.contents
+                                if(contents == "フォロワー数"){
+                                    trStartIndex = k+1
+                                }
+                            }
+                        }
+                        k++
+                    }
+                }
+                
+                //アンラップについて
+                //ref:http://qiita.com/cotrpepe/items/518c4476ca957a42f5f1
+                
+                for var i:Int=0; i<50; ++i{
+                    if let trNodesUnwap = trNodes{
+                        let node0 : HTMLNode? = trNodesUnwap[trStartIndex+i]
+                        let tdNodes : Array<HTMLNode>? = node0?.findChildTags("td")
+                        
+                        if let tdNodesUnwap = tdNodes {
+                            let rankingNumNode : HTMLNode? = tdNodesUnwap[0]
+                            let nameNode : HTMLNode? = tdNodesUnwap[1].findChildTag("a")?.findChildTag("b")
+                            println("\(rankingNumNode?.contents) \(nameNode?.contents)")
+                        }
+//
+                        //                    let nameNode : HTMLNode? =
+                    }
+                }
                 
                 /*
                 NSArray *trNodes = [bodyNode findChildTags:@"tr"];

@@ -55,59 +55,7 @@ class FollowerRankingViewController: UIViewController {
                 println("success")
                 
                 let html : NSString? = NSString(data: responsobject as! NSData, encoding: NSJapaneseEUCStringEncoding)
-//                println("responsobject:\(responsobject)")
-//                println("operation:\(operation)")
-                println("html:\(html)")
-                
-                var followerRankings = NSMutableArray()
-                var error : NSError? = nil
-                var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)//parse error
-                let bodyNode :HTMLNode? = parser?.body
-                
-                let trNodes : Array<HTMLNode>? = bodyNode?.findChildTags("tr")
-                var k = 0
-                var trStartIndex  =  0
-                
-                //オプショナルのオブジェクト郡をfor-inでつかうときはアンラップしてからつかう
-                //ref:http://stackoverflow.com/questions/26852656/loop-through-anyobject-results-in-does-not-have-a-member-named-generator
-                if let trNodesUnwrap = trNodes{
-                    for trNode in trNodesUnwrap{
-                        let tdNodes : Array<HTMLNode>? = trNode.findChildTags("td")
-                        if let tdNodesUnwap = tdNodes{
-                            for tdNode in tdNodesUnwap{
-                                let contents : String = tdNode.contents
-                                if(contents == "フォロワー数"){
-                                    trStartIndex = k+1
-                                }
-                            }
-                        }
-                        k++
-                    }
-                }
-                
-                //アンラップについて
-                //ref:http://qiita.com/cotrpepe/items/518c4476ca957a42f5f1
-                
-                for var i:Int=0; i<50; ++i{
-                    if let trNodesUnwap = trNodes{
-                        let node0 : HTMLNode? = trNodesUnwap[trStartIndex+i]
-                        let tdNodes : Array<HTMLNode>? = node0?.findChildTags("td")
-                        
-                        if let tdNodesUnwap = tdNodes {
-                            let rankingNumNode : HTMLNode? = tdNodesUnwap[0]
-                            let nameNode : HTMLNode? = tdNodesUnwap[1].findChildTag("a")?.findChildTag("b")
-                            let junreNode : HTMLNode? = tdNodesUnwap[2]
-                            let followerNumNode : HTMLNode? = tdNodesUnwap[tdNodes!.count-1]
-                            
-                            println("\(rankingNumNode!.contents) \(nameNode!.contents) \(junreNode!.contents) \(followerNumNode!.contents)")
-                            
-                            let ranking : Int! = rankingNumNode!.contents.toInt()
-                            let followerRanking = FollwerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, follower: followerNumNode!.contents)
-                            
-                            followerRankings.addObject(followerRanking)
-                        }
-                    }
-                }
+                let followerRankings = ParseHelper.convertFollowerRankingFromHtml(html: html! as String)
                 
         
             },

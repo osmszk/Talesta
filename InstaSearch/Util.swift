@@ -10,6 +10,16 @@ import Foundation
 
 class Util{
 
+    static let KEY_TRACKING_VERSION : String = "keyTrackingVersion"
+    
+    class func appVersionString() -> String{
+        //[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+        let infoDic : Dictionary = NSBundle.mainBundle().infoDictionary! as Dictionary
+        return (infoDic["CFBundleVersion"] as! String)
+//        return NSBundle.mainBundle().infoDictionary.objectForKey("CFBundleVersion")
+    }
+    
+    ////////////////////////
     
     class func saveObject(obj:AnyObject?, forKey key: String){
         NSUserDefaults.standardUserDefaults().setObject(obj, forKey: key)
@@ -63,9 +73,11 @@ class Util{
     }
     
     class func saveTrackingAppVersion(){
-//        NSUserDefaults.standardUserDefaults().setObject(<#value: AnyObject?#>, forKey: <#String#>)
+        NSUserDefaults.standardUserDefaults().setObject(Util.appVersionString(), forKey: KEY_TRACKING_VERSION)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
+    
+    
     
     
 }

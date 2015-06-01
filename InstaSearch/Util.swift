@@ -12,11 +12,69 @@ class Util{
 
     static let KEY_TRACKING_VERSION : String = "keyTrackingVersion"
     
+    enum AppVersionState: Int {
+        case NotChanged
+        case First
+        case BumpedUp
+    }
+    
+    class func osVersion() -> Float{
+        return NSString(string: UIDevice.currentDevice().systemVersion).floatValue
+    }
+    
     class func appVersionString() -> String{
-        //[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
         let infoDic : Dictionary = NSBundle.mainBundle().infoDictionary! as Dictionary
-        return (infoDic["CFBundleVersion"] as! String)
-//        return NSBundle.mainBundle().infoDictionary.objectForKey("CFBundleVersion")
+        return infoDic["CFBundleVersion"] as! String
+    }
+    
+    class func trackingAppVersion() -> String?{
+        return NSUserDefaults.standardUserDefaults().stringForKey(KEY_TRACKING_VERSION);
+    }
+    
+    class func appVersionNumber() -> NSNumber{
+        return Util.convertToNumberVersion(Util.appVersionString());
+    }
+    
+    class func appVersionState() -> AppVersionState{
+        let trackingAppVersion = Util.trackingAppVersion()
+        let currentAppVersion = Util.appVersionString();
+        if (trackingAppVersion == nil) {
+            return AppVersionState.First
+        }
+        
+        if (trackingAppVersion != currentAppVersion) {
+            return AppVersionState.BumpedUp;
+        }
+        
+        return AppVersionState.NotChanged;
+    }
+    
+    class func displaySize() -> CGSize {
+        return UIScreen.mainScreen().bounds.size
+    }
+    
+    class func displayFrame() -> CGRect{
+        return CGRectMake(0, 0, Util.displaySize().width, Util.displaySize().height);
+    }
+    
+    class func displayCenter() -> CGPoint {
+        return CGPointMake(Util.displaySize().width/2.0, Util.displaySize().height/2.0);
+    }
+    
+    ////////////////////////
+    
+    class func convertToNumberVersion(appVersionString:String) -> NSNumber{
+        let array : NSArray = appVersionString.componentsSeparatedByString(".")
+        var resultString : NSString = ""
+        if array.count == 2{
+            resultString = NSString(format: "%d%02d", array[0].integerValue, array[1].integerValue)
+            return NSNumber(integer: resultString.integerValue)
+        }else if array.count == 3{
+            resultString = NSString(format: "%d%02d%02d",array[0].integerValue, array[1].integerValue, array[2].integerValue)
+            return NSNumber(integer: resultString.integerValue)
+        }else{
+            return NSNumber(integer: appVersionString.toInt()!)
+        }
     }
     
     ////////////////////////
@@ -76,8 +134,4 @@ class Util{
         NSUserDefaults.standardUserDefaults().setObject(Util.appVersionString(), forKey: KEY_TRACKING_VERSION)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
-    
-    
-    
-    
 }

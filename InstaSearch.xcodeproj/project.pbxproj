@@ -49,6 +49,7 @@
 		C70205131B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C70205121B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m */; };
 		C70205FC1B1ACF49004FAD19 /* FollowerRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */; };
 		C70205FE1B1AD285004FAD19 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FD1B1AD285004FAD19 /* ParseHelper.swift */; };
+		C70206001B1C15B1004FAD19 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FF1B1C15B1004FAD19 /* Util.swift */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -134,6 +135,7 @@
 		C70205121B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+TimeoutCategory.m"; sourceTree = "<group>"; };
 		C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRanking.swift; sourceTree = "<group>"; };
 		C70205FD1B1AD285004FAD19 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		C70205FF1B1C15B1004FAD19 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				9720D53D1B0F4C7D00E258CE /* PLCommon.h */,
 				9720D53A1B0F4C0C00E258CE /* PLUtil.h */,
 				9720D53B1B0F4C0C00E258CE /* PLUtil.m */,
+				C70205FF1B1C15B1004FAD19 /* Util.swift */,
 				C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */,
 				C70205FD1B1AD285004FAD19 /* ParseHelper.swift */,
 			);
@@ -486,6 +489,7 @@
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
+				C70206001B1C15B1004FAD19 /* Util.swift in Sources */,
 				971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */,
 				C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */,
 				C70204F21B0A2070004FAD19 /* AFSecurityPolicy.m in Sources */,

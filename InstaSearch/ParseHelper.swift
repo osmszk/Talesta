@@ -52,7 +52,7 @@ class ParseHelper {
                     let junreNode : HTMLNode? = tdNodesUnwap[2]
                     let followerNumNode : HTMLNode? = tdNodesUnwap[tdNodes!.count-1]
                     
-                    println("\(rankingNumNode!.contents) \(nameNode!.contents) \(junreNode!.contents) \(followerNumNode!.contents)")
+                    Log.DLog("\(rankingNumNode!.contents) \(nameNode!.contents) \(junreNode!.contents) \(followerNumNode!.contents)")
                     
                     let ranking : Int! = rankingNumNode!.contents.toInt()
                     let followerRanking = FollwerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, follower: followerNumNode!.contents)

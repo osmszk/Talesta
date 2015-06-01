@@ -10,6 +10,8 @@ import UIKit
 
 class FollowerRankingViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,17 +57,25 @@ class FollowerRankingViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 
                 //ref:http://blog.f60k.com/objective-c%E3%81%A8swift%E3%81%AE%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/
-                println("success")
+                Log.DLog("success")
                 
                 let html : NSString? = NSString(data: responsobject as! NSData, encoding: NSJapaneseEUCStringEncoding)
-                let followerRankings = ParseHelper.convertFollowerRankingFromHtml(html: html! as String)
+                if html == nil {
+                    let utf8 : NSString? = NSString(data: responsobject as! NSData, encoding: NSUTF8StringEncoding)
+                    Log.DLog("failed! :\(utf8)")
+                    return
+                }
                 
-        
+                let followerRankings = ParseHelper.convertFollowerRankingFromHtml(html: html! as String)
+                    
+                
+                
+                
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
                 SVProgressHUD.dismiss()
-                println("error \(error)")
-                println("error \(error.localizedDescription)")
+                Log.DLog("error \(error)")
+                Log.DLog("error \(error.localizedDescription)")
         })
         
     }

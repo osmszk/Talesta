@@ -10,7 +10,7 @@ import Foundation
 
 class Util{
 
-    static let KEY_TRACKING_VERSION : String = "keyTrackingVersion"
+    static let KEY_TRACKING_VERSION = "keyTrackingVersion"
     
     enum AppVersionState: Int {
         case NotChanged

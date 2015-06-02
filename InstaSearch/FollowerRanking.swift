@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FollwerRanking {
+class FollowerRanking {
     
     var rankingNo : Int
     var name : String

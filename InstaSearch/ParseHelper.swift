@@ -58,7 +58,7 @@ class ParseHelper {
                     
                     let ranking : Int! = rankingNumNode!.contents.toInt()
                     let followerRanking
-                        = FollwerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents)
+                        = FollowerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents)
                     
                     followerRankings.addObject(followerRanking)
                 }

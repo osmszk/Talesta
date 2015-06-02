@@ -51,14 +51,17 @@ class ParseHelper {
                 if let tdNodesUnwap = tdNodes {
                     let rankingNumNode : HTMLNode? = tdNodesUnwap[0]
                     let nameNode : HTMLNode? = tdNodesUnwap[1].findChildTag("a")?.findChildTag("b")
+                    let imgNode : HTMLNode? = tdNodesUnwap[1].findChildTag("img")
+                    let imgUrl = imgNode?.getAttributeNamed("src")
                     let junreNode : HTMLNode? = tdNodesUnwap[2]
                     let followerNumNode : HTMLNode? = tdNodesUnwap[tdNodes!.count-1]
                     
                     Log.DLog("\(rankingNumNode!.contents) \(nameNode!.contents) \(junreNode!.contents) \(followerNumNode!.contents)")
+                    Log.DLog("url:\(imgUrl)")
                     
                     let ranking : Int! = rankingNumNode!.contents.toInt()
                     let followerRanking
-                        = FollowerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents)
+                    = FollowerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents,imageUrl:imgUrl)
                     
                     followerRankings.addObject(followerRanking)
                 }

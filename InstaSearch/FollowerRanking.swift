@@ -15,9 +15,9 @@ class FollowerRanking {
     var junre : String
     var follower : Int
     var followerString : String//コンマ区切り
-//    var imageUrl : String
+    var imageUrl : String?
     
-    init(rankingNo:Int=0 ,name:String="" , junre:String="",followerString:String=""){
+    init(rankingNo:Int=0 ,name:String="" , junre:String="",followerString:String="",imageUrl:String?){
         self.rankingNo = rankingNo
         self.name = name
         self.junre = junre
@@ -28,7 +28,7 @@ class FollowerRanking {
         
         self.follower = followerStr.toInt()!
         self.followerString = followerString
-        
+        self.imageUrl = imageUrl
     }
     
 }

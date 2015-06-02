@@ -11,10 +11,10 @@ import Foundation
 class FollowerRanking {
     
     var rankingNo : Int
-    var name : String
-    var junre : String
-    var follower : Int
-    var followerString : String//コンマ区切り
+    var name : String?
+    var junre : String?
+    var follower : Int?
+    var followerString : String?//コンマ区切り
     var imageUrl : String?
     
     init(rankingNo:Int=0 ,name:String="" , junre:String="",followerString:String="",imageUrl:String?){
@@ -22,11 +22,9 @@ class FollowerRanking {
         self.name = name
         self.junre = junre
         
-//        var followerStr : NSString = followerString as! followerString
-//        followerStr = Util.re
         var followerStr : String = followerString.stringByReplacingOccurrencesOfString(",", withString: "", options: nil, range: nil)
         
-        self.follower = followerStr.toInt()!
+        self.follower = followerStr.toInt()
         self.followerString = followerString
         self.imageUrl = imageUrl
     }

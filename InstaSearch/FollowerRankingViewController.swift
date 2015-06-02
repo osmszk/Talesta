@@ -88,7 +88,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "Cell")
         
         let ranking = self.followerRankings[indexPath.row] as! FollowerRanking
         cell.textLabel?.text = ranking.name

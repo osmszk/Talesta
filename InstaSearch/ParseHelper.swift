@@ -14,6 +14,7 @@ class ParseHelper {
         
         var followerRankings = NSMutableArray()
         var error : NSError? = nil
+        //TODO: エラーログ修正
         var parser : HTMLParser? = HTMLParser(html: html, encoding: NSUTF8StringEncoding, error: &error)//parse error
         let bodyNode :HTMLNode? = parser?.body
         

@@ -12,7 +12,6 @@
 		971240A51B09FE6F00E25C2E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A31B09FE6F00E25C2E /* SearchViewController.swift */; };
 		971240A61B09FE6F00E25C2E /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240A41B09FE6F00E25C2E /* SearchViewController.xib */; };
 		971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */; };
-		971240AA1B09FE8400E25C2E /* FollowerRankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240A81B09FE8400E25C2E /* FollowerRankingViewController.xib */; };
 		971240AD1B09FEA400E25C2E /* LikeRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */; };
 		971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */; };
 		971240B11B09FED400E25C2E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AF1B09FED400E25C2E /* DetailViewController.swift */; };
@@ -51,6 +50,7 @@
 		C70205FE1B1AD285004FAD19 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FD1B1AD285004FAD19 /* ParseHelper.swift */; };
 		C70206001B1C15B1004FAD19 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FF1B1C15B1004FAD19 /* Util.swift */; };
 		C70206021B1C8CF6004FAD19 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70206011B1C8CF6004FAD19 /* Log.swift */; };
+		C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76620CF1B1DDB05003FFC7A /* Main.storyboard */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -72,7 +72,6 @@
 		971240A31B09FE6F00E25C2E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		971240A41B09FE6F00E25C2E /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingViewController.swift; sourceTree = "<group>"; };
-		971240A81B09FE8400E25C2E /* FollowerRankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowerRankingViewController.xib; sourceTree = "<group>"; };
 		971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRankingViewController.swift; sourceTree = "<group>"; };
 		971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeRankingViewController.xib; sourceTree = "<group>"; };
 		971240AF1B09FED400E25C2E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +137,7 @@
 		C70205FD1B1AD285004FAD19 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		C70205FF1B1C15B1004FAD19 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C70206011B1C8CF6004FAD19 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		C76620CF1B1DDB05003FFC7A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 				971240A31B09FE6F00E25C2E /* SearchViewController.swift */,
 				971240A41B09FE6F00E25C2E /* SearchViewController.xib */,
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
-				971240A81B09FE8400E25C2E /* FollowerRankingViewController.xib */,
+				C76620CF1B1DDB05003FFC7A /* Main.storyboard */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
 				971240AF1B09FED400E25C2E /* DetailViewController.swift */,
@@ -444,12 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				971240A21B09FE3200E25C2E /* TopViewController.xib in Resources */,
+				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
 				971240B21B09FED400E25C2E /* DetailViewController.xib in Resources */,
 				971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,
-				971240AA1B09FE8400E25C2E /* FollowerRankingViewController.xib in Resources */,
 				971240A61B09FE6F00E25C2E /* SearchViewController.xib in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,
 			);

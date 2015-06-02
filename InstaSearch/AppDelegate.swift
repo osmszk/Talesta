@@ -21,9 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tab: TabBarController = TabBarController()
         
+        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
         var top : TopViewController = TopViewController(nibName: "TopViewController", bundle: nil)
         var search : SearchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
-        var followerRank : FollowerRankingViewController = FollowerRankingViewController(nibName: "FollowerRankingViewController", bundle: nil)
+        var followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
         var likeRank : LikeRankingViewController = LikeRankingViewController(nibName: "LikeRankingViewController", bundle: nil)
         var other : OtherViewController = OtherViewController(nibName: "OtherViewController", bundle: nil)
         

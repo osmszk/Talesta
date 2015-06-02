@@ -14,7 +14,7 @@ class ParseHelper {
         
         var followerRankings = NSMutableArray()
         var error : NSError? = nil
-        var parser : HTMLParser? = HTMLParser(html:html , error:&error)//parse error
+        var parser : HTMLParser? = HTMLParser(html: html, encoding: NSUTF8StringEncoding, error: &error)//parse error
         let bodyNode :HTMLNode? = parser?.body
         
         let trNodes : Array<HTMLNode>? = bodyNode?.findChildTags("tr")

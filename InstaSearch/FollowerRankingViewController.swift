@@ -73,6 +73,8 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
 //                followerRankings.addObject
                 
                 
+                self.tableView.reloadData()
+                
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
                 SVProgressHUD.dismiss()
@@ -93,12 +95,9 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
-        let ranking  = self.followerRankings[indexPath.row]
-        if let rankingAnwrap = ranking{
-            cell.textLabel?.text = ranking.name
-            cell.detailTextLabel?.text = NSString("%d",ranking.rankingNo)
-        }
-        
+        let ranking = self.followerRankings[indexPath.row] as! FollwerRanking
+        cell.textLabel?.text = ranking.name
+        cell.detailTextLabel?.text = NSString(format: "%d", ranking.rankingNo) as String
         return cell
     }
     

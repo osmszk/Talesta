@@ -55,7 +55,8 @@ class ParseHelper {
                     Log.DLog("\(rankingNumNode!.contents) \(nameNode!.contents) \(junreNode!.contents) \(followerNumNode!.contents)")
                     
                     let ranking : Int! = rankingNumNode!.contents.toInt()
-                    let followerRanking = FollwerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, follower: followerNumNode!.contents)
+                    let followerRanking
+                        = FollwerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents)
                     
                     followerRankings.addObject(followerRanking)
                 }

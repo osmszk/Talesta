@@ -70,8 +70,6 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
                 let followerRankings = ParseHelper.convertFollowerRankingFromHtml(html: html! as String)
                 
                 self.followerRankings.addObjectsFromArray(followerRankings as Array)
-//                followerRankings.addObject
-                
                 
                 self.tableView.reloadData()
                 
@@ -83,15 +81,12 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         })
         
     }
-    // セルに表示するテキスト
-    let texts = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
-    // セルの行数
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.followerRankings.count
     }
     
-    // セルの内容を変更
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         

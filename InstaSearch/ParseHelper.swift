@@ -41,7 +41,9 @@ class ParseHelper {
         //アンラップについて
         //ref:http://qiita.com/cotrpepe/items/518c4476ca957a42f5f1
         
-        for var i:Int=0; i<50; ++i{
+        //
+        
+        for i in 0..<50{
             if let trNodesUnwap = trNodes{
                 let node0 : HTMLNode? = trNodesUnwap[trStartIndex+i]
                 let tdNodes : Array<HTMLNode>? = node0?.findChildTags("td")

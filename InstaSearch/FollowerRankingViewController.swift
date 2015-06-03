@@ -1,4 +1,4 @@
-//
+
 //  FollowerRankingViewController.swift
 //  InstaSearch
 //
@@ -98,6 +98,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
             let url = ranking.imageUrl
             cell.iconImageView.setImageWithURL(NSURL(string:url!))
         }
+        cell.followerNumLabel?.text = ranking.followerString
         return cell
     }
     

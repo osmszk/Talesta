@@ -14,6 +14,7 @@ class FollowerRankingTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rankingLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var followerNumLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,6 +14,8 @@
 #import "Reachability.h"
 #import "SVProgressHUD.h"
 #import "AFHTTPRequestOperationManager+TimeoutCategory.h"
+#import "UIImageView+AFNetworking.h"
+
 
 #import <libxml/HTMLtree.h>
 #import <libxml/xpath.h>

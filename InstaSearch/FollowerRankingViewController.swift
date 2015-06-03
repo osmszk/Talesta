@@ -88,11 +88,16 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "Cell")
+        let cell  = tableView.dequeueReusableCellWithIdentifier("followerRankingCell", forIndexPath: indexPath) as! FollowerRankingTableViewCell
+        //UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "followerRankingCell") as! FollowerRankingTableViewCell
         
         let ranking = self.followerRankings[indexPath.row] as! FollowerRanking
-        cell.textLabel?.text = ranking.name
-        cell.detailTextLabel?.text = NSString(format: "%d", ranking.rankingNo) as String
+        cell.nameLabel?.text = ranking.name
+        cell.rankingLabel?.text = NSString(format: "%d", ranking.rankingNo) as String
+        if ranking.imageUrl != nil {
+            let url = ranking.imageUrl
+            cell.iconImageView.setImageWithURL(NSURL(string:url!))
+        }
         return cell
     }
     

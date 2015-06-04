@@ -77,6 +77,10 @@ class Util{
         }
     }
     
+    class func includedStringInString(keyStr :String ,inString inStr:String) -> Bool{
+        return (inStr as NSString).containsString(keyStr)
+    }
+    
     ////////////////////////
     
     class func saveObject(obj:AnyObject?, forKey key: String){

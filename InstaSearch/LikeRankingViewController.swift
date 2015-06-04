@@ -67,6 +67,49 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 let bodyNode :HTMLNode? = parser?.body
                 println("bodyNode:\(bodyNode)")
                 
+                //1. <script>タグを抽出する
+                //2. "number:"と","の間の文字列を正規表現で抽出
+                //3. "number:"と","の文字列を、置換して削除
+                var likeNumbers : NSMutableArray = NSMutableArray()
+                let scriptNodes : Array<HTMLNode>? = bodyNode?.findChildTags("script")
+                if let scriptNodesUnwrap = scriptNodes{
+                    for scriptNode in scriptNodesUnwrap{
+                        let script = scriptNode.contents
+                        if !((script as NSString).containsString("number:")){
+                            //number:が見つからなかったら次
+                            continue
+                        }
+                        let nsSentence = script as NSString
+                        //\[.+?\]
+                        //number:(.*),$
+                        
+                        Log.DLog("script:\(nsSentence)")
+                        
+                        //[^）]*（(.*?)）[^（]*
+                        //[^,]*number:(.*?),[^number:]*
+                        //number:(.*),
+                        //[^,]*number:(.*?),[^number:]*
+                        
+                        var regex = NSRegularExpression(pattern: "number:(.*),", options: NSRegularExpressionOptions.allZeros, error: nil)
+                        //ref:
+                        if let result = regex?.matchesInString(nsSentence as String, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, nsSentence.length)){
+                            for reg in result{
+//                                println("reg:\(reg)")
+                                let expression = nsSentence.substringWithRange(reg.range)
+//                                Log.DLog("expression:\(expression)")
+                                let str1 = expression.stringByReplacingOccurrencesOfString("number: ", withString: "", options: nil, range: nil)
+                                let number = str1.stringByReplacingOccurrencesOfString(",", withString: "", options: nil, range: nil)
+                                Log.DLog("number:\(number)")
+                                
+                                likeNumbers.addObject(number as String)
+                            }
+                        }
+                        //"number:(.*),$"
+                    }
+                }
+                Log.DLog("numbers:\(likeNumbers)")
+                
+                
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in

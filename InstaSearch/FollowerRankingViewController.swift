@@ -99,6 +99,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
             cell.iconImageView.setImageWithURL(NSURL(string:url!))
         }
         cell.followerNumLabel?.text = ranking.followerString
+        cell.categoryLabel?.text = ranking.junre
         return cell
     }
     

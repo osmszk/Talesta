@@ -61,7 +61,27 @@ class Util{
         return CGPointMake(Util.displaySize().width/2.0, Util.displaySize().height/2.0);
     }
     
-    ////////////////////////
+    //MARK:  -
+    
+    class func resizeImage(image :UIImage,width w:CGFloat, height h:CGFloat) -> UIImage{
+        let resultImage : UIImage
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(w, h), false, 2.0)
+        image.drawInRect(CGRectMake(0, 0, w, h))
+        resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resultImage
+    }
+    
+    class func resizeImageWithRatio(image :UIImage,widthRatio wR:CGFloat, heightRatio hR:CGFloat) -> UIImage{
+        let size : CGSize = CGSizeMake(image.size.width*wR, image.size.height*hR)
+        let resultImage : UIImage
+        UIGraphicsBeginImageContextWithOptions(size, false, 2.0)
+        image.drawInRect(CGRectMake(0, 0, size.width, size.height))
+        resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resultImage
+    }
+
     
     class func convertToNumberVersion(appVersionString:String) -> NSNumber{
         let array : NSArray = appVersionString.componentsSeparatedByString(".")
@@ -81,7 +101,9 @@ class Util{
         return (inStr as NSString).containsString(keyStr)
     }
     
-    ////////////////////////
+    ////////////////////////////////////////////////
+    //MARK: - NSUserDefault
+    ////////////////////////////////////////////////
     
     class func saveObject(obj:AnyObject?, forKey key: String){
         NSUserDefaults.standardUserDefaults().setObject(obj, forKey: key)

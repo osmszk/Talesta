@@ -20,9 +20,14 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         self.title = "follower"
         
         
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         SVProgressHUD.show()
         self.requestToGetRanking()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +42,16 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        
-//        if ([segue.identifier isEqualToString:@"from_fav_to_video"]) {
-//            PLVideoViewController *controller =(PLVideoViewController *)segue.destinationViewController;
-//            
-//            PLHighlightTableViewCell *cell = (PLHighlightTableViewCell*)sender;
-//            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-//            
-//            NSInteger row = indexPath.row;
-//            
-//            PLVideo *video = self.videoFavDatas[row];
-//            controller.video = video;
-//            controller.jumpType = PLVideoJumpTypeFav;
-//        }
+        if segue.identifier == "followerraking_to_detail"{
+            let controller = segue.destinationViewController as! DetailViewController
+            
+            let cell = sender as! FollowerRankingTableViewCell
+            let indexPath = self.tableView.indexPathForCell(cell)
+            let row = indexPath?.row
+            
+            let followerRanking = self.followerRankings[row!] as! FollowerRanking
+            controller.setProfileWithFollowerRanking(followerRanking)
+        }
     }
 
     

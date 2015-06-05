@@ -10,6 +10,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var userProfile : User?
+    var profileUrl : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,12 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Public Methods
+    
+    internal func setProfileWithFollowerRanking(ranking :FollowerRanking ){
+        self.profileUrl = ranking.profileUrl
+        
+    }
 
     /*
     // MARK: - Navigation

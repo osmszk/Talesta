@@ -26,10 +26,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dTn-wi-NDf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tM8-5Z-PKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="-79"/>
+            <point key="canvasLocation" x="356" y="46"/>
         </scene>
         <!--Follower Ranking View Controller-->
         <scene sceneID="IAY-ST-mxn">
@@ -96,6 +97,7 @@
                                             <outlet property="iconImageView" destination="TWf-1F-UOY" id="3fH-v9-mN1"/>
                                             <outlet property="nameLabel" destination="ND8-7q-7Me" id="vmQ-Do-PNZ"/>
                                             <outlet property="rankingLabel" destination="FI2-xH-wqW" id="4tn-c3-99v"/>
+                                            <segue destination="BWq-Nx-4Wf" kind="push" identifier="followerraking_to_detail" id="g6Q-HL-Oc9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQa-1H-jF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="258"/>
+            <point key="canvasLocation" x="-48" y="46"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

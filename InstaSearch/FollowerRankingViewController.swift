@@ -31,15 +31,26 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//        
+//        if ([segue.identifier isEqualToString:@"from_fav_to_video"]) {
+//            PLVideoViewController *controller =(PLVideoViewController *)segue.destinationViewController;
+//            
+//            PLHighlightTableViewCell *cell = (PLHighlightTableViewCell*)sender;
+//            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+//            
+//            NSInteger row = indexPath.row;
+//            
+//            PLVideo *video = self.videoFavDatas[row];
+//            controller.video = video;
+//            controller.jumpType = PLVideoJumpTypeFav;
+//        }
     }
-    */
+
     
     func requestToGetRanking(){
         
@@ -101,6 +112,12 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         cell.followerNumLabel?.text = ranking.followerString
         cell.categoryLabel?.text = ranking.junre
         return cell
+    }
+    
+    func jumpToDetail(){
+        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
+        var detail  = storyboard1.instantiateViewControllerWithIdentifier("detail") as! DetailViewController
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
 

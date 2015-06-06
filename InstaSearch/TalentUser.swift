@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+class TalentUser {
     
     var usrId : NSString?//ex) becky_dayo
     var userName : NSString?//ex) Becky ベッキー

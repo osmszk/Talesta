@@ -76,4 +76,9 @@ class ParseHelper {
         return followerRankings
     }
     
+//    class func convertTalentUserFromHtml(html:String="") -> TalentUser {
+//        
+//        
+//    }
+    
 }

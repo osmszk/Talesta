@@ -52,7 +52,7 @@
 		C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76620CF1B1DDB05003FFC7A /* Main.storyboard */; };
 		C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76620D11B1DDD4A003FFC7A /* Main2.storyboard */; };
 		C76620D41B1E830F003FFC7A /* FollowerRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */; };
-		C76620D61B2126A8003FFC7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76620D51B2126A8003FFC7A /* User.swift */; };
+		C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76620D51B2126A8003FFC7A /* TalentUser.swift */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -142,7 +142,7 @@
 		C76620CF1B1DDB05003FFC7A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C76620D11B1DDD4A003FFC7A /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingTableViewCell.swift; sourceTree = "<group>"; };
-		C76620D51B2126A8003FFC7A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C76620D51B2126A8003FFC7A /* TalentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentUser.swift; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 				C70206011B1C8CF6004FAD19 /* Log.swift */,
 				C70205FD1B1AD285004FAD19 /* ParseHelper.swift */,
 				C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */,
-				C76620D51B2126A8003FFC7A /* User.swift */,
+				C76620D51B2126A8003FFC7A /* TalentUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C70206021B1C8CF6004FAD19 /* Log.swift in Sources */,
-				C76620D61B2126A8003FFC7A /* User.swift in Sources */,
+				C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
 				C70206001B1C15B1004FAD19 /* Util.swift in Sources */,
 				971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */,

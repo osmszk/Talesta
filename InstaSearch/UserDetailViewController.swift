@@ -17,7 +17,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var officialButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
     
-    var userProfile : User? = User()
+    var userProfile : TalentUser? = TalentUser()
 //    var profileUrl : String?
     var followerRanking : FollowerRanking?
     

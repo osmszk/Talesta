@@ -33,6 +33,8 @@ class UserDetailViewController: UIViewController {
         self.title = "Detail"
         
         
+        self.officialButton.enabled = false
+        
         SVProgressHUD.show()
         self.requestToGetUserDetail()
         
@@ -135,9 +137,15 @@ class UserDetailViewController: UIViewController {
                 Log.DLog("displayName \(displayName)")
                 
                 
+                if let iconUrl = iconImageUrl{
+                    self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
+                }
                 
+                self.nameLabel.text = displayName
                 
-
+                if officialUrl != nil {
+                    self.officialButton.enabled = true
+                }
                 
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in

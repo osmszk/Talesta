@@ -10,14 +10,15 @@ import Foundation
 
 class TalentUser {
     
-    var usrId : NSString?//ex) becky_dayo
-    var userName : NSString?//ex) Becky ベッキー
-    var talentInstaName : NSString?//ex) ベッキー
-    var profile : NSString? //ex) ベッキーなのかもしれない！
+    var usrId : NSString?//公式InstagramのID ex) becky_dayo
+    var userName : NSString?//公式Instagramの表示名 ex) Becky ベッキー
+    var talentInstaName : NSString?//talentinstaで使われている表示名＝芸名　ex)ベッキー
+    var profile : NSString? //公式Instagramのプロフィール文 ex)ベッキーなのかもしれない！
     var postCount : Int?
     var followerCount : Int?
     var followingCount : Int?
-    var officialUrl : String? //Instgram公式ページ
+    var officialUrl : String? //公式Instgramページ
+    var iconImageUrl : String? //
     
     
    

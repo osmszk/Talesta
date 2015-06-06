@@ -17,7 +17,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var officialButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
     
-    var userProfile : TalentUser? = TalentUser()
+    var talentUser : TalentUser? = TalentUser()
 //    var profileUrl : String?
     var followerRanking : FollowerRanking?
     
@@ -92,58 +92,15 @@ class UserDetailViewController: UIViewController {
                 
                 Log.DLog("html:\(html)")
                 
+                self.talentUser =  ParseHelper.convertTalentUserFromHtml(html: html as! String , talent: self.talentUser!)
                 
-                var error : NSError? = nil
-                var parser : HTMLParser? = HTMLParser(html: html! as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
-                let bodyNode :HTMLNode? = parser?.body
-                
-                
-                let tdNodes : Array<HTMLNode>? = bodyNode?.findChildTags("td")
-                var k = 0
-                var trStartIndex  =  0
-                
-                var iconImageUrl : String? = nil
-                var officialUrl : String? = nil
-                var displayName : String? = nil
-                if let tdNodesUnwrap = tdNodes{
-                    for tdNode in tdNodesUnwrap{
-                        let imgNode = tdNode.findChildTag("img")
-                        let name2Node = tdNode.findChildTag("h2")
-                        let name1Node = tdNode.findChildTag("h1")
-                        if imgNode == nil && name2Node == nil && name1Node == nil{
-                            continue
-                        }
-                        
-                        if let imgUrl = imgNode?.getAttributeNamed("src"){
-                            if (imgUrl as NSString).containsString("instagram") {
-                                iconImageUrl = imgUrl
-                            }
-                        }
-                        
-                        if let officalUrlNode = name2Node?.findChildTag("a"){
-                            if let offclUrl = officalUrlNode.getAttributeNamed("href") as String?{
-                                officialUrl = offclUrl as String?
-                            }
-                        }
-                        
-                        if let name = name1Node?.contents{
-                            displayName = name
-                        }
-                    }
-                }
-                
-                Log.DLog("iconImageUrl \(iconImageUrl)")
-                Log.DLog("officialUrl \(officialUrl)")
-                Log.DLog("displayName \(displayName)")
-                
-                
-                if let iconUrl = iconImageUrl{
+                if let iconUrl = self.talentUser?.iconImageUrl{
                     self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
                 }
                 
-                self.nameLabel.text = displayName
+                self.nameLabel.text = self.talentUser?.talentInstaName as? String
                 
-                if officialUrl != nil {
+                if self.talentUser?.officialUrl != nil {
                     self.officialButton.enabled = true
                 }
                 

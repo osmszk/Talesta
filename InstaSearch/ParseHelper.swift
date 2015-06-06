@@ -76,9 +76,56 @@ class ParseHelper {
         return followerRankings
     }
     
-//    class func convertTalentUserFromHtml(html:String="") -> TalentUser {
-//        
-//        
-//    }
+    class func convertTalentUserFromHtml(html:String="",talent talentUser:TalentUser) -> TalentUser {
+        
+        
+        var error : NSError? = nil
+        var parser : HTMLParser? = HTMLParser(html: html as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
+        let bodyNode :HTMLNode? = parser?.body
+        
+        let tdNodes : Array<HTMLNode>? = bodyNode?.findChildTags("td")
+        var k = 0
+        var trStartIndex  =  0
+        
+        var iconImageUrl : String? = nil
+        var officialUrl : String? = nil
+        var displayName : String? = nil
+        if let tdNodesUnwrap = tdNodes{
+            for tdNode in tdNodesUnwrap{
+                let imgNode = tdNode.findChildTag("img")
+                let name2Node = tdNode.findChildTag("h2")
+                let name1Node = tdNode.findChildTag("h1")
+                if imgNode == nil && name2Node == nil && name1Node == nil{
+                    continue
+                }
+                
+                if let imgUrl = imgNode?.getAttributeNamed("src"){
+                    if (imgUrl as NSString).containsString("instagram") {
+                        iconImageUrl = imgUrl
+                    }
+                }
+                
+                if let officalUrlNode = name2Node?.findChildTag("a"){
+                    if let offclUrl = officalUrlNode.getAttributeNamed("href") as String?{
+                        officialUrl = offclUrl as String?
+                    }
+                }
+                
+                if let name = name1Node?.contents{
+                    displayName = name
+                }
+            }
+        }
+        
+        Log.DLog("iconImageUrl \(iconImageUrl)")
+        Log.DLog("officialUrl \(officialUrl)")
+        Log.DLog("displayName \(displayName)")
+        
+        talentUser.iconImageUrl = iconImageUrl
+        talentUser.officialUrl = officialUrl
+        talentUser.talentInstaName = displayName
+        
+        return talentUser
+    }
     
 }

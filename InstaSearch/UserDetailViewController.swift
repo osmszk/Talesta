@@ -100,24 +100,32 @@ class UserDetailViewController: UIViewController {
                 var k = 0
                 var trStartIndex  =  0
                 
-                var iconImageUrl : String = ""
+                var iconImageUrl : String? = nil
+                var officialUrl : String? = nil
                 if let tdNodesUnwrap = tdNodes{
                     for tdNode in tdNodesUnwrap{
                         let imgNode = tdNode.findChildTag("img")
-                        if imgNode == nil{
+                        let name2Node = tdNode.findChildTag("h2")
+                        if imgNode == nil && name2Node == nil{
                             continue
                         }
                         
-                        let imgUrl = imgNode?.getAttributeNamed("src")
-                        if let imgUrlUnwrap = imgUrl{
-                            if (imgUrlUnwrap as NSString).containsString("instagram") {
-                                iconImageUrl = imgUrlUnwrap
+                        if let imgUrl = imgNode?.getAttributeNamed("src"){
+                            if (imgUrl as NSString).containsString("instagram") {
+                                iconImageUrl = imgUrl
+                            }
+                        }
+                        
+                        if let officalUrlNode = name2Node?.findChildTag("a"){
+                            if let offclUrl = officalUrlNode.getAttributeNamed("href") as String?{
+                                officialUrl = offclUrl as String?
                             }
                         }
                     }
                 }
                 
                 Log.DLog("iconImageUrl \(iconImageUrl)")
+                Log.DLog("officialUrl \(officialUrl)")
                 
                 
                 

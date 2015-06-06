@@ -29,6 +29,13 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         SVProgressHUD.show()
         self.requestToGetRanking()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let row = self.tableView.indexPathForSelectedRow(){
+            self.tableView.deselectRowAtIndexPath(row, animated: true)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

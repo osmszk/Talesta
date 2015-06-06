@@ -14,7 +14,7 @@
 		971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */; };
 		971240AD1B09FEA400E25C2E /* LikeRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */; };
 		971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */; };
-		971240B11B09FED400E25C2E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AF1B09FED400E25C2E /* DetailViewController.swift */; };
+		971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AF1B09FED400E25C2E /* UserDetailViewController.swift */; };
 		971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B31B09FEE400E25C2E /* OtherViewController.swift */; };
 		971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B41B09FEE400E25C2E /* OtherViewController.xib */; };
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
@@ -56,6 +56,7 @@
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
+		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,7 @@
 		971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingViewController.swift; sourceTree = "<group>"; };
 		971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRankingViewController.swift; sourceTree = "<group>"; };
 		971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeRankingViewController.xib; sourceTree = "<group>"; };
-		971240AF1B09FED400E25C2E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		971240AF1B09FED400E25C2E /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		971240B31B09FEE400E25C2E /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		971240B41B09FEE400E25C2E /* OtherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherViewController.xib; sourceTree = "<group>"; };
 		971240B71B0A016300E25C2E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 		C779ADD61B0379AB000F585A /* InstaSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADDB1B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaSearchTests.swift; sourceTree = "<group>"; };
+		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				9720D53D1B0F4C7D00E258CE /* PLCommon.h */,
 				9720D53A1B0F4C0C00E258CE /* PLUtil.h */,
 				9720D53B1B0F4C0C00E258CE /* PLUtil.m */,
+				C7FBB5DB1B22EBA600CEC6EB /* Const.swift */,
 				C70205FF1B1C15B1004FAD19 /* Util.swift */,
 				C70206011B1C8CF6004FAD19 /* Log.swift */,
 				C70205FD1B1AD285004FAD19 /* ParseHelper.swift */,
@@ -330,7 +333,7 @@
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
-				971240AF1B09FED400E25C2E /* DetailViewController.swift */,
+				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
 				971240B41B09FEE400E25C2E /* OtherViewController.xib */,
 				971240B71B0A016300E25C2E /* TabBarController.swift */,
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70204F61B0A2070004FAD19 /* AFURLSessionManager.m in Sources */,
+				C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */,
 				C70204F31B0A2070004FAD19 /* AFURLConnectionOperation.m in Sources */,
 				C70204FD1B0A2070004FAD19 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C70204FA1B0A2070004FAD19 /* UIButton+AFNetworking.m in Sources */,
@@ -511,7 +515,7 @@
 				C70204FE1B0A2070004FAD19 /* UIWebView+AFNetworking.m in Sources */,
 				C70204F51B0A2070004FAD19 /* AFURLResponseSerialization.m in Sources */,
 				C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */,
-				971240B11B09FED400E25C2E /* DetailViewController.swift in Sources */,
+				971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

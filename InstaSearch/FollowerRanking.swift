@@ -16,7 +16,7 @@ class FollowerRanking {
     var follower : Int?
     var followerString : String?//コンマ区切り
     var imageUrl : String?
-    var profileUrl : String?
+    var profileUrl : String?//talentInstaの詳細URL
     
     init(rankingNo:Int=0 ,name:String="" , junre:String="",followerString:String="",imageUrl:String?,profileUrl:String?){
         self.rankingNo = rankingNo

@@ -20,6 +20,7 @@ class TopViewController: UIViewController {
         
 //        NSLog("%@",label);
         self.title = "top"
+        self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
     }
 

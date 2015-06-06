@@ -5,28 +5,87 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="Fmv-VK-1Yq">
             <objects>
-                <viewController storyboardIdentifier="detail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BWq-Nx-4Wf" customClass="DetailViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BWq-Nx-4Wf" customClass="UserDetailViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nq0-cx-cUh"/>
                         <viewControllerLayoutGuide type="bottom" id="m9g-BF-1sv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qda-IO-iJE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="詳細" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTP-Xz-gXX">
-                                <rect key="frame" x="128" y="125" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbE-tB-6aF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-ws-9wE">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KR-duq" userLabel="アイコン">
+                                                <rect key="frame" x="13" y="8" width="120" height="120"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ベッキー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYc-N3-gAv" userLabel="表示名">
+                                                <rect key="frame" x="146" y="27" width="157" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cj-ba-hCb">
+                                                <rect key="frame" x="146" y="92" width="147" height="30"/>
+                                                <state key="normal" title="Instagram公式ページ">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushedOfficialButton:" destination="BWq-Nx-4Wf" eventType="touchUpInside" id="zBF-uB-gQ1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruE-pd-DCB" userLabel="フォロー">
+                                                <rect key="frame" x="28" y="178" width="247" height="30"/>
+                                                <state key="normal" title="フォロー">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushedFollowButton:" destination="BWq-Nx-4Wf" eventType="touchUpInside" id="I8Z-LD-KyU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="600" id="UMJ-ht-LFN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="I8Z-ws-9wE" secondAttribute="bottom" id="JOL-dr-f2l"/>
+                                    <constraint firstItem="I8Z-ws-9wE" firstAttribute="leading" secondItem="vbE-tB-6aF" secondAttribute="leading" id="Pz1-BC-Jlt"/>
+                                    <constraint firstItem="I8Z-ws-9wE" firstAttribute="width" secondItem="vbE-tB-6aF" secondAttribute="width" id="eT9-jE-Sjp"/>
+                                    <constraint firstAttribute="trailing" secondItem="I8Z-ws-9wE" secondAttribute="trailing" id="uoT-yM-28J"/>
+                                    <constraint firstItem="I8Z-ws-9wE" firstAttribute="top" secondItem="vbE-tB-6aF" secondAttribute="top" id="wMr-hU-ZuO"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vbE-tB-6aF" firstAttribute="top" secondItem="nq0-cx-cUh" secondAttribute="bottom" id="99r-9Z-J0P"/>
+                            <constraint firstAttribute="trailing" secondItem="vbE-tB-6aF" secondAttribute="trailing" id="AZD-m4-t99"/>
+                            <constraint firstItem="m9g-BF-1sv" firstAttribute="top" secondItem="vbE-tB-6aF" secondAttribute="bottom" id="IZY-tW-R2s"/>
+                            <constraint firstItem="vbE-tB-6aF" firstAttribute="leading" secondItem="qda-IO-iJE" secondAttribute="leading" id="sYf-Bj-kNs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dTn-wi-NDf"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="followButton" destination="ruE-pd-DCB" id="gZW-YA-UUY"/>
+                        <outlet property="iconImageView" destination="wGi-KR-duq" id="j36-Ah-1Ek"/>
+                        <outlet property="nameLabel" destination="aYc-N3-gAv" id="q9D-aO-J8u"/>
+                        <outlet property="officialButton" destination="9cj-ba-hCb" id="9t5-le-ux9"/>
+                        <outlet property="scrollContentView" destination="I8Z-ws-9wE" id="H54-UU-2zz"/>
+                        <outlet property="scrollView" destination="vbE-tB-6aF" id="5Ng-r4-5H0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tM8-5Z-PKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,11 +100,11 @@
                         <viewControllerLayoutGuide type="bottom" id="yPC-lo-yBg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nzh-hn-Jbr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="77R-9q-MWp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="followerRankingCell" rowHeight="78" id="s9J-Nb-QgL" customClass="FollowerRankingTableViewCell" customModule="InstaSearch" customModuleProvider="target">
@@ -115,6 +174,8 @@
                             <constraint firstItem="77R-9q-MWp" firstAttribute="leading" secondItem="nzh-hn-Jbr" secondAttribute="leading" id="yQW-IW-nY5"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="tableView" destination="77R-9q-MWp" id="tpC-RV-nhY"/>
                     </connections>

@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "search"
+        self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
     }
 
     override func didReceiveMemoryWarning() {

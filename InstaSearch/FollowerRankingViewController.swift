@@ -18,6 +18,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
 
         // Do any additional setup after loading the view.
         self.title = "follower"
+        self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
         
         
@@ -50,14 +51,14 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        
         if segue.identifier == "followerraking_to_detail"{
-            let controller = segue.destinationViewController as! DetailViewController
+            let controller = segue.destinationViewController as! UserDetailViewController
             
             let cell = sender as! FollowerRankingTableViewCell
             let indexPath = self.tableView.indexPathForCell(cell)
             let row = indexPath?.row
             
             let followerRanking = self.followerRankings[row!] as! FollowerRanking
-            controller.setProfileWithFollowerRanking(followerRanking)
+            controller.followerRanking = followerRanking
         }
     }
 
@@ -126,7 +127,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     
     func jumpToDetail(){
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
-        var detail  = storyboard1.instantiateViewControllerWithIdentifier("detail") as! DetailViewController
+        var detail  = storyboard1.instantiateViewControllerWithIdentifier("detail") as! UserDetailViewController
         self.navigationController?.pushViewController(detail, animated: true)
     }
     

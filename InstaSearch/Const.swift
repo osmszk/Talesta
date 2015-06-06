@@ -8,16 +8,14 @@
 
 import Foundation
 
-
-//static BOOL const  NAVI_BAR_TRANSLUCENT = NO; //translucent
-//static CGFloat const AD_BANNER_HIGHT = 50.0f;
-//static CGFloat const AD_ICON_W = 50.0f;
-//static CGFloat const TAB_H = 49.0f;
-//static CGFloat const TABLE_VIEW_FOOTER_HEIGHT = 50.0f;
-//static CGFloat const TIME_OUT_INTERVAL = 10.0f;
-
 class Const {
     
     static let NAVI_BAR_TRANSLUCENT = false
+    static let AD_BANNER_HIGHT = 50.0;
+    static let AD_ICON_W = 50.0;
+    static let TAB_H = 49.0;
+    static let TABLE_VIEW_FOOTER_HEIGHT = 50.0;
+    static let TIME_OUT_INTERVAL = 10.0;
+
     
 }

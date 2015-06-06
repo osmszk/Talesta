@@ -17,6 +17,7 @@ class User {
     var postCount : Int?
     var followerCount : Int?
     var followingCount : Int?
+    var officialUrl : String? //Instgram公式ページ
     
     
    

@@ -17,7 +17,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var officialButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
     
-    var userProfile : User?
+    var userProfile : User? = User()
 //    var profileUrl : String?
     var followerRanking : FollowerRanking?
     
@@ -89,6 +89,39 @@ class UserDetailViewController: UIViewController {
                 }
                 
                 Log.DLog("html:\(html)")
+                
+                
+                var error : NSError? = nil
+                var parser : HTMLParser? = HTMLParser(html: html! as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
+                let bodyNode :HTMLNode? = parser?.body
+                
+                
+                let tdNodes : Array<HTMLNode>? = bodyNode?.findChildTags("td")
+                var k = 0
+                var trStartIndex  =  0
+                
+                var iconImageUrl : String = ""
+                if let tdNodesUnwrap = tdNodes{
+                    for tdNode in tdNodesUnwrap{
+                        let imgNode = tdNode.findChildTag("img")
+                        if imgNode == nil{
+                            continue
+                        }
+                        
+                        let imgUrl = imgNode?.getAttributeNamed("src")
+                        if let imgUrlUnwrap = imgUrl{
+                            if (imgUrlUnwrap as NSString).containsString("instagram") {
+                                iconImageUrl = imgUrlUnwrap
+                            }
+                        }
+                    }
+                }
+                
+                Log.DLog("iconImageUrl \(iconImageUrl)")
+                
+                
+                
+                
                 
 
                 

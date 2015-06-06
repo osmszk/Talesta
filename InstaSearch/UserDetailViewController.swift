@@ -102,11 +102,13 @@ class UserDetailViewController: UIViewController {
                 
                 var iconImageUrl : String? = nil
                 var officialUrl : String? = nil
+                var displayName : String? = nil
                 if let tdNodesUnwrap = tdNodes{
                     for tdNode in tdNodesUnwrap{
                         let imgNode = tdNode.findChildTag("img")
                         let name2Node = tdNode.findChildTag("h2")
-                        if imgNode == nil && name2Node == nil{
+                        let name1Node = tdNode.findChildTag("h1")
+                        if imgNode == nil && name2Node == nil && name1Node == nil{
                             continue
                         }
                         
@@ -121,12 +123,16 @@ class UserDetailViewController: UIViewController {
                                 officialUrl = offclUrl as String?
                             }
                         }
+                        
+                        if let name = name1Node?.contents{
+                            displayName = name
+                        }
                     }
                 }
                 
                 Log.DLog("iconImageUrl \(iconImageUrl)")
                 Log.DLog("officialUrl \(officialUrl)")
-                
+                Log.DLog("displayName \(displayName)")
                 
                 
                 

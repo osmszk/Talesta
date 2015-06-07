@@ -43,7 +43,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Cc7-fz-qEn"/>
                                                 </constraints>
-                                                <state key="normal" title="Instagram公式ページ">
+                                                <state key="normal" title="フォローする">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -51,6 +51,13 @@
                                                     <segue destination="6cA-uu-uIN" kind="push" identifier="detail_to_webview" id="27k-Uz-ISG"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrF-fq-Vjy" userLabel="AdView">
+                                                <rect key="frame" x="0.0" y="153" width="320" height="50"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="5hV-QO-gKP"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="335,666,888" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFF-rK-NFo" userLabel="followersNum">
                                                 <rect key="frame" x="215" y="66" width="94" height="21"/>
                                                 <constraints>
@@ -71,7 +78,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-H7-mRM">
-                                                <rect key="frame" x="0.0" y="228" width="320" height="320"/>
+                                                <rect key="frame" x="0.0" y="223" width="320" height="320"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="320" id="ktC-wL-0o0"/>
@@ -81,27 +88,14 @@
                                                     <outlet property="delegate" destination="BWq-Nx-4Wf" id="r6d-2B-nrb"/>
                                                 </connections>
                                             </webView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruE-pd-DCB" userLabel="フォロー">
-                                                <rect key="frame" x="20" y="148" width="280" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="jY9-lP-r5b"/>
-                                                </constraints>
-                                                <state key="normal" title="フォロー">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pushedFollowButton:" destination="BWq-Nx-4Wf" eventType="touchUpInside" id="I8Z-LD-KyU"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="oTW-H7-mRM" firstAttribute="top" secondItem="ruE-pd-DCB" secondAttribute="bottom" constant="50" id="4St-fs-WB3"/>
-                                            <constraint firstAttribute="trailing" secondItem="ruE-pd-DCB" secondAttribute="trailing" constant="20" id="7ky-u1-Ewq"/>
+                                            <constraint firstItem="oTW-H7-mRM" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="20" id="DAm-Vy-fk3"/>
                                             <constraint firstItem="93u-9u-Or4" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="19" id="Dqn-cm-skz"/>
                                             <constraint firstItem="wGi-KR-duq" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="15" id="EfC-9i-kGt"/>
                                             <constraint firstItem="UFF-rK-NFo" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="19" id="EhX-h6-BJE"/>
                                             <constraint firstItem="aYc-N3-gAv" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="26" id="KQd-uv-yu1"/>
-                                            <constraint firstItem="ruE-pd-DCB" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" constant="20" id="N0s-Fa-Dn9"/>
+                                            <constraint firstAttribute="trailing" secondItem="wrF-fq-Vjy" secondAttribute="trailing" id="RmR-B9-VIp"/>
                                             <constraint firstAttribute="height" constant="600" id="UMJ-ht-LFN"/>
                                             <constraint firstItem="oTW-H7-mRM" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" id="YJ0-y8-wup"/>
                                             <constraint firstItem="9cj-ba-hCb" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="11" id="aLh-mA-EQy"/>
@@ -110,8 +104,9 @@
                                             <constraint firstItem="aYc-N3-gAv" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="dcA-Yq-3ED"/>
                                             <constraint firstItem="9cj-ba-hCb" firstAttribute="top" secondItem="93u-9u-Or4" secondAttribute="bottom" constant="11" id="e1v-lT-mq3"/>
                                             <constraint firstAttribute="trailing" secondItem="oTW-H7-mRM" secondAttribute="trailing" id="hzP-iS-ZhB"/>
-                                            <constraint firstItem="ruE-pd-DCB" firstAttribute="top" secondItem="9cj-ba-hCb" secondAttribute="bottom" constant="20" id="joD-i1-zlC"/>
+                                            <constraint firstItem="wrF-fq-Vjy" firstAttribute="top" secondItem="wGi-KR-duq" secondAttribute="bottom" constant="18" id="n25-dd-yu0"/>
                                             <constraint firstItem="93u-9u-Or4" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="nx7-WL-Ikc"/>
+                                            <constraint firstItem="wrF-fq-Vjy" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" id="ozh-CR-hh1"/>
                                             <constraint firstItem="wGi-KR-duq" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" constant="15" id="qrP-vZ-Vbh"/>
                                             <constraint firstItem="UFF-rK-NFo" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="80" id="tQp-4m-KaA"/>
                                             <constraint firstAttribute="trailing" secondItem="UFF-rK-NFo" secondAttribute="trailing" constant="11" id="u61-xx-nkY"/>
@@ -141,7 +136,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="contentViewHConstraint" destination="UMJ-ht-LFN" id="Vzf-O1-fA6"/>
-                        <outlet property="followButton" destination="ruE-pd-DCB" id="gZW-YA-UUY"/>
                         <outlet property="followersLabel" destination="UFF-rK-NFo" id="tt8-Ei-TsG"/>
                         <outlet property="iconImageView" destination="wGi-KR-duq" id="j36-Ah-1Ek"/>
                         <outlet property="nameLabel" destination="aYc-N3-gAv" id="q9D-aO-J8u"/>

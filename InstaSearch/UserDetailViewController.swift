@@ -15,7 +15,6 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var officialButton: UIButton!
-    @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var widgetWebView: UIWebView!
     @IBOutlet weak var widgetWebViewHConstraint: NSLayoutConstraint!
@@ -157,10 +156,6 @@ class UserDetailViewController: UIViewController {
     @IBAction func pushedOfficialButton(sender: AnyObject) {
         Log.DLog("pushedOfficialButton")
         
-    }
-    
-    @IBAction func pushedFollowButton(sender: AnyObject) {
-        Log.DLog("pushedFollowButton")
     }
     
     // MARK: - Delegate

@@ -113,9 +113,10 @@ class UserDetailViewController: UIViewController {
                     self.officialButton.enabled = true
                 }
                 
-                let req :NSURLRequest = NSURLRequest(URL: NSURL(string: "http://widget.stagram.com/in/i_am_kiko/?s=180&amp;w=3&amp;h=2&amp;b=0&amp;p=5")!)
-                self.widgetWebView.loadRequest(req)
-                
+                if let widgetUrl = self.talentUser?.widgetUrl {
+                    let req :NSURLRequest = NSURLRequest(URL: NSURL(string: widgetUrl)!)
+                    self.widgetWebView.loadRequest(req)
+                }
                 
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in

@@ -87,9 +87,10 @@ class ParseHelper {
         var k = 0
         var trStartIndex  =  0
         
-        var iconImageUrl : String? = nil
-        var officialUrl : String? = nil
-        var displayName : String? = nil
+        var iconImageUrl : String?
+        var officialUrl : String?
+        var displayName : String?
+        var widgetUrl : String?
         if let tdNodesUnwrap = tdNodes{
             for tdNode in tdNodesUnwrap{
                 let imgNode = tdNode.findChildTag("img")
@@ -117,13 +118,24 @@ class ParseHelper {
             }
         }
         
+        if let iframeNodes = bodyNode?.findChildTags("iframe"){
+            for iframeNode in iframeNodes{
+                let src = iframeNode.getAttributeNamed("src")
+                if (src as NSString).containsString("widget"){
+                    widgetUrl = src
+                }
+            }
+        }
+        
         Log.DLog("iconImageUrl \(iconImageUrl)")
         Log.DLog("officialUrl \(officialUrl)")
         Log.DLog("displayName \(displayName)")
+        Log.DLog("widgetUrl \(widgetUrl)")
         
         talentUser.iconImageUrl = iconImageUrl
         talentUser.officialUrl = officialUrl
         talentUser.talentInstaName = displayName
+        talentUser.widgetUrl = widgetUrl
         
         return talentUser
     }

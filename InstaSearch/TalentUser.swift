@@ -21,7 +21,8 @@ class TalentUser {
     var followingCount : Int?
     var officialUrl : String?    //公式Instgramページ ex)https://instagram.com/becky_dayo/
     var iconImageUrl : String?   //talentinstaのアイコン画像URL
-    var wedgetUrl : String?      //talentinstaのwidget(websta)URL ex)http://websta.me/n/becky_dayo
+    var widgetUrl : String?      //talentinstaのwidget(websta)URL 
+                    // ex)http://widget.websta.me/in/i_am_kiko?s=120&amp;w=2&amp;h=3&amp;b=0&amp;p=10
     
     
    

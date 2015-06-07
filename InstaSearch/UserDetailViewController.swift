@@ -43,6 +43,10 @@ class UserDetailViewController: UIViewController {
             self.followersLabel.text = ""
         }
         
+        if let iconUrl = self.followerRanking?.imageUrl{
+            self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
+            self.talentUser?.iconImageUrl = iconUrl
+        }
         
         SVProgressHUD.show()
         self.requestToGetUserDetail()
@@ -103,9 +107,9 @@ class UserDetailViewController: UIViewController {
                 
                 self.talentUser =  ParseHelper.convertTalentUserFromHtml(html: html as! String , talent: self.talentUser!)
                 
-                if let iconUrl = self.talentUser?.iconImageUrl{
-                    self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
-                }
+//                if let iconUrl = self.talentUser?.iconImageUrl{
+//                    self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
+//                }
                 
                 self.nameLabel.text = self.talentUser?.talentInstaName
                 
@@ -114,7 +118,21 @@ class UserDetailViewController: UIViewController {
                 }
                 
                 if let widgetUrl = self.talentUser?.widgetUrl {
-                    let req :NSURLRequest = NSURLRequest(URL: NSURL(string: widgetUrl)!)
+                    //ex)http://widget.stagram.com/in/i_am_kiko/?s=180&w=3&h=2&b=0&p=5
+                    
+                    let arrayStr = widgetUrl.componentsSeparatedByString("?")
+                    let widgetBaseUrl = arrayStr[0]
+                    
+                    let wCount : CGFloat = 3
+                    let hCount = 3
+                    let space : CGFloat = 5
+                    let iconWidthPlusBuffer = Util.displaySize().width/wCount
+                    let iconWidth = iconWidthPlusBuffer-space
+                    
+                    let resultUrl = "\(widgetBaseUrl)?s=\(iconWidth)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
+                    Log.DLog("resultUrl:\(resultUrl)")
+                    
+                    let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
                     self.widgetWebView.loadRequest(req)
                 }
                 

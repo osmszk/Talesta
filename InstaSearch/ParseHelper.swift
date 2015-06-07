@@ -78,7 +78,6 @@ class ParseHelper {
     
     class func convertTalentUserFromHtml(html:String="",talent talentUser:TalentUser) -> TalentUser {
         
-        
         var error : NSError? = nil
         var parser : HTMLParser? = HTMLParser(html: html as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
         let bodyNode :HTMLNode? = parser?.body
@@ -87,23 +86,15 @@ class ParseHelper {
         var k = 0
         var trStartIndex  =  0
         
-        var iconImageUrl : String?
         var officialUrl : String?
         var displayName : String?
         var widgetUrl : String?
         if let tdNodesUnwrap = tdNodes{
             for tdNode in tdNodesUnwrap{
-                let imgNode = tdNode.findChildTag("img")
                 let name2Node = tdNode.findChildTag("h2")
                 let name1Node = tdNode.findChildTag("h1")
-                if imgNode == nil && name2Node == nil && name1Node == nil{
+                if name2Node == nil && name1Node == nil{
                     continue
-                }
-                
-                if let imgUrl = imgNode?.getAttributeNamed("src"){
-                    if (imgUrl as NSString).containsString("instagram") {
-                        iconImageUrl = imgUrl
-                    }
                 }
                 
                 if let officalUrlNode = name2Node?.findChildTag("a"){
@@ -127,12 +118,10 @@ class ParseHelper {
             }
         }
         
-        Log.DLog("iconImageUrl \(iconImageUrl)")
         Log.DLog("officialUrl \(officialUrl)")
         Log.DLog("displayName \(displayName)")
         Log.DLog("widgetUrl \(widgetUrl)")
         
-        talentUser.iconImageUrl = iconImageUrl
         talentUser.officialUrl = officialUrl
         talentUser.talentInstaName = displayName
         talentUser.widgetUrl = widgetUrl

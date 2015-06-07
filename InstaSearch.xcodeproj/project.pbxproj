@@ -57,6 +57,7 @@
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
+		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		C779ADDB1B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaSearchTests.swift; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
 				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
+				C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
@@ -515,6 +518,7 @@
 				C70204FE1B0A2070004FAD19 /* UIWebView+AFNetworking.m in Sources */,
 				C70204F51B0A2070004FAD19 /* AFURLResponseSerialization.m in Sources */,
 				C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */,
+				C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */,
 				971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

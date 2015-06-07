@@ -48,6 +48,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="pushedOfficialButton:" destination="BWq-Nx-4Wf" eventType="touchUpInside" id="zBF-uB-gQ1"/>
+                                                    <segue destination="6cA-uu-uIN" kind="push" identifier="detail_to_webview" id="27k-Uz-ISG"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="335,666,888" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFF-rK-NFo" userLabel="followersNum">
@@ -154,6 +155,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tM8-5Z-PKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356" y="46"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="PqO-mw-3gb">
+            <objects>
+                <viewController storyboardIdentifier="web" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6cA-uu-uIN" customClass="WebViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cZJ-OH-luN"/>
+                        <viewControllerLayoutGuide type="bottom" id="dub-b0-APP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HKu-XD-XVh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sc-JJ-ZPS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dub-b0-APP" firstAttribute="top" secondItem="2sc-JJ-ZPS" secondAttribute="bottom" id="CPx-xa-V1w"/>
+                            <constraint firstItem="2sc-JJ-ZPS" firstAttribute="top" secondItem="cZJ-OH-luN" secondAttribute="bottom" id="GLC-8u-HdG"/>
+                            <constraint firstItem="2sc-JJ-ZPS" firstAttribute="leading" secondItem="HKu-XD-XVh" secondAttribute="leading" id="Gje-Gi-b6f"/>
+                            <constraint firstAttribute="trailing" secondItem="2sc-JJ-ZPS" secondAttribute="trailing" id="Seo-Hf-T65"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L86-NK-Vfd"/>
+                    <connections>
+                        <outlet property="webView" destination="2sc-JJ-ZPS" id="M2w-Ns-3lG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7A-kQ-dHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="46"/>
         </scene>
         <!--Follower Ranking View Controller-->
         <scene sceneID="IAY-ST-mxn">

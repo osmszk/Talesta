@@ -16,6 +16,10 @@
 #import "AFHTTPRequestOperationManager+TimeoutCategory.h"
 #import "UIImageView+AFNetworking.h"
 
+#import "HTPressableButton.h"
+#import "UIColor+HTColor.h"
+#import "HTPressableButtonPrefs.h"
+
 
 #import <libxml/HTMLtree.h>
 #import <libxml/xpath.h>

@@ -58,6 +58,10 @@
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
+		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
+		C7FBB5E91B24350A00CEC6EB /* HTPressableButtonPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E31B24350A00CEC6EB /* HTPressableButtonPrefs.m */; };
+		C7FBB5EA1B24350A00CEC6EB /* UIColor+HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E51B24350A00CEC6EB /* UIColor+HTColor.m */; };
+		C7FBB5EB1B24350A00CEC6EB /* UIImage+HTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E71B24350A00CEC6EB /* UIImage+HTButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +157,14 @@
 		C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaSearchTests.swift; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
+		C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPressableButton.m; sourceTree = "<group>"; };
+		C7FBB5E21B24350A00CEC6EB /* HTPressableButtonPrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButtonPrefs.h; sourceTree = "<group>"; };
+		C7FBB5E31B24350A00CEC6EB /* HTPressableButtonPrefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPressableButtonPrefs.m; sourceTree = "<group>"; };
+		C7FBB5E41B24350A00CEC6EB /* UIColor+HTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HTColor.h"; sourceTree = "<group>"; };
+		C7FBB5E51B24350A00CEC6EB /* UIColor+HTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HTColor.m"; sourceTree = "<group>"; };
+		C7FBB5E61B24350A00CEC6EB /* UIImage+HTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTButton.h"; sourceTree = "<group>"; };
+		C7FBB5E71B24350A00CEC6EB /* UIImage+HTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTButton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +224,7 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */,
 				C70205091B108165004FAD19 /* SVProgressHUD */,
 				9720D5331B0F4B4A00E258CE /* Reachability */,
 				C70205001B0AEA88004FAD19 /* Swift-HTML-Parser */,
@@ -375,6 +388,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */,
+				C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */,
+				C7FBB5E21B24350A00CEC6EB /* HTPressableButtonPrefs.h */,
+				C7FBB5E31B24350A00CEC6EB /* HTPressableButtonPrefs.m */,
+				C7FBB5E41B24350A00CEC6EB /* UIColor+HTColor.h */,
+				C7FBB5E51B24350A00CEC6EB /* UIColor+HTColor.m */,
+				C7FBB5E61B24350A00CEC6EB /* UIImage+HTButton.h */,
+				C7FBB5E71B24350A00CEC6EB /* UIImage+HTButton.m */,
+			);
+			path = HTPressableButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +514,7 @@
 				C70204F31B0A2070004FAD19 /* AFURLConnectionOperation.m in Sources */,
 				C70204FD1B0A2070004FAD19 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C70204FA1B0A2070004FAD19 /* UIButton+AFNetworking.m in Sources */,
+				C7FBB5EA1B24350A00CEC6EB /* UIColor+HTColor.m in Sources */,
 				C70205FC1B1ACF49004FAD19 /* FollowerRanking.swift in Sources */,
 				C70204FC1B0A2070004FAD19 /* UIProgressView+AFNetworking.m in Sources */,
 				C70204EE1B0A2070004FAD19 /* AFHTTPRequestOperation.m in Sources */,
@@ -497,6 +526,7 @@
 				C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */,
 				9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */,
 				971240B81B0A016300E25C2E /* TabBarController.swift in Sources */,
+				C7FBB5EB1B24350A00CEC6EB /* UIImage+HTButton.m in Sources */,
 				971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */,
 				C70204FB1B0A2070004FAD19 /* UIImageView+AFNetworking.m in Sources */,
 				9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */,
@@ -504,6 +534,7 @@
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */,
 				C70206021B1C8CF6004FAD19 /* Log.swift in Sources */,
 				C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
@@ -517,6 +548,7 @@
 				C70204F11B0A2070004FAD19 /* AFNetworkReachabilityManager.m in Sources */,
 				C70204FE1B0A2070004FAD19 /* UIWebView+AFNetworking.m in Sources */,
 				C70204F51B0A2070004FAD19 /* AFURLResponseSerialization.m in Sources */,
+				C7FBB5E91B24350A00CEC6EB /* HTPressableButtonPrefs.m in Sources */,
 				C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */,
 				C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */,
 				971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */,

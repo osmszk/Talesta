@@ -14,7 +14,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var scrollContentView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var officialButton: UIButton!
+    @IBOutlet weak var officialButton: HTPressableButton!
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var widgetWebView: UIWebView!
     @IBOutlet weak var widgetWebViewHConstraint: NSLayoutConstraint!
@@ -33,6 +33,12 @@ class UserDetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         self.widgetWebViewHConstraint.constant = Util.displaySize().width
         //TODO:contentViewHConstraintを動的に
+        
+        self.officialButton.style = HTPressableButtonStyle.Rect
+        self.officialButton.buttonColor = UIColor.ht_pinkRoseColor()
+        self.officialButton.shadowColor = UIColor.ht_pinkRoseDarkColor()
+        self.officialButton.setTitle("フォローする", forState: UIControlState.Normal)
+        self.officialButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         
         self.widgetWebView.scrollView.scrollEnabled = false
         self.widgetWebView.scrollView.bounces = false

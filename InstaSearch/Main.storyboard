@@ -70,10 +70,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-H7-mRM">
-                                                <rect key="frame" x="0.0" y="228" width="320" height="300"/>
+                                                <rect key="frame" x="0.0" y="228" width="320" height="320"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="ktC-wL-0o0"/>
+                                                    <constraint firstAttribute="height" constant="320" id="ktC-wL-0o0"/>
                                                 </constraints>
                                                 <dataDetectorType key="dataDetectorTypes"/>
                                                 <connections>
@@ -139,6 +139,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="contentViewHConstraint" destination="UMJ-ht-LFN" id="Vzf-O1-fA6"/>
                         <outlet property="followButton" destination="ruE-pd-DCB" id="gZW-YA-UUY"/>
                         <outlet property="followersLabel" destination="UFF-rK-NFo" id="tt8-Ei-TsG"/>
                         <outlet property="iconImageView" destination="wGi-KR-duq" id="j36-Ah-1Ek"/>
@@ -147,6 +148,7 @@
                         <outlet property="scrollContentView" destination="I8Z-ws-9wE" id="H54-UU-2zz"/>
                         <outlet property="scrollView" destination="vbE-tB-6aF" id="5Ng-r4-5H0"/>
                         <outlet property="widgetWebView" destination="oTW-H7-mRM" id="jaD-h6-o1a"/>
+                        <outlet property="widgetWebViewHConstraint" destination="ktC-wL-0o0" id="21u-GC-xwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tM8-5Z-PKL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,9 +18,10 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var widgetWebView: UIWebView!
+    @IBOutlet weak var widgetWebViewHConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentViewHConstraint: NSLayoutConstraint!
     
     var talentUser : TalentUser? = TalentUser()
-//    var profileUrl : String?
     var followerRanking : FollowerRanking?
     
     override func viewDidLoad() {
@@ -31,9 +32,14 @@ class UserDetailViewController: UIViewController {
         self.scrollContentView.backgroundColor = UIColor.whiteColor()
         self.scrollView.backgroundColor = UIColor.whiteColor()
         self.view.backgroundColor = UIColor.whiteColor()
+        self.widgetWebViewHConstraint.constant = Util.displaySize().width
+        //TODO:contentViewHConstraintを動的に
+        
+        self.widgetWebView.scrollView.scrollEnabled = false
+        self.widgetWebView.scrollView.bounces = false
+        self.widgetWebView.userInteractionEnabled = false
         
         self.title = "Detail"
-        
         
         self.officialButton.enabled = false
         self.nameLabel.text = self.followerRanking?.name

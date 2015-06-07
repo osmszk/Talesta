@@ -79,8 +79,14 @@ class UserDetailViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "detail_to_webview"{
-            let controller = segue.destinationViewController as! WebViewController
-            controller.urlStr = self.talentUser?.officialUrl
+            let webController = segue.destinationViewController as! WebViewController
+            webController.urlStr = self.talentUser?.officialUrl
+            
+            webController.mode = JOWebBrowserMode.Navigation
+            webController.showURLStringOnActionSheetTitle = false
+            webController.showPageTitleOnTitleBar = true
+            webController.showReloadButton = true
+            webController.showActionButton = true
         }
     }
     

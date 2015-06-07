@@ -163,20 +163,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sc-JJ-ZPS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIO-CY-NRf">
+                                <rect key="frame" x="0.0" y="411" width="320" height="44"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dub-b0-APP" firstAttribute="top" secondItem="2sc-JJ-ZPS" secondAttribute="bottom" id="CPx-xa-V1w"/>
                             <constraint firstItem="2sc-JJ-ZPS" firstAttribute="top" secondItem="cZJ-OH-luN" secondAttribute="bottom" id="GLC-8u-HdG"/>
                             <constraint firstItem="2sc-JJ-ZPS" firstAttribute="leading" secondItem="HKu-XD-XVh" secondAttribute="leading" id="Gje-Gi-b6f"/>
+                            <constraint firstAttribute="trailing" secondItem="iIO-CY-NRf" secondAttribute="trailing" id="IcO-vZ-DKW"/>
+                            <constraint firstItem="iIO-CY-NRf" firstAttribute="top" secondItem="2sc-JJ-ZPS" secondAttribute="bottom" id="NYR-Ow-1zV"/>
                             <constraint firstAttribute="trailing" secondItem="2sc-JJ-ZPS" secondAttribute="trailing" id="Seo-Hf-T65"/>
+                            <constraint firstItem="iIO-CY-NRf" firstAttribute="leading" secondItem="HKu-XD-XVh" secondAttribute="leading" id="YnP-hA-WPI"/>
+                            <constraint firstItem="iIO-CY-NRf" firstAttribute="top" secondItem="2sc-JJ-ZPS" secondAttribute="bottom" id="hTK-dY-Kd2"/>
+                            <constraint firstItem="dub-b0-APP" firstAttribute="top" secondItem="iIO-CY-NRf" secondAttribute="bottom" id="rii-5z-1T0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L86-NK-Vfd"/>
                     <connections>
+                        <outlet property="toolBar" destination="iIO-CY-NRf" id="j6t-NN-LlX"/>
                         <outlet property="webView" destination="2sc-JJ-ZPS" id="M2w-Ns-3lG"/>
                     </connections>
                 </viewController>

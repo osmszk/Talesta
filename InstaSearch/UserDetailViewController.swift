@@ -16,6 +16,8 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var officialButton: UIButton!
     @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var widgetWebView: UIWebView!
     
     var talentUser : TalentUser? = TalentUser()
 //    var profileUrl : String?
@@ -34,6 +36,13 @@ class UserDetailViewController: UIViewController {
         
         
         self.officialButton.enabled = false
+        self.nameLabel.text = self.followerRanking?.name
+        if let followerStr = self.followerRanking?.followerString{
+            self.followersLabel.text = followerStr
+        }else{
+            self.followersLabel.text = ""
+        }
+        
         
         SVProgressHUD.show()
         self.requestToGetUserDetail()
@@ -98,11 +107,15 @@ class UserDetailViewController: UIViewController {
                     self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
                 }
                 
-                self.nameLabel.text = self.talentUser?.talentInstaName as? String
+                self.nameLabel.text = self.talentUser?.talentInstaName
                 
                 if self.talentUser?.officialUrl != nil {
                     self.officialButton.enabled = true
                 }
+                
+                let req :NSURLRequest = NSURLRequest(URL: NSURL(string: "http://widget.stagram.com/in/i_am_kiko/?s=180&amp;w=3&amp;h=2&amp;b=0&amp;p=5")!)
+                self.widgetWebView.loadRequest(req)
+                
                 
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in

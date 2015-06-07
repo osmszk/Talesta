@@ -11,12 +11,12 @@ import Foundation
 class FollowerRanking {
     
     var rankingNo : Int
-    var name : String?
+    var name : String? //芸名 Talentinstaで使っている名前
     var junre : String?
     var follower : Int?
     var followerString : String?//コンマ区切り
     var imageUrl : String?
-    var profileUrl : String?//talentInstaの詳細URL
+    var profileUrl : String?//Talentinstaの詳細URL
     
     init(rankingNo:Int=0 ,name:String="" , junre:String="",followerString:String="",imageUrl:String?,profileUrl:String?){
         self.rankingNo = rankingNo

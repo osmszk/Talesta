@@ -23,17 +23,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-ws-9wE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KR-duq" userLabel="アイコン">
-                                                <rect key="frame" x="13" y="8" width="120" height="120"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KR-duq" userLabel="アイコン">
+                                                <rect key="frame" x="15" y="15" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="94x-pq-VbN"/>
+                                                    <constraint firstAttribute="width" constant="120" id="jSl-Te-hDV"/>
+                                                </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ベッキー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYc-N3-gAv" userLabel="表示名">
-                                                <rect key="frame" x="146" y="27" width="157" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ベッキー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYc-N3-gAv" userLabel="表示名">
+                                                <rect key="frame" x="147" y="26" width="162" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="jEo-5K-0hb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cj-ba-hCb">
-                                                <rect key="frame" x="146" y="92" width="147" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cj-ba-hCb">
+                                                <rect key="frame" x="146" y="98" width="147" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Cc7-fz-qEn"/>
+                                                </constraints>
                                                 <state key="normal" title="Instagram公式ページ">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -41,8 +50,41 @@
                                                     <action selector="pushedOfficialButton:" destination="BWq-Nx-4Wf" eventType="touchUpInside" id="zBF-uB-gQ1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruE-pd-DCB" userLabel="フォロー">
-                                                <rect key="frame" x="28" y="178" width="247" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="335,666,888" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFF-rK-NFo" userLabel="followersNum">
+                                                <rect key="frame" x="215" y="66" width="94" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="3pH-R0-Qk4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93u-9u-Or4">
+                                                <rect key="frame" x="147" y="66" width="74" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="74" id="GVJ-vS-PsP"/>
+                                                    <constraint firstAttribute="height" constant="21" id="Mtx-jT-3VF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-H7-mRM">
+                                                <rect key="frame" x="0.0" y="228" width="320" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="ktC-wL-0o0"/>
+                                                </constraints>
+                                                <dataDetectorType key="dataDetectorTypes"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BWq-Nx-4Wf" id="r6d-2B-nrb"/>
+                                                </connections>
+                                            </webView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruE-pd-DCB" userLabel="フォロー">
+                                                <rect key="frame" x="20" y="148" width="280" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="jY9-lP-r5b"/>
+                                                </constraints>
                                                 <state key="normal" title="フォロー">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -51,9 +93,27 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="oTW-H7-mRM" firstAttribute="top" secondItem="ruE-pd-DCB" secondAttribute="bottom" constant="50" id="4St-fs-WB3"/>
+                                            <constraint firstAttribute="trailing" secondItem="ruE-pd-DCB" secondAttribute="trailing" constant="20" id="7ky-u1-Ewq"/>
+                                            <constraint firstItem="93u-9u-Or4" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="19" id="Dqn-cm-skz"/>
+                                            <constraint firstItem="wGi-KR-duq" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="15" id="EfC-9i-kGt"/>
+                                            <constraint firstItem="UFF-rK-NFo" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="19" id="EhX-h6-BJE"/>
+                                            <constraint firstItem="aYc-N3-gAv" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="26" id="KQd-uv-yu1"/>
+                                            <constraint firstItem="ruE-pd-DCB" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" constant="20" id="N0s-Fa-Dn9"/>
                                             <constraint firstAttribute="height" constant="600" id="UMJ-ht-LFN"/>
+                                            <constraint firstItem="oTW-H7-mRM" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" id="YJ0-y8-wup"/>
+                                            <constraint firstItem="9cj-ba-hCb" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="11" id="aLh-mA-EQy"/>
+                                            <constraint firstAttribute="trailing" secondItem="aYc-N3-gAv" secondAttribute="trailing" constant="11" id="bX2-Ze-GAC"/>
+                                            <constraint firstAttribute="trailing" secondItem="9cj-ba-hCb" secondAttribute="trailing" constant="27" id="cw1-0c-05i"/>
+                                            <constraint firstItem="aYc-N3-gAv" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="dcA-Yq-3ED"/>
+                                            <constraint firstItem="9cj-ba-hCb" firstAttribute="top" secondItem="93u-9u-Or4" secondAttribute="bottom" constant="11" id="e1v-lT-mq3"/>
+                                            <constraint firstAttribute="trailing" secondItem="oTW-H7-mRM" secondAttribute="trailing" id="hzP-iS-ZhB"/>
+                                            <constraint firstItem="ruE-pd-DCB" firstAttribute="top" secondItem="9cj-ba-hCb" secondAttribute="bottom" constant="20" id="joD-i1-zlC"/>
+                                            <constraint firstItem="93u-9u-Or4" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="nx7-WL-Ikc"/>
+                                            <constraint firstItem="wGi-KR-duq" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" constant="15" id="qrP-vZ-Vbh"/>
+                                            <constraint firstItem="UFF-rK-NFo" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="80" id="tQp-4m-KaA"/>
+                                            <constraint firstAttribute="trailing" secondItem="UFF-rK-NFo" secondAttribute="trailing" constant="11" id="u61-xx-nkY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -80,11 +140,13 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="followButton" destination="ruE-pd-DCB" id="gZW-YA-UUY"/>
+                        <outlet property="followersLabel" destination="UFF-rK-NFo" id="tt8-Ei-TsG"/>
                         <outlet property="iconImageView" destination="wGi-KR-duq" id="j36-Ah-1Ek"/>
                         <outlet property="nameLabel" destination="aYc-N3-gAv" id="q9D-aO-J8u"/>
                         <outlet property="officialButton" destination="9cj-ba-hCb" id="9t5-le-ux9"/>
                         <outlet property="scrollContentView" destination="I8Z-ws-9wE" id="H54-UU-2zz"/>
                         <outlet property="scrollView" destination="vbE-tB-6aF" id="5Ng-r4-5H0"/>
+                        <outlet property="widgetWebView" destination="oTW-H7-mRM" id="jaD-h6-o1a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tM8-5Z-PKL" userLabel="First Responder" sceneMemberID="firstResponder"/>

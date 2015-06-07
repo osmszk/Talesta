@@ -130,10 +130,11 @@ class UserDetailViewController: UIViewController {
                     let wCount : CGFloat = 3
                     let hCount = 3
                     let space : CGFloat = 5
-                    let iconWidthPlusBuffer = Util.displaySize().width/wCount
-                    let iconWidth = iconWidthPlusBuffer-space
+                    let offset : CGFloat = 2
+                    let iconWidth = (Util.displaySize().width-space*(wCount-1.0))/wCount
+                    let iconWidthInt = Int(ceilf(Float(iconWidth)))
                     
-                    let resultUrl = "\(widgetBaseUrl)?s=\(iconWidth)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
+                    let resultUrl = "\(widgetBaseUrl)?s=\(iconWidthInt)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
                     Log.DLog("resultUrl:\(resultUrl)")
                     
                     let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)

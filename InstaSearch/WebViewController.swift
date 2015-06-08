@@ -13,15 +13,21 @@ enum JOWebBrowserMode {
     case Modal
     case TabBar
 }
+enum ActionSheetButtonIndex {
+    case Safari
+    case Line
+    case Twitter
+    case Facebook
+};
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController,UIActionSheetDelegate {
 
     @IBOutlet var webView : UIWebView!
     @IBOutlet var toolBar : UIToolbar!
     
     var mode :JOWebBrowserMode?;
-    var showURLStringOnActionSheetTitle :Bool?
-    var showPageTitleOnTitleBar : Bool?
+    var showURLStringOnActionSheetTitle :Bool = false
+    var showPageTitleOnTitleBar : Bool = false
     var showReloadButton : Bool = false
     var showActionButton : Bool = false
     var barStyle : UIBarStyle?
@@ -196,39 +202,52 @@ class WebViewController: UIViewController {
     //Mark : - Action Sheet
     
     func showActionSheet(){
-        let urlString : String = "";
-//        if (self.showURLStringOnActionSheetTitle) {
-//        url = _webView.request. URL];
-//        urlString = [url absoluteString];
-//        }
-//        UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
-//        actionSheet.title = urlString;
-//        actionSheet.delegate = self;
-//        [actionSheet addButtonWithTitle:NSLocalizedString(@"Open in Safari", @"")];
-//        //
-//        
-//        //    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome://"]]) {
-//        //        [actionSheet addButtonWithTitle:@"Chromeでひらく"];
-//        //        //NSLocalizedString(@"Open in Chrome", nil)
-//        //    }
-//        
-//        [actionSheet addButtonWithTitle:NSLocalizedString(@"Share via LINE", @"")];
-//        [actionSheet addButtonWithTitle:NSLocalizedString(@"Share via Twitter", @"")];
-//        [actionSheet addButtonWithTitle:NSLocalizedString(@"Share via Facebook", @"")];
-//        
-//        actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
-//        actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-//        
-//        if (_mode == JOWebBrowserModeTabBar) {
-//        [actionSheet showFromTabBar:self.tabBarController.tabBar];
-//        }
-//        //else if (_mode == JOWebBrowserModeNavigation && [self.navigationController respondsToSelector:@selector(tabBarController)]) {
-//        else if (_mode == JOWebBrowserModeNavigation && self.navigationController.tabBarController != nil) {
-//        [actionSheet showFromTabBar:self.navigationController.tabBarController.tabBar];
-//        }
-//        else {
-//        [actionSheet showInView:self.view];
-//        }
-    
+        var urlString : String?
+        if (self.showURLStringOnActionSheetTitle) {
+            let url = self.webView.request?.URL
+            urlString = url?.absoluteString
+        }
+        let actionSheet = UIActionSheet()
+        if let title = urlString{ actionSheet.title = title}
+        actionSheet.delegate = self
+        actionSheet.addButtonWithTitle("Safariでひらく")//NSLocalizedString
+        
+        actionSheet.addButtonWithTitle("LINEでシェア")//NSLocalizedString
+        actionSheet.addButtonWithTitle("Twitterでシェア")
+        actionSheet.addButtonWithTitle("Facebookでシェア")
+
+        actionSheet.cancelButtonIndex = actionSheet.addButtonWithTitle("キャンセル")
+        actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent;
+
+        if (self.mode == JOWebBrowserMode.TabBar) {
+            actionSheet.showFromTabBar(self.tabBarController?.tabBar);
+        }else if (self.mode == JOWebBrowserMode.Navigation && self.navigationController?.tabBarController != nil) {
+            actionSheet.showFromTabBar(self.navigationController?.tabBarController?.tabBar);
+        }else {
+            actionSheet.showInView(self.view);
+        }
     }
+    
+    //Mark : - UIActionSheetDelegate
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        
+        if (buttonIndex == actionSheet.cancelButtonIndex){return}
+        
+        let theURL = self.webView.request?.URL
+//        if theURL == nil || theURL.isEqual(NSURL(string: "")!) {
+//            theURL = self.urlToLoad
+//        }
+//        
+//        if buttonIndex == ActionSheetButtonIndex.Safari {
+//            UIApplication.sharedApplication().openURL(theURL!)
+//        } else ifbuttonIndex == ActionSheetButtonIndex.Line) {
+//            self.shareViaLine(theURL?.absoluteString)
+//        } else if (buttonIndex == ActionSheetButtonIndex.Twitter) {
+//            self.shareViaTwitter(theURL?.absoluteString)
+//        } else if (buttonIndex == ActionSheetButtonIndex.Facebook){
+//            self.shareViaFacebook(theURL?.absoluteString)
+//        }
+
+    }
+
 }

@@ -10,6 +10,9 @@ import UIKit
 
 class LikeRankingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
+    var likeRankings : NSMutableArray = NSMutableArray()
+    var likeNumbers : NSMutableArray = NSMutableArray()
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,26 +76,30 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 let divs : [HTMLNode] = bodyNode!.findChildTagsAttr("div", attrName: "class", attrValue: "row hot-photo-row")
                 println("divs.count:\(divs.count)")
                 for node : HTMLNode in divs {
+                    var dict : NSMutableDictionary = NSMutableDictionary()
+                    
                     let photoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image img-thumbnail")
                     if photoImageNodes.count != 0 {
                         let photoImagePath:NSString = photoImageNodes[0].getAttributeNamed("src")
+                        dict["photoImage"] = photoImagePath
                         println("photoImagePath:\(photoImagePath)")
-                    }
-                    
-                    let likesNodes:[HTMLNode] = node.findChildTagsAttr("p", attrName: "class", attrValue: "hot-photo-likes")
-                    if likesNodes.count != 0 {
-                        let likesNode:HTMLNode = likesNodes[0].findChildTag("span")!
-                        println("hotNode.className:\(likesNode.className)")
-                        println("hotNode.contents:\(likesNode.contents)")
+                    } else {
+                        let smallPhotoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image-small img-thumbnail")
+                        if smallPhotoImageNodes.count != 0 {
+                            let photoImagePath:NSString = smallPhotoImageNodes[0].getAttributeNamed("src")
+                            dict["photoImage"] = photoImagePath
+                            println("photoImagePath:\(photoImagePath)")
+                        }
                     }
                     
                     let photoUserNode:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-user img-circle")
                     if photoUserNode.count != 0 {
                         let photoUserPath:NSString = photoUserNode[0].getAttributeNamed("src")
+                        dict["userImage"] = photoUserPath
                         println("photoUserPath:\(photoUserPath)")
                     }
                     
-                    
+                    self.likeRankings.addObject(dict)
                     
                     println(node.className)
                 }
@@ -100,7 +107,6 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 //1. <script>タグを抽出する
                 //2. "number:"と","の間の文字列を正規表現で抽出
                 //3. "number:"と","の文字列を、置換して削除
-                var likeNumbers : NSMutableArray = NSMutableArray()
                 let scriptNodes : Array<HTMLNode>? = bodyNode?.findChildTags("script")
                 if let scriptNodesUnwrap = scriptNodes{
                     for scriptNode in scriptNodesUnwrap{
@@ -131,15 +137,15 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                                 let number = str1.stringByReplacingOccurrencesOfString(",", withString: "", options: nil, range: nil)
                                 Log.DLog("number:\(number)")
                                 
-                                likeNumbers.addObject(number as String)
+                                self.likeNumbers.addObject(number as String)
                             }
                         }
                         //"number:(.*),$"
                     }
                 }
-                Log.DLog("numbers:\(likeNumbers)")
+                Log.DLog("numbers:\(self.likeNumbers)")
                 
-                
+                self.tableView.reloadData()
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
@@ -149,20 +155,33 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
-
-    // セルに表示するテキスト
-    let texts = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    
     // セルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.count
+        return likeRankings.count
     }
     
     // セルの内容を変更
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("LikeRankingTableViewCell", forIndexPath: indexPath) as! LikeRankingTableViewCell
+//        let cell: LikeRankingTableViewCell = LikeRankingTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "LikeRankingTableViewCell")
         
-        cell.textLabel?.text = texts[indexPath.row]
+        let dict : NSDictionary = likeRankings[indexPath.row] as! NSDictionary
+        Log.DLog("dict:\(dict)")
+        
+        cell.rankLabel.text = NSString(format: "%d位", indexPath.row + 1) as String
+        
+        cell.photoImageView.image = nil
+        if let photoImagePath: AnyObject = dict["photoImage"] {
+            cell.photoImageView.setImageWithURL(NSURL(string:photoImagePath as! String))
+        }
+        
+        cell.userImageView.image = nil
+        if let userImagePath: AnyObject = dict["userImage"] {
+            cell.userImageView.setImageWithURL(NSURL(string:userImagePath as! String))
+        }
+        
+        cell.likeLabel?.text = self.likeNumbers[indexPath.row] as? String
+        
         return cell
     }
     

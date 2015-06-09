@@ -62,6 +62,7 @@
 		C7FBB5E91B24350A00CEC6EB /* HTPressableButtonPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E31B24350A00CEC6EB /* HTPressableButtonPrefs.m */; };
 		C7FBB5EA1B24350A00CEC6EB /* UIColor+HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E51B24350A00CEC6EB /* UIColor+HTColor.m */; };
 		C7FBB5EB1B24350A00CEC6EB /* UIImage+HTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E71B24350A00CEC6EB /* UIImage+HTButton.m */; };
+		E0353B611B26B68C002B2E32 /* LikeRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		C7FBB5E51B24350A00CEC6EB /* UIColor+HTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HTColor.m"; sourceTree = "<group>"; };
 		C7FBB5E61B24350A00CEC6EB /* UIImage+HTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTButton.h"; sourceTree = "<group>"; };
 		C7FBB5E71B24350A00CEC6EB /* UIImage+HTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTButton.m"; sourceTree = "<group>"; };
+		E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRankingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
 				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
 				C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */,
+				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
@@ -536,6 +539,7 @@
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */,
 				C70206021B1C8CF6004FAD19 /* Log.swift in Sources */,
+				E0353B611B26B68C002B2E32 /* LikeRankingTableViewCell.swift in Sources */,
 				C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
 				C70206001B1C15B1004FAD19 /* Util.swift in Sources */,

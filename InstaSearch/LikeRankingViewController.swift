@@ -48,8 +48,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
                 println("Success!!")
                 
-//                let html : NSString? = NSString(data: responsobject as! NSData, encoding: NSJapaneseEUCStringEncoding)
-                var html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
+                let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
                 println("html:\(html)")
                 
                 if html == nil {
@@ -58,14 +57,45 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 
                 var error : NSError? = nil
-                var parser : HTMLParser? = HTMLParser(html: html as! String , error:&error)
+                var parser : HTMLParser = HTMLParser(html: html as! String , error:&error)
                 
-                if error != nil {
+                if (error != nil) {
                     println(error)
                 }
                 
-                let bodyNode :HTMLNode? = parser?.body
+                var bodyNode : HTMLNode? = parser.body
                 println("bodyNode:\(bodyNode)")
+                if bodyNode == nil {
+                    println("bodyNode")
+                    return
+                }
+                
+                let divs : [HTMLNode] = bodyNode!.findChildTagsAttr("div", attrName: "class", attrValue: "row hot-photo-row")
+                println("divs.count:\(divs.count)")
+                for node : HTMLNode in divs {
+                    let photoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image img-thumbnail")
+                    if photoImageNodes.count != 0 {
+                        let photoImagePath:NSString = photoImageNodes[0].getAttributeNamed("src")
+                        println("photoImagePath:\(photoImagePath)")
+                    }
+                    
+                    let likesNodes:[HTMLNode] = node.findChildTagsAttr("p", attrName: "class", attrValue: "hot-photo-likes")
+                    if likesNodes.count != 0 {
+                        let likesNode:HTMLNode = likesNodes[0].findChildTag("span")!
+                        println("hotNode.className:\(likesNode.className)")
+                        println("hotNode.contents:\(likesNode.contents)")
+                    }
+                    
+                    let photoUserNode:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-user img-circle")
+                    if photoUserNode.count != 0 {
+                        let photoUserPath:NSString = photoUserNode[0].getAttributeNamed("src")
+                        println("photoUserPath:\(photoUserPath)")
+                    }
+                    
+                    
+                    
+                    println(node.className)
+                }
                 
                 //1. <script>タグを抽出する
                 //2. "number:"と","の間の文字列を正規表現で抽出

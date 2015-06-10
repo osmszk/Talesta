@@ -99,6 +99,20 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                         println("photoUserPath:\(photoUserPath)")
                     }
                     
+                    let divNodes:[HTMLNode] = node.findChildTagsAttr("div", attrName: "class", attrValue: "col-xs-5")
+                    if divNodes.count != 0 {
+                        let pNodes:[HTMLNode] = divNodes[1].findChildTags("p")
+                        if pNodes.count != 0 {
+                            let aNode:[HTMLNode] = pNodes[2].findChildTags("a")
+                            let userId:NSString = aNode[0].contents
+                            dict["userId"] = userId
+                            println("userId:\(userId)")
+                        }
+                    }
+                    
+                    
+                    
+                    
                     self.likeRankings.addObject(dict)
                     
                     println(node.className)
@@ -178,6 +192,10 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         cell.userImageView.image = nil
         if let userImagePath: AnyObject = dict["userImage"] {
             cell.userImageView.setImageWithURL(NSURL(string:userImagePath as! String))
+        }
+        
+        if let userId: AnyObject = dict["userId"] {
+            cell.userLabel?.text = userId as? String
         }
         
         cell.likeLabel?.text = self.likeNumbers[indexPath.row] as? String

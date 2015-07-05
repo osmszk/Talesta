@@ -329,6 +329,14 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		C7640DEC1B49372E002C443F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
@@ -353,10 +361,10 @@
 			children = (
 				C70204C71B0A2070004FAD19 /* Library */,
 				9720D5391B0F4BEF00E258CE /* Model */,
+				C7640DEC1B49372E002C443F /* View */,
 				C779ADC41B0379AB000F585A /* AppDelegate.swift */,
 				9712409F1B09FE3200E25C2E /* TopViewController.swift */,
 				971240A31B09FE6F00E25C2E /* SearchViewController.swift */,
-				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
 				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
 				C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */,

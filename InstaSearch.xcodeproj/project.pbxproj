@@ -14,7 +14,6 @@
 		971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */; };
 		971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AF1B09FED400E25C2E /* UserDetailViewController.swift */; };
 		971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B31B09FEE400E25C2E /* OtherViewController.swift */; };
-		971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240B41B09FEE400E25C2E /* OtherViewController.xib */; };
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
 		9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D5351B0F4B4A00E258CE /* Reachability.m */; };
 		9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */; };
@@ -82,7 +81,6 @@
 		971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeRankingViewController.xib; sourceTree = "<group>"; };
 		971240AF1B09FED400E25C2E /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		971240B31B09FEE400E25C2E /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
-		971240B41B09FEE400E25C2E /* OtherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherViewController.xib; sourceTree = "<group>"; };
 		971240B71B0A016300E25C2E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9720D5341B0F4B4A00E258CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9720D5351B0F4B4A00E258CE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
-				971240B41B09FEE400E25C2E /* OtherViewController.xib */,
 				971240B71B0A016300E25C2E /* TabBarController.swift */,
 				C76620CF1B1DDB05003FFC7A /* Main.storyboard */,
 				C76620D11B1DDD4A003FFC7A /* Main2.storyboard */,
@@ -502,7 +499,6 @@
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
-				971240B61B09FEE400E25C2E /* OtherViewController.xib in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,
 				C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,

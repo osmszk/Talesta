@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
         var search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
         var likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
-        var other : OtherViewController = OtherViewController(nibName: "OtherViewController", bundle: nil)
+        var other = storyboard1.instantiateViewControllerWithIdentifier("other") as! OtherViewController
         
         var navi0:UINavigationController = UINavigationController(rootViewController:top)
         var navi1:UINavigationController = UINavigationController(rootViewController:search)

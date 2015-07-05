@@ -330,10 +330,10 @@
             </objects>
             <point key="canvasLocation" x="-48" y="670"/>
         </scene>
-        <!--top-->
+        <!--Top View Controller-->
         <scene sceneID="c0I-oK-u3S">
             <objects>
-                <viewController storyboardIdentifier="top" title="top" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zR7-1n-tTT" customClass="TopViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="top" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zR7-1n-tTT" customClass="TopViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eYT-2n-15m"/>
                         <viewControllerLayoutGuide type="bottom" id="EYG-AZ-afC"/>
@@ -349,6 +349,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmk-cU-BuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-48" y="1308"/>
+        </scene>
+        <!--Other View Controller-->
+        <scene sceneID="P1l-PL-SAg">
+            <objects>
+                <viewController storyboardIdentifier="other" id="J7b-g3-fk6" customClass="OtherViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wjd-SN-S5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="3KZ-Qp-Zao"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WEb-hb-4D5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMb-6Y-8St" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="1944"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

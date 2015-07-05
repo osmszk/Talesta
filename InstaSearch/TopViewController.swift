@@ -19,7 +19,7 @@ class TopViewController: UIViewController {
 //        label?.text = "teststs"
         
 //        NSLog("%@",label);
-        self.title = "top"
+        self.title = "インスタ芸能人！"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
     }

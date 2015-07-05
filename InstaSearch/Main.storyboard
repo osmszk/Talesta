@@ -216,7 +216,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI2-xH-wqW" userLabel="順位">
-                                                    <rect key="frame" x="6" y="30" width="23" height="21"/>
+                                                    <rect key="frame" x="6" y="31" width="23" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="etN-I1-uZ1"/>
                                                         <constraint firstAttribute="height" constant="21" id="v3j-Fv-aVO"/>
@@ -265,7 +265,7 @@
                                                 <constraint firstItem="Dlv-gZ-qhx" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="33" id="89h-b1-xNx"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dlv-gZ-qhx" secondAttribute="trailing" constant="11" id="A2C-l7-0Gi"/>
                                                 <constraint firstItem="FI2-xH-wqW" firstAttribute="leading" secondItem="yya-js-SQj" secondAttribute="leading" constant="6" id="DmD-n4-Sd3"/>
-                                                <constraint firstItem="FI2-xH-wqW" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="30" id="M46-c0-PPq"/>
+                                                <constraint firstItem="FI2-xH-wqW" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="31" id="M46-c0-PPq"/>
                                                 <constraint firstItem="hjl-MD-p56" firstAttribute="top" secondItem="ND8-7q-7Me" secondAttribute="bottom" constant="21" id="UfC-MN-paV"/>
                                                 <constraint firstAttribute="trailing" secondItem="ND8-7q-7Me" secondAttribute="trailing" constant="10" id="XoA-uj-zJu"/>
                                                 <constraint firstItem="ND8-7q-7Me" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="10" id="YEg-q2-ipr"/>
@@ -309,6 +309,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQa-1H-jF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-48" y="46"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="p67-EZ-HSf">
+            <objects>
+                <viewController storyboardIdentifier="search" id="Now-EW-tI2" customClass="SearchViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7kr-O0-04E"/>
+                        <viewControllerLayoutGuide type="bottom" id="9EK-Mb-3PZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cVY-cr-qSu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Spb-kx-RAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="670"/>
+        </scene>
+        <!--top-->
+        <scene sceneID="c0I-oK-u3S">
+            <objects>
+                <viewController storyboardIdentifier="top" title="top" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zR7-1n-tTT" customClass="TopViewController" customModule="InstaSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eYT-2n-15m"/>
+                        <viewControllerLayoutGuide type="bottom" id="EYG-AZ-afC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="52z-xE-bY9">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmk-cU-BuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="1308"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

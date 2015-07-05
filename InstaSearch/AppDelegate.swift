@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
         let storyboard2 = UIStoryboard(name: "Main2", bundle: nil)
-        var top : TopViewController = TopViewController(nibName: "TopViewController", bundle: nil)
-        var search : SearchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        var top = storyboard1.instantiateViewControllerWithIdentifier("top") as! TopViewController
         var followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
+        var search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
         var likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
         var other : OtherViewController = OtherViewController(nibName: "OtherViewController", bundle: nil)
         

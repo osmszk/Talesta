@@ -24,6 +24,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         super.viewDidAppear(animated)
         
         followerRankings.removeAllObjects()
+        self.tableView.reloadData()
         
         SVProgressHUD.show()
         self.requestToGetRanking()

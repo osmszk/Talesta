@@ -116,8 +116,9 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         cell.rankingLabel?.text = NSString(format: "%d", ranking.rankingNo) as String
         if ranking.imageUrl != nil {
             let url = ranking.imageUrl
-            cell.iconImageView.setImageWithURL(NSURL(string:url!))
-            //画像の大きさは150x150
+            let placeImage = UIImage(named: "loading")
+            cell.iconImageView.setImageWithURL(NSURL(string:url!), placeholderImage: placeImage)
+            //インスタ画像の大きさは150x150
         }
         cell.iconImageView.layer.cornerRadius = 75.0 * 0.5
         cell.iconImageView.clipsToBounds = true

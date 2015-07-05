@@ -119,6 +119,9 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
             cell.iconImageView.setImageWithURL(NSURL(string:url!))
             //画像の大きさは150x150
         }
+        cell.iconImageView.layer.cornerRadius = 75.0 * 0.5
+        cell.iconImageView.clipsToBounds = true
+        
         cell.followerNumLabel?.text = ranking.followerString
         cell.categoryLabel?.text = ranking.junre
         return cell

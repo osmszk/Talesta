@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--User Detail View Controller-->
@@ -205,42 +205,56 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="77R-9q-MWp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="77R-9q-MWp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="followerRankingCell" rowHeight="78" id="s9J-Nb-QgL" customClass="FollowerRankingTableViewCell" customModule="InstaSearch" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="followerRankingCell" rowHeight="88" id="s9J-Nb-QgL" customClass="FollowerRankingTableViewCell" customModule="InstaSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s9J-Nb-QgL" id="yya-js-SQj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWf-1F-UOY">
-                                                    <rect key="frame" x="31" y="5" width="70" height="68"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="きゃりーぱみゅぱみゅ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-7q-7Me" userLabel="名前">
-                                                    <rect key="frame" x="111" y="9" width="177" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="歌手・ミュージシャン" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjl-MD-p56" userLabel="カテゴリ">
-                                                    <rect key="frame" x="111" y="42" width="198" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI2-xH-wqW" userLabel="順位">
-                                                    <rect key="frame" x="6" y="25" width="23" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI2-xH-wqW" userLabel="順位">
+                                                    <rect key="frame" x="6" y="30" width="23" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="etN-I1-uZ1"/>
+                                                        <constraint firstAttribute="height" constant="21" id="v3j-Fv-aVO"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TWf-1F-UOY">
+                                                    <rect key="frame" x="31" y="6" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="D3G-XB-nPZ"/>
+                                                        <constraint firstAttribute="width" constant="75" id="Dn0-O7-4uj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="きゃりーぱみゅぱみゅ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-7q-7Me" userLabel="名前">
+                                                    <rect key="frame" x="114" y="10" width="196" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="sMj-P2-oyF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌手・ミュージシャン" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjl-MD-p56" userLabel="カテゴリ">
+                                                    <rect key="frame" x="114" y="53" width="195" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="s3z-km-VYD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,300,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlv-gZ-qhx" userLabel="フォロワー数">
-                                                    <rect key="frame" x="229" y="25" width="80" height="21"/>
+                                                    <rect key="frame" x="213" y="33" width="96" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EMS-uc-4xd"/>
-                                                        <constraint firstAttribute="width" constant="80" id="wgI-Bo-Wbt"/>
+                                                        <constraint firstAttribute="width" constant="96" id="wgI-Bo-Wbt"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -248,8 +262,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Dlv-gZ-qhx" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="25" id="89h-b1-xNx"/>
+                                                <constraint firstItem="Dlv-gZ-qhx" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="33" id="89h-b1-xNx"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dlv-gZ-qhx" secondAttribute="trailing" constant="11" id="A2C-l7-0Gi"/>
+                                                <constraint firstItem="FI2-xH-wqW" firstAttribute="leading" secondItem="yya-js-SQj" secondAttribute="leading" constant="6" id="DmD-n4-Sd3"/>
+                                                <constraint firstItem="FI2-xH-wqW" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="30" id="M46-c0-PPq"/>
+                                                <constraint firstItem="hjl-MD-p56" firstAttribute="top" secondItem="ND8-7q-7Me" secondAttribute="bottom" constant="21" id="UfC-MN-paV"/>
+                                                <constraint firstAttribute="trailing" secondItem="ND8-7q-7Me" secondAttribute="trailing" constant="10" id="XoA-uj-zJu"/>
+                                                <constraint firstItem="ND8-7q-7Me" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="10" id="YEg-q2-ipr"/>
+                                                <constraint firstAttribute="trailing" secondItem="hjl-MD-p56" secondAttribute="trailing" constant="11" id="gdB-qJ-Hnr"/>
+                                                <constraint firstItem="TWf-1F-UOY" firstAttribute="top" secondItem="yya-js-SQj" secondAttribute="top" constant="6" id="hh7-Sk-Sch"/>
+                                                <constraint firstItem="hjl-MD-p56" firstAttribute="leading" secondItem="TWf-1F-UOY" secondAttribute="trailing" constant="8" id="kje-AH-LpR"/>
+                                                <constraint firstItem="ND8-7q-7Me" firstAttribute="leading" secondItem="TWf-1F-UOY" secondAttribute="trailing" constant="8" id="rd5-MC-KH7"/>
+                                                <constraint firstItem="TWf-1F-UOY" firstAttribute="leading" secondItem="FI2-xH-wqW" secondAttribute="trailing" constant="2" id="uU7-2l-UKP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

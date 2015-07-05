@@ -30,7 +30,7 @@
                                                     <constraint firstAttribute="width" constant="120" id="jSl-Te-hDV"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ベッキー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYc-N3-gAv" userLabel="表示名">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水原希子" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYc-N3-gAv" userLabel="表示名">
                                                 <rect key="frame" x="147" y="20" width="162" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="jEo-5K-0hb"/>

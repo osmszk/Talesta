@@ -44,10 +44,12 @@ class UserDetailViewController: UIViewController {
         self.widgetWebView.scrollView.bounces = false
         self.widgetWebView.userInteractionEnabled = false
         
+        self.iconImageView.layer.cornerRadius = 120.0 * 0.5
+        self.iconImageView.clipsToBounds = true
         self.title = self.followerRanking?.name
         
         self.officialButton.enabled = false
-        self.nameLabel.text = self.followerRanking?.name
+        self.nameLabel.text = "" //self.followerRanking?.name
         if let followerStr = self.followerRanking?.followerString{
             self.followersLabel.text = followerStr
         }else{
@@ -55,7 +57,8 @@ class UserDetailViewController: UIViewController {
         }
         
         if let iconUrl = self.followerRanking?.imageUrl{
-            self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
+            let placeImage = UIImage(named: "loading")
+            self.iconImageView.setImageWithURL(NSURL(string:iconUrl), placeholderImage: placeImage)
             self.talentUser?.iconImageUrl = iconUrl
         }
         
@@ -127,7 +130,12 @@ class UserDetailViewController: UIViewController {
 //                    self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
 //                }
                 
-                self.nameLabel.text = self.talentUser?.talentInstaName
+                if let offcialUrl = self.talentUser?.officialUrl{
+                    let userPath = offcialUrl.lastPathComponent
+                    self.nameLabel.text = userPath
+                    self.talentUser?.userName = userPath
+                }
+                
                 
                 if self.talentUser?.officialUrl != nil {
                     self.officialButton.enabled = true

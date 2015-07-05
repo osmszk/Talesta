@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController {
+class UserDetailViewController: UIViewController,UIWebViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
@@ -17,6 +17,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var officialButton: HTPressableButton!
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var widgetWebView: UIWebView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var widgetWebViewHConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentViewHConstraint: NSLayoutConstraint!
     
@@ -62,6 +63,7 @@ class UserDetailViewController: UIViewController {
             self.talentUser?.iconImageUrl = iconUrl
         }
         
+        self.indicator.hidden = true
         SVProgressHUD.show()
         self.requestToGetUserDetail()
         
@@ -159,6 +161,10 @@ class UserDetailViewController: UIViewController {
                     
                     let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
                     self.widgetWebView.loadRequest(req)
+                    self.widgetWebView.delegate = self
+                    
+                    self.indicator.hidden = false
+                    self.indicator.startAnimating()
                 }
                 
             },
@@ -180,5 +186,27 @@ class UserDetailViewController: UIViewController {
     }
     
     // MARK: - Delegate
+    
+    // MARK: - UIWebViewDelegate
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        
+        return true
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        self.indicator.stopAnimating()
+        self.indicator.hidden = true
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        self.indicator.stopAnimating()
+        self.indicator.hidden = true
+    }
 
 }

@@ -88,6 +88,13 @@
                                                     <outlet property="delegate" destination="BWq-Nx-4Wf" id="r6d-2B-nrb"/>
                                                 </connections>
                                             </webView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="brh-tV-IG1">
+                                                <rect key="frame" x="150" y="387" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Wm2-bB-k5q"/>
+                                                    <constraint firstAttribute="width" constant="20" id="ZvC-l0-7Ak"/>
+                                                </constraints>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="oTW-H7-mRM" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="20" id="DAm-Vy-fk3"/>
@@ -95,11 +102,13 @@
                                             <constraint firstItem="wGi-KR-duq" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="15" id="EfC-9i-kGt"/>
                                             <constraint firstItem="UFF-rK-NFo" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="13" id="EhX-h6-BJE"/>
                                             <constraint firstItem="aYc-N3-gAv" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="20" id="KQd-uv-yu1"/>
+                                            <constraint firstItem="brh-tV-IG1" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="184" id="Kd6-et-le0"/>
                                             <constraint firstAttribute="trailing" secondItem="wrF-fq-Vjy" secondAttribute="trailing" id="RmR-B9-VIp"/>
                                             <constraint firstAttribute="height" constant="600" id="UMJ-ht-LFN"/>
                                             <constraint firstItem="oTW-H7-mRM" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" id="YJ0-y8-wup"/>
                                             <constraint firstItem="9cj-ba-hCb" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="aLh-mA-EQy"/>
                                             <constraint firstAttribute="trailing" secondItem="aYc-N3-gAv" secondAttribute="trailing" constant="11" id="bX2-Ze-GAC"/>
+                                            <constraint firstAttribute="centerX" secondItem="brh-tV-IG1" secondAttribute="centerX" id="bjK-6y-8ZA"/>
                                             <constraint firstAttribute="trailing" secondItem="9cj-ba-hCb" secondAttribute="trailing" constant="12" id="cw1-0c-05i"/>
                                             <constraint firstItem="aYc-N3-gAv" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="dcA-Yq-3ED"/>
                                             <constraint firstItem="9cj-ba-hCb" firstAttribute="top" secondItem="93u-9u-Or4" secondAttribute="bottom" constant="11" id="e1v-lT-mq3"/>
@@ -138,6 +147,7 @@
                         <outlet property="contentViewHConstraint" destination="UMJ-ht-LFN" id="Vzf-O1-fA6"/>
                         <outlet property="followersLabel" destination="UFF-rK-NFo" id="tt8-Ei-TsG"/>
                         <outlet property="iconImageView" destination="wGi-KR-duq" id="j36-Ah-1Ek"/>
+                        <outlet property="indicator" destination="brh-tV-IG1" id="Ate-Mu-b9w"/>
                         <outlet property="nameLabel" destination="aYc-N3-gAv" id="q9D-aO-J8u"/>
                         <outlet property="officialButton" destination="9cj-ba-hCb" id="9t5-le-ux9"/>
                         <outlet property="scrollContentView" destination="I8Z-ws-9wE" id="H54-UU-2zz"/>

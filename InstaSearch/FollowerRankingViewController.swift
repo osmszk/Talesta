@@ -16,17 +16,15 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.title = "follower"
+        self.title = "フォロワーランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
-        
-        
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        followerRankings.removeAllObjects()
+        
         SVProgressHUD.show()
         self.requestToGetRanking()
     }
@@ -119,6 +117,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         if ranking.imageUrl != nil {
             let url = ranking.imageUrl
             cell.iconImageView.setImageWithURL(NSURL(string:url!))
+            //画像の大きさは150x150
         }
         cell.followerNumLabel?.text = ranking.followerString
         cell.categoryLabel?.text = ranking.junre

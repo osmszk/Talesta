@@ -47,6 +47,7 @@
 		C70206001B1C15B1004FAD19 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FF1B1C15B1004FAD19 /* Util.swift */; };
 		C70206021B1C8CF6004FAD19 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70206011B1C8CF6004FAD19 /* Log.swift */; };
 		C7640DEB1B492C89002C443F /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEA1B492C89002C443F /* loading@2x.png */; };
+		C7640DEF1B4AC66E002C443F /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEE1B4AC66E002C443F /* names.txt */; };
 		C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76620CF1B1DDB05003FFC7A /* Main.storyboard */; };
 		C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76620D11B1DDD4A003FFC7A /* Main2.storyboard */; };
 		C76620D41B1E830F003FFC7A /* FollowerRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */; };
@@ -141,6 +142,7 @@
 		C70205FF1B1C15B1004FAD19 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C70206011B1C8CF6004FAD19 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		C7640DEA1B492C89002C443F /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
+		C7640DEE1B4AC66E002C443F /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = names.txt; sourceTree = "<group>"; };
 		C76620CF1B1DDB05003FFC7A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C76620D11B1DDD4A003FFC7A /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingTableViewCell.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		C7640DE61B492BEA002C443F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C7640DED1B4AC66E002C443F /* data */,
 				C7640DE71B492BEA002C443F /* images */,
 			);
 			path = Resources;
@@ -336,6 +339,14 @@
 				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		C7640DED1B4AC66E002C443F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C7640DEE1B4AC66E002C443F /* names.txt */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		C779ADB61B0379AB000F585A = {
@@ -507,6 +518,7 @@
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
+				C7640DEF1B4AC66E002C443F /* names.txt in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,
 				C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,

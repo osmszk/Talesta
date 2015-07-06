@@ -1,29 +1,9 @@
-
-#http://www.talentinsta.com/ichiran/1/
-
 require 'anemone'
 require 'nokogiri'
 require 'kconv'
 
-# num = 100
-# URL = "http://www.talentinsta.com/ichiran/#{num}/"
-#スクレイピング
-# Anemone.crawl(URL,:depth_limit => 0) do |anemone|
-# 	anemone.on_every_page do |page|
-# 		doc = Nokogiri::HTML.parse(page.body.toutf8)
-# 		body = doc.xpath('//p').each do |node|
-# 			str = node.text
-# 			pos1 = str.index("Instagram")
-# 			pos2 = str.index("ブログ")
-# 			if pos1 == nil && pos2 == nil
-# 				p str
-# 			end
-#     	end
-# 	end
-# end
-
 id = 0
-range = 1..2
+range = 1..100
 range.each{ |num|
   Anemone.crawl("http://www.talentinsta.com/ichiran/#{num}/",:depth_limit => 0) do |anemone|
 	anemone.on_every_page do |page|

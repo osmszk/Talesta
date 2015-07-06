@@ -333,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
+				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -368,7 +369,6 @@
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
 				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
 				C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */,
-				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,

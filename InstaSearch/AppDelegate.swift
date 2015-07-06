@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//import CoreData
+//import SugarRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

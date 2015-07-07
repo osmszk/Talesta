@@ -50,6 +50,7 @@
 		C74A83451B4B4E8E00EDAE9D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83421B4B4E8E00EDAE9D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; };
 		C74A83471B4B4E8E00EDAE9D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C74A834A1B4B574E00EDAE9D /* TalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A83491B4B574E00EDAE9D /* TalentModel.swift */; };
 		C7640DEB1B492C89002C443F /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEA1B492C89002C443F /* loading@2x.png */; };
 		C7640DEF1B4AC66E002C443F /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEE1B4AC66E002C443F /* names.txt */; };
 		C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7640DF01B4ACD28002C443F /* CoreData.framework */; };
@@ -164,6 +165,7 @@
 		C70206011B1C8CF6004FAD19 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		C74A83421B4B4E8E00EDAE9D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		C74A83491B4B574E00EDAE9D /* TalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentModel.swift; sourceTree = "<group>"; };
 		C7640DEA1B492C89002C443F /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		C7640DEE1B4AC66E002C443F /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = names.txt; sourceTree = "<group>"; };
 		C7640DF01B4ACD28002C443F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -237,6 +239,7 @@
 				C70205FD1B1AD285004FAD19 /* ParseHelper.swift */,
 				C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */,
 				C76620D51B2126A8003FFC7A /* TalentUser.swift */,
+				C74A83491B4B574E00EDAE9D /* TalentModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				C70205131B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m in Sources */,
 				C70204F91B0A2070004FAD19 /* UIAlertView+AFNetworking.m in Sources */,
 				C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */,
+				C74A834A1B4B574E00EDAE9D /* TalentModel.swift in Sources */,
 				C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */,
 				9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */,
 				971240B81B0A016300E25C2E /* TabBarController.swift in Sources */,

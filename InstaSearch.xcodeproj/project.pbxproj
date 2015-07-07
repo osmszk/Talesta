@@ -46,6 +46,10 @@
 		C70205FE1B1AD285004FAD19 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FD1B1AD285004FAD19 /* ParseHelper.swift */; };
 		C70206001B1C15B1004FAD19 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FF1B1C15B1004FAD19 /* Util.swift */; };
 		C70206021B1C8CF6004FAD19 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70206011B1C8CF6004FAD19 /* Log.swift */; };
+		C74A83441B4B4E8E00EDAE9D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83421B4B4E8E00EDAE9D /* Realm.framework */; };
+		C74A83451B4B4E8E00EDAE9D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83421B4B4E8E00EDAE9D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; };
+		C74A83471B4B4E8E00EDAE9D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C7640DEB1B492C89002C443F /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEA1B492C89002C443F /* loading@2x.png */; };
 		C7640DEF1B4AC66E002C443F /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEE1B4AC66E002C443F /* names.txt */; };
 		C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7640DF01B4ACD28002C443F /* CoreData.framework */; };
@@ -75,6 +79,21 @@
 			remoteInfo = InstaSearch;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C74A83481B4B4E8E00EDAE9D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C74A83471B4B4E8E00EDAE9D /* RealmSwift.framework in Embed Frameworks */,
+				C74A83451B4B4E8E00EDAE9D /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9712409F1B09FE3200E25C2E /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +162,8 @@
 		C70205FD1B1AD285004FAD19 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		C70205FF1B1C15B1004FAD19 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C70206011B1C8CF6004FAD19 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		C74A83421B4B4E8E00EDAE9D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		C7640DEA1B492C89002C443F /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		C7640DEE1B4AC66E002C443F /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = names.txt; sourceTree = "<group>"; };
 		C7640DF01B4ACD28002C443F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -178,8 +199,10 @@
 			files = (
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
+				C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */,
 				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
+				C74A83441B4B4E8E00EDAE9D /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +383,8 @@
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
+				C74A83421B4B4E8E00EDAE9D /* Realm.framework */,
+				C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,
 				C779ADD91B0379AB000F585A /* InstaSearchTests */,
 				9720D53E1B0F513400E258CE /* Frameworks */,
@@ -453,6 +478,8 @@
 				C779ADBB1B0379AB000F585A /* Sources */,
 				C779ADBC1B0379AB000F585A /* Frameworks */,
 				C779ADBD1B0379AB000F585A /* Resources */,
+				C74A83411B4B4C8200EDAE9D /* ShellScript */,
+				C74A83481B4B4E8E00EDAE9D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -542,6 +569,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C74A83411B4B4C8200EDAE9D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C779ADBB1B0379AB000F585A /* Sources */ = {
@@ -714,7 +757,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/InstaSearch/Library/SugarRecord/Realm",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = InstaSearch/Info.plist;
@@ -730,7 +772,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/InstaSearch/Library/SugarRecord/Realm",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = InstaSearch/Info.plist;
@@ -747,6 +788,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -766,6 +808,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = InstaSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

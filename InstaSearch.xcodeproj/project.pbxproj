@@ -42,7 +42,7 @@
 		C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C702050B1B108165004FAD19 /* SVProgressHUD.bundle */; };
 		C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C702050D1B108165004FAD19 /* SVProgressHUD.m */; };
 		C70205131B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C70205121B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m */; };
-		C70205FC1B1ACF49004FAD19 /* FollowerRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */; };
+		C70205FC1B1ACF49004FAD19 /* Talentinsta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FB1B1ACF49004FAD19 /* Talentinsta.swift */; };
 		C70205FE1B1AD285004FAD19 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FD1B1AD285004FAD19 /* ParseHelper.swift */; };
 		C70206001B1C15B1004FAD19 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FF1B1C15B1004FAD19 /* Util.swift */; };
 		C70206021B1C8CF6004FAD19 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70206011B1C8CF6004FAD19 /* Log.swift */; };
@@ -165,7 +165,7 @@
 		C702050D1B108165004FAD19 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		C70205111B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+TimeoutCategory.h"; sourceTree = "<group>"; };
 		C70205121B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+TimeoutCategory.m"; sourceTree = "<group>"; };
-		C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRanking.swift; sourceTree = "<group>"; };
+		C70205FB1B1ACF49004FAD19 /* Talentinsta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Talentinsta.swift; sourceTree = "<group>"; };
 		C70205FD1B1AD285004FAD19 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		C70205FF1B1C15B1004FAD19 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C70206011B1C8CF6004FAD19 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 				C70205FF1B1C15B1004FAD19 /* Util.swift */,
 				C70206011B1C8CF6004FAD19 /* Log.swift */,
 				C70205FD1B1AD285004FAD19 /* ParseHelper.swift */,
-				C70205FB1B1ACF49004FAD19 /* FollowerRanking.swift */,
+				C70205FB1B1ACF49004FAD19 /* Talentinsta.swift */,
 				C76620D51B2126A8003FFC7A /* TalentUser.swift */,
 				C74A83491B4B574E00EDAE9D /* TalentModel.swift */,
 				C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */,
@@ -623,7 +623,7 @@
 				C70204FD1B0A2070004FAD19 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C70204FA1B0A2070004FAD19 /* UIButton+AFNetworking.m in Sources */,
 				C7FBB5EA1B24350A00CEC6EB /* UIColor+HTColor.m in Sources */,
-				C70205FC1B1ACF49004FAD19 /* FollowerRanking.swift in Sources */,
+				C70205FC1B1ACF49004FAD19 /* Talentinsta.swift in Sources */,
 				C70204FC1B0A2070004FAD19 /* UIProgressView+AFNetworking.m in Sources */,
 				C70204EE1B0A2070004FAD19 /* AFHTTPRequestOperation.m in Sources */,
 				971240A51B09FE6F00E25C2E /* SearchViewController.swift in Sources */,

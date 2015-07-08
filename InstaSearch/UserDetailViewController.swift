@@ -23,7 +23,7 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var contentViewHConstraint: NSLayoutConstraint!
     
     var talentUser : TalentUser? = TalentUser()
-    var followerRanking : FollowerRanking?
+    var followerRanking : Talentinsta?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -66,7 +66,7 @@ class ParseHelper {
                     
                     let ranking : Int! = rankingNumNode!.contents.toInt()
                     let followerRanking
-                    = FollowerRanking(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents,imageUrl:imgUrl,profileUrl:profileUrl)
+                    = Talentinsta(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents,imageUrl:imgUrl,profileUrl:profileUrl)
                     
                     followerRankings.addObject(followerRanking)
                 }

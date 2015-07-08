@@ -56,7 +56,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
             let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             
-            let followerRanking = self.followerRankings[row!] as! FollowerRanking
+            let followerRanking = self.followerRankings[row!] as! Talentinsta
             controller.followerRanking = followerRanking
         }
     }
@@ -112,7 +112,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         let cell  = tableView.dequeueReusableCellWithIdentifier("followerRankingCell", forIndexPath: indexPath) as! FollowerRankingTableViewCell
         //UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "followerRankingCell") as! FollowerRankingTableViewCell
         
-        let ranking = self.followerRankings[indexPath.row] as! FollowerRanking
+        let ranking = self.followerRankings[indexPath.row] as! Talentinsta
         cell.nameLabel?.text = ranking.name
         cell.rankingLabel?.text = NSString(format: "%d", ranking.rankingNo) as String
         if ranking.imageUrl != nil {

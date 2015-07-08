@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-//Realmのオブジェクト
+//Realmのオブジェクト テキストファイルからオブジェクト化してDBに保存
 class TalentModel: Object {
     dynamic var id : String = ""//こっちで適当につけた数値
     dynamic var name : String = ""//芸名

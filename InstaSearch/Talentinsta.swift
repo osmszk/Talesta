@@ -8,7 +8,8 @@
 
 import Foundation
 
-class FollowerRanking {
+//TalentinstaのページHTMLをパースして生成したオブジェクト
+class Talentinsta {
     
     var rankingNo : Int
     var name : String? //芸名 Talentinstaで使っている名前
@@ -18,6 +19,7 @@ class FollowerRanking {
     var imageUrl : String?
     var profileUrl : String?//Talentinstaの詳細URL
     
+    //フォロワーランキングから
     init(rankingNo:Int=0 ,name:String="" , junre:String="",followerString:String="",imageUrl:String?,profileUrl:String?){
         self.rankingNo = rankingNo
         self.name = name

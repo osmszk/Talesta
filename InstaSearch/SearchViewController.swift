@@ -49,7 +49,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             let talentModel = talentObject[row!]
             let url = talentModel.url
             let name = talentModel.name
-            let ranking = FollowerRanking(name: name, url: url)
+            let ranking = Talentinsta(name: name, url: url)
             controller.followerRanking = ranking;
         }
     }

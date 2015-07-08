@@ -145,6 +145,7 @@
                     <connections>
                         <outlet property="contentViewHConstraint" destination="UMJ-ht-LFN" id="Vzf-O1-fA6"/>
                         <outlet property="followersLabel" destination="UFF-rK-NFo" id="tt8-Ei-TsG"/>
+                        <outlet property="followersTitleLabel" destination="93u-9u-Or4" id="Hi4-xn-iCP"/>
                         <outlet property="iconImageView" destination="wGi-KR-duq" id="j36-Ah-1Ek"/>
                         <outlet property="indicator" destination="brh-tV-IG1" id="Ate-Mu-b9w"/>
                         <outlet property="nameLabel" destination="aYc-N3-gAv" id="q9D-aO-J8u"/>

@@ -16,6 +16,7 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var officialButton: HTPressableButton!
     @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var followersTitleLabel: UILabel!
     @IBOutlet weak var widgetWebView: UIWebView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var widgetWebViewHConstraint: NSLayoutConstraint!
@@ -55,6 +56,7 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
             self.followersLabel.text = followerStr
         }else{
             self.followersLabel.text = ""
+            self.followersTitleLabel.hidden = true
         }
         
         if let iconUrl = self.followerRanking?.imageUrl{

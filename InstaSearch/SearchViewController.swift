@@ -12,6 +12,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     
+    let talentObject = RealmHelper.talentModelAll()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,12 +40,15 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return talentObject.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier("searchCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = "\(indexPath.row+2000)"
+
+        let object = talentObject[indexPath.row]
+        
+        cell.textLabel?.text = object.name
         return cell
     }
     

@@ -70,7 +70,7 @@ class RealmHelper: NSObject {
     class func talentModelAll() -> Results<TalentModel> {
 //        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             let realm = Realm()
-            var results = realm.objects(TalentModel) as Results<TalentModel>
+            var results = realm.objects(TalentModel).sorted("name", ascending: true) as Results<TalentModel>
             return results
 //        }
     }

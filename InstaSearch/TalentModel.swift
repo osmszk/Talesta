@@ -15,11 +15,11 @@ class TalentModel: Object {
     dynamic var name : String = ""
     dynamic var url : String = ""
     
-    class func talentWithDic(dic : NSDictionary) -> TalentModel{
-        let talent : TalentModel = TalentModel()
-        talent.id = dic["id"] as! String
-        talent.name = dic["name"] as! String
-        talent.url = dic["url"] as! String
-        return talent
-    }
+//    class func talentWithDic(dic : NSDictionary) -> TalentModel{
+//        let talent : TalentModel = TalentModel()
+//        talent.id = dic["id"] as! String
+//        talent.name = dic["name"] as! String
+//        talent.url = dic["url"] as! String
+//        return talent
+//    }
 }

@@ -50,7 +50,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = tab
         self.window!.makeKeyAndVisible()
         
+        setupDatabase();
+        
         return true
+    }
+    
+    func setupDatabase(){
+//        RealmHelper.deleteAll()
+        
+        
+        RealmHelper.makeRealmModelIfNeeded()
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

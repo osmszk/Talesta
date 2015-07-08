@@ -20,7 +20,7 @@ enum ActionSheetButtonIndex {
     case Facebook
 };
 
-class WebViewController: UIViewController,UIActionSheetDelegate {
+class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegate {
 
     @IBOutlet var webView : UIWebView!
     @IBOutlet var toolBar : UIToolbar!
@@ -54,6 +54,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
+        self.webView.delegate = self
         
         initToolBar()
         
@@ -249,5 +250,25 @@ class WebViewController: UIViewController,UIActionSheetDelegate {
 //        }
 
     }
+    
+    //Mark : - UIWebViewDelegate
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        return true
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        SVProgressHUD.dismiss()
+        SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
+    }
+    
 
 }

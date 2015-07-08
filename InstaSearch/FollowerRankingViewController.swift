@@ -53,7 +53,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
             let controller = segue.destinationViewController as! UserDetailViewController
             
             let cell = sender as! FollowerRankingTableViewCell
-            let indexPath = self.tableView.indexPathForCell(cell)
+            let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             
             let followerRanking = self.followerRankings[row!] as! FollowerRanking

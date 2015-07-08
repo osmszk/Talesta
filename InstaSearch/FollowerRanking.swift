@@ -31,4 +31,11 @@ class FollowerRanking {
         self.profileUrl = profileUrl
     }
     
+    //検索画面から遷移
+    init(name:String,url:String?){
+        self.rankingNo = 0
+        self.name = name
+        self.profileUrl = url
+    }
+    
 }

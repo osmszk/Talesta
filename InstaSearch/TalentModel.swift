@@ -11,15 +11,8 @@ import RealmSwift
 
 //Realmのオブジェクト
 class TalentModel: Object {
-    dynamic var id : String = ""
-    dynamic var name : String = ""
-    dynamic var url : String = ""
+    dynamic var id : String = ""//こっちで適当につけた数値
+    dynamic var name : String = ""//芸名
+    dynamic var url : String = ""//Talentinstaのユーザー詳細URL
     
-//    class func talentWithDic(dic : NSDictionary) -> TalentModel{
-//        let talent : TalentModel = TalentModel()
-//        talent.id = dic["id"] as! String
-//        talent.name = dic["name"] as! String
-//        talent.url = dic["url"] as! String
-//        return talent
-//    }
 }

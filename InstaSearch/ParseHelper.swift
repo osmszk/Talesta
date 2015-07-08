@@ -89,6 +89,7 @@ class ParseHelper {
         var officialUrl : String?
         var displayName : String?
         var widgetUrl : String?
+        var iconImageUrl : String?
         if let tdNodesUnwrap = tdNodes{
             for tdNode in tdNodesUnwrap{
                 let name2Node = tdNode.findChildTag("h2")
@@ -118,13 +119,29 @@ class ParseHelper {
             }
         }
         
+        if let tdNodes = bodyNode?.findChildTags("td"){
+            for tdNode in tdNodes{
+                if let imgNode = tdNode.findChildTag("img"){
+                    let alt = imgNode.getAttributeNamed("alt")
+                    let src = imgNode.getAttributeNamed("src")
+                    if (alt as NSString).containsString("インスタグラム") &&
+                    !(src as NSString).containsString("talentinsta")
+                    {
+                        iconImageUrl = src
+                    }
+                }
+            }
+        }
+        
         Log.DLog("officialUrl \(officialUrl)")
         Log.DLog("displayName \(displayName)")
         Log.DLog("widgetUrl \(widgetUrl)")
+        Log.DLog("iconImageUrl \(iconImageUrl)")
         
         talentUser.officialUrl = officialUrl
         talentUser.talentInstaName = displayName
         talentUser.widgetUrl = widgetUrl
+        talentUser.iconImageUrl = iconImageUrl
         
         return talentUser
     }

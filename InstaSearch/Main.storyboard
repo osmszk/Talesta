@@ -349,6 +349,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BWq-Nx-4Wf" kind="push" identifier="search_to_deail" id="8mQ-AH-d84"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -421,4 +424,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="g6Q-HL-Oc9"/>
+    </inferredMetricsTieBreakers>
 </document>

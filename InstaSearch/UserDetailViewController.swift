@@ -124,13 +124,10 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
                     return
                 }
                 
-                Log.DLog("html:\(html)")
+//                Log.DLog("html:\(html)")
                 
                 self.talentUser =  ParseHelper.convertTalentUserFromHtml(html: html as! String , talent: self.talentUser!)
                 
-//                if let iconUrl = self.talentUser?.iconImageUrl{
-//                    self.iconImageView.setImageWithURL(NSURL(string:iconUrl))
-//                }
                 
                 if let offcialUrl = self.talentUser?.officialUrl{
                     let userPath = offcialUrl.lastPathComponent
@@ -141,6 +138,13 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
                 
                 if self.talentUser?.officialUrl != nil {
                     self.officialButton.enabled = true
+                }
+                
+                if self.iconImageView.image == nil{
+                    if let iconUrl = self.talentUser?.iconImageUrl{
+                        let placeImage = UIImage(named: "loading")
+                        self.iconImageView.setImageWithURL(NSURL(string:iconUrl), placeholderImage: placeImage)
+                    }
                 }
                 
                 if let widgetUrl = self.talentUser?.widgetUrl {

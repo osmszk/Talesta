@@ -20,6 +20,13 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.title = "検索"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let row = self.tableView.indexPathForSelectedRow(){
+            self.tableView.deselectRowAtIndexPath(row, animated: true)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,15 +34,26 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+        if segue.identifier == "search_to_deail"{
+            let controller = segue.destinationViewController as! UserDetailViewController
+            
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let row = indexPath?.row
+            
+            let talentModel = talentObject[row!]
+            let url = talentModel.url
+            let name = talentModel.name
+            let ranking = FollowerRanking(name: name, url: url)
+            controller.followerRanking = ranking;
+        }
     }
-    */
+
     
     // MARK: - UITableViewDataSource
     

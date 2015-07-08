@@ -52,6 +52,11 @@
 		C74A83471B4B4E8E00EDAE9D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C74A834A1B4B574E00EDAE9D /* TalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A83491B4B574E00EDAE9D /* TalentModel.swift */; };
 		C74A834C1B4CD14C00EDAE9D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */; };
+		C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */; };
+		C74A83531B4D6D7F00EDAE9D /* barbtn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A834E1B4D6D7F00EDAE9D /* barbtn_back@2x.png */; };
+		C74A83541B4D6D7F00EDAE9D /* barbtn_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A834F1B4D6D7F00EDAE9D /* barbtn_forward@2x.png */; };
+		C74A83551B4D6D7F00EDAE9D /* barbtn_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A83501B4D6D7F00EDAE9D /* barbtn_gear@2x.png */; };
+		C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A83511B4D6D7F00EDAE9D /* barbtn_reload@2x.png */; };
 		C7640DEB1B492C89002C443F /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEA1B492C89002C443F /* loading@2x.png */; };
 		C7640DEF1B4AC66E002C443F /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEE1B4AC66E002C443F /* names.txt */; };
 		C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7640DF01B4ACD28002C443F /* CoreData.framework */; };
@@ -168,6 +173,11 @@
 		C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		C74A83491B4B574E00EDAE9D /* TalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentModel.swift; sourceTree = "<group>"; };
 		C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_action@2x.png"; sourceTree = "<group>"; };
+		C74A834E1B4D6D7F00EDAE9D /* barbtn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_back@2x.png"; sourceTree = "<group>"; };
+		C74A834F1B4D6D7F00EDAE9D /* barbtn_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_forward@2x.png"; sourceTree = "<group>"; };
+		C74A83501B4D6D7F00EDAE9D /* barbtn_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_gear@2x.png"; sourceTree = "<group>"; };
+		C74A83511B4D6D7F00EDAE9D /* barbtn_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_reload@2x.png"; sourceTree = "<group>"; };
 		C7640DEA1B492C89002C443F /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		C7640DEE1B4AC66E002C443F /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = names.txt; sourceTree = "<group>"; };
 		C7640DF01B4ACD28002C443F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -364,6 +374,11 @@
 		C7640DE71B492BEA002C443F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */,
+				C74A834E1B4D6D7F00EDAE9D /* barbtn_back@2x.png */,
+				C74A834F1B4D6D7F00EDAE9D /* barbtn_forward@2x.png */,
+				C74A83501B4D6D7F00EDAE9D /* barbtn_gear@2x.png */,
+				C74A83511B4D6D7F00EDAE9D /* barbtn_reload@2x.png */,
 				C7640DEA1B492C89002C443F /* loading@2x.png */,
 			);
 			path = images;
@@ -556,13 +571,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74A83531B4D6D7F00EDAE9D /* barbtn_back@2x.png in Resources */,
+				C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */,
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
 				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
 				C7640DEF1B4AC66E002C443F /* names.txt in Resources */,
+				C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,
 				C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */,
+				C74A83541B4D6D7F00EDAE9D /* barbtn_forward@2x.png in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,
+				C74A83551B4D6D7F00EDAE9D /* barbtn_gear@2x.png in Resources */,
 				C7640DEB1B492C89002C443F /* loading@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

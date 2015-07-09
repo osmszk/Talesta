@@ -19,6 +19,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
 
         self.title = "検索"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
+        self.tableView.sectionIndexColor = Const.APP_COLOR1;
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,6 +58,10 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     // MARK: - UITableViewDataSource
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return talentObject.count
     }
@@ -71,5 +76,18 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     // MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ""
+    }
+    
+    func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+        return [""]
+    }
+    
+    func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        return 1
+    }
+    
+
 
 }

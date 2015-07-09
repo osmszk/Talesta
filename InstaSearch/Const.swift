@@ -17,5 +17,6 @@ class Const {
     static let TABLE_VIEW_FOOTER_HEIGHT = 50.0;
     static let TIME_OUT_INTERVAL = 10.0;
 
+    static let APP_COLOR1 = Util.hexColor("0x770c02", alpha: 1)
     
 }

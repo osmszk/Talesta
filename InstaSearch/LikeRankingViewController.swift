@@ -20,7 +20,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view.
         self.title = "Like"
         
-        self.getLikeRanking()
+        self.getLikeRanking("http://websta.me/hot/jp_posts")
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,16 +40,17 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     */
     
     
-    func getLikeRanking() {
+    func getLikeRanking(url: NSString) {
         let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
         manager.responseSerializer = AFHTTPResponseSerializer()
-        let url = "http://websta.me/hot/jp_posts"
-        manager.GET(url,
+        manager.GET(url as String,
             parameters: nil,
             timeoutInterval: 10,
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
                 println("Success!!")
+                
+                self.likeRankings.removeAllObjects()
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
                 println("html:\(html)")
@@ -101,7 +102,22 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                     
                     let divNodes:[HTMLNode] = node.findChildTagsAttr("div", attrName: "class", attrValue: "col-xs-5")
                     if divNodes.count != 0 {
-                        let pNodes:[HTMLNode] = divNodes[1].findChildTags("p")
+                        // 詳細ページのリンク取得
+                        let aNodes:[HTMLNode] = divNodes[0].findChildTags("a")
+                        if aNodes.count != 0 {
+                            let detailUrl = aNodes[0].getAttributeNamed("href")
+                            dict["detailUrl"] = NSString(format: "%@%@", url, detailUrl)
+                            println("detailUrl:\(detailUrl)")
+                        }
+                        
+                        let pNodes:[HTMLNode]
+                        if divNodes.count == 2 {
+                            // ユーザーID取得
+                            pNodes = divNodes[1].findChildTags("p")
+                        } else {
+                            let xs6Nodes:[HTMLNode] = node.findChildTagsAttr("div", attrName: "class", attrValue: "col-xs-6")
+                            pNodes = xs6Nodes[0].findChildTags("p")
+                        }
                         if pNodes.count != 0 {
                             let aNode:[HTMLNode] = pNodes[2].findChildTags("a")
                             let userId:NSString = aNode[0].contents
@@ -109,9 +125,6 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                             println("userId:\(userId)")
                         }
                     }
-                    
-                    
-                    
                     
                     self.likeRankings.addObject(dict)
                     
@@ -203,7 +216,16 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    @IBAction func segmentChangeAction(sender: AnyObject) {
+    @IBAction func didValueChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.getLikeRanking("http://websta.me/hot/jp_posts")
+            
+        case 1:
+            self.getLikeRanking("http://websta.me/hot/posts")
+            
+        default:
+            Log.DLog("default")
+        }
     }
-    
 }

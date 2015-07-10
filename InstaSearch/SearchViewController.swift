@@ -63,33 +63,36 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     // MARK: - UITableViewDataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.cellDataIndexTalents.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.talentModels.count
+        let indexTalent = self.cellDataIndexTalents[section]
+        return indexTalent.talents.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier("searchCell", forIndexPath: indexPath) as! UITableViewCell
 
-        let object = self.talentModels[indexPath.row]
+        let indexTalent = self.cellDataIndexTalents[indexPath.section]
+        let talent = indexTalent.talents[indexPath.row]
         
-        cell.textLabel?.text = object.name
+        cell.textLabel?.text = talent.name
         return cell
     }
     
     // MARK: - UITableViewDelegate
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
+        let indexTalent = self.cellDataIndexTalents[section]
+        return indexTalent.indexTitle
     }
     
     func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-        return [""]
+        return self.talentSectionTitles
     }
     
     func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        return 1
+        return (self.talentSectionTitles as NSArray).indexOfObject(title)
     }
     
 

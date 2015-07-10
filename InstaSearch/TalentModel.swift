@@ -15,4 +15,5 @@ class TalentModel: Object {
     dynamic var name : String = ""//芸名
     dynamic var url : String = ""//Talentinstaのユーザー詳細URL
     
+    
 }

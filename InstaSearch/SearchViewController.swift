@@ -12,7 +12,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     
-    let talentObject = RealmHelper.talentModelAll()
+    let talentModels = RealmHelper.talentModelAll()
+    let talentSectionTitles = RealmHelper.talentSectionTitles()
+    var cellDataIndexTalents : [IndexTitleTalent] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.title = "検索"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
+        
+        self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(talentModels)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,7 +51,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             
-            let talentModel = talentObject[row!]
+            let talentModel = self.talentModels[row!]
             let url = talentModel.url
             let name = talentModel.name
             let ranking = Talentinsta(name: name, url: url)
@@ -63,13 +67,13 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return talentObject.count
+        return self.talentModels.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier("searchCell", forIndexPath: indexPath) as! UITableViewCell
 
-        let object = talentObject[indexPath.row]
+        let object = self.talentModels[indexPath.row]
         
         cell.textLabel?.text = object.name
         return cell

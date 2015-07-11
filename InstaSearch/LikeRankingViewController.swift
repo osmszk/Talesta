@@ -53,7 +53,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 self.likeRankings.removeAllObjects()
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
-                println("html:\(html)")
+//                println("html:\(html)")
                 
                 if html == nil {
                     println("html:nil")
@@ -106,7 +106,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                         let aNodes:[HTMLNode] = divNodes[0].findChildTags("a")
                         if aNodes.count != 0 {
                             let detailUrl = aNodes[0].getAttributeNamed("href")
-                            dict["detailUrl"] = NSString(format: "%@%@", url, detailUrl)
+                            dict["detailUrl"] = NSString(format: "http://websta.me/%@", detailUrl)
                             println("detailUrl:\(detailUrl)")
                         }
                         
@@ -180,6 +180,68 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             }
         )
         
+    }
+    
+    func getDetail(url: NSString) {
+        println("url:\(url)")
+        let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        manager.GET(url as String,
+            parameters: nil,
+            timeoutInterval: 10,
+            success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
+                println("Success!!")
+                
+                self.likeRankings.removeAllObjects()
+                
+                let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
+                println("html:\(html)")
+                
+                if html == nil {
+                    println("html:nil")
+                    return
+                }
+                
+                var error : NSError? = nil
+                var parser : HTMLParser = HTMLParser(html: html as! String , error:&error)
+                
+                if (error != nil) {
+                    println(error)
+                }
+                
+                var bodyNode : HTMLNode? = parser.body
+                println("bodyNode:\(bodyNode)")
+                if bodyNode == nil {
+                    println("bodyNode")
+                    return
+                }
+                
+                let ulNodes : [HTMLNode] = bodyNode!.findChildTagsAttr("ul", attrName: "class", attrValue: "dropdown-menu")
+                println("uls:\(ulNodes.count)")
+                if ulNodes.count != 0 {
+                    let liNodes:[HTMLNode] = ulNodes[1].findChildTags("li")
+                    if liNodes.count != 0 {
+                        let aNodes = liNodes[4].findChildTags("a")
+                        if aNodes.count != 0 {
+                            let detailUrl = aNodes[0].getAttributeNamed("href")
+                            println("detailUrl:\(detailUrl)")
+                        }
+                    }
+                }
+                
+            },
+            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error!!")
+            }
+        )
+    }
+    
+    // Cell が選択された場合
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+        let dict : NSDictionary = likeRankings[indexPath.row] as! NSDictionary
+        
+        self.getDetail((dict["detailUrl"] as? String)!)
     }
     
     // セルの行数

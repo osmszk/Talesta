@@ -16,7 +16,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "フォロワーランキング"
+        self.navigationItem.title = "フォロワーランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
     }
     

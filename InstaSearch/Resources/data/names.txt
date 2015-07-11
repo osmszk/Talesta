@@ -1967,7 +1967,6 @@ num,name,url
 1965,ハク (ユナイト),http://www.talentinsta.com/view/89haku.html
 1966,長江崚行,http://www.talentinsta.com/view/ryokin0826.html
 1967,重太みゆき,http://www.talentinsta.com/view/shigetamiyuki.html
-1968,β (お笑い芸人),http://www.talentinsta.com/view/thanke311.html
 1969,明日花キララ,http://www.talentinsta.com/view/asukakiraran.html
 1970,千秋,http://www.talentinsta.com/view/chiaki77777.html
 1971,川谷絵音,http://www.talentinsta.com/view/indigolaend.html

@@ -23,7 +23,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
         
-        self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(talentModels)
+        self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(self.talentModels)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,14 +48,14 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         if segue.identifier == "search_to_deail"{
             let controller = segue.destinationViewController as! UserDetailViewController
             
-            let indexPath = self.tableView.indexPathForSelectedRow()
-            let row = indexPath?.row
-            
-            let talentModel = self.talentModels[row!]
-            let url = talentModel.url
-            let name = talentModel.name
-            let ranking = Talentinsta(name: name, url: url)
-            controller.followerRanking = ranking;
+            if let indexPath = self.tableView.indexPathForSelectedRow(){
+                let indexTalent = self.cellDataIndexTalents[indexPath.section]
+                let talentModel = indexTalent.talents[indexPath.row]
+                let url = talentModel.url
+                let name = talentModel.name
+                let ranking = Talentinsta(name: name, url: url)
+                controller.followerRanking = ranking;
+            }
         }
     }
 

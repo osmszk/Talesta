@@ -23,7 +23,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "検索"
+        self.title = "芸能人検索"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
         

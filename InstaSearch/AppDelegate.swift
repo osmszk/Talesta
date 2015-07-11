@@ -46,6 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         tab.setViewControllers(naviControllerList, animated: true)
+        if let items = tab.tabBar.items {
+            (items[0] as! UITabBarItem).title = "トップ"
+            (items[1] as! UITabBarItem).title = "芸能人検索"
+            (items[2] as! UITabBarItem).title = "ﾌｫﾛﾜｰﾗﾝｷﾝｸﾞ"
+            (items[3] as! UITabBarItem).title = "LIKEﾗﾝｷﾝｸﾞ"
+            (items[4] as! UITabBarItem).title = "その他"
+        }
         
         self.window!.rootViewController = tab
         self.window!.makeKeyAndVisible()

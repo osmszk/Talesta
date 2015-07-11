@@ -28,6 +28,21 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
         
         self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(self.talentModels)
+        
+        let label = UILabel()
+        label.text = "芸能人検索"
+        label.font = UIFont.boldSystemFontOfSize(18)
+        label.sizeToFit()
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
+        label.addGestureRecognizer(gestureRecognizer)
+        
+        label.userInteractionEnabled = true
+        self.navigationItem.titleView = label
+        
+    }
+    func tapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        self.searchBar.resignFirstResponder()
+    
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -141,6 +156,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText as NSString).length == 0 {
             self.isFiltered = false
+            searchBar.resignFirstResponder()
         }else{
             self.isFiltered = true
             self.filteredTableData = []
@@ -152,9 +168,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 }
             }
         }
-        
         self.tableView.reloadData()
-        
     }
 
 

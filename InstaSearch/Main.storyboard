@@ -335,6 +335,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6oS-52-gMy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="k7I-lX-jmq">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Now-EW-tI2" id="iEB-Oo-9Ek"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" textLabel="gFJ-Ef-Cza" style="IBUITableViewCellStyleDefault" id="bPg-NX-hO8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -372,6 +380,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="searchBar" destination="k7I-lX-jmq" id="WPj-i0-1df"/>
                         <outlet property="tableView" destination="6oS-52-gMy" id="ozz-VZ-Kbp"/>
                     </connections>
                 </viewController>
@@ -461,6 +470,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="g6Q-HL-Oc9"/>
+        <segue reference="8mQ-AH-d84"/>
     </inferredMetricsTieBreakers>
 </document>

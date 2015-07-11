@@ -82,9 +82,6 @@ class RealmHelper: NSObject {
     
     class func cellDataIndexTalents(talentModels:Results<TalentModel>) -> [IndexTitleTalent]{
         
-        //TODO:ロジック
-        
-        
         var cellDataIndexArtists : [IndexTitleTalent] = []
 
         var talentsNum : [TalentModel]  = []
@@ -119,7 +116,7 @@ class RealmHelper: NSObject {
         for talentModel in talentModels {
             
             let name = talentModel.name
-            let checkIndexString = (name as NSString).substringToIndex(1)
+            let checkIndexString = (name as NSString).substringToIndex(1).uppercaseString
             
             if self.isDigit(checkIndexString) {
                 //頭文字が数字
@@ -258,7 +255,7 @@ class RealmHelper: NSObject {
             let digits = NSCharacterSet.decimalDigitCharacterSet()
             let isADigit = digits.longCharacterIsMember(uni.value)
             if isADigit{
-                Log.DLog("is digit true \(string)")
+//                Log.DLog("is digit true \(string)")
                 return true
             }
         }

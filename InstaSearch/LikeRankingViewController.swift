@@ -17,8 +17,8 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.title = "Like"
+        self.navigationItem.title = "LIKEﾗﾝｷﾝｸﾞ"
+        self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
         self.getLikeRanking("http://websta.me/hot/jp_posts")
     }
@@ -41,6 +41,8 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func getLikeRanking(url: NSString) {
+        SVProgressHUD.show()
+        
         let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
         manager.responseSerializer = AFHTTPResponseSerializer()
@@ -172,10 +174,13 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 Log.DLog("numbers:\(self.likeNumbers)")
                 
+                SVProgressHUD.dismiss()
+                
                 self.tableView.reloadData()
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
+                SVProgressHUD.dismiss()
                 println("Error!!")
             }
         )
@@ -183,6 +188,8 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func getDetail(url: NSString) {
+        SVProgressHUD.show()
+        
         println("url:\(url)")
         let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
@@ -192,8 +199,6 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             timeoutInterval: 10,
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
                 println("Success!!")
-                
-                self.likeRankings.removeAllObjects()
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
                 println("html:\(html)")
@@ -219,28 +224,43 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 let ulNodes : [HTMLNode] = bodyNode!.findChildTagsAttr("ul", attrName: "class", attrValue: "dropdown-menu")
                 println("uls:\(ulNodes.count)")
+                var detailUrl = ""
                 if ulNodes.count != 0 {
                     let liNodes:[HTMLNode] = ulNodes[1].findChildTags("li")
                     if liNodes.count != 0 {
                         let aNodes = liNodes[4].findChildTags("a")
                         if aNodes.count != 0 {
-                            let detailUrl = aNodes[0].getAttributeNamed("href")
+                            detailUrl = aNodes[0].getAttributeNamed("href")
                             println("detailUrl:\(detailUrl)")
                         }
                     }
                 }
                 
+                SVProgressHUD.dismiss()
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let webController = storyboard.instantiateViewControllerWithIdentifier("web") as! WebViewController
+                webController.urlStr = detailUrl
+                
+                webController.mode = JOWebBrowserMode.Navigation
+                webController.showURLStringOnActionSheetTitle = false
+                webController.showPageTitleOnTitleBar = true
+                webController.showReloadButton = true
+                webController.showActionButton = true
+                self.navigationController?.pushViewController(webController, animated: true)
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error!!")
+                SVProgressHUD.dismiss()
             }
         )
     }
     
     // Cell が選択された場合
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
-        let dict : NSDictionary = likeRankings[indexPath.row] as! NSDictionary
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        let dict : NSDictionary = likeRankings[indexPath.row] as! NSDictionary
         self.getDetail((dict["detailUrl"] as? String)!)
     }
     

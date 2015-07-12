@@ -11,7 +11,6 @@
 		971240A51B09FE6F00E25C2E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A31B09FE6F00E25C2E /* SearchViewController.swift */; };
 		971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */; };
 		971240AD1B09FEA400E25C2E /* LikeRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */; };
-		971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */; };
 		971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240AF1B09FED400E25C2E /* UserDetailViewController.swift */; };
 		971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B31B09FEE400E25C2E /* OtherViewController.swift */; };
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
@@ -108,7 +107,6 @@
 		971240A31B09FE6F00E25C2E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingViewController.swift; sourceTree = "<group>"; };
 		971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRankingViewController.swift; sourceTree = "<group>"; };
-		971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeRankingViewController.xib; sourceTree = "<group>"; };
 		971240AF1B09FED400E25C2E /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		971240B31B09FEE400E25C2E /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		971240B71B0A016300E25C2E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -438,7 +436,6 @@
 				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
 				C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
-				971240AC1B09FEA400E25C2E /* LikeRankingViewController.xib */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
 				971240B71B0A016300E25C2E /* TabBarController.swift */,
 				C76620CF1B1DDB05003FFC7A /* Main.storyboard */,
@@ -578,7 +575,6 @@
 				C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */,
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
-				971240AE1B09FEA400E25C2E /* LikeRankingViewController.xib in Resources */,
 				C7640DEF1B4AC66E002C443F /* names.txt in Resources */,
 				C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,

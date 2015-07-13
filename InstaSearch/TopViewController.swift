@@ -8,9 +8,12 @@
 
 import UIKit
 
-class TopViewController: UIViewController {
+class TopViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
 //    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var guideView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,34 +25,24 @@ class TopViewController: UIViewController {
         self.navigationItem.title = "インスタ芸能人！"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
+        //韓流かテラスハウス特集
+        //韓流
+        //http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=1
+        //テラスハウス
+        //http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9
+
+        
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        
-//    }
-//    
-//    required init(coder aDecoder: NSCoder){
-//        super.init(coder: aDecoder)
-//    }
-    
-//    func initLabel(){
-//        
-//        let helloLabel: UILabel = UILabel(frame: CGRectMake(60, 100, 200, 30))
-//        
-//        helloLabel.text = "Hello World!"
-//        helloLabel.textAlignment = NSTextAlignment.Center
-//        helloLabel.textColor = UIColor.whiteColor()
-//        helloLabel.backgroundColor = UIColor.orangeColor()
-//        
-//        self.view.addSubview(helloLabel)
-//        
-//    }
 
     /*
     // MARK: - Navigation
@@ -60,5 +53,21 @@ class TopViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell  = tableView.dequeueReusableCellWithIdentifier("top_cell", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = "aaaa"
+        
+        return cell
+    }
 
 }

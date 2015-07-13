@@ -10,17 +10,24 @@ range.each{ |num|
 		doc = Nokogiri::HTML.parse(page.body.toutf8)
 		body = doc.xpath('//a').each do |node|
 			str = node.text
-			pos1 = str.index("http://www.talentinsta.com/tllink/tllink.php")
-			pos2 = str.index("ブログ")
+			# pos1 = str.index("http://www.talentinsta.com/tllink/tllink.php")
+			# pos2 = str.index("ブログ")
 			# if pos1 != nil
 			# 	url = node.xpath('a').attribute('href').value
 			# 	p id.to_s+","+str+","+url
 			# 	id = id + 1
 			# end
 			url = node.attribute('href').value
+			img = nil
+			imgNode = node.xpath('img')
+			if !imgNode.nil? && imgNode.to_s != ""
+				# img = imgNode.attribute('src').value
+				# p imgNode.to_s
+				img = imgNode.attribute('src').value
+			end
 			pos3 = url.index("http://www.talentinsta.com/tllink/tllink.php?mode=jump")
-			if pos3 != nil
-				p id.to_s+","+str+","+url
+			if pos3 != nil && img != nil
+				p id.to_s+","+str+","+url+","+img
 				id = id + 1
 			end
     	end

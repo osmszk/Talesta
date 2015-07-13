@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         RealmHelper.makeRealmModelIfNeeded()
-        
+        RealmHelper.makeTerraceHouseRealmModelIfNeeded()
     }
 
     func applicationWillResignActive(application: UIApplication) {

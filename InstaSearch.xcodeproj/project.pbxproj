@@ -57,6 +57,7 @@
 		C74A83551B4D6D7F00EDAE9D /* barbtn_gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A83501B4D6D7F00EDAE9D /* barbtn_gear@2x.png */; };
 		C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A83511B4D6D7F00EDAE9D /* barbtn_reload@2x.png */; };
 		C74A83581B4EB8EA00EDAE9D /* IndexTitleTalent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */; };
+		C76368AE1B53F1F400F3EBCE /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */; };
 		C7640DEB1B492C89002C443F /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEA1B492C89002C443F /* loading@2x.png */; };
 		C7640DEF1B4AC66E002C443F /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEE1B4AC66E002C443F /* names.txt */; };
 		C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7640DF01B4ACD28002C443F /* CoreData.framework */; };
@@ -178,6 +179,7 @@
 		C74A83501B4D6D7F00EDAE9D /* barbtn_gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_gear@2x.png"; sourceTree = "<group>"; };
 		C74A83511B4D6D7F00EDAE9D /* barbtn_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_reload@2x.png"; sourceTree = "<group>"; };
 		C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTitleTalent.swift; sourceTree = "<group>"; };
+		C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		C7640DEA1B492C89002C443F /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		C7640DEE1B4AC66E002C443F /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = names.txt; sourceTree = "<group>"; };
 		C7640DF01B4ACD28002C443F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -388,6 +390,7 @@
 		C7640DEC1B49372E002C443F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */,
 				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
 				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
 			);
@@ -639,6 +642,7 @@
 				C70204FB1B0A2070004FAD19 /* UIImageView+AFNetworking.m in Sources */,
 				9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */,
 				C70204F01B0A2070004FAD19 /* AFHTTPSessionManager.m in Sources */,
+				C76368AE1B53F1F400F3EBCE /* TopTableViewCell.swift in Sources */,
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,

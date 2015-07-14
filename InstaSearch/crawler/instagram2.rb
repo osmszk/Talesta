@@ -3,9 +3,10 @@ require 'nokogiri'
 require 'kconv'
 
 id = 0
-range = 1..1
-range.each{ |num|
-  Anemone.crawl("http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9",:depth_limit => 0) do |anemone|
+
+talentUrls = []
+raws = []
+Anemone.crawl("http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9",:depth_limit => 0) do |anemone|
 	anemone.on_every_page do |page|
 		doc = Nokogiri::HTML.parse(page.body.toutf8)
 		body = doc.xpath('//a').each do |node|
@@ -27,13 +28,37 @@ range.each{ |num|
 			end
 			pos3 = url.index("http://www.talentinsta.com/tllink/tllink.php?mode=jump")
 			if pos3 != nil && img != nil
-				p id.to_s+","+str+","+url+","+img
+				# p id.to_s+","+str+","+url+","+img
+				talentUrls.push(url)
 				id = id + 1
 			end
     	end
 	end
 end
+
+#公式インスタグラムのページURL取得
+talentUrls.each {|talentUrl|
+	Anemone.crawl(talentUrl, :depth_limit => 0) do |anemone|
+		anemone.on_every_page do |page|
+			doc = Nokogiri::HTML.parse(page.body.toutf8)
+			body = doc.xpath('//a').each do |node|
+				url = node.attribute('href').value
+				pos = url.index("instagram.com")
+				if pos != nil
+					p url
+				end
+			end
+	    end
+	end
 }
+
+
+# p "URLS:"+talentUrls.to_s
+
+#widget URLを取得したい。
+#公式URLも
+
+
 
 
 # /html/body/div[1]/table[3]/tbody/tr/td[1]/table[1]/tbody/tr[1]/td/a

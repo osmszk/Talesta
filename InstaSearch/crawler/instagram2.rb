@@ -5,7 +5,7 @@ require 'kconv'
 id = 0
 
 talentUrls = []
-raws = []
+rows = []
 Anemone.crawl("http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9",:depth_limit => 0) do |anemone|
 	anemone.on_every_page do |page|
 		doc = Nokogiri::HTML.parse(page.body.toutf8)
@@ -18,25 +18,30 @@ Anemone.crawl("http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%
 			# 	p id.to_s+","+str+","+url
 			# 	id = id + 1
 			# end
-			url = node.attribute('href').value
-			img = nil
-			imgNode = node.xpath('img')
-			if !imgNode.nil? && imgNode.to_s != ""
-				# img = imgNode.attribute('src').value
-				# p imgNode.to_s
-				img = imgNode.attribute('src').value
-			end
-			pos3 = url.index("http://www.talentinsta.com/tllink/tllink.php?mode=jump")
-			if pos3 != nil && img != nil
-				# p id.to_s+","+str+","+url+","+img
-				talentUrls.push(url)
-				id = id + 1
+			if url_ = node.attribute('href')
+				url = url_.value
+				img = nil
+				imgNode = node.xpath('img')
+				if !imgNode.nil? && imgNode.to_s != ""
+					# img = imgNode.attribute('src').value
+					# p imgNode.to_s
+					img = imgNode.attribute('src').value
+				end
+				pos3 = url.index("http://www.talentinsta.com/tllink/tllink.php?mode=jump")
+				if pos3 != nil && img != nil
+					# p id.to_s+","+str+","+url+","+img
+					talentUrls.push(url)
+					rows.push(id.to_s+","+str+","+url+","+img)
+					id = id + 1
+				end
+
 			end
     	end
 	end
 end
 
 #公式インスタグラムのページURL取得
+index = 0
 talentUrls.each {|talentUrl|
 	Anemone.crawl(talentUrl, :depth_limit => 0) do |anemone|
 		anemone.on_every_page do |page|
@@ -45,11 +50,18 @@ talentUrls.each {|talentUrl|
 				url = node.attribute('href').value
 				pos = url.index("instagram.com")
 				if pos != nil
-					p url
+					# p url
+					r = rows[index]
+					rows[index] = r+","+url
+					index = index+1
 				end
 			end
 	    end
 	end
+}
+
+rows.each {|r|
+	p r
 }
 
 

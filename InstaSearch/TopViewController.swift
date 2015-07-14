@@ -10,10 +10,10 @@ import UIKit
 
 class TopViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-//    @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideView: UIView!
+    
+    var talentModels = RealmHelper.terraceHousetalentModelAll()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,14 @@ class TopViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
 
         
         
+        
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if let row = self.tableView.indexPathForSelectedRow(){
+            self.tableView.deselectRowAtIndexPath(row, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,14 +64,36 @@ class TopViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.talentModels.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier("topCell", forIndexPath: indexPath) as! TopTableViewCell
         
+        let talent = self.talentModels[indexPath.row]
+        cell.nameLabel.text = talent.name
+        let placeImage = UIImage(named: "loading")
+        cell.iconImageView.setImageWithURL(NSURL(string:talent.imageUrl), placeholderImage: placeImage)
         
-//        cell.wigetWebView.
+        
+        //http://widget.websta.me/in/i_am_kiko/?s=135&w=3.0&h=3&b=0&p=5.0
+        
+        let arrayStr = talent.officialUrl.componentsSeparatedByString("/")
+        let account = arrayStr[arrayStr.count-1]
+        let widgetBaseUrl = "http://widget.websta.me/in/\(account)/"//http://widget.websta.me/in/i_am_kiko/
+        
+        let wCount : CGFloat = 3
+        let hCount = 3
+        let space : CGFloat = 5
+        let offset : CGFloat = 2
+        let iconWidth = (Util.displaySize().width-space*(wCount-1.0))/wCount
+        let iconWidthInt = Int(ceilf(Float(iconWidth)))
+        
+        let resultUrl = "\(widgetBaseUrl)?s=\(iconWidthInt)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
+        Log.DLog("resultUrl:\(resultUrl)")
+        
+        let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
+        cell.widgetWebView.loadRequest(req)
         
         return cell
     }

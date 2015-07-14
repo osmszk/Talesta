@@ -436,7 +436,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-f6-0YG">
                                                     <rect key="frame" x="14" y="8" width="70" height="70"/>
                                                 </imageView>
-                                                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-oD-vla">
+                                                <webView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-oD-vla">
                                                     <rect key="frame" x="14" y="95" width="298" height="194"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
@@ -454,7 +454,7 @@
                                         <connections>
                                             <outlet property="iconImageView" destination="6Im-f6-0YG" id="rl8-LX-4aK"/>
                                             <outlet property="nameLabel" destination="iqn-75-AuJ" id="DWa-yU-0ky"/>
-                                            <outlet property="wigetWebView" destination="EoK-oD-vla" id="j4c-vi-Blj"/>
+                                            <outlet property="widgetWebView" destination="EoK-oD-vla" id="j2P-nR-vSX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

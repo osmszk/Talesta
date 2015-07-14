@@ -12,7 +12,7 @@ class TopTableViewCell: UITableViewCell,UIWebViewDelegate {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var wigetWebView: UIWebView!
+    @IBOutlet weak var widgetWebView: UIWebView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -427,29 +427,49 @@
                                 <rect key="frame" x="0.0" y="100" width="320" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topCell" rowHeight="302" id="XBJ-i0-Mih" customClass="TopTableViewCell" customModule="InstaSearch" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topCell" rowHeight="310" id="XBJ-i0-Mih" customClass="TopTableViewCell" customModule="InstaSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XBJ-i0-Mih" id="ybP-5T-wUT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-f6-0YG">
-                                                    <rect key="frame" x="14" y="8" width="70" height="70"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-f6-0YG">
+                                                    <rect key="frame" x="12" y="12" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="Drz-aH-URh"/>
+                                                        <constraint firstAttribute="height" constant="75" id="iFn-3c-yP0"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <webView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-oD-vla">
-                                                    <rect key="frame" x="14" y="95" width="298" height="194"/>
+                                                <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-oD-vla">
+                                                    <rect key="frame" x="0.0" y="100" width="320" height="194"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="194" id="vIy-4U-7O7"/>
+                                                    </constraints>
                                                     <connections>
                                                         <outlet property="delegate" destination="XBJ-i0-Mih" id="JyL-bF-fv9"/>
                                                     </connections>
                                                 </webView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="芸能人名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqn-75-AuJ">
-                                                    <rect key="frame" x="100" y="32" width="201" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="芸能人名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqn-75-AuJ">
+                                                    <rect key="frame" x="104" y="38" width="206" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="WXD-Tz-D2e"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="EoK-oD-vla" secondAttribute="trailing" id="8Aq-Y3-lH7"/>
+                                                <constraint firstItem="iqn-75-AuJ" firstAttribute="leading" secondItem="6Im-f6-0YG" secondAttribute="trailing" constant="17" id="8Xu-JW-EYJ"/>
+                                                <constraint firstItem="EoK-oD-vla" firstAttribute="top" secondItem="6Im-f6-0YG" secondAttribute="bottom" constant="13" id="FzG-vg-JE1"/>
+                                                <constraint firstAttribute="trailing" secondItem="iqn-75-AuJ" secondAttribute="trailing" constant="10" id="Gbt-7J-FsK"/>
+                                                <constraint firstItem="iqn-75-AuJ" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="38" id="T1n-2x-Lho"/>
+                                                <constraint firstItem="EoK-oD-vla" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" id="fKm-ZP-8yN"/>
+                                                <constraint firstItem="6Im-f6-0YG" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="12" id="htS-Ju-aaN"/>
+                                                <constraint firstItem="6Im-f6-0YG" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" constant="12" id="uMs-Sc-Pvs"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="iconImageView" destination="6Im-f6-0YG" id="rl8-LX-4aK"/>
@@ -513,6 +533,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8mQ-AH-d84"/>
+        <segue reference="g6Q-HL-Oc9"/>
     </inferredMetricsTieBreakers>
 </document>

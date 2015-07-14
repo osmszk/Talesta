@@ -74,13 +74,14 @@ class TopViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         cell.nameLabel.text = talent.name
         let placeImage = UIImage(named: "loading")
         cell.iconImageView.setImageWithURL(NSURL(string:talent.imageUrl), placeholderImage: placeImage)
-        
+        cell.iconImageView.layer.cornerRadius = 75.0 * 0.5
+        cell.iconImageView.clipsToBounds = true
         
         //http://widget.websta.me/in/i_am_kiko/?s=135&w=3.0&h=3&b=0&p=5.0
         
         let arrayStr = talent.officialUrl.componentsSeparatedByString("/")
         let account = arrayStr[arrayStr.count-1]
-        let widgetBaseUrl = "http://widget.websta.me/in/\(account)/"//http://widget.websta.me/in/i_am_kiko/
+        let widgetBaseUrl = "http://widget.websta.me/in/\(account)/"
         
         let wCount : CGFloat = 3
         let hCount = 3

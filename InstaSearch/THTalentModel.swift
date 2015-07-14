@@ -9,6 +9,6 @@
 import UIKit
 
 class THTalentModel: TalentModel {
-    
-   
+    dynamic var imageUrl : String = ""
+    dynamic var officialUrl : String = ""
 }

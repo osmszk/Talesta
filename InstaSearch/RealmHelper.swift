@@ -92,10 +92,14 @@ class RealmHelper: NSObject {
                 let id: AnyObject = items![0]
                 let name: AnyObject = items![1]
                 let url: AnyObject = items![2]
+                let imageUrl : AnyObject = items![3]
+                let officialUrl : AnyObject = items![4]
                 let talentModel : THTalentModel = THTalentModel()
                 talentModel.id = id as! String
                 talentModel.name = name as! String
                 talentModel.url = url as! String
+                talentModel.imageUrl = imageUrl as! String
+                talentModel.officialUrl = officialUrl as! String
                 realm.write { () -> Void in
                     realm.add(talentModel)
                 }

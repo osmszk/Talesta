@@ -7,22 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
-class TopViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideView: UIView!
     
-    var talentModels = RealmHelper.terraceHousetalentModelAll()
+    var talentModels : Results<THTalentModel> = RealmHelper.terraceHousetalentModelAll()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.initLabel()
         
-//        label?.text = "teststs"
-        
-//        NSLog("%@",label);
-        self.navigationItem.title = "インスタ芸能人！"
+        self.navigationItem.title = "トップ"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
         //韓流かテラスハウス特集
@@ -32,8 +29,21 @@ class TopViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         //http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9
 
         
-        
-        
+        if talentModels.count == 0 {
+            SVProgressHUD.showWithStatus("データ読込中", maskType: SVProgressHUDMaskType.Gradient)
+            dispatch_async_global {
+                //重い処理
+                self.setupDatabase();
+                self.dispatch_async_main {
+                    // ここからメインスレッド
+                    SVProgressHUD.dismiss()
+                    //UIいじる
+                    
+                    self.talentModels = RealmHelper.terraceHousetalentModelAll()
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -46,6 +56,23 @@ class TopViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Private Methods
+    
+    func setupDatabase(){
+        //        RealmHelper.deleteAll()
+        
+        RealmHelper.makeRealmModelIfNeeded()
+        RealmHelper.makeTerraceHouseRealmModelIfNeeded()
+    }
+    
+    func dispatch_async_main(block: () -> ()) {
+        dispatch_async(dispatch_get_main_queue(), block)
+    }
+    
+    func dispatch_async_global(block: () -> ()) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
     }
 
     

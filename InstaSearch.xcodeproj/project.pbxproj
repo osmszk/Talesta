@@ -255,12 +255,12 @@
 				C70205FF1B1C15B1004FAD19 /* Util.swift */,
 				C70206011B1C8CF6004FAD19 /* Log.swift */,
 				C70205FD1B1AD285004FAD19 /* ParseHelper.swift */,
+				C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */,
 				C70205FB1B1ACF49004FAD19 /* Talentinsta.swift */,
 				C76620D51B2126A8003FFC7A /* TalentUser.swift */,
 				C74A83491B4B574E00EDAE9D /* TalentModel.swift */,
 				C76368B11B540C8B00F3EBCE /* THTalentModel.swift */,
 				C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */,
-				C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

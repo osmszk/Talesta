@@ -57,34 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = tab
         self.window!.makeKeyAndVisible()
         
-        SVProgressHUD.showWithStatus("データ読込中", maskType: SVProgressHUDMaskType.Gradient)
-        dispatch_async_global {
-            //重い処理
-            self.setupDatabase();
-            self.dispatch_async_main {
-                // ここからメインスレッド
-                SVProgressHUD.dismiss()
-                //UIいじる
-            }
-        }
         
         return true
-    }
-    
-    func dispatch_async_main(block: () -> ()) {
-        dispatch_async(dispatch_get_main_queue(), block)
-    }
-    
-    func dispatch_async_global(block: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
-    }
-    
-    func setupDatabase(){
-//        RealmHelper.deleteAll()
-        
-        
-        RealmHelper.makeRealmModelIfNeeded()
-        RealmHelper.makeTerraceHouseRealmModelIfNeeded()
     }
 
     func applicationWillResignActive(application: UIApplication) {

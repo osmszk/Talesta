@@ -127,7 +127,7 @@ class RealmHelper: NSObject {
     
     class func terraceHousetalentModelAll() -> Results<THTalentModel> {
         let realm = Realm()
-        var results = realm.objects(THTalentModel).sorted("name", ascending: true) as Results<THTalentModel>
+        var results = realm.objects(THTalentModel) as Results<THTalentModel>
         return results
     }
     

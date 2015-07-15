@@ -134,6 +134,10 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         let resultUrl = "\(widgetBaseUrl)?s=\(iconWidthInt)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
         Log.DLog("resultUrl:\(resultUrl)")
         
+        //読み込む前にクリア
+        let blankReq = NSURLRequest(URL: NSURL(string:"about:blank")!)
+        cell.widgetWebView.loadRequest(blankReq)
+        
         let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
         cell.widgetWebView.loadRequest(req)
         

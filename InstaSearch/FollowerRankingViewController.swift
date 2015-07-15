@@ -11,7 +11,11 @@ import UIKit
 class FollowerRankingViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
     var followerRankings : NSMutableArray = NSMutableArray()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

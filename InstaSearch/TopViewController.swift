@@ -13,6 +13,10 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideView: UIView!
+    @IBOutlet weak var guideCloseButton: UIButton!
+    @IBOutlet weak var guideLabel: UILabel!
+    
+    @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
     
     var talentModels : Results<THTalentModel> = RealmHelper.terraceHousetalentModelAll()
     
@@ -56,6 +60,16 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Action
+    
+    @IBAction func pushedCloseButton(sender: AnyObject) {
+        
+        self.guideViewHeightConstraint.constant = 0;
+        UIView.animateWithDuration(0.8) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
     }
     
     // MARK: - Private Methods

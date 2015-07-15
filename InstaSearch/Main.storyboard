@@ -403,24 +403,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lk8-EZ-7DJ" userLabel="DescriptionView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="221-l8-VlL">
-                                        <rect key="frame" x="18" y="11" width="255" height="75"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="221-l8-VlL">
+                                        <rect key="frame" x="10" y="10" width="276" height="80"/>
                                         <string key="text">テラスハウス特集！
 テラスハウスの出演者たちのインスタグラムを今すぐチェック！</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbF-qu-7Hf">
-                                        <rect key="frame" x="266" y="8" width="46" height="30"/>
-                                        <state key="normal" title="X">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbF-qu-7Hf">
+                                        <rect key="frame" x="286" y="0.0" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="0zi-Nr-lic"/>
+                                            <constraint firstAttribute="height" constant="34" id="ccG-V7-Mej"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_close.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushedCloseButton:" destination="zR7-1n-tTT" eventType="touchUpInside" id="ky3-nN-xNm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="221-l8-VlL" secondAttribute="bottom" constant="10" id="3Jx-Ps-vlc"/>
+                                    <constraint firstItem="221-l8-VlL" firstAttribute="top" secondItem="lk8-EZ-7DJ" secondAttribute="top" constant="10" id="AIq-K0-Pfv"/>
                                     <constraint firstAttribute="height" constant="100" id="GUT-gq-2Aq"/>
+                                    <constraint firstItem="DbF-qu-7Hf" firstAttribute="leading" secondItem="221-l8-VlL" secondAttribute="trailing" id="c1u-oU-lUi"/>
+                                    <constraint firstItem="DbF-qu-7Hf" firstAttribute="top" secondItem="lk8-EZ-7DJ" secondAttribute="top" id="cB8-18-1Jg"/>
+                                    <constraint firstItem="221-l8-VlL" firstAttribute="leading" secondItem="lk8-EZ-7DJ" secondAttribute="leading" constant="10" id="n4L-rp-DuX"/>
+                                    <constraint firstAttribute="trailing" secondItem="DbF-qu-7Hf" secondAttribute="trailing" id="wnZ-9B-Dzv"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="302" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7gg-Qm-ywl">
@@ -498,7 +511,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="guideCloseButton" destination="DbF-qu-7Hf" id="wtB-BV-BZi"/>
+                        <outlet property="guideLabel" destination="221-l8-VlL" id="kbM-iW-xz7"/>
                         <outlet property="guideView" destination="lk8-EZ-7DJ" id="2Xy-ca-vaI"/>
+                        <outlet property="guideViewHeightConstraint" destination="GUT-gq-2Aq" id="yfB-Sl-dsU"/>
                         <outlet property="tableView" destination="7gg-Qm-ywl" id="Lyx-GY-oRC"/>
                     </connections>
                 </viewController>
@@ -527,6 +543,9 @@
             <point key="canvasLocation" x="-48" y="1944"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_close.png" width="50" height="50"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

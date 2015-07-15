@@ -436,35 +436,35 @@
                                     <constraint firstAttribute="trailing" secondItem="DbF-qu-7Hf" secondAttribute="trailing" id="wnZ-9B-Dzv"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="302" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7gg-Qm-ywl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="340" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7gg-Qm-ywl">
                                 <rect key="frame" x="0.0" y="100" width="320" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topCell" rowHeight="310" id="XBJ-i0-Mih" customClass="TopTableViewCell" customModule="InstaSearch" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topCell" rowHeight="340" id="XBJ-i0-Mih" customClass="TopTableViewCell" customModule="InstaSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XBJ-i0-Mih" id="ybP-5T-wUT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-f6-0YG">
-                                                    <rect key="frame" x="12" y="12" width="75" height="75"/>
+                                                    <rect key="frame" x="10" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="Drz-aH-URh"/>
                                                         <constraint firstAttribute="height" constant="75" id="iFn-3c-yP0"/>
                                                     </constraints>
                                                 </imageView>
                                                 <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-oD-vla">
-                                                    <rect key="frame" x="0.0" y="100" width="320" height="194"/>
+                                                    <rect key="frame" x="0.0" y="95" width="320" height="320"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="194" id="vIy-4U-7O7"/>
+                                                        <constraint firstAttribute="height" constant="320" id="vIy-4U-7O7"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="delegate" destination="XBJ-i0-Mih" id="JyL-bF-fv9"/>
                                                     </connections>
                                                 </webView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="芸能人名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqn-75-AuJ">
-                                                    <rect key="frame" x="104" y="38" width="206" height="24"/>
+                                                    <rect key="frame" x="102" y="36" width="208" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="WXD-Tz-D2e"/>
                                                     </constraints>
@@ -476,15 +476,16 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="EoK-oD-vla" secondAttribute="trailing" id="8Aq-Y3-lH7"/>
                                                 <constraint firstItem="iqn-75-AuJ" firstAttribute="leading" secondItem="6Im-f6-0YG" secondAttribute="trailing" constant="17" id="8Xu-JW-EYJ"/>
-                                                <constraint firstItem="EoK-oD-vla" firstAttribute="top" secondItem="6Im-f6-0YG" secondAttribute="bottom" constant="13" id="FzG-vg-JE1"/>
+                                                <constraint firstItem="EoK-oD-vla" firstAttribute="top" secondItem="6Im-f6-0YG" secondAttribute="bottom" constant="10" id="FzG-vg-JE1"/>
                                                 <constraint firstAttribute="trailing" secondItem="iqn-75-AuJ" secondAttribute="trailing" constant="10" id="Gbt-7J-FsK"/>
-                                                <constraint firstItem="iqn-75-AuJ" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="38" id="T1n-2x-Lho"/>
+                                                <constraint firstItem="iqn-75-AuJ" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="36" id="T1n-2x-Lho"/>
                                                 <constraint firstItem="EoK-oD-vla" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" id="fKm-ZP-8yN"/>
-                                                <constraint firstItem="6Im-f6-0YG" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="12" id="htS-Ju-aaN"/>
-                                                <constraint firstItem="6Im-f6-0YG" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" constant="12" id="uMs-Sc-Pvs"/>
+                                                <constraint firstItem="6Im-f6-0YG" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="10" id="htS-Ju-aaN"/>
+                                                <constraint firstItem="6Im-f6-0YG" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" constant="10" id="uMs-Sc-Pvs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellHeightConstraint" destination="vIy-4U-7O7" id="TiG-qQ-j1l"/>
                                             <outlet property="iconImageView" destination="6Im-f6-0YG" id="rl8-LX-4aK"/>
                                             <outlet property="nameLabel" destination="iqn-75-AuJ" id="DWa-yU-0ky"/>
                                             <outlet property="widgetWebView" destination="EoK-oD-vla" id="j2P-nR-vSX"/>

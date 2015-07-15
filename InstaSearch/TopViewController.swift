@@ -141,7 +141,13 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
         cell.widgetWebView.loadRequest(req)
         
+        cell.cellHeightConstraint.constant = Util.displaySize().width
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75+10+10+Util.displaySize().width
     }
 
 }

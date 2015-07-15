@@ -63,6 +63,11 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             self.webView.loadRequest(req)   
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        SVProgressHUD.dismiss()
+        super.viewWillDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

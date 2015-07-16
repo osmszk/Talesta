@@ -13,10 +13,13 @@ class RealmHelper: NSObject {
     
     class func makeRealmModelIfNeeded(){
         
-        Log.DLog("HOME:\(NSHomeDirectory())")
+        Log.DLog("[start]make realm HOME:\(NSHomeDirectory())")
+        
+        let start = NSDate()
         
         if self.talentModelAll().count>0{
-            Log.DLog("Data exist")
+            Log.DLog("Data exist \(NSDate().timeIntervalSinceDate(start))")
+            
             return
         }
         
@@ -33,6 +36,7 @@ class RealmHelper: NSObject {
         let keys = keysStr?.componentsSeparatedByString(",")
         
         let realm = Realm()
+        realm.beginWrite()
         if lines != nil{
             for i in 1..<lines!.count {
                 let itemsStr : AnyObject? = lines![i]
@@ -45,15 +49,16 @@ class RealmHelper: NSObject {
                 let name: AnyObject = items![1]
                 let url: AnyObject = items![2]
                 let talentModel : TalentModel = TalentModel()
-                talentModel.id = id as! String
-                talentModel.name = name as! String
-                talentModel.url = url as! String
-                realm.write { () -> Void in
-                    realm.add(talentModel)
-                }
+
+                realm.create(TalentModel.self, value: [
+                    "id": id as! String,
+                    "name": name as! String,
+                    "url": url as! String
+                    ])
             }
         }
-        Log.DLog("convert!")
+        realm.commitWrite()
+        Log.DLog("[end] convert! \(NSDate().timeIntervalSinceDate(start)))")
         
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html
         //ref:
@@ -61,10 +66,12 @@ class RealmHelper: NSObject {
     
     class func makeTerraceHouseRealmModelIfNeeded(){
         
-        Log.DLog("HOME:\(NSHomeDirectory())")
+        Log.DLog("[start] make realm HOME:\(NSHomeDirectory())")
+        
+        let start = NSDate()
         
         if self.terraceHousetalentModelAll().count>0{
-            Log.DLog("terraceHouse Data exist")
+            Log.DLog("terraceHouse Data exist \(NSDate().timeIntervalSinceDate(start))")
             return
         }
         
@@ -105,7 +112,7 @@ class RealmHelper: NSObject {
                 }
             }
         }
-        Log.DLog("terrace convert!")
+        Log.DLog("[end]terrace convert! \(NSDate().timeIntervalSinceDate(start))")
         
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html
         //ref:
@@ -120,9 +127,9 @@ class RealmHelper: NSObject {
     }
     
     class func talentModelAll() -> Results<TalentModel> {
-            let realm = Realm()
-            var results = realm.objects(TalentModel).sorted("name", ascending: true) as Results<TalentModel>
-            return results
+        let realm = Realm()
+        var results = realm.objects(TalentModel).sorted("name", ascending: true) as Results<TalentModel>
+        return results
     }
     
     class func terraceHousetalentModelAll() -> Results<THTalentModel> {

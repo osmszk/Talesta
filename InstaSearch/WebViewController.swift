@@ -209,7 +209,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     
     func shareViaLine(urlStr:String?){
         if let urlString = urlStr{
-            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")
+            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")!
             let appName = Const.APP_NAME
             let text = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
             if let msgText = Util.changeUrlEncode(text){
@@ -236,7 +236,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
                     message: NSLocalizedString("No function of Twitter :(", comment: ""))
             }
             let tweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")
+            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")!
             let appName = Const.APP_NAME
             let msgText = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
             tweetViewController.setInitialText(msgText)
@@ -259,6 +259,40 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             
             self.presentViewController(tweetViewController, animated: true, completion: nil)
         }
+    }
+    
+    func shareViaFacebook(urlString:String?){
+        if let urlString = urlStr{
+            if !SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+                //NSLocalizedString
+                Util.showAlert(NSLocalizedString("Error", comment: ""),
+                    message: NSLocalizedString("No function of Facebook :(", comment: ""))
+            }
+            let tweetViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")!
+            let appName = Const.APP_NAME
+            let msgText = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
+            tweetViewController.setInitialText(msgText)
+            tweetViewController.addURL(NSURL(string: Const.URL_APP_STORE_SHORT))
+            
+            tweetViewController.completionHandler = {(result:SLComposeViewControllerResult) -> () in
+                if result == SLComposeViewControllerResult.Cancelled{
+                    Log.DLog("Cancelled")
+                }else{
+                    Log.DLog("Done")
+                    if Const.ENABLE_ANALYTICS{
+                        
+                    }
+                    
+                    //NSLocalizedString
+                    Util.showAlert("", message: "シェア成功!")
+                }
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            
+            self.presentViewController(tweetViewController, animated: true, completion: nil)
+        }
+        
     }
     
     // MARK: - Action Sheet
@@ -308,7 +342,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         } else if buttonIndex == ActionSheetButtonIndex.Twitter.rawValue {
             self.shareViaTwitter(theURL?.absoluteString)
         } else if buttonIndex == ActionSheetButtonIndex.Facebook.rawValue{
-//            self.shareViaFacebook(theURL?.absoluteString)
+            self.shareViaFacebook(theURL?.absoluteString)
         }
 
     }
@@ -316,20 +350,24 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     //MARK: - UIWebViewDelegate
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        toggleBackForwardButtons()
         return true
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
         SVProgressHUD.show()
+        toggleBackForwardButtons()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
         SVProgressHUD.dismiss()
+        toggleBackForwardButtons()
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
         SVProgressHUD.dismiss()
         SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
+        toggleBackForwardButtons()
     }
     
 

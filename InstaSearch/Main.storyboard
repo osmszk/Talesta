@@ -472,21 +472,31 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Mwa-Gs-gnK">
+                                                    <rect key="frame" x="150" y="245" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="5lb-Vc-oU0"/>
+                                                        <constraint firstAttribute="height" constant="20" id="oLy-0N-WyB"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="EoK-oD-vla" secondAttribute="trailing" id="8Aq-Y3-lH7"/>
                                                 <constraint firstItem="iqn-75-AuJ" firstAttribute="leading" secondItem="6Im-f6-0YG" secondAttribute="trailing" constant="17" id="8Xu-JW-EYJ"/>
+                                                <constraint firstItem="Mwa-Gs-gnK" firstAttribute="top" secondItem="iqn-75-AuJ" secondAttribute="bottom" constant="185" id="FlT-hp-PNZ"/>
                                                 <constraint firstItem="EoK-oD-vla" firstAttribute="top" secondItem="6Im-f6-0YG" secondAttribute="bottom" constant="10" id="FzG-vg-JE1"/>
                                                 <constraint firstAttribute="trailing" secondItem="iqn-75-AuJ" secondAttribute="trailing" constant="10" id="Gbt-7J-FsK"/>
                                                 <constraint firstItem="iqn-75-AuJ" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="36" id="T1n-2x-Lho"/>
                                                 <constraint firstItem="EoK-oD-vla" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" id="fKm-ZP-8yN"/>
                                                 <constraint firstItem="6Im-f6-0YG" firstAttribute="top" secondItem="ybP-5T-wUT" secondAttribute="top" constant="10" id="htS-Ju-aaN"/>
+                                                <constraint firstAttribute="centerX" secondItem="Mwa-Gs-gnK" secondAttribute="centerX" id="tNm-GZ-ELq"/>
                                                 <constraint firstItem="6Im-f6-0YG" firstAttribute="leading" secondItem="ybP-5T-wUT" secondAttribute="leading" constant="10" id="uMs-Sc-Pvs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellHeightConstraint" destination="vIy-4U-7O7" id="TiG-qQ-j1l"/>
                                             <outlet property="iconImageView" destination="6Im-f6-0YG" id="rl8-LX-4aK"/>
+                                            <outlet property="indicator" destination="Mwa-Gs-gnK" id="RYF-Ti-wcW"/>
                                             <outlet property="nameLabel" destination="iqn-75-AuJ" id="DWa-yU-0ky"/>
                                             <outlet property="widgetWebView" destination="EoK-oD-vla" id="j2P-nR-vSX"/>
                                             <segue destination="6cA-uu-uIN" kind="push" identifier="top_to_web" id="wW5-pR-PFb"/>

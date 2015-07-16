@@ -14,6 +14,7 @@ class TopTableViewCell: UITableViewCell,UIWebViewDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var widgetWebView: UIWebView!
     @IBOutlet weak var cellHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,14 +32,18 @@ class TopTableViewCell: UITableViewCell,UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        
+        self.indicator.hidden = false
+        self.indicator.startAnimating()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        self.indicator.stopAnimating()
+        self.indicator.hidden = true
         
     }
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
-        
+        self.indicator.stopAnimating()
+        self.indicator.hidden = true
     }
 
 }

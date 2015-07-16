@@ -64,6 +64,18 @@ class Const {
     
     static let APP_COLOR1 = Util.hexColor("0x770c02", alpha: 1)
     
+    //TODO:キャンペーン->webへ
+    //TODO:キャンペーンの韓流バージョン
+    //TODO:キャンペーンのwebview cell最適化
+    //TODO:検索画面はやく
+    //TODO:その他画面
+    //TODO:各画面　リロード
+    
+    //TODO:アナリティクス
+    //TODO:広告
+    
+    //TODO:tabアイコン
+    //TODO:色決定
     
     
 }

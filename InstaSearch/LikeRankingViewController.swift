@@ -287,6 +287,8 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         cell.userImageView.image = nil
         if let userImagePath: AnyObject = dict["userImage"] {
             cell.userImageView.setImageWithURL(NSURL(string:userImagePath as! String))
+            cell.userImageView.layer.cornerRadius = 40.0 * 0.5
+            cell.userImageView.clipsToBounds = true
         }
         
         if let userId: AnyObject = dict["userId"] {

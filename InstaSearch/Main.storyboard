@@ -489,6 +489,7 @@
                                             <outlet property="iconImageView" destination="6Im-f6-0YG" id="rl8-LX-4aK"/>
                                             <outlet property="nameLabel" destination="iqn-75-AuJ" id="DWa-yU-0ky"/>
                                             <outlet property="widgetWebView" destination="EoK-oD-vla" id="j2P-nR-vSX"/>
+                                            <segue destination="6cA-uu-uIN" kind="push" identifier="top_to_web" id="wW5-pR-PFb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -521,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmk-cU-BuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-48" y="1308"/>
+            <point key="canvasLocation" x="356" y="767"/>
         </scene>
         <!--Other View Controller-->
         <scene sceneID="P1l-PL-SAg">
@@ -553,6 +554,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="g6Q-HL-Oc9"/>
+        <segue reference="8mQ-AH-d84"/>
+        <segue reference="wW5-pR-PFb"/>
     </inferredMetricsTieBreakers>
 </document>

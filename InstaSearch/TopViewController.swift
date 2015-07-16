@@ -94,8 +94,22 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "top_to_web"{
+            let webController = segue.destinationViewController as! WebViewController
+            
+            let cell = sender as! TopTableViewCell
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let row = indexPath?.row
+            
+            let thTalent = self.talentModels[row!] as THTalentModel
+            webController.urlStr = thTalent.officialUrl
+            
+            webController.mode = JOWebBrowserMode.Navigation
+            webController.showURLStringOnActionSheetTitle = false
+            webController.showPageTitleOnTitleBar = true
+            webController.showReloadButton = true
+            webController.showActionButton = true
+        }
     }
 
     // MARK: - UITableViewDelegate

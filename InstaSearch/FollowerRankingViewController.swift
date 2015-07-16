@@ -56,7 +56,6 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         if segue.identifier == "followerraking_to_detail"{
             let controller = segue.destinationViewController as! UserDetailViewController
             
-            let cell = sender as! FollowerRankingTableViewCell
             let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             

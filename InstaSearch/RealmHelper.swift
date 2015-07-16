@@ -19,7 +19,6 @@ class RealmHelper: NSObject {
         
         if self.talentModelAll().count>0{
             Log.DLog("Data exist \(NSDate().timeIntervalSinceDate(start))")
-            
             return
         }
         
@@ -127,8 +126,10 @@ class RealmHelper: NSObject {
     }
     
     class func talentModelAll() -> Results<TalentModel> {
+        let start = NSDate()
         let realm = Realm()
         var results = realm.objects(TalentModel).sorted("name", ascending: true) as Results<TalentModel>
+        Log.DLog("talentModelAll \(NSDate().timeIntervalSinceDate(start))")
         return results
     }
     
@@ -147,6 +148,8 @@ class RealmHelper: NSObject {
         
         var cellDataIndexArtists : [IndexTitleTalent] = []
 
+        let start = NSDate()
+        
         for indexTitle in self.talentSectionTitles() {
             let indexTitleArtist = IndexTitleTalent()
             indexTitleArtist.indexTitle = indexTitle;
@@ -164,8 +167,14 @@ class RealmHelper: NSObject {
             indexTitleArtist.talents = talentsGroup
             cellDataIndexArtists.append(indexTitleArtist)
         }
+        //TODO:ボトルネックなおす　3.17秒かかる
+        Log.DLog("cellDataIndexTalents :\(NSDate().timeIntervalSinceDate(start))")
+        
         return cellDataIndexArtists as Array
     }
+    
+    
+    
     
     class func shouldAddGroup(nameHead:String ,indexTitle:String)->Bool {
         //http://qiita.com/hiroo0529/items/c49416c7587daa61ff90

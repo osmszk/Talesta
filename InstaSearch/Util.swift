@@ -61,6 +61,24 @@ class Util{
         return CGPointMake(Util.displaySize().width/2.0, Util.displaySize().height/2.0);
     }
     
+    class func changeUrlEncode(string:String) -> String? {
+        //ref:http://stackoverflow.com/questions/24551816/swift-encode-url
+    //    URLFragmentAllowedCharacterSet  "#%<>[\]^`{|}
+    //    URLHostAllowedCharacterSet      "#%/<>?@\^`{|}
+    //    URLPasswordAllowedCharacterSet  "#%/:<>?@[\]^`{|}
+    //    URLPathAllowedCharacterSet      "#%;<>?[\]^`{|}
+    //    URLQueryAllowedCharacterSet     "#%<>[\]^`{|}
+    //    URLUserAllowedCharacterSet      "#%/:<>?@[\]^`
+        //obj-c
+        //CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef)str, NULL, (CFStringRef)@";,?:@&=+$#", kCFStringEncodingUTF8);
+        return string.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+    }
+    
+    class func showAlert(title:String ,message:String){
+        let alert = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "OK")
+        alert.show()
+    }
+    
     //MARK:  -
     
     class func resizeImage(image :UIImage,width w:CGFloat, height h:CGFloat) -> UIImage{

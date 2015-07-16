@@ -72,6 +72,7 @@
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
 		C7CFAE571B561A0000C6B67F /* btn_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE561B561A0000C6B67F /* btn_close@2x.png */; };
+		C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE581B575FED00C6B67F /* Social.framework */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -201,6 +202,7 @@
 		C779ADDB1B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaSearchTests.swift; sourceTree = "<group>"; };
 		C7CFAE561B561A0000C6B67F /* btn_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close@2x.png"; sourceTree = "<group>"; };
+		C7CFAE581B575FED00C6B67F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
 				C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */,
@@ -270,6 +273,7 @@
 		9720D53E1B0F513400E258CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7CFAE581B575FED00C6B67F /* Social.framework */,
 				C7640E251B4AD1D5002C443F /* libc++.dylib */,
 				C7640DF01B4ACD28002C443F /* CoreData.framework */,
 				9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */,

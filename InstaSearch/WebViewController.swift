@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Social
 
-enum JOWebBrowserMode {
+enum JOWebBrowserMode : Int{
     case Navigation
     case Modal
     case TabBar
 }
-enum ActionSheetButtonIndex {
+enum ActionSheetButtonIndex : Int{
     case Safari
     case Line
     case Twitter
@@ -205,7 +206,62 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
 //    onWallCloseBlock:nil];
     }
     
-    //Mark : - Action Sheet
+    
+    func shareViaLine(urlStr:String?){
+        if let urlString = urlStr{
+            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")
+            let appName = Const.APP_NAME
+            let text = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
+            if let msgText = Util.changeUrlEncode(text){
+                let urlStringLine = "line://msg/text/\(msgText)"
+                if UIApplication.sharedApplication().canOpenURL(NSURL(string: urlStringLine)!){
+                    UIApplication.sharedApplication().openURL(NSURL(string: urlStringLine)!)
+                    if Const.ENABLE_ANALYTICS {
+                        
+                    }
+                }else {
+                    //NSLocalizedString
+                    Util.showAlert(NSLocalizedString("Error", comment: ""),
+                        message: NSLocalizedString("No function of LINE :(", comment: ""))
+                }
+            }
+        }
+    }
+    
+    func shareViaTwitter(urlString:String?){
+        if let urlString = urlStr{
+            if !SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+                //NSLocalizedString
+                Util.showAlert(NSLocalizedString("Error", comment: ""),
+                    message: NSLocalizedString("No function of Twitter :(", comment: ""))
+            }
+            let tweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")
+            let appName = Const.APP_NAME
+            let msgText = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
+            tweetViewController.setInitialText(msgText)
+            tweetViewController.addURL(NSURL(string: Const.URL_APP_STORE_SHORT))
+            
+            tweetViewController.completionHandler = {(result:SLComposeViewControllerResult) -> () in
+                if result == SLComposeViewControllerResult.Cancelled{
+                    Log.DLog("Cancelled")
+                }else{
+                    Log.DLog("Done")
+                    if Const.ENABLE_ANALYTICS{
+                        
+                    }
+                    
+                    //NSLocalizedString
+                    Util.showAlert("", message: "シェア成功!")
+                }
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            
+            self.presentViewController(tweetViewController, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: - Action Sheet
     
     func showActionSheet(){
         var urlString : String?
@@ -234,7 +290,8 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         }
     }
     
-    //Mark : - UIActionSheetDelegate
+    // MARK: - UIActionSheetDelegate
+    
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         
         if (buttonIndex == actionSheet.cancelButtonIndex){return}
@@ -243,20 +300,20 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
 //        if theURL == nil || theURL.isEqual(NSURL(string: "")!) {
 //            theURL = self.urlToLoad
 //        }
-//        
-//        if buttonIndex == ActionSheetButtonIndex.Safari {
-//            UIApplication.sharedApplication().openURL(theURL!)
-//        } else ifbuttonIndex == ActionSheetButtonIndex.Line) {
-//            self.shareViaLine(theURL?.absoluteString)
-//        } else if (buttonIndex == ActionSheetButtonIndex.Twitter) {
-//            self.shareViaTwitter(theURL?.absoluteString)
-//        } else if (buttonIndex == ActionSheetButtonIndex.Facebook){
+        
+        if buttonIndex == ActionSheetButtonIndex.Safari.rawValue {
+            UIApplication.sharedApplication().openURL(theURL!)
+        } else if buttonIndex == ActionSheetButtonIndex.Line.rawValue {
+            self.shareViaLine(theURL?.absoluteString)
+        } else if buttonIndex == ActionSheetButtonIndex.Twitter.rawValue {
+            self.shareViaTwitter(theURL?.absoluteString)
+        } else if buttonIndex == ActionSheetButtonIndex.Facebook.rawValue{
 //            self.shareViaFacebook(theURL?.absoluteString)
-//        }
+        }
 
     }
     
-    //Mark : - UIWebViewDelegate
+    //MARK: - UIWebViewDelegate
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         return true

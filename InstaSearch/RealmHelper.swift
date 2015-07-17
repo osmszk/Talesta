@@ -87,6 +87,7 @@ class RealmHelper: NSObject {
         let keys = keysStr?.componentsSeparatedByString(",")
         
         let realm = Realm()
+        realm.beginWrite()
         if lines != nil{
             for i in 1..<lines!.count {
                 let itemsStr : AnyObject? = lines![i]
@@ -101,16 +102,16 @@ class RealmHelper: NSObject {
                 let imageUrl : AnyObject = items![3]
                 let officialUrl : AnyObject = items![4]
                 let talentModel : SubTalentModel = SubTalentModel()
-                talentModel.id = id as! String
-                talentModel.name = name as! String
-                talentModel.url = url as! String
-                talentModel.imageUrl = imageUrl as! String
-                talentModel.officialUrl = officialUrl as! String
-                realm.write { () -> Void in
-                    realm.add(talentModel)
-                }
+                realm.create(SubTalentModel.self, value: [
+                    "id": id as! String,
+                    "name": name as! String,
+                    "url": url as! String,
+                    "imageUrl": imageUrl as! String,
+                    "officialUrl": officialUrl as! String
+                    ])
             }
         }
+        realm.commitWrite()
         Log.DLog("[end]terrace convert! \(NSDate().timeIntervalSinceDate(start))")
         
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html

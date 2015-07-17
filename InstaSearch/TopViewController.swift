@@ -18,7 +18,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
     
-    var talentModels : Results<SubTalentModel> = RealmHelper.terraceHousetalentModelAll()
+//    var talentModels : Results<TerracehouseTalentModel> = RealmHelper.terraceHousetalentModelAll()
+    var talentModels : Results<KoreanTalentModel> = RealmHelper.koreantalentModelAll()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
                     SVProgressHUD.dismiss()
                     //UIいじる
                     
-                    self.talentModels = RealmHelper.terraceHousetalentModelAll()
+//                    self.talentModels = RealmHelper.terraceHousetalentModelAll()
+                    self.talentModels = RealmHelper.koreantalentModelAll()
                     self.tableView.reloadData()
                 }
             }
@@ -78,7 +80,12 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         //        RealmHelper.deleteAll()
         
         RealmHelper.makeRealmModelIfNeeded()
-        RealmHelper.makeTerraceHouseRealmModelIfNeeded()
+        if RealmHelper.terraceHousetalentModelAll().count==0{
+            RealmHelper.makeSubRealmModelIfNeeded("terracehouse")
+        }
+        if RealmHelper.koreantalentModelAll().count==0{
+            RealmHelper.makeSubRealmModelIfNeeded("korean")
+        }
     }
     
     func dispatch_async_main(block: () -> ()) {
@@ -101,7 +108,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             
-            let thTalent = self.talentModels[row!] as SubTalentModel
+//            let thTalent = self.talentModels[row!] as TerracehouseTalentModel
+            let thTalent = self.talentModels[row!] as KoreanTalentModel
             webController.urlStr = thTalent.officialUrl
             
             webController.mode = JOWebBrowserMode.Navigation

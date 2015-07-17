@@ -460,6 +460,6 @@ num,name,url,imageUrl,officialUrl
 458,ジョンス (SM☆SH),http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=999,https://instagramimages-a.akamaihd.net/profiles/profile_528362227_75sq_1379267420.jpg,http://instagram.com/official_boysrepublic
 459,BIGSTAR,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=1643,https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xat1/t51.2885-19/11111424_1641209559431961_1008245691_a.jpg,http://instagram.com/giriboy91
 460,Teo (Lunafly),http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=2174,https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-19/11376665_1004139509619847_796158265_a.jpg,http://instagram.com/2yoooung
-461,少年共和国,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=2178,https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11355816_718514308294100_1497537798_a.jpg
-462,Giriboy,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3660,https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11374486_366624506867649_536412741_a.jpg
-463,ユンヨン (A-JAX),http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3880,https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11313250_877007599031350_150289226_a.jpg
+461,少年共和国,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=2178,https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11355816_718514308294100_1497537798_a.jpg,https://instagram.com/official_boysrepublic/
+462,Giriboy,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3660,https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11374486_366624506867649_536412741_a.jpg,https://instagram.com/giriboy91/
+463,ユンヨン (A-JAX),http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3880,https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11313250_877007599031350_150289226_a.jpg,https://instagram.com/2yoooung/

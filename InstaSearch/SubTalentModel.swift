@@ -1,5 +1,5 @@
 //
-//  THTalentModel.swift
+//  SubTalentModel.swift
 //  InstaSearch
 //
 //  Created by 鈴木治 on 2015/07/14.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class THTalentModel: TalentModel {
+//アイコン画像URLとオフィシャルURLを追加したRealmオブジェクトのサブクラス
+class SubTalentModel: TalentModel {
     dynamic var imageUrl : String = ""
     dynamic var officialUrl : String = ""
 }

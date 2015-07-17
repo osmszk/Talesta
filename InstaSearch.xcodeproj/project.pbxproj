@@ -58,7 +58,7 @@
 		C74A83581B4EB8EA00EDAE9D /* IndexTitleTalent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */; };
 		C76368AE1B53F1F400F3EBCE /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */; };
 		C76368B01B540C0D00F3EBCE /* terracehouse.txt in Resources */ = {isa = PBXBuildFile; fileRef = C76368AF1B540C0D00F3EBCE /* terracehouse.txt */; };
-		C76368B21B540C8B00F3EBCE /* THTalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76368B11B540C8B00F3EBCE /* THTalentModel.swift */; };
+		C76368B21B540C8B00F3EBCE /* SubTalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76368B11B540C8B00F3EBCE /* SubTalentModel.swift */; };
 		C7640DEB1B492C89002C443F /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEA1B492C89002C443F /* loading@2x.png */; };
 		C7640DEF1B4AC66E002C443F /* names.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7640DEE1B4AC66E002C443F /* names.txt */; };
 		C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7640DF01B4ACD28002C443F /* CoreData.framework */; };
@@ -182,7 +182,7 @@
 		C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTitleTalent.swift; sourceTree = "<group>"; };
 		C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		C76368AF1B540C0D00F3EBCE /* terracehouse.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = terracehouse.txt; sourceTree = "<group>"; };
-		C76368B11B540C8B00F3EBCE /* THTalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THTalentModel.swift; sourceTree = "<group>"; };
+		C76368B11B540C8B00F3EBCE /* SubTalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTalentModel.swift; sourceTree = "<group>"; };
 		C7640DEA1B492C89002C443F /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
 		C7640DEE1B4AC66E002C443F /* names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = names.txt; sourceTree = "<group>"; };
 		C7640DF01B4ACD28002C443F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -259,7 +259,7 @@
 				C70205FB1B1ACF49004FAD19 /* Talentinsta.swift */,
 				C76620D51B2126A8003FFC7A /* TalentUser.swift */,
 				C74A83491B4B574E00EDAE9D /* TalentModel.swift */,
-				C76368B11B540C8B00F3EBCE /* THTalentModel.swift */,
+				C76368B11B540C8B00F3EBCE /* SubTalentModel.swift */,
 				C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */,
 			);
 			name = Model;
@@ -657,7 +657,7 @@
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				C76368B21B540C8B00F3EBCE /* THTalentModel.swift in Sources */,
+				C76368B21B540C8B00F3EBCE /* SubTalentModel.swift in Sources */,
 				C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */,
 				C70206021B1C8CF6004FAD19 /* Log.swift in Sources */,
 				E0353B611B26B68C002B2E32 /* LikeRankingTableViewCell.swift in Sources */,

@@ -100,7 +100,7 @@ class RealmHelper: NSObject {
                 let url: AnyObject = items![2]
                 let imageUrl : AnyObject = items![3]
                 let officialUrl : AnyObject = items![4]
-                let talentModel : THTalentModel = THTalentModel()
+                let talentModel : SubTalentModel = SubTalentModel()
                 talentModel.id = id as! String
                 talentModel.name = name as! String
                 talentModel.url = url as! String
@@ -133,9 +133,9 @@ class RealmHelper: NSObject {
         return results
     }
     
-    class func terraceHousetalentModelAll() -> Results<THTalentModel> {
+    class func terraceHousetalentModelAll() -> Results<SubTalentModel> {
         let realm = Realm()
-        var results = realm.objects(THTalentModel) as Results<THTalentModel>
+        var results = realm.objects(SubTalentModel) as Results<SubTalentModel>
         return results
     }
     

@@ -18,7 +18,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
     
-    var talentModels : Results<THTalentModel> = RealmHelper.terraceHousetalentModelAll()
+    var talentModels : Results<SubTalentModel> = RealmHelper.terraceHousetalentModelAll()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +101,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             
-            let thTalent = self.talentModels[row!] as THTalentModel
+            let thTalent = self.talentModels[row!] as SubTalentModel
             webController.urlStr = thTalent.officialUrl
             
             webController.mode = JOWebBrowserMode.Navigation

@@ -63,7 +63,7 @@ class RealmHelper: NSObject {
         //ref:
     }
     
-    class func makeSubRealmModelIfNeeded(fileName:String){
+    class func makeSubRealmModel(fileName:String){
         
         Log.DLog("[start] make SUB realm HOME:\(NSHomeDirectory())")
         

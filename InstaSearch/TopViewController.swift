@@ -81,10 +81,10 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         RealmHelper.makeRealmModelIfNeeded()
         if RealmHelper.terraceHousetalentModelAll().count==0{
-            RealmHelper.makeSubRealmModelIfNeeded("terracehouse")
+            RealmHelper.makeSubRealmModel("terracehouse")
         }
         if RealmHelper.koreantalentModelAll().count==0{
-            RealmHelper.makeSubRealmModelIfNeeded("korean")
+            RealmHelper.makeSubRealmModel("korean")
         }
     }
     

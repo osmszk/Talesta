@@ -16,7 +16,6 @@
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
 		9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D5351B0F4B4A00E258CE /* Reachability.m */; };
 		9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */; };
-		9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D53B1B0F4C0C00E258CE /* PLUtil.m */; };
 		C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */; };
 		C70204EE1B0A2070004FAD19 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */; };
 		C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CC1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m */; };
@@ -118,9 +117,6 @@
 		9720D5341B0F4B4A00E258CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9720D5351B0F4B4A00E258CE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9720D53A1B0F4C0C00E258CE /* PLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLUtil.h; sourceTree = "<group>"; };
-		9720D53B1B0F4C0C00E258CE /* PLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLUtil.m; sourceTree = "<group>"; };
-		9720D53D1B0F4C7D00E258CE /* PLCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLCommon.h; sourceTree = "<group>"; };
 		C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C70204C91B0A2070004FAD19 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -253,9 +249,6 @@
 		9720D5391B0F4BEF00E258CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9720D53D1B0F4C7D00E258CE /* PLCommon.h */,
-				9720D53A1B0F4C0C00E258CE /* PLUtil.h */,
-				9720D53B1B0F4C0C00E258CE /* PLUtil.m */,
 				C7FBB5DB1B22EBA600CEC6EB /* Const.swift */,
 				C70205FF1B1C15B1004FAD19 /* Util.swift */,
 				C70206011B1C8CF6004FAD19 /* Log.swift */,
@@ -655,7 +648,6 @@
 				C7FBB5EB1B24350A00CEC6EB /* UIImage+HTButton.m in Sources */,
 				971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */,
 				C70204FB1B0A2070004FAD19 /* UIImageView+AFNetworking.m in Sources */,
-				9720D53C1B0F4C0C00E258CE /* PLUtil.m in Sources */,
 				C70204F01B0A2070004FAD19 /* AFHTTPSessionManager.m in Sources */,
 				C76368AE1B53F1F400F3EBCE /* TopTableViewCell.swift in Sources */,
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,

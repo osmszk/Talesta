@@ -10,6 +10,11 @@ import Foundation
 
 class Const {
     
+    //TODO:申請時
+    //サーバーのversion.jsonのバージョンを現状AppStoreに公開されてるバージョン(初の場合は0.0.0)にする。フラグも1にする。
+    
+    //TODO:申請とおったら
+    //サーバーのversion.jsonのバージョンを現状AppStoreに公開されてるバージョン(初の場合は1.0.0)にする。フラグも0にする。
     
     //TODO:URL修正
     static let URL_APP_STORE = "https://itunes.apple.com/jp/app/id938517576?mt=8"
@@ -26,13 +31,21 @@ class Const {
     static let URL_APP_STORE_KAKUREIC = "https://itunes.apple.com/jp/app/id404832410?mt=8"
     static let URL_APP_STORE_ALL      = "http://appstore.com/suzukicreative"
 
-    static let URL_REVIEW_API = "http://plegineer.co.jp/api/natsumero/version.json"
+    static let URL_REVIEW_API = "http://plegineer.co.jp/api/instasearch/version.json"
     
+    //TODO:
+    //i-mobile(CoreLocation,AdSupport,SystemConfig)
     static let AD_IMOBILE_PUBLISHER_ID   = "29411"
     static let AD_IMOBILE_MEDIA_ID       = "129311"//test:101043
     static let AD_IMOBILE_SPOT_ID_BANNER = "322000"//バナー//test:238097//med
     static let AD_IMOBILE_SPOT_ID_BANNER2 = "385340"//セル間
     static let AD_IMOBILE_SPOT_ID_ICON    = "385295"
+    //40degreeのやーつ
+    //#define AD_IMOBILE_PUBLISHER_ID @"29411"
+    //#define AD_IMOBILE_MEDIA_ID     @"106566"
+    //#define AD_IMOBILE_SPOT_ID_INT  @"243725"//インタースティシャル
+    //#define AD_IMOBILE_SPOT_ID_BANNER1 @"243706"//バナー
+    //#define AD_IMOBILE_SPOT_ID_ICON   @"252517"
     
     //NEND(AdSupport,Security,ImageIO)
     
@@ -65,7 +78,6 @@ class Const {
     static let APP_COLOR1 = Util.hexColor("0x770c02", alpha: 1)
     
     //TODO:キャンペーンの韓流バージョン
-    //TODO:検索画面はやく
     //TODO:その他画面
     //TODO:各画面テーブルビュー　リロード
     

@@ -9,36 +9,39 @@ id = 0
 
 talentUrls = []
 rows = []
-Anemone.crawl("http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=1",:depth_limit => 0) do |anemone|
-	anemone.on_every_page do |page|
-		doc = Nokogiri::HTML.parse(page.body.toutf8)
-		body = doc.xpath('//p').each do |node|
-			str = node.text
-			aNode = node.xpath("a")
-			# p node.to_s
-			imgNodes = node.xpath("img")
+# page 1〜24
+range = 1..24
+range.each{ |num|
+	Anemone.crawl("http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=#{num}",:depth_limit => 0) do |anemone|
+		anemone.on_every_page do |page|
+			doc = Nokogiri::HTML.parse(page.body.toutf8)
+			body = doc.xpath('//p').each do |node|
+				str = node.text
+				aNode = node.xpath("a")
+				# p node.to_s
+				imgNodes = node.xpath("img")
 
-			iconImageNode = nil
-			imgNodes.each do |imgNode|
-				# p imgNode.to_s
-				pos = imgNode.to_s.index("talentinsta")
-				if pos == nil  #talentinstaの文字を含まないのは、アイコンURLと認識してつめる
-					iconImageNode = imgNode
+				iconImageNode = nil
+				imgNodes.each do |imgNode|
+					# p imgNode.to_s
+					pos = imgNode.to_s.index("talentinsta")
+					if pos == nil  #talentinstaの文字を含まないのは、アイコンURLと認識してつめる
+						iconImageNode = imgNode
+					end
 				end
-			end
-			imageUrl = iconImageNode.attribute("src").value
-			# p imageUrl
-			# p imgNodes.to_s
-			name = aNode.text
-			path = aNode.attribute('href').value
-			# p name+","+url+","+imageUrl
-			url = "http://www.talentinsta.com"+path
-			rows.push(id.to_s+","+name+","+url+","+imageUrl)
-			talentUrls.push(url)
-			id = id+1
-    	end
+				imageUrl = iconImageNode.attribute("src").value
+				# p imageUrl
+				# p imgNodes.to_s
+				name = aNode.text
+				path = aNode.attribute('href').value
+				url = "http://www.talentinsta.com"+path
+				rows.push(id.to_s+","+name+","+url+","+imageUrl)
+				talentUrls.push(url)
+				id = id+1
+	    	end
+		end
 	end
-end
+}
 
 index = 0
 talentUrls.each {|talentUrl|

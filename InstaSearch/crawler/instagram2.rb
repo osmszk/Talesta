@@ -2,6 +2,9 @@ require 'anemone'
 require 'nokogiri'
 require 'kconv'
 
+#テラスハウスのメンバーのアカウント取得
+# 名前,talentinstaのURL,アイコン画像URL,オフィシャルURL
+
 id = 0
 
 talentUrls = []

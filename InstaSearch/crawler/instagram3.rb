@@ -2,6 +2,9 @@ require 'anemone'
 require 'nokogiri'
 require 'kconv'
 
+#韓流のメンバーのアカウント取得
+# 名前,talentinstaのURL,アイコン画像URL,オフィシャルURL
+
 id = 0
 
 talentUrls = []
@@ -9,49 +12,34 @@ rows = []
 Anemone.crawl("http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=1",:depth_limit => 0) do |anemone|
 	anemone.on_every_page do |page|
 		doc = Nokogiri::HTML.parse(page.body.toutf8)
-		body = doc.xpath('//a').each do |node|
+		body = doc.xpath('//p').each do |node|
 			str = node.text
-			# pos1 = str.index("http://www.talentinsta.com/tllink/tllink.php")
-			# pos2 = str.index("ブログ")
-			# if pos1 != nil
-			# 	url = node.xpath('a').attribute('href').value
-			# 	p id.to_s+","+str+","+url
-			# 	id = id + 1
-			# end
-			if url_ = node.attribute('href')
-				url = url_.value
-				img = nil
-				imgNode = node.xpath('img')
-				if !imgNode.nil? && imgNode.to_s != ""
-					# img = imgNode.attribute('src').value
-					# p imgNode.to_s
-					img = imgNode.attribute('src').value
-				end
-				pos3 = url.index("tllink/tllink.php?mode=jump")
-				if pos3 != nil && img != nil
-					# p id.to_s+","+str+","+url+","+img
-					talentUrls.push(url)
-					rows.push(id.to_s+","+str+","+url+","+img)
-					id = id + 1
-				end
+			aNode = node.xpath("a")
+			# p node.to_s
+			imgNodes = node.xpath("img")
 
+			iconImageNode = nil
+			imgNodes.each do |imgNode|
+				# p imgNode.to_s
+				pos = imgNode.to_s.index("talentinsta")
+				if pos == nil  #talentinstaの文字を含まないのは、アイコンURLと認識してつめる
+					iconImageNode = imgNode
+				end
 			end
-    	end
-
-    	body2 = doc.xpath('//p').each do |node|
-			str = node.text
-			pos1 = str.index("Instagram")
-			pos2 = str.index("ブログ")
-			url = node.xpath('a').attribute('href').value
-			if pos1 == nil && pos2 == nil
-				p id.to_s+","+str+","+url
-				id = id + 1
-			end
+			imageUrl = iconImageNode.attribute("src").value
+			# p imageUrl
+			# p imgNodes.to_s
+			name = aNode.text
+			path = aNode.attribute('href').value
+			# p name+","+url+","+imageUrl
+			url = "http://www.talentinsta.com"+path
+			rows.push(id.to_s+","+name+","+url+","+imageUrl)
+			talentUrls.push(url)
+			id = id+1
     	end
 	end
 end
 
-#公式インスタグラムのページURL取得
 index = 0
 talentUrls.each {|talentUrl|
 	Anemone.crawl(talentUrl, :depth_limit => 0) do |anemone|
@@ -61,7 +49,7 @@ talentUrls.each {|talentUrl|
 				url = node.attribute('href').value
 				pos = url.index("instagram.com")
 				if pos != nil
-					p url
+					# p url
 					r = rows[index]
 					rows[index] = r+","+url
 					index = index+1
@@ -82,6 +70,9 @@ rows.each {|r|
 #公式URLも
 
 
+# imageUrlは2パターンある
+# "https://instagramimages-a.akamaihd.net/profiles/profile_363567749_75sq_1367585195.jpg"
+# "https://igcdn-photos-c-a.akamaihd.net/hphotos-ak-xpf1/t51.2885-19/11008213_1021562717873922_608795827_a.jpg"
 
 
 # /html/body/div[1]/table[3]/tbody/tr/td[1]/table[1]/tbody/tr[1]/td/a

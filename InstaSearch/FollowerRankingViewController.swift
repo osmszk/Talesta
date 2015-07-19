@@ -15,24 +15,25 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     
     var followerRankings : NSMutableArray = NSMutableArray()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "フォロワーランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        
+        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        reloadButton.frame = CGRectMake(0, 0, 34, 34);
+        reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
+        reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
+        
+        SVProgressHUD.show()
+        self.requestToGetRanking()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        followerRankings.removeAllObjects()
-        self.tableView.reloadData()
-        
-        SVProgressHUD.show()
-        self.requestToGetRanking()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,11 +65,18 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
             controller.followerRanking = followerRanking
         }
     }
-
+    
+    // MARK: - Methods
+    
+    func pushedReloadButton(sender:UIButton){
+        self.followerRankings.removeAllObjects()
+        self.tableView.reloadData()
+        
+        SVProgressHUD.show()
+        self.requestToGetRanking()
+    }
     
     func requestToGetRanking(){
-        
-        
         let manager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
         manager.responseSerializer = AFHTTPResponseSerializer()

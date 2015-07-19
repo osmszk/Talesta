@@ -14,12 +14,20 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     var likeNumbers : NSMutableArray = NSMutableArray()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "LIKEランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        
+        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        reloadButton.frame = CGRectMake(0, 0, 34, 34);
+        reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
+        reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
         
         self.getLikeRanking("http://websta.me/hot/jp_posts")
     }
@@ -40,6 +48,18 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     }
     */
     
+    func pushedReloadButton(sender:UIButton){
+        
+        let segIndex = self.segmentedControl.selectedSegmentIndex
+        switch segIndex{
+        case 0:
+            self.getLikeRanking("http://websta.me/hot/jp_posts")
+        case 1:
+            self.getLikeRanking("http://websta.me/hot/posts")
+        default:
+            Log.DLog("")
+        }
+    }
     
     func getLikeRanking(url: NSString) {
         SVProgressHUD.show()

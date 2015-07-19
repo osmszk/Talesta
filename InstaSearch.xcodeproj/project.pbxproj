@@ -81,6 +81,7 @@
 		C7CFAE6F1B5BAF2A00C6B67F /* singer.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE671B5BAF2A00C6B67F /* singer.txt */; };
 		C7CFAE701B5BAF2A00C6B67F /* talentman.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE681B5BAF2A00C6B67F /* talentman.txt */; };
 		C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */; };
+		C7CFAE731B5BFB6900C6B67F /* barbtn_reload_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE721B5BFB6900C6B67F /* barbtn_reload_white@2x.png */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -217,6 +218,7 @@
 		C7CFAE671B5BAF2A00C6B67F /* singer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = singer.txt; sourceTree = "<group>"; };
 		C7CFAE681B5BAF2A00C6B67F /* talentman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = talentman.txt; sourceTree = "<group>"; };
 		C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = talentwoman.txt; sourceTree = "<group>"; };
+		C7CFAE721B5BFB6900C6B67F /* barbtn_reload_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_reload_white@2x.png"; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				C74A834F1B4D6D7F00EDAE9D /* barbtn_forward@2x.png */,
 				C74A83501B4D6D7F00EDAE9D /* barbtn_gear@2x.png */,
 				C74A83511B4D6D7F00EDAE9D /* barbtn_reload@2x.png */,
+				C7CFAE721B5BFB6900C6B67F /* barbtn_reload_white@2x.png */,
 				C7640DEA1B492C89002C443F /* loading@2x.png */,
 			);
 			path = images;
@@ -629,6 +632,7 @@
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,
 				C74A83551B4D6D7F00EDAE9D /* barbtn_gear@2x.png in Resources */,
 				C7CFAE571B561A0000C6B67F /* btn_close@2x.png in Resources */,
+				C7CFAE731B5BFB6900C6B67F /* barbtn_reload_white@2x.png in Resources */,
 				C7640DEB1B492C89002C443F /* loading@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

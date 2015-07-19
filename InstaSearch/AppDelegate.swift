@@ -14,11 +14,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tracker: GAITracker?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if Const.ENABLE_ANALYTICS{
+            GAI.sharedInstance().trackUncaughtExceptions = true;
+            GAI.sharedInstance().dispatchInterval = 20
+            GAI.sharedInstance().logger.logLevel = .Verbose
+            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                self.tracker = GAI.sharedInstance().trackerWithTrackingId(Const.GOOGLE_ANALYTICS_TRACKING_ID)
+            }
+        }
         
         self.customizeColor()
         

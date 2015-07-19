@@ -25,4 +25,9 @@
 #import <libxml/HTMLtree.h>
 #import <libxml/xpath.h>
 
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAILogger.h"
+#import "GAIDictionaryBuilder.h"
+
 #endif

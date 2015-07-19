@@ -49,15 +49,12 @@ class Const {
     
     //NEND(AdSupport,Security,ImageIO)
     
-    //TODO:
     //Admob(AdSupport,AudioToolbox,AVFoundation,CoreGraphics,CoreTelephony,EventKit,EventKitUI,MessageUI,StoreKit,SystemConfiguration "-ObjC")
-    static let AD_ADMOB_UNIT_ID_BANNER_1 = "ca-app-pub-6784237840620329/5409420894"
+//    static let AD_ADMOB_UNIT_ID_BANNER_1 = "ca-app-pub-6784237840620329/5409420894"
     
-    //TODO:
-    //GoogleAnalyics v3.0.0(SystemConfig,Coredata,libz)
-    static let GOOGLE_ANALYTICS_TRACKING_ID = "UA-56625547-1"
+    //GoogleAnalyics v3.0.0(SystemConfig,Coredata,libz.dylib,libsqlite3.dylib)
+    static let GOOGLE_ANALYTICS_TRACKING_ID = "UA-65312442-1"
     
-    //TODO:
     static let HASH_TAG = "#talesta"
     
     //TODO: 申請前に1にする
@@ -65,8 +62,7 @@ class Const {
     //TODO: 申請前に1にする
     static let ENABLE_AD = true
     
-    
-    static let APP_NAME = "インスタ芸能人!"
+    static let APP_NAME = "talesta"
     
     static let NAVI_BAR_TRANSLUCENT = false
     static let AD_BANNER_HIGHT = 50.0;
@@ -84,13 +80,11 @@ class Const {
     static let KEY_START_DATE = "keyStartDate"
     
     //TODO:その他画面
-    //TODO:各画面テーブルビュー　リロード
     
     //TODO:アナリティクス
     //TODO:広告
     
     //TODO:tabアイコン
-    //TODO:色決定
     
     
 }

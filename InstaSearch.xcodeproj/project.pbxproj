@@ -82,6 +82,9 @@
 		C7CFAE701B5BAF2A00C6B67F /* talentman.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE681B5BAF2A00C6B67F /* talentman.txt */; };
 		C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */; };
 		C7CFAE731B5BFB6900C6B67F /* barbtn_reload_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE721B5BFB6900C6B67F /* barbtn_reload_white@2x.png */; };
+		C7CFAE801B5C03D900C6B67F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE7F1B5C03D900C6B67F /* libGoogleAnalyticsServices.a */; };
+		C7CFAE821B5C051E00C6B67F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE811B5C051E00C6B67F /* libz.dylib */; };
+		C7CFAE841B5C052800C6B67F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE831B5C052800C6B67F /* libsqlite3.dylib */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -219,6 +222,19 @@
 		C7CFAE681B5BAF2A00C6B67F /* talentman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = talentman.txt; sourceTree = "<group>"; };
 		C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = talentwoman.txt; sourceTree = "<group>"; };
 		C7CFAE721B5BFB6900C6B67F /* barbtn_reload_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_reload_white@2x.png"; sourceTree = "<group>"; };
+		C7CFAE751B5C03AF00C6B67F /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		C7CFAE761B5C03AF00C6B67F /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		C7CFAE771B5C03AF00C6B67F /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		C7CFAE781B5C03AF00C6B67F /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		C7CFAE791B5C03AF00C6B67F /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		C7CFAE7A1B5C03AF00C6B67F /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		C7CFAE7B1B5C03AF00C6B67F /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		C7CFAE7C1B5C03AF00C6B67F /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		C7CFAE7D1B5C03AF00C6B67F /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		C7CFAE7E1B5C03AF00C6B67F /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		C7CFAE7F1B5C03D900C6B67F /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		C7CFAE811B5C051E00C6B67F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C7CFAE831B5C052800C6B67F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -237,11 +253,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CFAE841B5C052800C6B67F /* libsqlite3.dylib in Frameworks */,
+				C7CFAE821B5C051E00C6B67F /* libz.dylib in Frameworks */,
+				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
+				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
-				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
+				C7CFAE801B5C03D900C6B67F /* libGoogleAnalyticsServices.a in Frameworks */,
 				C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */,
-				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
 				C74A83441B4B4E8E00EDAE9D /* Realm.framework in Frameworks */,
 			);
@@ -286,6 +305,8 @@
 		9720D53E1B0F513400E258CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7CFAE831B5C052800C6B67F /* libsqlite3.dylib */,
+				C7CFAE811B5C051E00C6B67F /* libz.dylib */,
 				C7CFAE581B575FED00C6B67F /* Social.framework */,
 				C7640E251B4AD1D5002C443F /* libc++.dylib */,
 				C7640DF01B4ACD28002C443F /* CoreData.framework */,
@@ -298,6 +319,7 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C7CFAE741B5C03AF00C6B67F /* GoogleAnalytics */,
 				C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */,
 				C70205091B108165004FAD19 /* SVProgressHUD */,
 				9720D5331B0F4B4A00E258CE /* Reachability */,
@@ -511,6 +533,24 @@
 				C779ADDB1B0379AB000F585A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7CFAE741B5C03AF00C6B67F /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				C7CFAE7F1B5C03D900C6B67F /* libGoogleAnalyticsServices.a */,
+				C7CFAE751B5C03AF00C6B67F /* GAI.h */,
+				C7CFAE761B5C03AF00C6B67F /* GAIDictionaryBuilder.h */,
+				C7CFAE771B5C03AF00C6B67F /* GAIEcommerceFields.h */,
+				C7CFAE781B5C03AF00C6B67F /* GAIEcommerceProduct.h */,
+				C7CFAE791B5C03AF00C6B67F /* GAIEcommerceProductAction.h */,
+				C7CFAE7A1B5C03AF00C6B67F /* GAIEcommercePromotion.h */,
+				C7CFAE7B1B5C03AF00C6B67F /* GAIFields.h */,
+				C7CFAE7C1B5C03AF00C6B67F /* GAILogger.h */,
+				C7CFAE7D1B5C03AF00C6B67F /* GAITrackedViewController.h */,
+				C7CFAE7E1B5C03AF00C6B67F /* GAITracker.h */,
+			);
+			path = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 		C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */ = {
@@ -842,6 +882,10 @@
 				INFOPLIST_FILE = InstaSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InstaSearch/Library/GoogleAnalytics",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -857,6 +901,10 @@
 				INFOPLIST_FILE = InstaSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InstaSearch/Library/GoogleAnalytics",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

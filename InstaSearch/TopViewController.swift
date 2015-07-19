@@ -11,15 +11,30 @@ import RealmSwift
 
 enum CampaignType: Int {
     case TerraceHouse = 0
-    case Singer
-    case TalentWoman
-    case International
-    case ModelAndBikini
-    case TalentMan
-    case KoreanIdol
-    case AkbGroup
-    case Comedian
-    case Creator
+    case Singer = 1
+    case TalentWoman = 2
+    case International = 3
+    case ModelAndBikini = 4
+    case TalentMan = 5
+    case KoreanIdol = 6
+    case AkbGroup = 7
+    case Comedian = 8
+    case Creator = 9
+    
+    func guides() ->[String]{
+        switch self{
+        case .TerraceHouse: return ["テラスハウス特集！","テラスハウスの出演者たちのインスタグラムを今すぐチェックしよう！"]
+        case .Singer:       return ["アーティスト(歌手)特集！","アーティスト(歌手)の出演者たちのインスタグラムを今すぐチェックしよう！"]
+        case .TalentWoman:  return ["女性タレント特集！","女性タレントのインスタグラムを今すぐチェックしよう！"]
+        case .International: return ["海外セレブ特集！","海外セレブのインスタグラムを今すぐチェックしよう！"]
+        case .ModelAndBikini: return ["モデル/グラビア特集！","モデル/グラビアのインスタグラムを今すぐチェックしよう！"]
+        case .TalentMan:    return ["男性タレント特集！","男性タレントのインスタグラムを今すぐチェックしよう！"]
+        case .KoreanIdol:   return ["韓国アイドル特集！","韓国アイドルのインスタグラムを今すぐチェックしよう！"]
+        case .AkbGroup:     return ["AKBグループ特集！","AKBグループのインスタグラムを今すぐチェックしよう！"]
+        case .Comedian:     return ["芸人特集！","芸人のインスタグラムを今すぐチェックしよう！"]
+        case .Creator:      return ["クリエイター+α特集！","クリエイター+αのインスタグラムを今すぐチェックしよう！"]
+        }
+    }
 }
 
 class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelegate {
@@ -40,15 +55,10 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.navigationItem.title = "トップ"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
-        var type = CampaignType.TerraceHouse
-        var guide : [String] = ["テラスハウス特集！","テラスハウスの出演者たちのインスタグラムを今すぐチェックしよう！"]
-        if arc4random() % 2 == 0{
-            type = CampaignType.TerraceHouse
-            guide = ["テラスハウス特集！","テラスハウスの出演者たちのインスタグラムを今すぐチェックしよう！"]
-        }else{
-            type = CampaignType.KoreanIdol
-            guide = ["韓国アイドル特集！","韓国アイドルたちのインスタグラムを今すぐチェックしよう！"]
-        }
+        
+        var type = self.campaignTypeSaved()
+        var guide : [String] = CampaignType.guides(type)()
+        
         self.guideTitleLabel.text = guide[0]
         self.guideLabel.text = guide[1]
         
@@ -102,14 +112,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     func setupDatabase(){
         //        RealmHelper.deleteAll()
         RealmHelper.makeRealmModelIfNeeded()
-//        if RealmHelper.subModelAll(CampaignType.TerraceHouse).count==0{
-//            RealmHelper.makeSubRealmModel(CampaignType.TerraceHouse)
-//        }
-//        if RealmHelper.subModelAll(CampaignType.KoreanIdol).count==0{
-//            RealmHelper.makeSubRealmModel(CampaignType.KoreanIdol)
-//        }
         
-        for i : Int in 0..<9{
+        for i : Int in 0...9{
             if RealmHelper.subModelAll(CampaignType(rawValue: i)!).count==0{
                 RealmHelper.makeSubRealmModel(CampaignType(rawValue: i)!)
             }
@@ -123,7 +127,34 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     func dispatch_async_global(block: () -> ()) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
     }
-
+    
+    func campaignTypeSaved()->CampaignType{
+        var date = Util.loadObject(Const.KEY_START_DATE) as? NSDate
+        if date == nil{
+            Util.saveObject(NSDate(), forKey: Const.KEY_START_DATE)
+            return CampaignType.TerraceHouse
+        }
+        //test
+        //        date = NSDate(timeIntervalSinceNow: -1*24*60*60)//singer
+        //        date = NSDate(timeIntervalSinceNow: -2*24*60*60)//talentwoman
+        //        date = NSDate(timeIntervalSinceNow: -3*24*60*60)//international
+        //        date = NSDate(timeIntervalSinceNow: -4*24*60*60)//model
+        //        date = NSDate(timeIntervalSinceNow: -5*24*60*60)//talentman
+        //        date = NSDate(timeIntervalSinceNow: -6*24*60*60)//korean
+        //        date = NSDate(timeIntervalSinceNow: -7*24*60*60)//akb
+        //        date = NSDate(timeIntervalSinceNow: -8*24*60*60)//comedian
+        //        date = NSDate(timeIntervalSinceNow: -9*24*60*60)//creator
+        //        date = NSDate(timeIntervalSinceNow: -10*24*60*60)//terracehouse
+        //        date = NSDate(timeIntervalSinceNow: -11*24*60*60)//singer
+        
+        let intervalSec = NSDate().timeIntervalSinceDate(date!)
+        let fl = floor(intervalSec/(60*60*24))
+        let s = Int(fl)
+        let mod = s%10
+        Log.DLog("interval \(intervalSec) fl \(fl) s \(s) mod \(mod)")
+        let type = CampaignType(rawValue: mod)!
+        return type
+    }
     
     // MARK: - Navigation
 

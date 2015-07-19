@@ -111,7 +111,7 @@ class RealmHelper: NSObject {
                 let url: AnyObject = items![2]
                 let imageUrl : AnyObject = items![3]
                 let officialUrl : AnyObject = items![4]
-                Log.DLog("i:\(i)")
+//                Log.DLog("i:\(i)")
                 let talentModel : SubTalentModel = SubTalentModel()
                 realm.create(SubTalentModel.self, value: [
                     "id": id as! String,

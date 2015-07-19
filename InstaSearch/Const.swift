@@ -81,6 +81,7 @@ class Const {
     static let APP_COLOR4 = Util.hexColor("0xffffff")
     static let APP_COLOR1 = Util.hexColor("0x000000")
     
+    static let KEY_START_DATE = "keyStartDate"
     
     //TODO:キャンペーンの動的に処理
     //TODO:その他画面

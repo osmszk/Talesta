@@ -94,8 +94,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes =  [NSForegroundColorAttributeName:Const.APP_COLOR8]
         //[NSObject : AnyObject]//タイトルの文字カラー
         
-        UIToolbar.appearance().barTintColor = Const.APP_COLOR1//背景ぬりつぶし色
-        UIToolbar.appearance().tintColor = Const.APP_COLOR8//ボタンのテキストカラー
+        UIToolbar.appearance().barTintColor = Const.APP_COLOR8//背景ぬりつぶし色
+        UIToolbar.appearance().tintColor = Const.APP_COLOR1//ボタンのテキストカラー
         
         UITabBar.appearance().barTintColor = Const.APP_COLOR1//背景ぬりつぶし色
         UITabBar.appearance().tintColor = Const.APP_COLOR8//アイコンの線の色

@@ -34,6 +34,11 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        if Const.ENABLE_ANALYTICS{
+            let screenName = reflect(self).summary
+            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

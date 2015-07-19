@@ -25,6 +25,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
 
         self.title = "芸能人検索"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
         
         self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(self.talentModels)

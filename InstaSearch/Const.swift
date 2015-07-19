@@ -83,7 +83,6 @@ class Const {
     
     static let KEY_START_DATE = "keyStartDate"
     
-    //TODO:キャンペーンの動的に処理
     //TODO:その他画面
     //TODO:各画面テーブルビュー　リロード
     

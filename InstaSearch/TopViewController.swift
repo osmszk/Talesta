@@ -54,7 +54,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         self.navigationItem.title = "トップ"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         var type = self.campaignTypeSaved()
         var guide : [String] = CampaignType.guides(type)()

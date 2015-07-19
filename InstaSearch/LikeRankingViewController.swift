@@ -17,8 +17,9 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "LIKEﾗﾝｷﾝｸﾞ"
+        self.navigationItem.title = "LIKEランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         self.getLikeRanking("http://websta.me/hot/jp_posts")
     }

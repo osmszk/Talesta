@@ -55,6 +55,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.webView.delegate = self
         
         initToolBar()

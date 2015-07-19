@@ -22,6 +22,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
 
         self.navigationItem.title = "フォロワーランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
     }
     
     override func viewDidAppear(animated: Bool) {

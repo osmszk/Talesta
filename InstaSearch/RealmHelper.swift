@@ -64,15 +64,23 @@ class RealmHelper: NSObject {
     }
     class func fileNameWithType(type:CampaignType) -> String{
         switch(type){
-        case .TerraceHouse:return "terracehouse"
-        case .KoreanIdol:return "korean"
-        default:return ""
+        case .TerraceHouse:    return "terracehouse"
+        case .Singer:          return "singer"
+        case .TalentWoman:     return "talentwoman"
+        case .International:   return "international"
+        case .ModelAndBikini:  return "modelandbikini"
+        case .TalentMan:       return "talentman"
+        case .KoreanIdol:      return "koreanidol"
+        case .AkbGroup:        return "akbgroup"
+        case .Comedian:        return "comedian"
+        case .Creator:         return "creator"
+        default:               return "terracehouse"
         }
     }
     
     class func makeSubRealmModel(type:CampaignType){
         
-        Log.DLog("[start] make SUB realm HOME:\(NSHomeDirectory())")
+        Log.DLog("[start] make SUB realm type:\(type.rawValue) HOME:\(NSHomeDirectory())")
         
         let start = NSDate()
         
@@ -116,7 +124,7 @@ class RealmHelper: NSObject {
             }
         }
         realm.commitWrite()
-        Log.DLog("[end]terrace convert! \(NSDate().timeIntervalSinceDate(start))")
+        Log.DLog("[end]terrace convert! type:\(type.rawValue) \(NSDate().timeIntervalSinceDate(start))")
         
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html
         //ref:

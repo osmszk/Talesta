@@ -71,8 +71,16 @@
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
 		C7CFAE571B561A0000C6B67F /* btn_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE561B561A0000C6B67F /* btn_close@2x.png */; };
 		C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE581B575FED00C6B67F /* Social.framework */; };
-		C7CFAE5D1B59441100C6B67F /* korean.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE5C1B59441100C6B67F /* korean.txt */; };
+		C7CFAE5D1B59441100C6B67F /* koreanidol.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE5C1B59441100C6B67F /* koreanidol.txt */; };
 		C7CFAE611B5B878500C6B67F /* SubTalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */; };
+		C7CFAE6A1B5BAF2A00C6B67F /* akbgroup.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE621B5BAF2A00C6B67F /* akbgroup.txt */; };
+		C7CFAE6B1B5BAF2A00C6B67F /* comedian.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE631B5BAF2A00C6B67F /* comedian.txt */; };
+		C7CFAE6C1B5BAF2A00C6B67F /* creator.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE641B5BAF2A00C6B67F /* creator.txt */; };
+		C7CFAE6D1B5BAF2A00C6B67F /* international.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE651B5BAF2A00C6B67F /* international.txt */; };
+		C7CFAE6E1B5BAF2A00C6B67F /* modelandbikini.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE661B5BAF2A00C6B67F /* modelandbikini.txt */; };
+		C7CFAE6F1B5BAF2A00C6B67F /* singer.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE671B5BAF2A00C6B67F /* singer.txt */; };
+		C7CFAE701B5BAF2A00C6B67F /* talentman.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE681B5BAF2A00C6B67F /* talentman.txt */; };
+		C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -199,8 +207,16 @@
 		C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaSearchTests.swift; sourceTree = "<group>"; };
 		C7CFAE561B561A0000C6B67F /* btn_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close@2x.png"; sourceTree = "<group>"; };
 		C7CFAE581B575FED00C6B67F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		C7CFAE5C1B59441100C6B67F /* korean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = korean.txt; sourceTree = "<group>"; };
+		C7CFAE5C1B59441100C6B67F /* koreanidol.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = koreanidol.txt; sourceTree = "<group>"; };
 		C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTalentModel.swift; sourceTree = "<group>"; };
+		C7CFAE621B5BAF2A00C6B67F /* akbgroup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = akbgroup.txt; sourceTree = "<group>"; };
+		C7CFAE631B5BAF2A00C6B67F /* comedian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comedian.txt; sourceTree = "<group>"; };
+		C7CFAE641B5BAF2A00C6B67F /* creator.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = creator.txt; sourceTree = "<group>"; };
+		C7CFAE651B5BAF2A00C6B67F /* international.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = international.txt; sourceTree = "<group>"; };
+		C7CFAE661B5BAF2A00C6B67F /* modelandbikini.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modelandbikini.txt; sourceTree = "<group>"; };
+		C7CFAE671B5BAF2A00C6B67F /* singer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = singer.txt; sourceTree = "<group>"; };
+		C7CFAE681B5BAF2A00C6B67F /* talentman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = talentman.txt; sourceTree = "<group>"; };
+		C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = talentwoman.txt; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -407,7 +423,15 @@
 		C7640DED1B4AC66E002C443F /* data */ = {
 			isa = PBXGroup;
 			children = (
-				C7CFAE5C1B59441100C6B67F /* korean.txt */,
+				C7CFAE621B5BAF2A00C6B67F /* akbgroup.txt */,
+				C7CFAE631B5BAF2A00C6B67F /* comedian.txt */,
+				C7CFAE641B5BAF2A00C6B67F /* creator.txt */,
+				C7CFAE651B5BAF2A00C6B67F /* international.txt */,
+				C7CFAE661B5BAF2A00C6B67F /* modelandbikini.txt */,
+				C7CFAE671B5BAF2A00C6B67F /* singer.txt */,
+				C7CFAE681B5BAF2A00C6B67F /* talentman.txt */,
+				C7CFAE691B5BAF2A00C6B67F /* talentwoman.txt */,
+				C7CFAE5C1B59441100C6B67F /* koreanidol.txt */,
 				C76368AF1B540C0D00F3EBCE /* terracehouse.txt */,
 				C7640DEE1B4AC66E002C443F /* names.txt */,
 			);
@@ -584,14 +608,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74A83531B4D6D7F00EDAE9D /* barbtn_back@2x.png in Resources */,
+				C7CFAE6C1B5BAF2A00C6B67F /* creator.txt in Resources */,
+				C7CFAE6E1B5BAF2A00C6B67F /* modelandbikini.txt in Resources */,
+				C7CFAE701B5BAF2A00C6B67F /* talentman.txt in Resources */,
 				C76368B01B540C0D00F3EBCE /* terracehouse.txt in Resources */,
 				C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */,
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C702050E1B108165004FAD19 /* SVProgressHUD.bundle in Resources */,
+				C7CFAE6A1B5BAF2A00C6B67F /* akbgroup.txt in Resources */,
 				C7640DEF1B4AC66E002C443F /* names.txt in Resources */,
+				C7CFAE6F1B5BAF2A00C6B67F /* singer.txt in Resources */,
 				C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */,
-				C7CFAE5D1B59441100C6B67F /* korean.txt in Resources */,
+				C7CFAE5D1B59441100C6B67F /* koreanidol.txt in Resources */,
+				C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */,
+				C7CFAE6B1B5BAF2A00C6B67F /* comedian.txt in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,
+				C7CFAE6D1B5BAF2A00C6B67F /* international.txt in Resources */,
 				C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */,
 				C74A83541B4D6D7F00EDAE9D /* barbtn_forward@2x.png in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,

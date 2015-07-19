@@ -13,6 +13,7 @@ enum CampaignType: Int {
     case TerraceHouse = 0
     case Singer
     case TalentWoman
+    case International
     case ModelAndBikini
     case TalentMan
     case KoreanIdol
@@ -100,13 +101,18 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     func setupDatabase(){
         //        RealmHelper.deleteAll()
-        
         RealmHelper.makeRealmModelIfNeeded()
-        if RealmHelper.subModelAll(CampaignType.TerraceHouse).count==0{
-            RealmHelper.makeSubRealmModel(CampaignType.TerraceHouse)
-        }
-        if RealmHelper.subModelAll(CampaignType.KoreanIdol).count==0{
-            RealmHelper.makeSubRealmModel(CampaignType.KoreanIdol)
+//        if RealmHelper.subModelAll(CampaignType.TerraceHouse).count==0{
+//            RealmHelper.makeSubRealmModel(CampaignType.TerraceHouse)
+//        }
+//        if RealmHelper.subModelAll(CampaignType.KoreanIdol).count==0{
+//            RealmHelper.makeSubRealmModel(CampaignType.KoreanIdol)
+//        }
+        
+        for i : Int in 0..<9{
+            if RealmHelper.subModelAll(CampaignType(rawValue: i)!).count==0{
+                RealmHelper.makeSubRealmModel(CampaignType(rawValue: i)!)
+            }
         }
     }
     

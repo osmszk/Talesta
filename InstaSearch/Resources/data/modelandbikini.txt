@@ -398,4 +398,4 @@ num,name,url,imageUrl,officialUrl
 396,椎名ひかり,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=2754,https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xap1/t51.2885-19/10387797_871687252841441_1299746643_a.jpg,http://instagram.com/1126chihiro
 397,山下ちひろ,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3049,https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/11205901_373113316215990_1247954585_a.jpg,http://instagram.com/tuttu.a
 398,荒井つかさ,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3079,https://igcdn-photos-c-a.akamaihd.net/hphotos-ak-xpt1/t51.2885-19/10860038_763435593744778_2026393512_a.jpg,http://instagram.com/yuu_pl
-399,鈴木優華,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3264,https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-19/11379869_658494377620191_1701233059_a.jpg,
+399,鈴木優華,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3264,https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-19/11379869_658494377620191_1701233059_a.jpg,http://instagram.com/yuu_pl

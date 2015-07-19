@@ -44,6 +44,7 @@ range.each{ |num|
 				path = aNode.attribute('href').value
 				url = "http://www.talentinsta.com"+path
 				rows.push(id.to_s+","+name+","+url+","+imageUrl)
+#                p id.to_s+","+name+","+url+","+imageUrl
 				talentUrls.push(url)
 				id = id+1
 	    	end
@@ -60,7 +61,7 @@ talentUrls.each {|talentUrl|
 				url = node.attribute('href').value
 				pos = url.index("instagram.com")
 				if pos != nil
-					# p url
+#					p url
 					r = rows[index]
 					rows[index] = r+","+url
 					index = index+1

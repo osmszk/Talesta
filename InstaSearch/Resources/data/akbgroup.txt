@@ -63,4 +63,3 @@ num,name,url,imageUrl,officialUrl
 61,miray,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=1559,https://instagramimages-a.akamaihd.net/profiles/profile_401959008_75sq_1370084512.jpg,http://instagram.com/miray0705
 62,河内麻沙美,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=4236,https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-19/11235980_343211145889533_1669940075_a.jpg,http://instagram.com/masamikouchi
 63,細田海友,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=1350,https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-19/11382533_927704817250459_170624501_a.jpg,http://instagram.com/miyuu_bigbaby
-

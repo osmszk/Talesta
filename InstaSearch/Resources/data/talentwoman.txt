@@ -346,4 +346,4 @@ num,name,url,imageUrl,officialUrl
 344,百川晴香,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3601,https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xpf1/t51.2885-19/1168765_345247005654036_1203968161_a.jpg,http://instagram.com/mori_shiori
 345,森詩織,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3686,https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xpf1/t51.2885-19/10958524_368185476698247_820448600_a.jpg,http://instagram.com/musubizm
 346,むすびズム,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=3975,https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10817689_785194488225768_1711037039_a.jpg,http://instagram.com/tempurakidz
-347,TEMPURA KIDZ,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=2344,https://instagramimages-a.akamaihd.net/profiles/profile_403992065_75sq_1370268430.jpg
+347,TEMPURA KIDZ,http://www.talentinsta.com/tllink/tllink.php?mode=jump&id=2344,https://instagramimages-a.akamaihd.net/profiles/profile_403992065_75sq_1370268430.jpg,http://instagram.com/tempurakidz

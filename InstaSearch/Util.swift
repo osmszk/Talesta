@@ -119,7 +119,7 @@ class Util{
         return (inStr as NSString).containsString(keyStr)
     }
     
-    class func hexColor(var hexStr : NSString, var alpha : CGFloat) -> UIColor {
+    class func hexColor(var hexStr : NSString, var alpha : CGFloat=1.0) -> UIColor {
         hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
         let scanner = NSScanner(string: hexStr as String)
         var color: UInt32 = 0

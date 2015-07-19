@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.backgroundColor = UIColor.whiteColor()
+        
+        self.customizeColor()
         
         let tab: TabBarController = TabBarController()
         
@@ -81,6 +82,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func customizeColor(){
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        UINavigationBar.appearance().barTintColor = Const.APP_COLOR1//背景塗りつぶし色
+        UINavigationBar.appearance().tintColor = Const.APP_COLOR8//ボタンのテキストカラー
+        UINavigationBar.appearance().titleTextAttributes =  [NSForegroundColorAttributeName:Const.APP_COLOR8]
+        //[NSObject : AnyObject]//タイトルの文字カラー
+        
+        UIToolbar.appearance().barTintColor = Const.APP_COLOR1//背景ぬりつぶし色
+        UIToolbar.appearance().tintColor = Const.APP_COLOR8//ボタンのテキストカラー
+        
+        UITabBar.appearance().barTintColor = Const.APP_COLOR1//背景ぬりつぶし色
+        UITabBar.appearance().tintColor = Const.APP_COLOR8//アイコンの線の色
+        let font = UIFont.boldSystemFontOfSize(10)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:Const.APP_COLOR8,NSFontAttributeName:font], forState: UIControlState.Selected)//選択中の文字の色
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.grayColor(),NSFontAttributeName:font], forState: UIControlState.Normal)//通常時の文字の色
+//        //http://qiita.com/yimajo/items/a7ed557d382077498181
+
     }
 
 

@@ -58,7 +58,7 @@ class Const {
     static let GOOGLE_ANALYTICS_TRACKING_ID = "UA-56625547-1"
     
     //TODO:
-    static let HASH_TAG = "#インスタ芸能人!"
+    static let HASH_TAG = "#talesta"
     
     //TODO: 申請前に1にする
     static let ENABLE_ANALYTICS = true
@@ -75,9 +75,14 @@ class Const {
     static let TABLE_VIEW_FOOTER_HEIGHT = 50.0;
     static let TIME_OUT_INTERVAL = 10.0;
     
-    static let APP_COLOR1 = Util.hexColor("0x770c02", alpha: 1)
+    static let APP_COLOR8 = Util.hexColor("0xffffff")
+    static let APP_COLOR2 = Util.hexColor("0x000000")
+    static let APP_COLOR3 = Util.hexColor("0x000000")
+    static let APP_COLOR4 = Util.hexColor("0xffffff")
+    static let APP_COLOR1 = Util.hexColor("0x000000")
     
-    //TODO:キャンペーンの韓流バージョン
+    
+    //TODO:キャンペーンの動的に処理
     //TODO:その他画面
     //TODO:各画面テーブルビュー　リロード
     

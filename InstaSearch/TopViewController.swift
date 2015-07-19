@@ -18,7 +18,7 @@ enum CampaignType: Int {
     case KoreanIdol
     case AkbGroup
     case Comedian
-    case Creater
+    case Creator
 }
 
 class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelegate {
@@ -26,6 +26,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideView: UIView!
     @IBOutlet weak var guideCloseButton: UIButton!
+    @IBOutlet weak var guideTitleLabel: UILabel!
     @IBOutlet weak var guideLabel: UILabel!
     
     @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
@@ -38,7 +39,19 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.navigationItem.title = "トップ"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
-        self.talentModels = RealmHelper.subModelAll(CampaignType.TerraceHouse)
+        var type = CampaignType.TerraceHouse
+        var guide : [String] = ["テラスハウス特集！","テラスハウスの出演者たちのインスタグラムを今すぐチェックしよう！"]
+        if arc4random() % 2 == 0{
+            type = CampaignType.TerraceHouse
+            guide = ["テラスハウス特集！","テラスハウスの出演者たちのインスタグラムを今すぐチェックしよう！"]
+        }else{
+            type = CampaignType.KoreanIdol
+            guide = ["韓国アイドル特集！","韓国アイドルたちのインスタグラムを今すぐチェックしよう！"]
+        }
+        self.guideTitleLabel.text = guide[0]
+        self.guideLabel.text = guide[1]
+        
+        self.talentModels = RealmHelper.subModelAll(type)
         
         if let models = self.talentModels{
             if models.count == 0 {
@@ -51,7 +64,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
                         SVProgressHUD.dismiss()
                         //UIいじる
                         
-                        self.talentModels = RealmHelper.subModelAll(CampaignType.TerraceHouse)
+                        self.talentModels = RealmHelper.subModelAll(type)
                         self.tableView.reloadData()
                     }
                 }
@@ -76,7 +89,9 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     @IBAction func pushedCloseButton(sender: AnyObject) {
         
         self.guideViewHeightConstraint.constant = 0;
-        UIView.animateWithDuration(0.8) { () -> Void in
+        self.guideLabel.hidden = true
+        self.guideTitleLabel.hidden = true
+        UIView.animateWithDuration(0.6) { () -> Void in
             self.view.layoutIfNeeded()
         }
     }

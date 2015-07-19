@@ -403,10 +403,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lk8-EZ-7DJ" userLabel="DescriptionView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="221-l8-VlL">
-                                        <rect key="frame" x="10" y="10" width="276" height="80"/>
-                                        <string key="text">テラスハウス特集！
-テラスハウスの出演者たちのインスタグラムを今すぐチェック！</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テラスハウス特集！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhE-nm-dXx">
+                                        <rect key="frame" x="10" y="13" width="300" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テラスハウスの出演者たちのインスタグラムを今すぐチェック！" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="221-l8-VlL">
+                                        <rect key="frame" x="10" y="35" width="300" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="TTs-Xq-b1v"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -427,13 +434,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="221-l8-VlL" secondAttribute="bottom" constant="10" id="3Jx-Ps-vlc"/>
-                                    <constraint firstItem="221-l8-VlL" firstAttribute="top" secondItem="lk8-EZ-7DJ" secondAttribute="top" constant="10" id="AIq-K0-Pfv"/>
                                     <constraint firstAttribute="height" constant="100" id="GUT-gq-2Aq"/>
-                                    <constraint firstItem="DbF-qu-7Hf" firstAttribute="leading" secondItem="221-l8-VlL" secondAttribute="trailing" id="c1u-oU-lUi"/>
+                                    <constraint firstAttribute="trailing" secondItem="BhE-nm-dXx" secondAttribute="trailing" constant="10" id="Gn3-95-WPi"/>
+                                    <constraint firstAttribute="bottom" secondItem="221-l8-VlL" secondAttribute="bottom" constant="10" id="QLO-Rp-3sL"/>
+                                    <constraint firstItem="BhE-nm-dXx" firstAttribute="top" secondItem="lk8-EZ-7DJ" secondAttribute="top" constant="13" id="SEL-zj-Ofw"/>
+                                    <constraint firstItem="BhE-nm-dXx" firstAttribute="leading" secondItem="lk8-EZ-7DJ" secondAttribute="leading" constant="10" id="UC0-Zc-TuB"/>
                                     <constraint firstItem="DbF-qu-7Hf" firstAttribute="top" secondItem="lk8-EZ-7DJ" secondAttribute="top" id="cB8-18-1Jg"/>
-                                    <constraint firstItem="221-l8-VlL" firstAttribute="leading" secondItem="lk8-EZ-7DJ" secondAttribute="leading" constant="10" id="n4L-rp-DuX"/>
+                                    <constraint firstAttribute="trailing" secondItem="221-l8-VlL" secondAttribute="trailing" constant="10" id="rqi-6E-Lbo"/>
+                                    <constraint firstItem="221-l8-VlL" firstAttribute="top" secondItem="BhE-nm-dXx" secondAttribute="bottom" constant="1" id="uU3-H0-HS7"/>
                                     <constraint firstAttribute="trailing" secondItem="DbF-qu-7Hf" secondAttribute="trailing" id="wnZ-9B-Dzv"/>
+                                    <constraint firstItem="221-l8-VlL" firstAttribute="leading" secondItem="lk8-EZ-7DJ" secondAttribute="leading" constant="10" id="ybR-mi-MJf"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="340" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7gg-Qm-ywl">
@@ -525,6 +535,7 @@
                     <connections>
                         <outlet property="guideCloseButton" destination="DbF-qu-7Hf" id="wtB-BV-BZi"/>
                         <outlet property="guideLabel" destination="221-l8-VlL" id="kbM-iW-xz7"/>
+                        <outlet property="guideTitleLabel" destination="BhE-nm-dXx" id="DYk-6y-aHI"/>
                         <outlet property="guideView" destination="lk8-EZ-7DJ" id="2Xy-ca-vaI"/>
                         <outlet property="guideViewHeightConstraint" destination="GUT-gq-2Aq" id="yfB-Sl-dsU"/>
                         <outlet property="tableView" destination="7gg-Qm-ywl" id="Lyx-GY-oRC"/>

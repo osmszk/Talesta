@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 enum CampaignType: Int {
-    case TerraceHouse
+    case TerraceHouse = 0
     case Singer
     case TalentWoman
     case ModelAndBikini
@@ -30,8 +30,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
     
-//    var talentModels : Results<TerracehouseTalentModel> = RealmHelper.terraceHousetalentModelAll()
-    var talentModels : Results<KoreanTalentModel>? = nil
+    var talentModels : Results<SubTalentModel>? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +38,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.navigationItem.title = "トップ"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         
-        //韓流かテラスハウス特集
-        //韓流
-        //http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=1
-        //テラスハウス
-        //http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9
-
-        self.talentModels = RealmHelper.koreantalentModelAll()
+        self.talentModels = RealmHelper.subModelAll(CampaignType.TerraceHouse)
         
         if let models = self.talentModels{
             if models.count == 0 {
@@ -58,8 +51,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
                         SVProgressHUD.dismiss()
                         //UIいじる
                         
-    //                    self.talentModels = RealmHelper.terraceHousetalentModelAll()
-                        self.talentModels = RealmHelper.koreantalentModelAll()
+                        self.talentModels = RealmHelper.subModelAll(CampaignType.TerraceHouse)
                         self.tableView.reloadData()
                     }
                 }
@@ -95,11 +87,11 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         //        RealmHelper.deleteAll()
         
         RealmHelper.makeRealmModelIfNeeded()
-        if RealmHelper.terraceHousetalentModelAll().count==0{
-            RealmHelper.makeSubRealmModel("terracehouse")
+        if RealmHelper.subModelAll(CampaignType.TerraceHouse).count==0{
+            RealmHelper.makeSubRealmModel(CampaignType.TerraceHouse)
         }
-        if RealmHelper.koreantalentModelAll().count==0{
-            RealmHelper.makeSubRealmModel("korean")
+        if RealmHelper.subModelAll(CampaignType.KoreanIdol).count==0{
+            RealmHelper.makeSubRealmModel(CampaignType.KoreanIdol)
         }
     }
     
@@ -125,7 +117,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             
 //            let thTalent = self.talentModels[row!] as TerracehouseTalentModel
             if let models = self.talentModels {
-                let talent = models[row!] as KoreanTalentModel
+                let talent = models[row!] as SubTalentModel
                 webController.urlStr = talent.officialUrl
                 
                 webController.mode = JOWebBrowserMode.Navigation

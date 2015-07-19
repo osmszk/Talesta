@@ -62,13 +62,21 @@ class RealmHelper: NSObject {
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html
         //ref:
     }
+    class func fileNameWithType(type:CampaignType) -> String{
+        switch(type){
+        case .TerraceHouse:return "terracehouse"
+        case .KoreanIdol:return "korean"
+        default:return ""
+        }
+    }
     
-    class func makeSubRealmModel(fileName:String){
+    class func makeSubRealmModel(type:CampaignType){
         
         Log.DLog("[start] make SUB realm HOME:\(NSHomeDirectory())")
         
         let start = NSDate()
         
+        let fileName = self.fileNameWithType(type)
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
         //        let data = NSData(contentsOfFile: path)
         var error : NSError
@@ -96,25 +104,34 @@ class RealmHelper: NSObject {
                 let imageUrl : AnyObject = items![3]
                 let officialUrl : AnyObject = items![4]
                 Log.DLog("i:\(i)")
-                if(fileName == "terracehouse"){
-                    let talentModel : TerracehouseTalentModel = TerracehouseTalentModel()
-                    realm.create(TerracehouseTalentModel.self, value: [
-                        "id": id as! String,
-                        "name": name as! String,
-                        "url": url as! String,
-                        "imageUrl": imageUrl as! String,
-                        "officialUrl": officialUrl as! String
-                        ])
-                }else if(fileName == "korean"){
-                    let talentModel : KoreanTalentModel = KoreanTalentModel()
-                    realm.create(KoreanTalentModel.self, value: [
-                        "id": id as! String,
-                        "name": name as! String,
-                        "url": url as! String,
-                        "imageUrl": imageUrl as! String,
-                        "officialUrl": officialUrl as! String
-                        ])
-                }
+//                if(fileName == "terracehouse"){
+//                    let talentModel : TerracehouseTalentModel = TerracehouseTalentModel()
+//                    realm.create(TerracehouseTalentModel.self, value: [
+//                        "id": id as! String,
+//                        "name": name as! String,
+//                        "url": url as! String,
+//                        "imageUrl": imageUrl as! String,
+//                        "officialUrl": officialUrl as! String
+//                        ])
+//                }else if(fileName == "korean"){
+//                    let talentModel : KoreanTalentModel = KoreanTalentModel()
+//                    realm.create(KoreanTalentModel.self, value: [
+//                        "id": id as! String,
+//                        "name": name as! String,
+//                        "url": url as! String,
+//                        "imageUrl": imageUrl as! String,
+//                        "officialUrl": officialUrl as! String
+//                        ])
+//                }
+                let talentModel : SubTalentModel = SubTalentModel()
+                realm.create(SubTalentModel.self, value: [
+                    "id": id as! String,
+                    "name": name as! String,
+                    "url": url as! String,
+                    "imageUrl": imageUrl as! String,
+                    "officialUrl": officialUrl as! String,
+                    "type": type.rawValue as Int
+                    ])
             }
         }
         realm.commitWrite()
@@ -140,19 +157,23 @@ class RealmHelper: NSObject {
         return results
     }
     
-    class func terraceHousetalentModelAll() -> Results<TerracehouseTalentModel> {
+//    class func terraceHousetalentModelAll() -> Results<TerracehouseTalentModel> {
+//        let realm = Realm()
+//        var results = realm.objects(TerracehouseTalentModel) as Results<TerracehouseTalentModel>
+//        return results
+//    }
+//    
+//    class func koreantalentModelAll() -> Results<KoreanTalentModel> {
+//        let realm = Realm()
+//        var results = realm.objects(KoreanTalentModel) as Results<KoreanTalentModel>
+//        return results
+//    }
+    class func subModelAll(type:CampaignType) -> Results<SubTalentModel> {
         let realm = Realm()
-        var results = realm.objects(TerracehouseTalentModel) as Results<TerracehouseTalentModel>
+        let filterString = "type == \(type.rawValue)"
+        var results = realm.objects(SubTalentModel).filter(filterString) as Results<SubTalentModel>
         return results
     }
-    
-    class func koreantalentModelAll() -> Results<KoreanTalentModel> {
-        let realm = Realm()
-        var results = realm.objects(KoreanTalentModel) as Results<KoreanTalentModel>
-        return results
-    }
-    
-    
     
     class func talentSectionTitles() -> [String]{
         return ["0","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q" ,"R", "S", "T", "U", "V", "W", "X", "Y", "Z","あ","ア","漢","#"]

@@ -74,6 +74,7 @@
 		C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE581B575FED00C6B67F /* Social.framework */; };
 		C7CFAE5D1B59441100C6B67F /* korean.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE5C1B59441100C6B67F /* korean.txt */; };
 		C7CFAE5F1B59497500C6B67F /* KoreanTalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CFAE5E1B59497500C6B67F /* KoreanTalentModel.swift */; };
+		C7CFAE611B5B878500C6B67F /* SubTalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -203,6 +204,7 @@
 		C7CFAE581B575FED00C6B67F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C7CFAE5C1B59441100C6B67F /* korean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = korean.txt; sourceTree = "<group>"; };
 		C7CFAE5E1B59497500C6B67F /* KoreanTalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoreanTalentModel.swift; sourceTree = "<group>"; };
+		C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTalentModel.swift; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				C70205FB1B1ACF49004FAD19 /* Talentinsta.swift */,
 				C76620D51B2126A8003FFC7A /* TalentUser.swift */,
 				C74A83491B4B574E00EDAE9D /* TalentModel.swift */,
+				C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */,
 				C76368B11B540C8B00F3EBCE /* TerracehouseTalentModel.swift */,
 				C7CFAE5E1B59497500C6B67F /* KoreanTalentModel.swift */,
 				C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */,
@@ -658,6 +661,7 @@
 				C70204F01B0A2070004FAD19 /* AFHTTPSessionManager.m in Sources */,
 				C76368AE1B53F1F400F3EBCE /* TopTableViewCell.swift in Sources */,
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				C7CFAE611B5B878500C6B67F /* SubTalentModel.swift in Sources */,
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C76368B21B540C8B00F3EBCE /* TerracehouseTalentModel.swift in Sources */,

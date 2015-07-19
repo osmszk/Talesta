@@ -86,6 +86,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func customizeColor(){
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        //info.plistで”View controller-based status bar”をNOにしておく必要がある。
+        //LightContent->白
+        
         UINavigationBar.appearance().barTintColor = Const.APP_COLOR1//背景塗りつぶし色
         UINavigationBar.appearance().tintColor = Const.APP_COLOR8//ボタンのテキストカラー
         UINavigationBar.appearance().titleTextAttributes =  [NSForegroundColorAttributeName:Const.APP_COLOR8]
@@ -97,8 +100,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = Const.APP_COLOR1//背景ぬりつぶし色
         UITabBar.appearance().tintColor = Const.APP_COLOR8//アイコンの線の色
         let font = UIFont.boldSystemFontOfSize(10)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:Const.APP_COLOR8,NSFontAttributeName:font], forState: UIControlState.Selected)//選択中の文字の色
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.grayColor(),NSFontAttributeName:font], forState: UIControlState.Normal)//通常時の文字の色
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:Const.APP_COLOR8,NSFontAttributeName:font], forState: UIControlState.Selected)//選択中のテキストカラー
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.grayColor(),NSFontAttributeName:font], forState: UIControlState.Normal)//通常時のテキストカラー
 //        //http://qiita.com/yimajo/items/a7ed557d382077498181
 
     }

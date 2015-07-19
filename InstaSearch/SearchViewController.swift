@@ -31,6 +31,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
         let label = UILabel()
         label.text = "芸能人検索"
+        label.textColor = Const.APP_COLOR8
         label.font = UIFont.boldSystemFontOfSize(18)
         label.sizeToFit()
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")

@@ -9,6 +9,18 @@
 import UIKit
 import RealmSwift
 
+enum CampaignType: Int {
+    case TerraceHouse
+    case Singer
+    case TalentWoman
+    case ModelAndBikini
+    case TalentMan
+    case KoreanIdol
+    case AkbGroup
+    case Comedian
+    case Creater
+}
+
 class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,7 +31,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
     
 //    var talentModels : Results<TerracehouseTalentModel> = RealmHelper.terraceHousetalentModelAll()
-    var talentModels : Results<KoreanTalentModel> = RealmHelper.koreantalentModelAll()
+    var talentModels : Results<KoreanTalentModel>? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +45,23 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         //テラスハウス
         //http://www.talentinsta.com/matome/index.php?p=%a5%c6%a5%e9%a5%b9%a5%cf%a5%a6%a5%b9
 
+        self.talentModels = RealmHelper.koreantalentModelAll()
         
-        if talentModels.count == 0 {
-            SVProgressHUD.showWithStatus("データ読込中", maskType: SVProgressHUDMaskType.Gradient)
-            dispatch_async_global {
-                //重い処理
-                self.setupDatabase();
-                self.dispatch_async_main {
-                    // ここからメインスレッド
-                    SVProgressHUD.dismiss()
-                    //UIいじる
-                    
-//                    self.talentModels = RealmHelper.terraceHousetalentModelAll()
-                    self.talentModels = RealmHelper.koreantalentModelAll()
-                    self.tableView.reloadData()
+        if let models = self.talentModels{
+            if models.count == 0 {
+                SVProgressHUD.showWithStatus("データ読込中", maskType: SVProgressHUDMaskType.Gradient)
+                dispatch_async_global {
+                    //重い処理
+                    self.setupDatabase();
+                    self.dispatch_async_main {
+                        // ここからメインスレッド
+                        SVProgressHUD.dismiss()
+                        //UIいじる
+                        
+    //                    self.talentModels = RealmHelper.terraceHousetalentModelAll()
+                        self.talentModels = RealmHelper.koreantalentModelAll()
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }
@@ -109,14 +124,16 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             let row = indexPath?.row
             
 //            let thTalent = self.talentModels[row!] as TerracehouseTalentModel
-            let thTalent = self.talentModels[row!] as KoreanTalentModel
-            webController.urlStr = thTalent.officialUrl
-            
-            webController.mode = JOWebBrowserMode.Navigation
-            webController.showURLStringOnActionSheetTitle = false
-            webController.showPageTitleOnTitleBar = true
-            webController.showReloadButton = true
-            webController.showActionButton = true
+            if let models = self.talentModels {
+                let talent = models[row!] as KoreanTalentModel
+                webController.urlStr = talent.officialUrl
+                
+                webController.mode = JOWebBrowserMode.Navigation
+                webController.showURLStringOnActionSheetTitle = false
+                webController.showPageTitleOnTitleBar = true
+                webController.showReloadButton = true
+                webController.showActionButton = true
+            }
         }
     }
 
@@ -127,43 +144,49 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.talentModels.count
+        if let models = self.talentModels{
+            return models.count
+        }else{
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier("topCell", forIndexPath: indexPath) as! TopTableViewCell
         
-        let talent = self.talentModels[indexPath.row]
-        cell.nameLabel.text = talent.name
-        let placeImage = UIImage(named: "loading")
-        cell.iconImageView.setImageWithURL(NSURL(string:talent.imageUrl), placeholderImage: placeImage)
-        cell.iconImageView.layer.cornerRadius = 75.0 * 0.5
-        cell.iconImageView.clipsToBounds = true
-        
-        //http://widget.websta.me/in/i_am_kiko/?s=135&w=3.0&h=3&b=0&p=5.0
-        
-        let arrayStr = talent.officialUrl.componentsSeparatedByString("/")
-        let account = arrayStr[arrayStr.count-1]
-        let widgetBaseUrl = "http://widget.websta.me/in/\(account)/"
-        
-        let wCount : CGFloat = 3
-        let hCount = 3
-        let space : CGFloat = 5
-        let offset : CGFloat = 2
-        let iconWidth = (Util.displaySize().width-space*(wCount-1.0))/wCount
-        let iconWidthInt = Int(ceilf(Float(iconWidth)))
-        
-        let resultUrl = "\(widgetBaseUrl)?s=\(iconWidthInt)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
-        Log.DLog("resultUrl:\(resultUrl)")
-        
-        //読み込む前にクリア
-        let blankReq = NSURLRequest(URL: NSURL(string:"about:blank")!)
-        cell.widgetWebView.loadRequest(blankReq)
-        
-        let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
-        cell.widgetWebView.loadRequest(req)
-        
-        cell.cellHeightConstraint.constant = Util.displaySize().width
+        if let models = self.talentModels {
+            let talent = models[indexPath.row]
+            cell.nameLabel.text = talent.name
+            let placeImage = UIImage(named: "loading")
+            cell.iconImageView.setImageWithURL(NSURL(string:talent.imageUrl), placeholderImage: placeImage)
+            cell.iconImageView.layer.cornerRadius = 75.0 * 0.5
+            cell.iconImageView.clipsToBounds = true
+            
+            //http://widget.websta.me/in/i_am_kiko/?s=135&w=3.0&h=3&b=0&p=5.0
+            
+            let arrayStr = talent.officialUrl.componentsSeparatedByString("/")
+            let account = arrayStr[arrayStr.count-1]
+            let widgetBaseUrl = "http://widget.websta.me/in/\(account)/"
+            
+            let wCount : CGFloat = 3
+            let hCount = 3
+            let space : CGFloat = 5
+            let offset : CGFloat = 2
+            let iconWidth = (Util.displaySize().width-space*(wCount-1.0))/wCount
+            let iconWidthInt = Int(ceilf(Float(iconWidth)))
+            
+            let resultUrl = "\(widgetBaseUrl)?s=\(iconWidthInt)&w=\(wCount)&h=\(hCount)&b=0&p=\(space)"
+            Log.DLog("resultUrl:\(resultUrl)")
+            
+            //読み込む前にクリア
+            let blankReq = NSURLRequest(URL: NSURL(string:"about:blank")!)
+            cell.widgetWebView.loadRequest(blankReq)
+            
+            let req :NSURLRequest = NSURLRequest(URL: NSURL(string: resultUrl)!)
+            cell.widgetWebView.loadRequest(req)
+            
+            cell.cellHeightConstraint.constant = Util.displaySize().width
+        }
         
         return cell
     }

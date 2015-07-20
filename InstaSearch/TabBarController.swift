@@ -16,6 +16,8 @@ class TabBarController: UITabBarController {
         Log.DLog("UITabBarController viewDidLoad")
         self.tabBar.translucent = Const.NAVI_BAR_TRANSLUCENT;
         
+        
+        
     }
     
    

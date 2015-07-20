@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navi3,
             navi4
         ]
-        
         tab.setViewControllers(naviControllerList, animated: true)
         if let items = tab.tabBar.items {
             (items[0] as! UITabBarItem).title = "トップ"
@@ -63,10 +62,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (items[3] as! UITabBarItem).title = "LIKEﾗﾝｷﾝｸﾞ"
             (items[4] as! UITabBarItem).title = "その他"
         }
+        if let items = tab.tabBar.items {
+            (items[0] as! UITabBarItem).image = UIImage(named: "tabbtn_t")
+            (items[1] as! UITabBarItem).image = UIImage(named: "tabbtn_finduser")
+            (items[2] as! UITabBarItem).image = UIImage(named: "tabbtn_group")
+            (items[3] as! UITabBarItem).image = UIImage(named: "tabbtn_like")
+            (items[4] as! UITabBarItem).image = UIImage(named: "tabbtn_help")
+        }
         
         self.window!.rootViewController = tab
         self.window!.makeKeyAndVisible()
-        
         
         return true
     }

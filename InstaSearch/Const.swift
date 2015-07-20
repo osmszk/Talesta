@@ -80,10 +80,7 @@ class Const {
     static let KEY_START_DATE = "keyStartDate"
     
     //TODO:その他画面
-    
     //TODO:広告
-    
-    //TODO:tabアイコン
     
     
 }

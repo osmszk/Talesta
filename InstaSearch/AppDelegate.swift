@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        setupAds()
+        if Const.ENABLE_AD{
+            setupAds()
+        }
         
         if Const.ENABLE_ANALYTICS{
             GAI.sharedInstance().trackUncaughtExceptions = true;
@@ -124,22 +126,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
-//    static let AD_IMOBILE_PUBLISHER_ID   = "29411"
-//    static let AD_IMOBILE_MEDIA_ID       = "191728"//test:101043
-//    static let AD_IMOBILE_SPOT_ID_BANNER1 = "531578"//バナー//test:238097//top
-//    static let AD_IMOBILE_SPOT_ID_BANNER2 = "531581"//search
-//    static let AD_IMOBILE_SPOT_ID_BANNER3 = "531582"//follower
-//    static let AD_IMOBILE_SPOT_ID_BANNER4 = "531583"//talent detail mideam rectangle
-//    static let AD_IMOBILE_SPOT_ID_BANNER5 = "531584"//web
-//    static let AD_IMOBILE_SPOT_ID_TEXT = "531585"//web
-    
     func setupAds(){
-//        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_TEXT)
-//        // 広告の取得を開始します
-//        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)
+        //banner
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER1)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER1)
         
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER2)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER2)
+        
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER3)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER3)
+        
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER4)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER4)
+        
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER5)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER5)
+        
+        //text
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_TEXT)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)   
     }
-
-
 }
 

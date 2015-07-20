@@ -32,11 +32,10 @@ class Const {
 
     static let URL_REVIEW_API = "http://plegineer.co.jp/api/instasearch/version.json"
     
-    //TODO:
     //i-mobile(CoreLocation,AdSupport,SystemConfig)
     static let AD_IMOBILE_PUBLISHER_ID   = "29411"
     static let AD_IMOBILE_MEDIA_ID       = "191728"//test:101043
-    static let AD_IMOBILE_SPOT_ID_BANNER1 = "531578"//バナー//test:238097//top
+    static let AD_IMOBILE_SPOT_ID_BANNER1 = "531578"//バナー//test:243706//top
     static let AD_IMOBILE_SPOT_ID_BANNER2 = "531581"//search
     static let AD_IMOBILE_SPOT_ID_BANNER3 = "531582"//follower
     static let AD_IMOBILE_SPOT_ID_BANNER4 = "531583"//talent detail mideam rectangle

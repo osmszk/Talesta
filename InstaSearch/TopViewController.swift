@@ -48,6 +48,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     @IBOutlet weak var guideViewHeightConstraint: NSLayoutConstraint!
     
     var talentModels : Results<SubTalentModel>? = nil
+    var adBannerView : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
                 }
             }
         }
+        
+        showBannerAd()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -136,6 +139,20 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     func dispatch_async_global(block: () -> ()) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+    }
+    
+    func showBannerAd(){
+        
+        let w = Util.displaySize().width
+        let h = Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+        let x = CGFloat(0.0)
+        let y = Util.displaySize().height-h-CGFloat(Const.TAB_H+44.0+20.0)
+        let adView = UIView(frame: CGRectMake(x, y, w, h))
+        adView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(adView)
+        self.adBannerView = adView;
+        
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER1, view: self.adBannerView, sizeAdjust: true)
     }
     
     func campaignTypeSaved()->CampaignType{

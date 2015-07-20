@@ -15,6 +15,7 @@ class LikeRankingTableViewCell: UITableViewCell {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var imageHeightConstraint : NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

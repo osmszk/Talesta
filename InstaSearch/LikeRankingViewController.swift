@@ -307,7 +307,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         let dict : NSDictionary = likeRankings[indexPath.row] as! NSDictionary
         Log.DLog("dict:\(dict)")
         
-        cell.rankLabel.text = NSString(format: "%d位", indexPath.row + 1) as String
+        cell.rankLabel.text = NSString(format: "%d", indexPath.row + 1) as String
         
         cell.photoImageView.image = nil
         if let photoImagePath: AnyObject = dict["photoImage"] {
@@ -325,10 +325,35 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             cell.userLabel?.text = userId as? String
         }
         
-        cell.likeLabel?.text = self.likeNumbers[indexPath.row] as? String
+        let likeNumStr = self.likeNumbers[indexPath.row] as? String
+        cell.likeLabel?.text = commaNumber(likeNumStr)
+        
+        cell.imageHeightConstraint.constant = Util.displaySize().width-20
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let imageWidth = Util.displaySize().width-20
+        return imageWidth+54+10
+    }
+    
+    func commaNumber(str:String?) -> String{
+        if let intNum = str?.toInt(){
+            var num = NSNumber(integer: intNum)
+            
+            var formatter = NSNumberFormatter()
+            formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            formatter.groupingSeparator = ","
+            formatter.groupingSize = 3
+            return formatter.stringFromNumber(num)!
+        }
+        return ""
+    }
+    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return Util
+//    }
     
     @IBAction func didValueChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

@@ -19,7 +19,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "LIKEランキング"
+        self.navigationItem.title = "週間LIKEランキング"
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
@@ -80,15 +80,15 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             parameters: nil,
             timeoutInterval: 10,
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
-                println("Success!!")
+                Log.DLog("Success!!")
                 
                 self.likeRankings.removeAllObjects()
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
-//                println("html:\(html)")
+                Log.DLog("html:\(html)")
                 
                 if html == nil {
-                    println("html:nil")
+                    Log.DLog("html:nil")
                     return
                 }
                 
@@ -100,14 +100,14 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 
                 var bodyNode : HTMLNode? = parser.body
-                println("bodyNode:\(bodyNode)")
+                Log.DLog("bodyNode:\(bodyNode)")
                 if bodyNode == nil {
-                    println("bodyNode")
+                    Log.DLog("bodyNode")
                     return
                 }
                 
                 let divs : [HTMLNode] = bodyNode!.findChildTagsAttr("div", attrName: "class", attrValue: "row hot-photo-row")
-                println("divs.count:\(divs.count)")
+                Log.DLog("divs.count:\(divs.count)")
                 for node : HTMLNode in divs {
                     var dict : NSMutableDictionary = NSMutableDictionary()
                     
@@ -115,13 +115,13 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                     if photoImageNodes.count != 0 {
                         let photoImagePath:NSString = photoImageNodes[0].getAttributeNamed("src")
                         dict["photoImage"] = photoImagePath
-                        println("photoImagePath:\(photoImagePath)")
+                        Log.DLog("photoImagePath:\(photoImagePath)")
                     } else {
                         let smallPhotoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image-small img-thumbnail")
                         if smallPhotoImageNodes.count != 0 {
                             let photoImagePath:NSString = smallPhotoImageNodes[0].getAttributeNamed("src")
                             dict["photoImage"] = photoImagePath
-                            println("photoImagePath:\(photoImagePath)")
+                            Log.DLog("photoImagePath:\(photoImagePath)")
                         }
                     }
                     
@@ -129,7 +129,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                     if photoUserNode.count != 0 {
                         let photoUserPath:NSString = photoUserNode[0].getAttributeNamed("src")
                         dict["userImage"] = photoUserPath
-                        println("photoUserPath:\(photoUserPath)")
+                        Log.DLog("photoUserPath:\(photoUserPath)")
                     }
                     
                     let divNodes:[HTMLNode] = node.findChildTagsAttr("div", attrName: "class", attrValue: "col-xs-5")
@@ -139,7 +139,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                         if aNodes.count != 0 {
                             let detailUrl = aNodes[0].getAttributeNamed("href")
                             dict["detailUrl"] = NSString(format: "http://websta.me/%@", detailUrl)
-                            println("detailUrl:\(detailUrl)")
+                            Log.DLog("detailUrl:\(detailUrl)")
                         }
                         
                         let pNodes:[HTMLNode]
@@ -154,13 +154,13 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                             let aNode:[HTMLNode] = pNodes[2].findChildTags("a")
                             let userId:NSString = aNode[0].contents
                             dict["userId"] = userId
-                            println("userId:\(userId)")
+                            Log.DLog("userId:\(userId)")
                         }
                     }
                     
                     self.likeRankings.addObject(dict)
                     
-                    println(node.className)
+                    Log.DLog(node.className)
                 }
                 
                 //1. <script>タグを抽出する
@@ -189,7 +189,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                         //ref:
                         if let result = regex?.matchesInString(nsSentence as String, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, nsSentence.length)){
                             for reg in result{
-//                                println("reg:\(reg)")
+//                                Log.DLog("reg:\(reg)")
                                 let expression = nsSentence.substringWithRange(reg.range)
 //                                Log.DLog("expression:\(expression)")
                                 let str1 = expression.stringByReplacingOccurrencesOfString("number: ", withString: "", options: nil, range: nil)
@@ -211,7 +211,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
                 SVProgressHUD.dismiss()
-                println("Error!!")
+                Log.DLog("Error!!")
             }
         )
         
@@ -220,7 +220,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     func getDetail(url: NSString) {
         SVProgressHUD.show()
         
-        println("url:\(url)")
+        Log.DLog("url:\(url)")
         let manager:AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
         manager.responseSerializer = AFHTTPResponseSerializer()
@@ -228,13 +228,13 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             parameters: nil,
             timeoutInterval: 10,
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
-                println("Success!!")
+                Log.DLog("Success!!")
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
-                println("html:\(html)")
+                Log.DLog("html:\(html)")
                 
                 if html == nil {
-                    println("html:nil")
+                    Log.DLog("html:nil")
                     return
                 }
                 
@@ -246,14 +246,14 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 
                 var bodyNode : HTMLNode? = parser.body
-                println("bodyNode:\(bodyNode)")
+                Log.DLog("bodyNode:\(bodyNode)")
                 if bodyNode == nil {
-                    println("bodyNode")
+                    Log.DLog("bodyNode")
                     return
                 }
                 
                 let ulNodes : [HTMLNode] = bodyNode!.findChildTagsAttr("ul", attrName: "class", attrValue: "dropdown-menu")
-                println("uls:\(ulNodes.count)")
+                Log.DLog("uls:\(ulNodes.count)")
                 var detailUrl = ""
                 if ulNodes.count != 0 {
                     let liNodes:[HTMLNode] = ulNodes[1].findChildTags("li")
@@ -261,7 +261,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                         let aNodes = liNodes[4].findChildTags("a")
                         if aNodes.count != 0 {
                             detailUrl = aNodes[0].getAttributeNamed("href")
-                            println("detailUrl:\(detailUrl)")
+                            Log.DLog("detailUrl:\(detailUrl)")
                         }
                     }
                 }
@@ -280,7 +280,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 self.navigationController?.pushViewController(webController, animated: true)
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error!!")
+                Log.DLog("Error!!")
                 SVProgressHUD.dismiss()
             }
         )

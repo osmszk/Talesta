@@ -35,7 +35,6 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
         self.scrollView.backgroundColor = UIColor.whiteColor()
         self.view.backgroundColor = UIColor.whiteColor()
         self.widgetWebViewHConstraint.constant = Util.displaySize().width
-        //TODO:contentViewHConstraintを動的に
         
         self.officialButton.style = HTPressableButtonStyle.Rect
         self.officialButton.buttonColor = UIColor.ht_pinkRoseColor()
@@ -80,6 +79,11 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        SVProgressHUD.dismiss()
+        super.viewWillDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -91,7 +95,6 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -112,10 +115,9 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     func requestToGetUserDetail(){
         
         if self.followerRanking == nil{
-            SVProgressHUD.dismiss()
+            SVProgressHUD.showErrorWithStatus("No Data(FollowerRanking)")
             return
         }
-        
         
         let manager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
@@ -140,13 +142,11 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
                 
                 self.talentUser =  ParseHelper.convertTalentUserFromHtml(html: html as! String , talent: self.talentUser!)
                 
-                
                 if let offcialUrl = self.talentUser?.officialUrl{
                     let userPath = offcialUrl.lastPathComponent
                     self.nameLabel.text = userPath
                     self.talentUser?.userName = userPath
                 }
-                
                 
                 if self.talentUser?.officialUrl != nil {
                     self.officialButton.enabled = true
@@ -185,13 +185,11 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
                 
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
-                SVProgressHUD.dismiss()
+                SVProgressHUD.showErrorWithStatus("データ取得に失敗しました")
                 Log.DLog("error \(error)")
                 Log.DLog("error \(error.localizedDescription)")
         })
-        
     }
-        
     
     
     // MARK: - Action

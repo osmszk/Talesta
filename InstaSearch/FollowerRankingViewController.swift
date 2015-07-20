@@ -113,7 +113,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
                 
             },
             failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
-                SVProgressHUD.dismiss()
+                SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
                 Log.DLog("error \(error)")
                 Log.DLog("error \(error.localizedDescription)")
         })

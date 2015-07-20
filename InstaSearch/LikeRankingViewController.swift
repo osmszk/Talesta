@@ -40,6 +40,11 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        SVProgressHUD.dismiss()
+        super.viewWillDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -86,10 +91,11 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 self.likeNumbers.removeAllObjects()
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
-                Log.DLog("html:\(html)")
+//                Log.DLog("html:\(html)")
                 
                 if html == nil {
                     Log.DLog("html:nil")
+                    SVProgressHUD.showErrorWithStatus("読込に失敗しました[html]")
                     return
                 }
                 
@@ -104,6 +110,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 Log.DLog("bodyNode:\(bodyNode)")
                 if bodyNode == nil {
                     Log.DLog("bodyNode")
+                    SVProgressHUD.showErrorWithStatus("読込に失敗しました[body]")
                     return
                 }
                 
@@ -211,11 +218,10 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
-                SVProgressHUD.dismiss()
+                SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
                 Log.DLog("Error!!")
             }
         )
-        
     }
     
     func getDetail(url: NSString) {
@@ -236,6 +242,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 if html == nil {
                     Log.DLog("html:nil")
+                    SVProgressHUD.showErrorWithStatus("読込に失敗しました[html]")
                     return
                 }
                 
@@ -250,6 +257,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 Log.DLog("bodyNode:\(bodyNode)")
                 if bodyNode == nil {
                     Log.DLog("bodyNode")
+                    SVProgressHUD.showErrorWithStatus("読込に失敗しました[body]")
                     return
                 }
                 
@@ -282,7 +290,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
                 Log.DLog("Error!!")
-                SVProgressHUD.dismiss()
+                SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
             }
         )
     }

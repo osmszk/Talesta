@@ -167,7 +167,6 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "top_to_web"{
             let webController = segue.destinationViewController as! WebViewController
@@ -176,7 +175,6 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             let row = indexPath?.row
             
-//            let thTalent = self.talentModels[row!] as TerracehouseTalentModel
             if let models = self.talentModels {
                 let talent = models[row!] as SubTalentModel
                 webController.urlStr = talent.officialUrl

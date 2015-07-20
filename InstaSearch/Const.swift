@@ -81,7 +81,6 @@ class Const {
     
     //TODO:その他画面
     
-    //TODO:アナリティクス
     //TODO:広告
     
     //TODO:tabアイコン

@@ -142,7 +142,6 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     }
     
     func showBannerAd(){
-        
         let w = Util.displaySize().width
         let h = Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
         let x = CGFloat(0.0)

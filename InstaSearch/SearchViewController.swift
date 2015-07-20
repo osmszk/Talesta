@@ -20,6 +20,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     var filteredTableData :[TalentModel] = []
     var isFiltered : Bool = false
     
+    var adBannerView : UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +43,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         label.userInteractionEnabled = true
         self.navigationItem.titleView = label
         
+        showBannerAd()
     }
+    
     func tapped(tapGestureRecognizer: UITapGestureRecognizer) {
         self.searchBar.resignFirstResponder()
     
@@ -59,7 +63,20 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: - Custom Methods
+    
+    func showBannerAd(){
+        let w = Util.displaySize().width
+        let h = Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+        let x = CGFloat(0.0)
+        let y = Util.displaySize().height-h-CGFloat(Const.TAB_H+44.0+20.0)
+        let adView = UIView(frame: CGRectMake(x, y, w, h))
+        adView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(adView)
+        self.adBannerView = adView;
+        
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER2, view: self.adBannerView, sizeAdjust: true)
+    }
     
     // MARK: - Navigation
 
@@ -150,6 +167,17 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             return 0
         }else{
             return (self.talentSectionTitles as NSArray).indexOfObject(title)
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if self.isFiltered{
+            return Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+        }else{
+            if section == self.cellDataIndexTalents.count-1{
+                return Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+            }
+            return 0
         }
     }
     

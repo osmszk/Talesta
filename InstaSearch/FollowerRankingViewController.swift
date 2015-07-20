@@ -14,6 +14,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     
     
     var followerRankings : NSMutableArray = NSMutableArray()
+    var adBannerView : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
         reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
+        
+        showBannerAd()
         
         SVProgressHUD.show()
         self.requestToGetRanking()
@@ -53,7 +56,20 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
-
+    //MARK: Custom Methods
+    
+    func showBannerAd(){
+        let w = Util.displaySize().width
+        let h = Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+        let x = CGFloat(0.0)
+        let y = Util.displaySize().height-h-CGFloat(Const.TAB_H+44.0+20.0)
+        let adView = UIView(frame: CGRectMake(x, y, w, h))
+        adView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(adView)
+        self.adBannerView = adView;
+        
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER3, view: self.adBannerView, sizeAdjust: true)
+    }
     
     // MARK: - Navigation
 
@@ -120,6 +136,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         
     }
     
+    //MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.followerRankings.count
@@ -144,6 +161,10 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         cell.followerNumLabel?.text = ranking.followerString
         cell.categoryLabel?.text = ranking.junre
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
     }
     
     func jumpToDetail(){

@@ -93,6 +93,9 @@
 		C7CFAE901B5CD35D00C6B67F /* tabbtn_t@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE8F1B5CD35D00C6B67F /* tabbtn_t@3x.png */; };
 		C7CFAE971B5CD6AB00C6B67F /* logo_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE951B5CD6AB00C6B67F /* logo_white@2x.png */; };
 		C7CFAE981B5CD6AB00C6B67F /* logo_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CFAE961B5CD6AB00C6B67F /* logo_white@3x.png */; };
+		C7CFAE9A1B5D3BC000C6B67F /* ImobileSdkAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE991B5D3BC000C6B67F /* ImobileSdkAds.framework */; };
+		C7CFAE9C1B5D3BF900C6B67F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */; };
+		C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -251,6 +254,9 @@
 		C7CFAE8F1B5CD35D00C6B67F /* tabbtn_t@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbtn_t@3x.png"; sourceTree = "<group>"; };
 		C7CFAE951B5CD6AB00C6B67F /* logo_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_white@2x.png"; sourceTree = "<group>"; };
 		C7CFAE961B5CD6AB00C6B67F /* logo_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_white@3x.png"; sourceTree = "<group>"; };
+		C7CFAE991B5D3BC000C6B67F /* ImobileSdkAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImobileSdkAds.framework; sourceTree = "<group>"; };
+		C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -269,12 +275,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
+				C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */,
+				C7CFAE9C1B5D3BF900C6B67F /* CoreLocation.framework in Frameworks */,
 				C7CFAE841B5C052800C6B67F /* libsqlite3.dylib in Frameworks */,
 				C7CFAE821B5C051E00C6B67F /* libz.dylib in Frameworks */,
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
-				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
+				C7CFAE9A1B5D3BC000C6B67F /* ImobileSdkAds.framework in Frameworks */,
 				C7CFAE801B5C03D900C6B67F /* libGoogleAnalyticsServices.a in Frameworks */,
 				C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */,
 				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
@@ -321,6 +330,8 @@
 		9720D53E1B0F513400E258CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */,
+				C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */,
 				C7CFAE831B5C052800C6B67F /* libsqlite3.dylib */,
 				C7CFAE811B5C051E00C6B67F /* libz.dylib */,
 				C7CFAE581B575FED00C6B67F /* Social.framework */,
@@ -490,6 +501,7 @@
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
+				C7CFAE991B5D3BC000C6B67F /* ImobileSdkAds.framework */,
 				C74A83421B4B4E8E00EDAE9D /* Realm.framework */,
 				C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,

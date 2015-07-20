@@ -16,9 +16,8 @@ class Const {
     //TODO:申請とおったら
     //サーバーのversion.jsonのバージョンを現状AppStoreに公開されてるバージョン(初の場合は1.0.0)にする。フラグも0にする。
     
-    //TODO:URL修正
-    static let URL_APP_STORE = "https://itunes.apple.com/jp/app/id938517576?mt=8"
-    static let URL_APP_STORE_SHORT = "http://bit.ly/natsu_"
+    static let URL_APP_STORE = "https://itunes.apple.com/jp/app/id1021240186?mt=8"
+    static let URL_APP_STORE_SHORT = "http://apple.co/1fhAG4d"
     
     static let URL_SUPPORT_TWITTER    = "https://mobile.twitter.com/s_0samu"
     static let SUPPORT_MAIL           = "app+instasearch@suzukicreative.com"
@@ -36,10 +35,14 @@ class Const {
     //TODO:
     //i-mobile(CoreLocation,AdSupport,SystemConfig)
     static let AD_IMOBILE_PUBLISHER_ID   = "29411"
-    static let AD_IMOBILE_MEDIA_ID       = "129311"//test:101043
-    static let AD_IMOBILE_SPOT_ID_BANNER = "322000"//バナー//test:238097//med
-    static let AD_IMOBILE_SPOT_ID_BANNER2 = "385340"//セル間
-    static let AD_IMOBILE_SPOT_ID_ICON    = "385295"
+    static let AD_IMOBILE_MEDIA_ID       = "191728"//test:101043
+    static let AD_IMOBILE_SPOT_ID_BANNER1 = "531578"//バナー//test:238097//top
+    static let AD_IMOBILE_SPOT_ID_BANNER2 = "531581"//search
+    static let AD_IMOBILE_SPOT_ID_BANNER3 = "531582"//follower
+    static let AD_IMOBILE_SPOT_ID_BANNER4 = "531583"//talent detail mideam rectangle
+    static let AD_IMOBILE_SPOT_ID_BANNER5 = "531584"//web
+    static let AD_IMOBILE_SPOT_ID_TEXT = "531585"//web
+    
     //40degreeのやーつ
     //#define AD_IMOBILE_PUBLISHER_ID @"29411"
     //#define AD_IMOBILE_MEDIA_ID     @"106566"

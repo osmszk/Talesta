@@ -30,4 +30,9 @@
 #import "GAILogger.h"
 #import "GAIDictionaryBuilder.h"
 
+//  for i-mobile SDK
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "ImobileSdkAds/ImobileSdkAds.h"
+
 #endif

@@ -21,6 +21,9 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var widgetWebViewHConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentViewHConstraint: NSLayoutConstraint!
+    @IBOutlet weak var adBannerView: UIView!
+    @IBOutlet weak var adRctangleView: UIView!
+    @IBOutlet weak var rectangleHConstraint: NSLayoutConstraint!
     
     var talentUser : TalentUser? = TalentUser()
     var followerRanking : Talentinsta?
@@ -35,6 +38,10 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
         self.scrollView.backgroundColor = UIColor.whiteColor()
         self.view.backgroundColor = UIColor.whiteColor()
         self.widgetWebViewHConstraint.constant = Util.displaySize().width
+        let webY = CGFloat(154)
+        let adRectangleH = Util.displaySize().width - CGFloat(20)
+        self.rectangleHConstraint.constant = adRectangleH
+        self.contentViewHConstraint.constant = webY + Util.displaySize().width + CGFloat(20) + adRectangleH
         
         self.officialButton.style = HTPressableButtonStyle.Rect
         self.officialButton.buttonColor = UIColor.ht_pinkRoseColor()
@@ -66,6 +73,9 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
         }
         
         self.indicator.hidden = true
+        
+        showBannerAd()
+        
         SVProgressHUD.show()
         self.requestToGetUserDetail()
        
@@ -111,6 +121,10 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     }
     
     // MARK: - Custom
+    
+    func showBannerAd(){
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER4, view: self.adRctangleView, sizeAdjust: true)
+    }
     
     func requestToGetUserDetail(){
         
@@ -222,5 +236,44 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
         self.indicator.stopAnimating()
         self.indicator.hidden = true
     }
+    
+    /*
+    スマートフォンバナー広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135002
+    スポットＩＤ　　: 342407
+    スマートフォンビッグバナー広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135002
+    スポットＩＤ　　: 342408
+    ミディアムレクタングルバナー広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135002
+    スポットＩＤ　　: 342409
+    インタースティシャル広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135002
+    スポットＩＤ　　: 342411
+    テキストポップアップ広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135002
+    スポットＩＤ　　: 342412
+    バナー広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135180
+    スポットＩＤ　　: 342421
+    ビッグバナー広告 テストID
+    
+    パートナーＩＤ　: 34816
+    メディアＩＤ　　: 135180
+    スポットＩＤ　　: 342422
+    */
+
 
 }

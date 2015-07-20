@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-ws-9wE">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="814"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KR-duq" userLabel="アイコン">
                                                 <rect key="frame" x="15" y="15" width="120" height="120"/>
@@ -51,10 +51,9 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrF-fq-Vjy" userLabel="AdView">
-                                                <rect key="frame" x="0.0" y="153" width="320" height="50"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="0.0" y="141" width="320" height="1"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="5hV-QO-gKP"/>
+                                                    <constraint firstAttribute="height" constant="1" id="5hV-QO-gKP"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="335,666,888" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFF-rK-NFo" userLabel="followersNum">
@@ -76,8 +75,15 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5g-9X-uKe" userLabel="AdRectangleView">
+                                                <rect key="frame" x="10" y="480" width="300" height="300"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="lqS-bf-6vY"/>
+                                                </constraints>
+                                            </view>
                                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-H7-mRM">
-                                                <rect key="frame" x="0.0" y="223" width="320" height="320"/>
+                                                <rect key="frame" x="0.0" y="150" width="320" height="320"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="320" id="ktC-wL-0o0"/>
@@ -88,7 +94,7 @@
                                                 </connections>
                                             </webView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="brh-tV-IG1">
-                                                <rect key="frame" x="150" y="387" width="20" height="20"/>
+                                                <rect key="frame" x="150" y="306" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Wm2-bB-k5q"/>
                                                     <constraint firstAttribute="width" constant="20" id="ZvC-l0-7Ak"/>
@@ -96,14 +102,16 @@
                                             </activityIndicatorView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="oTW-H7-mRM" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="20" id="DAm-Vy-fk3"/>
+                                            <constraint firstItem="oTW-H7-mRM" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="8" id="DAm-Vy-fk3"/>
                                             <constraint firstItem="93u-9u-Or4" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="13" id="Dqn-cm-skz"/>
                                             <constraint firstItem="wGi-KR-duq" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="15" id="EfC-9i-kGt"/>
                                             <constraint firstItem="UFF-rK-NFo" firstAttribute="top" secondItem="aYc-N3-gAv" secondAttribute="bottom" constant="13" id="EhX-h6-BJE"/>
                                             <constraint firstItem="aYc-N3-gAv" firstAttribute="top" secondItem="I8Z-ws-9wE" secondAttribute="top" constant="20" id="KQd-uv-yu1"/>
-                                            <constraint firstItem="brh-tV-IG1" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="184" id="Kd6-et-le0"/>
+                                            <constraint firstItem="brh-tV-IG1" firstAttribute="top" secondItem="wrF-fq-Vjy" secondAttribute="bottom" constant="164" id="Kd6-et-le0"/>
+                                            <constraint firstAttribute="trailing" secondItem="f5g-9X-uKe" secondAttribute="trailing" constant="10" id="Kvn-Xg-0Xc"/>
+                                            <constraint firstItem="f5g-9X-uKe" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" constant="10" id="R0r-hh-hXt"/>
                                             <constraint firstAttribute="trailing" secondItem="wrF-fq-Vjy" secondAttribute="trailing" id="RmR-B9-VIp"/>
-                                            <constraint firstAttribute="height" constant="600" id="UMJ-ht-LFN"/>
+                                            <constraint firstAttribute="height" constant="814" id="UMJ-ht-LFN"/>
                                             <constraint firstItem="oTW-H7-mRM" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" id="YJ0-y8-wup"/>
                                             <constraint firstItem="9cj-ba-hCb" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="aLh-mA-EQy"/>
                                             <constraint firstAttribute="trailing" secondItem="aYc-N3-gAv" secondAttribute="trailing" constant="11" id="bX2-Ze-GAC"/>
@@ -112,8 +120,9 @@
                                             <constraint firstItem="aYc-N3-gAv" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="dcA-Yq-3ED"/>
                                             <constraint firstItem="9cj-ba-hCb" firstAttribute="top" secondItem="93u-9u-Or4" secondAttribute="bottom" constant="11" id="e1v-lT-mq3"/>
                                             <constraint firstAttribute="trailing" secondItem="oTW-H7-mRM" secondAttribute="trailing" id="hzP-iS-ZhB"/>
-                                            <constraint firstItem="wrF-fq-Vjy" firstAttribute="top" secondItem="wGi-KR-duq" secondAttribute="bottom" constant="18" id="n25-dd-yu0"/>
+                                            <constraint firstItem="wrF-fq-Vjy" firstAttribute="top" secondItem="wGi-KR-duq" secondAttribute="bottom" constant="6" id="n25-dd-yu0"/>
                                             <constraint firstItem="93u-9u-Or4" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="12" id="nx7-WL-Ikc"/>
+                                            <constraint firstItem="f5g-9X-uKe" firstAttribute="top" secondItem="oTW-H7-mRM" secondAttribute="bottom" constant="10" id="oix-IT-3AV"/>
                                             <constraint firstItem="wrF-fq-Vjy" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" id="ozh-CR-hh1"/>
                                             <constraint firstItem="wGi-KR-duq" firstAttribute="leading" secondItem="I8Z-ws-9wE" secondAttribute="leading" constant="15" id="qrP-vZ-Vbh"/>
                                             <constraint firstItem="UFF-rK-NFo" firstAttribute="leading" secondItem="wGi-KR-duq" secondAttribute="trailing" constant="80" id="tQp-4m-KaA"/>
@@ -143,6 +152,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="adBannerView" destination="wrF-fq-Vjy" id="sFy-IW-SHv"/>
+                        <outlet property="adRctangleView" destination="f5g-9X-uKe" id="8oN-0l-UjA"/>
                         <outlet property="contentViewHConstraint" destination="UMJ-ht-LFN" id="Vzf-O1-fA6"/>
                         <outlet property="followersLabel" destination="UFF-rK-NFo" id="tt8-Ei-TsG"/>
                         <outlet property="followersTitleLabel" destination="93u-9u-Or4" id="Hi4-xn-iCP"/>
@@ -150,6 +161,7 @@
                         <outlet property="indicator" destination="brh-tV-IG1" id="Ate-Mu-b9w"/>
                         <outlet property="nameLabel" destination="aYc-N3-gAv" id="q9D-aO-J8u"/>
                         <outlet property="officialButton" destination="9cj-ba-hCb" id="9t5-le-ux9"/>
+                        <outlet property="rectangleHConstraint" destination="lqS-bf-6vY" id="mWp-Tw-V65"/>
                         <outlet property="scrollContentView" destination="I8Z-ws-9wE" id="H54-UU-2zz"/>
                         <outlet property="scrollView" destination="vbE-tB-6aF" id="5Ng-r4-5H0"/>
                         <outlet property="widgetWebView" destination="oTW-H7-mRM" id="jaD-h6-o1a"/>
@@ -576,6 +588,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8mQ-AH-d84"/>
-        <segue reference="wW5-pR-PFb"/>
+        <segue reference="27k-Uz-ISG"/>
     </inferredMetricsTieBreakers>
 </document>

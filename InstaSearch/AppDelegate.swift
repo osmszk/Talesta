@@ -98,6 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //info.plistで”View controller-based status bar”をNOにしておく必要がある。
         //LightContent->白
         
+        UISegmentedControl.appearance().tintColor = Const.APP_COLOR1
+        
         UINavigationBar.appearance().barTintColor = Const.APP_COLOR1//背景塗りつぶし色
         UINavigationBar.appearance().tintColor = Const.APP_COLOR8//ボタンのテキストカラー
         UINavigationBar.appearance().titleTextAttributes =  [NSForegroundColorAttributeName:Const.APP_COLOR8]

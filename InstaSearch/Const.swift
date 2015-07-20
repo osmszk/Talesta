@@ -57,9 +57,9 @@ class Const {
     
     static let HASH_TAG = "#talesta"
     
-    //TODO: 申請前に1にする
+    //TODO: 申請前にtrueにする
     static let ENABLE_ANALYTICS = false
-    //TODO: 申請前に1にする
+    //TODO: 申請前にtrueにする
     static let ENABLE_AD = true
     
     static let APP_NAME = "talesta"

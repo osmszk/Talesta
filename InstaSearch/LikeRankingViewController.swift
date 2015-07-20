@@ -351,10 +351,6 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         return ""
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return Util
-//    }
-    
     @IBAction func didValueChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:

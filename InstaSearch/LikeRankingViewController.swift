@@ -83,6 +83,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 Log.DLog("Success!!")
                 
                 self.likeRankings.removeAllObjects()
+                self.likeNumbers.removeAllObjects()
                 
                 let html: NSString? = NSString(data:responsobject as! NSData, encoding:NSUTF8StringEncoding)
                 Log.DLog("html:\(html)")
@@ -325,8 +326,12 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
             cell.userLabel?.text = userId as? String
         }
         
-        let likeNumStr = self.likeNumbers[indexPath.row] as? String
-        cell.likeLabel?.text = commaNumber(likeNumStr)
+        if self.likeNumbers.count > indexPath.row {
+            let likeNumStr = self.likeNumbers[indexPath.row] as? String
+            cell.likeLabel?.text = commaNumber(likeNumStr)
+        }else{
+            cell.likeLabel?.text = "No Data"
+        }
         
         cell.imageHeightConstraint.constant = Util.displaySize().width-20
         

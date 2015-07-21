@@ -8,7 +8,16 @@
 
 import UIKit
 
-class OtherViewController: UITableViewController {
+class OtherViewController: UITableViewController ,UITableViewDelegate{
+    
+    let faqSection = 0
+    let tutorialSection = 1
+    let moreAppSection = 2
+    let contactSection = 3
+    let spcialThanksSection = 4;//2
+    
+    let settingSection = -1;//2
+    let sectionCount = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +40,49 @@ class OtherViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let row = self.tableView.indexPathForSelectedRow(){
+            self.tableView.deselectRowAtIndexPath(row, animated: true)
+        }
+    }
+    
+    // MARK: - Action
+    
+    func pushedReviewButton(sender:AnyObject){
+        let url = NSURL(string: Const.URL_APP_STORE)
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    func moveToFaqView(){
+        let path = "\(NSBundle.mainBundle().resourcePath)/faq.txt"
+        let data = NSData(contentsOfFile: path)
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        
+        let textViewController = UIViewController()
+        let textView = UITextView(frame: CGRectMake(0, 0, Util.displaySize().width, Util.displaySize().height))
+        textView.editable = false;
+        textView.selectable = false;
+        textView.text = String(string!)
+        textViewController.view = textView;
+        textViewController.title = "FAQ"
+        self.navigationController?.pushViewController(textViewController, animated: true)
+    }
+    
+    func moveToSozaiView(){
+        let path = "\(NSBundle.mainBundle().resourcePath)/sozai.txt"
+        let data = NSData(contentsOfFile: path)
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        
+        let textViewController = UIViewController()
+        let textView = UITextView(frame: CGRectMake(0, 0, Util.displaySize().width, Util.displaySize().height))
+        textView.editable = false;
+        textView.selectable = false;
+        textView.text = String(string!)
+        textViewController.view = textView;
+        textViewController.title = "素材"
+        self.navigationController?.pushViewController(textViewController, animated: true)
+    }
 
     /*
     // MARK: - Navigation

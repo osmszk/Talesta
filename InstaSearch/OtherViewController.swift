@@ -83,6 +83,31 @@ class OtherViewController: UITableViewController ,UITableViewDelegate{
         textViewController.title = "素材"
         self.navigationController?.pushViewController(textViewController, animated: true)
     }
+    
+    func moveToLisenceView(){
+        let path = "\(NSBundle.mainBundle().resourcePath)/license.txt"
+        let data = NSData(contentsOfFile: path)
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        
+        let textViewController = UIViewController()
+        let textView = UITextView(frame: CGRectMake(0, 0, Util.displaySize().width, Util.displaySize().height))
+        textView.editable = false;
+        textView.selectable = false;
+        textView.text = String(string!)
+        textViewController.view = textView;
+        textViewController.title = "ライセンス"
+        self.navigationController?.pushViewController(textViewController, animated: true)
+        
+    }
+    
+    func devicePlatform() -> String {
+         var size : Int = 0
+        sysctlbyname("hw.machine", nil, &size, nil, 0)
+        var machine = [CChar](count: size, repeatedValue: 0)
+        sysctlbyname("hw.machine", &machine, &size, nil, 0)
+        //Stringに変換
+        return String.fromCString(machine)!
+    }
 
     /*
     // MARK: - Navigation

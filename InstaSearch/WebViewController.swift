@@ -377,22 +377,24 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     //MARK: - UIWebViewDelegate
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        toggleBackForwardButtons()
+        Log.DLog("")
+        println(request)
         return true
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
+        Log.DLog("")
         SVProgressHUD.show()
         toggleBackForwardButtons()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        Log.DLog("")
         SVProgressHUD.dismiss()
         toggleBackForwardButtons()
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
         SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
-        toggleBackForwardButtons()
     }
 }

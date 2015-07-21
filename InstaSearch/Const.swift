@@ -42,6 +42,11 @@ class Const {
     static let AD_IMOBILE_SPOT_ID_BANNER5 = "531584"//web
     static let AD_IMOBILE_SPOT_ID_TEXT = "531585"//web
     
+    //中司さんのアイモバアカウント
+    static let AD_IMOBILE_PUBLISHER_ID_NAKA   = "42085"
+    static let AD_IMOBILE_MEDIA_ID_NAKA       = "192049"
+    static let AD_IMOBILE_SPOT_ID_BANNER_NAKA = "532508"
+    
     //40degreeのやーつ
     //#define AD_IMOBILE_PUBLISHER_ID @"29411"
     //#define AD_IMOBILE_MEDIA_ID     @"106566"

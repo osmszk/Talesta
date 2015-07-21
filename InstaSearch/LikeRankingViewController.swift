@@ -12,6 +12,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
 
     var likeRankings : NSMutableArray = NSMutableArray()
     var likeNumbers : NSMutableArray = NSMutableArray()
+    var adBannerView : UIView?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -28,6 +29,8 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
         reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
+        
+        self.showBannerAd()
         
         self.getLikeRanking("http://websta.me/hot/jp_posts")
     }
@@ -73,6 +76,19 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         default:
             Log.DLog("")
         }
+    }
+    
+    func showBannerAd(){
+        let w = Util.displaySize().width
+        let h = Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+        let x = CGFloat(0.0)
+        let y = Util.displaySize().height-h-CGFloat(Const.TAB_H+44.0+20.0)
+        let adView = UIView(frame: CGRectMake(x, y, w, h))
+        adView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(adView)
+        self.adBannerView = adView;
+        
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER_NAKA, view: self.adBannerView, sizeAdjust: true)
     }
     
     func getLikeRanking(url: NSString) {

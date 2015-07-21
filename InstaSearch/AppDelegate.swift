@@ -145,7 +145,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //text
         ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_TEXT)
-        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)   
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)
+        
+        //nakatsuka
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID_NAKA, mediaID:Const.AD_IMOBILE_MEDIA_ID_NAKA, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER_NAKA)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER_NAKA)
     }
 }
 

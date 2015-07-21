@@ -10,6 +10,11 @@ import Foundation
 
 class Const {
     
+    //TODO: 申請前にtrueにする
+    static let ENABLE_ANALYTICS = false
+    //TODO: 申請前にtrueにする
+    static let ENABLE_AD = true
+    
     //TODO:申請時
     //サーバーのversion.jsonのバージョンを現状AppStoreに公開されてるバージョン(初の場合は0.0.0)にする。フラグも1にする。
     
@@ -64,11 +69,6 @@ class Const {
     
     static let HASH_TAG = "#talesta"
     
-    //TODO: 申請前にtrueにする
-    static let ENABLE_ANALYTICS = false
-    //TODO: 申請前にtrueにする
-    static let ENABLE_AD = true
-    
     static let APP_NAME = "talesta"
     
     static let NAVI_BAR_TRANSLUCENT = false
@@ -86,7 +86,6 @@ class Const {
     
     static let KEY_START_DATE = "keyStartDate"
     
-    //TODO:その他画面
     
     /*
     スマートフォンバナー広告 テストID

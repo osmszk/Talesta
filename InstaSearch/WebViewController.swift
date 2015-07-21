@@ -48,8 +48,8 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     var forcedTitleBarText : String?;
     var originalBarStyle : UIBarStyle?;
     
-    
     var urlStr : String?
+    var adBannerView : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,21 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             let req : NSURLRequest = NSURLRequest(URL: NSURL(string: url)!)
             self.webView.loadRequest(req)   
         }
+        
+        showBannerAd()
+    }
+    
+    func showBannerAd(){
+        let w = Util.displaySize().width
+        let h = Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+        let x = CGFloat(0.0)
+        let y = Util.displaySize().height-h-CGFloat(Const.TAB_H+44.0+20.0+44.0)
+        let adView = UIView(frame: CGRectMake(x, y, w, h))
+        adView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(adView)
+        self.adBannerView = adView;
+        
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER5, view: self.adBannerView, sizeAdjust: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,6 +88,8 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
+        
+        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)
     }
     
     override func viewWillDisappear(animated: Bool) {

@@ -12,6 +12,11 @@ import Social
 
 class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComposeViewControllerDelegate,UIActionSheetDelegate{
     
+    
+    enum PLActionSheetTag: Int {
+        case ShareToFriend = 1
+    }
+    
     let faqSection = 0
     let moreAppSection = 1
     let friendSection = 2
@@ -58,7 +63,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     }
     
     func moveToFaqView(){
-        let path = "\(NSBundle.mainBundle().resourcePath)/faq.txt"
+        let path = "\(NSBundle.mainBundle().resourcePath!)/faq.txt"
         let data = NSData(contentsOfFile: path)
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
         
@@ -73,7 +78,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     }
     
     func moveToSozaiView(){
-        let path = "\(NSBundle.mainBundle().resourcePath)/sozai.txt"
+        let path = "\(NSBundle.mainBundle().resourcePath!)/sozai.txt"
         let data = NSData(contentsOfFile: path)
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
         
@@ -88,7 +93,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     }
     
     func moveToLisenceView(){
-        let path = "\(NSBundle.mainBundle().resourcePath)/license.txt"
+        let path = "\(NSBundle.mainBundle().resourcePath!)/license.txt"
         let data = NSData(contentsOfFile: path)
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
         
@@ -118,16 +123,14 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
             mailPicker.mailComposeDelegate = self
             mailPicker.setToRecipients([Const.SUPPORT_MAIL])
             
-            
-            
             let device = UIDevice.currentDevice()
             var msg = ""
-            msg+"\n\n\n---------\n"
-            msg+"※今後の改修のため、お客様情報を送信します\n"
-            msg+"Version:\(Util.appVersionString())\n"
-            msg+"iOS:\(device.systemVersion)\n"
-            msg+"Device:\(self.devicePlatform())\n"
-            msg+"Screen:\(NSStringFromCGSize(Util.displaySize()))\n"
+            msg = msg+"\n\n\n---------\n"
+            msg = msg+"※今後の改修のため、お客様情報を送信します\n"
+            msg = msg+"Version:\(Util.appVersionString())\n"
+            msg = msg+"iOS:\(device.systemVersion)\n"
+            msg = msg+"Device:\(self.devicePlatform())\n"
+            msg = msg+"Screen:\(NSStringFromCGSize(Util.displaySize()))\n"
             mailPicker.setSubject("\(Const.APP_NAME) お問い合わせ/ご要望")
             mailPicker.setMessageBody(msg, isHTML: false)
             self.presentViewController(mailPicker, animated: true, completion: nil)
@@ -145,14 +148,14 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     
     func shareToFriend(){
         let actionSheet = UIActionSheet(title: "友達にシェア", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil,otherButtonTitles:"LINE","Twitter","Facebook")
-        actionSheet.tag = 1
+        actionSheet.tag = PLActionSheetTag.ShareToFriend.rawValue
         actionSheet.actionSheetStyle = UIActionSheetStyle.Default
         actionSheet.showFromTabBar(self.tabBarController?.tabBar)
     }
     
     func sendViaLine(text:String){
         let msgText = Util.changeUrlEncode(text)
-        let urlString = "line://msg/text/\(msgText)"
+        let urlString = "line://msg/text/\(msgText!)"
         
         if UIApplication.sharedApplication().canOpenURL(NSURL(string: urlString)!){
             UIApplication.sharedApplication().openURL(NSURL(string: urlString)!)
@@ -295,23 +298,30 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
         default:
             Log.DLog("")
         }
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: - UIActionSheetDelegate
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         
-        if (actionSheet.tag == 1) {
+        
+        if (actionSheet.tag == PLActionSheetTag.ShareToFriend.rawValue) {
+            if buttonIndex == 0 {
+                //cancel
+                return
+            }
+            
             let disp = "芸能人のインスタグラムを探せるアプリ"
             let appName = Const.APP_NAME
             let text = "\(disp)『\(appName)』 \(Const.URL_APP_STORE)"
-            if (buttonIndex == 0) {
+            if (buttonIndex == 1) {
                 //LINE
                 self.sendViaLine(text)
-            }else if (buttonIndex == 1) {
+            }else if (buttonIndex == 2) {
                 //Twitter
                 self.sendViaTwitter(text)
-            }else if (buttonIndex == 2) {
+            }else if (buttonIndex == 3) {
                 //Facebook
                 self.sendViaFacebook(text)
             } else  {

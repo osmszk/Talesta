@@ -17,6 +17,9 @@
 		9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D5351B0F4B4A00E258CE /* Reachability.m */; };
 		9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */; };
 		97769B171B5E656300CC0D41 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97769B161B5E656300CC0D41 /* MessageUI.framework */; };
+		97769B1B1B5E777100CC0D41 /* faq.txt in Resources */ = {isa = PBXBuildFile; fileRef = 97769B181B5E777100CC0D41 /* faq.txt */; };
+		97769B1C1B5E777100CC0D41 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 97769B191B5E777100CC0D41 /* license.txt */; };
+		97769B1D1B5E777100CC0D41 /* sozai.txt in Resources */ = {isa = PBXBuildFile; fileRef = 97769B1A1B5E777100CC0D41 /* sozai.txt */; };
 		C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */; };
 		C70204EE1B0A2070004FAD19 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */; };
 		C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CC1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m */; };
@@ -143,6 +146,9 @@
 		9720D5351B0F4B4A00E258CE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		97769B161B5E656300CC0D41 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		97769B181B5E777100CC0D41 /* faq.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = faq.txt; sourceTree = "<group>"; };
+		97769B191B5E777100CC0D41 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		97769B1A1B5E777100CC0D41 /* sozai.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sozai.txt; sourceTree = "<group>"; };
 		C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C70204C91B0A2070004FAD19 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -487,6 +493,9 @@
 		C7640DED1B4AC66E002C443F /* data */ = {
 			isa = PBXGroup;
 			children = (
+				97769B181B5E777100CC0D41 /* faq.txt */,
+				97769B191B5E777100CC0D41 /* license.txt */,
+				97769B1A1B5E777100CC0D41 /* sozai.txt */,
 				C7CFAE621B5BAF2A00C6B67F /* akbgroup.txt */,
 				C7CFAE631B5BAF2A00C6B67F /* comedian.txt */,
 				C7CFAE641B5BAF2A00C6B67F /* creator.txt */,
@@ -705,6 +714,7 @@
 				C7640DEF1B4AC66E002C443F /* names.txt in Resources */,
 				C7CFAE6F1B5BAF2A00C6B67F /* singer.txt in Resources */,
 				C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */,
+				97769B1B1B5E777100CC0D41 /* faq.txt in Resources */,
 				C7CFAE5D1B59441100C6B67F /* koreanidol.txt in Resources */,
 				C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */,
 				C7CFAE8D1B5CD13B00C6B67F /* tabbtn_like@2x.png in Resources */,
@@ -715,8 +725,10 @@
 				C7CFAE8B1B5CD13B00C6B67F /* tabbtn_group@2x.png in Resources */,
 				C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */,
 				C74A83541B4D6D7F00EDAE9D /* barbtn_forward@2x.png in Resources */,
+				97769B1D1B5E777100CC0D41 /* sozai.txt in Resources */,
 				C7CFAE901B5CD35D00C6B67F /* tabbtn_t@3x.png in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,
+				97769B1C1B5E777100CC0D41 /* license.txt in Resources */,
 				C7CFAE8A1B5CD13B00C6B67F /* tabbtn_finduser@2x.png in Resources */,
 				C74A83551B4D6D7F00EDAE9D /* barbtn_gear@2x.png in Resources */,
 				C7CFAE571B561A0000C6B67F /* btn_close@2x.png in Resources */,

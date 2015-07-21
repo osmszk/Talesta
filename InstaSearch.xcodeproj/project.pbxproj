@@ -16,6 +16,7 @@
 		971240B81B0A016300E25C2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240B71B0A016300E25C2E /* TabBarController.swift */; };
 		9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720D5351B0F4B4A00E258CE /* Reachability.m */; };
 		9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */; };
+		97769B171B5E656300CC0D41 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97769B161B5E656300CC0D41 /* MessageUI.framework */; };
 		C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */; };
 		C70204EE1B0A2070004FAD19 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */; };
 		C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C70204CC1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m */; };
@@ -141,6 +142,7 @@
 		9720D5341B0F4B4A00E258CE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9720D5351B0F4B4A00E258CE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9720D5371B0F4B6C00E258CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		97769B161B5E656300CC0D41 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C70204C51B0A1F6A004FAD19 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		C70204C91B0A2070004FAD19 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		C70204CA1B0A2070004FAD19 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97769B171B5E656300CC0D41 /* MessageUI.framework in Frameworks */,
 				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */,
 				C7CFAE9C1B5D3BF900C6B67F /* CoreLocation.framework in Frameworks */,
@@ -330,6 +333,7 @@
 		9720D53E1B0F513400E258CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97769B161B5E656300CC0D41 /* MessageUI.framework */,
 				C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */,
 				C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */,
 				C7CFAE831B5C052800C6B67F /* libsqlite3.dylib */,

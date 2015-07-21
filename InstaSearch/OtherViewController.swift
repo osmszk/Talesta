@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OtherViewController: UIViewController {
-
+class OtherViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,4 +42,8 @@ class OtherViewController: UIViewController {
     }
     */
 
+    //MARK: - UITableViewDataSource
+    
+    
+    
 }

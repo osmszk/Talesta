@@ -74,6 +74,23 @@ class Util{
         return string.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
     }
     
+    class func isOnline()->Bool{
+        let curReach = Reachability.reachabilityForInternetConnection()
+        let netStatus = curReach.currentReachabilityStatus()
+        
+        switch (netStatus.rawValue) {
+        case NetworkStatus.NotReachable.rawValue:
+            return false
+        case NetworkStatus.ReachableViaWWAN.rawValue://3G
+            return true
+        case NetworkStatus.ReachableViaWiFi.rawValue://Wifi
+            return true
+        default:
+            return true;
+        }
+        
+    }
+    
     class func showAlert(title:String ,message:String){
         let alert = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "OK")
         alert.show()

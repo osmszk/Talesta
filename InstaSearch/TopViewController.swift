@@ -85,6 +85,14 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         }
         
         showBannerAd()
+        
+        let appversionState = Util.appVersionState()
+        if (appversionState == Util.AppVersionState.First || appversionState == Util.AppVersionState.BumpedUp) {
+            //サーバーチェック
+            Log.DLog("first or bumpedUp!");
+            self.startServerCheckAf()
+            return
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -121,6 +129,64 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     }
     
     // MARK: - Private Methods
+    
+    func startServerCheckAf(){
+        if(!Util.isOnline()){
+            return
+        }
+        
+        self.removeCache()
+        
+        SVProgressHUD.showWithStatus("", maskType: SVProgressHUDMaskType.Clear)
+        self.requestToCheckForReviewAf()
+    }
+    
+    func removeCache(){
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+    }
+    
+    func requestToCheckForReviewAf(){
+        let url = Const.URL_REVIEW_API
+        
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer.acceptableContentTypes = NSSet(object: "text/plain") as Set<NSObject>
+        manager.GET(url, parameters:nil,timeoutInterval:3.0, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+            
+            SVProgressHUD.dismiss()
+            Util.saveTrackingAppVersion()
+            Log.DLog("responseObject:\(responseObject)")
+            
+            let jsonDic    = responseObject as? NSDictionary;//[request responseString];
+            //        DEBUGLOG(@"jsonDic:%@",jsonDic);
+            let shouldNOWallAd = self.shouldBeNoWallAd(jsonDic)
+            
+            if (shouldNOWallAd){
+                Util.saveBool(false,forKey:Const.KEY_WALL_AD_SHOW_FLG)
+            }else{
+                Util.saveBool(true,forKey:Const.KEY_WALL_AD_SHOW_FLG)
+            }
+        },failure:{ (operation:AFHTTPRequestOperation! , error:NSError!) -> Void in
+            Log.DLog("error!!!")
+            println(operation.responseObject);
+            SVProgressHUD.dismiss()
+        })
+    }
+    
+    func shouldBeNoWallAd(response: NSDictionary?) -> Bool{
+        if let responseDic = response{
+            let thisAppVer = Util.appVersionNumber().floatValue
+            let appVersionString: String = responseDic["version"] as! String
+            let serverVer = Util.convertToNumberVersion(appVersionString).floatValue
+            Log.DLog("sever:\(serverVer) app:\(thisAppVer)")
+            let flgInt = responseDic["flg"] as! Int
+            let isInReview : Bool = flgInt == 1
+            if(thisAppVer > serverVer && isInReview){
+                return true;
+            }
+            return false;
+        }
+        return false
+    }
     
     func setupDatabase(){
         //        RealmHelper.deleteAll()

@@ -35,7 +35,7 @@ class Const {
     static let URL_APP_STORE_KAKUREIC = "https://itunes.apple.com/jp/app/id404832410?mt=8"
     static let URL_APP_STORE_ALL      = "http://appstore.com/suzukicreative"
 
-    static let URL_REVIEW_API = "http://plegineer.co.jp/api/instasearch/version.json"
+    static let URL_REVIEW_API = "http://plegineer.co.jp/api/talesta/version.json"
     
     //i-mobile(CoreLocation,AdSupport,SystemConfig)
     static let AD_IMOBILE_PUBLISHER_ID   = "29411"
@@ -85,6 +85,7 @@ class Const {
     static let APP_COLOR1 = Util.hexColor("0x000000")
     
     static let KEY_START_DATE = "keyStartDate"
+    static let KEY_WALL_AD_SHOW_FLG = "keyWallAdShowFlg"//FLG:YES = NOT in review
     
     
     /*

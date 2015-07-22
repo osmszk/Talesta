@@ -86,7 +86,7 @@ class Const {
     
     static let KEY_START_DATE = "keyStartDate"
     static let KEY_WALL_AD_SHOW_FLG = "keyWallAdShowFlg"//FLG:YES = NOT in review
-    
+    static let KEY_REVIEW_DONE_FLG = "keyReviewDoneFlg"//レビュー催促→インセンティブ制限　が解除されたフラグ
     
     /*
     スマートフォンバナー広告 テストID

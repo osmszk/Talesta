@@ -12,9 +12,12 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     
     @IBOutlet weak var tableView: UITableView!
     
+    var isReviewOver : Bool = false
     
     var followerRankings : NSMutableArray = NSMutableArray()
     var adBannerView : UIView?
+    
+    let INITIAL_ROW_NUM_MAX : Int = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,8 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
         
         showBannerAd()
+        
+        self.isReviewOver = Util.loadBool(Const.KEY_WALL_AD_SHOW_FLG)
         
         SVProgressHUD.show()
         self.requestToGetRanking()
@@ -139,10 +144,24 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     //MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.followerRankings.count
+        if self.followerRankings.count==0{
+            return 0
+        }else{
+            if self.isReviewOver && !Util.loadBool(Const.KEY_REVIEW_DONE_FLG){
+                return INITIAL_ROW_NUM_MAX + 1
+            }else{
+                return self.followerRankings.count
+            }
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if self.isReviewOver && !Util.loadBool(Const.KEY_REVIEW_DONE_FLG){
+            if indexPath.row == INITIAL_ROW_NUM_MAX{
+                let cell = tableView.dequeueReusableCellWithIdentifier("reviewCell", forIndexPath: indexPath) as! UITableViewCell
+                return cell
+            }
+        }
         let cell  = tableView.dequeueReusableCellWithIdentifier("followerRankingCell", forIndexPath: indexPath) as! FollowerRankingTableViewCell
         //UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "followerRankingCell") as! FollowerRankingTableViewCell
         
@@ -167,11 +186,36 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         return Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if self.isReviewOver && !Util.loadBool(Const.KEY_REVIEW_DONE_FLG){
+            if indexPath.row == INITIAL_ROW_NUM_MAX{
+                
+                var alertController = UIAlertController(title: "", message: "このアプリの良さをレビューで伝えて頂いた方に、「21位以降見れる機能」をプレゼント!\n星5つだと制作者として、とっても励みになります^^\n", preferredStyle: .Alert)
+                
+                let otherAction = UIAlertAction(title: "レビューする", style: .Cancel) { action in
+                    
+                    let url = NSURL(string: Const.URL_APP_STORE)!
+                    UIApplication.sharedApplication().openURL(url)
+                    
+                    Util.saveBool(true,forKey:Const.KEY_REVIEW_DONE_FLG)
+                    
+                    self.tableView.reloadData()
+
+                }
+                let laterAction = UIAlertAction(title: "あとで", style: .Default) {action in
+                    
+                }
+                alertController.addAction(otherAction)
+                alertController.addAction(laterAction)
+                
+                presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+    
     func jumpToDetail(){
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
         var detail  = storyboard1.instantiateViewControllerWithIdentifier("detail") as! UserDetailViewController
         self.navigationController?.pushViewController(detail, animated: true)
     }
-    
-
 }

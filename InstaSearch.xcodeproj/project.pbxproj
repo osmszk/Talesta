@@ -80,6 +80,7 @@
 		C772B1FA1B75DA9E00986F97 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F11B75DA9E00986F97 /* NSDate+InternetDateTime.m */; };
 		C772B1FB1B75DA9E00986F97 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F31B75DA9E00986F97 /* NSString+HTML.m */; };
 		C772B1FC1B75DA9E00986F97 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */; };
+		C772B1FE1B75F08C00986F97 /* btn_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C772B1FD1B75F08C00986F97 /* btn_news@2x.png */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -249,6 +250,7 @@
 		C772B1F31B75DA9E00986F97 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		C772B1F41B75DA9E00986F97 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		C772B1FD1B75F08C00986F97 /* btn_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_news@2x.png"; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				C7CFAE561B561A0000C6B67F /* btn_close@2x.png */,
+				C772B1FD1B75F08C00986F97 /* btn_news@2x.png */,
 				C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */,
 				C74A834E1B4D6D7F00EDAE9D /* barbtn_back@2x.png */,
 				C74A834F1B4D6D7F00EDAE9D /* barbtn_forward@2x.png */,
@@ -769,6 +772,7 @@
 				C7CFAE6F1B5BAF2A00C6B67F /* singer.txt in Resources */,
 				C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */,
 				97769B1B1B5E777100CC0D41 /* faq.txt in Resources */,
+				C772B1FE1B75F08C00986F97 /* btn_news@2x.png in Resources */,
 				C7CFAE5D1B59441100C6B67F /* koreanidol.txt in Resources */,
 				C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */,
 				C7CFAE8D1B5CD13B00C6B67F /* tabbtn_like@2x.png in Resources */,

@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol NewsViewControllerDelegate:class{
+    func newsFinish(viewControllr:NewsViewController)
+}
+
 class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MWFeedParserDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var newsModels : [News] = []
+//    var newsModels : [News] = []
     var items :[MWFeedItem] = []
     var adBannerView : UIView?
+    weak var delegate : NewsViewControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,10 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
 
+        self.navigationItem.title = "インスタニュース"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.Plain, target: self, action: "pushedCloseButton")
+        
         showBannerAd()
         
         SVProgressHUD.show()
@@ -62,6 +71,11 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         feedParser.parse()
     }
     
+    //Action: - Action
+    func pushedCloseButton(){
+        self.delegate?.newsFinish(self)
+    }
+    
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -84,6 +98,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //            }
         }
     }
+    
     
     //MARK: UITableViewDataSource
     
@@ -121,6 +136,11 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func feedParserDidFinish(parser: MWFeedParser) {
         SVProgressHUD.dismiss()
+        self.items.sort { (lItem, rItem) -> Bool in
+            //ref:http://qiita.com/mst/items/b18e9531ac0cbdf2f3c3
+            return lItem.date.timeIntervalSinceDate(rItem.date)>0
+        }
+        
         self.tableView.reloadData()
     }
     

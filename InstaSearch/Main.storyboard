@@ -805,7 +805,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="Y6p-7P-eT6" id="XCE-mx-zNE"/>
                                             <outlet property="titleLabel" destination="cfZ-eY-AnT" id="IFg-eo-HYP"/>
-                                            <segue destination="6cA-uu-uIN" kind="push" id="6Iq-7u-BsP"/>
+                                            <segue destination="6cA-uu-uIN" kind="push" identifier="news_to_web" id="6Iq-7u-BsP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

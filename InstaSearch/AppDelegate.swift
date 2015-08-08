@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var navi1:UINavigationController = UINavigationController(rootViewController:search)
         var navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
         var navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
-        var navi4:UINavigationController = UINavigationController(rootViewController:news)
+        var navi4:UINavigationController = UINavigationController(rootViewController:other)
         var naviControllerList:Array<UINavigationController> =
         [
             navi0,

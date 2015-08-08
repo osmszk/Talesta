@@ -37,7 +37,7 @@ enum CampaignType: Int {
     }
 }
 
-class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelegate {
+class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelegate,NewsViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var guideView: UIView!
@@ -65,6 +65,12 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.guideLabel.text = guide[1]
         
         self.talentModels = RealmHelper.subModelAll(type)
+        
+        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        reloadButton.frame = CGRectMake(0, 0, 34, 34);
+        reloadButton.setImage(UIImage(named: "btn_news"), forState: UIControlState.Normal)
+        reloadButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
         
         if let models = self.talentModels{
             if models.count == 0 {
@@ -126,6 +132,14 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         UIView.animateWithDuration(0.6) { () -> Void in
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func pushedNewsButton(sender: AnyObject){
+        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
+        var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
+        news.delegate = self
+        var navi0:UINavigationController = UINavigationController(rootViewController:news)
+        self.presentViewController(navi0, animated: true, completion: nil)
     }
     
     // MARK: - Private Methods
@@ -327,6 +341,12 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 75+10+10+Util.displaySize().width
+    }
+    
+    // MARK: - NewsViewControllerDelegate
+    
+    func newsFinish(viewControllr:NewsViewController){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

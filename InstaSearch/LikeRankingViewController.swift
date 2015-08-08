@@ -282,16 +282,30 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 var detailUrl = ""
                 if ulNodes.count != 0 {
                     let liNodes:[HTMLNode] = ulNodes[1].findChildTags("li")
-                    if liNodes.count != 0 {
-                        let aNodes = liNodes[4].findChildTags("a")
+                    if liNodes.count > 3 {
+                        //image
+                        let aNodes = liNodes[4].findChildTags("a")//
                         if aNodes.count != 0 {
                             detailUrl = aNodes[0].getAttributeNamed("href")
-                            Log.DLog("detailUrl:\(detailUrl)")
+                            Log.DLog("detailUrl(image):\(detailUrl)")
                         }
+                    }else if liNodes.count == 3{
+                        //movie
+                        let aNodes = liNodes[2].findChildTags("a")//
+                        if aNodes.count != 0 {
+                            detailUrl = aNodes[0].getAttributeNamed("href")
+                            Log.DLog("detailUrl(movie):\(detailUrl)")
+                        }
+                        
                     }
                 }
                 
                 SVProgressHUD.dismiss()
+                
+                if detailUrl == ""{
+                    SVProgressHUD.showErrorWithStatus("情報取得に失敗しました[detail]")
+                    return
+                }
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let webController = storyboard.instantiateViewControllerWithIdentifier("web") as! WebViewController
@@ -303,6 +317,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 webController.showReloadButton = true
                 webController.showActionButton = true
                 self.navigationController?.pushViewController(webController, animated: true)
+                
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
                 Log.DLog("Error!!")

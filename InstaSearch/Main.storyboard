@@ -77,7 +77,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5g-9X-uKe" userLabel="AdRectangleView">
                                                 <rect key="frame" x="10" y="480" width="300" height="300"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="lqS-bf-6vY"/>
                                                 </constraints>
@@ -856,7 +855,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6Iq-7u-BsP"/>
+        <segue reference="27k-Uz-ISG"/>
         <segue reference="g6Q-HL-Oc9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MWFeedParserDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var newsModels : [News] = []
+    var items :[MWFeedItem] = []
     var adBannerView : UIView?
     
     override func viewDidLoad() {
@@ -20,10 +21,10 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
 
+        showBannerAd()
+        
         SVProgressHUD.show()
         self.requestToGetNews()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,36 +55,11 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER3, view: self.adBannerView, sizeAdjust: true)
     }
     
-    func requestToGetNews(){
-        let manager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
-        manager.requestSerializer.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36", forHTTPHeaderField: "User-Agent")
-        manager.responseSerializer = AFHTTPResponseSerializer()
-        let url = Const.URL_RSS_NEWS_INSTA
-        manager.GET(url,
-            parameters: nil,
-            timeoutInterval: 10,
-            success: { (operation : AFHTTPRequestOperation!, responsobject: AnyObject!) -> Void in
-                
-                SVProgressHUD.dismiss()
-                Log.DLog("success")
-                
-                let html : NSString? = NSString(data: responsobject as! NSData, encoding: NSUTF8StringEncoding)
-                if html == nil {
-                    Log.DLog("failed!")
-                    return
-                }
-                Log.DLog("html:\(html)")
-                
-                
-                
-                self.tableView.reloadData()
-                
-            },
-            failure: {( operation:AFHTTPRequestOperation!, error:NSError!) -> Void in
-                SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
-                Log.DLog("error \(error)")
-                Log.DLog("error \(error.localizedDescription)")
-        })
+    func requestToGetNews() {
+        let URL = NSURL(string: Const.URL_RSS_NEWS_INSTA)
+        let feedParser = MWFeedParser(feedURL: URL);
+        feedParser.delegate = self
+        feedParser.parse()
     }
     
     // MARK: - Navigation
@@ -97,14 +73,14 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let row = indexPath?.row
             
 //            if let models = self.newsModels {
-//                let talent = models[row!] as News
-//                webController.urlStr = talent.url
-//                
-//                webController.mode = JOWebBrowserMode.Navigation
-//                webController.showURLStringOnActionSheetTitle = false
-//                webController.showPageTitleOnTitleBar = true
-//                webController.showReloadButton = true
-//                webController.showActionButton = true
+                let talent = self.items[row!] as MWFeedItem
+                webController.urlStr = talent.link
+                
+                webController.mode = JOWebBrowserMode.Navigation
+                webController.showURLStringOnActionSheetTitle = false
+                webController.showPageTitleOnTitleBar = true
+                webController.showReloadButton = true
+                webController.showActionButton = true
 //            }
         }
     }
@@ -117,19 +93,52 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.newsModels.count
+        return self.items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell  = tableView.dequeueReusableCellWithIdentifier("newsCell", forIndexPath: indexPath) as! NewsTableViewCell
+        let item = self.items[indexPath.row] as MWFeedItem
+        cell.titleLabel.text = item.title
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        cell.dateLabel.text = formatter.stringFromDate(item.date) as String
         
-        let news = self.newsModels[indexPath.row] as News
         return cell
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return Util.displaySize().width/CGFloat(320.0) * CGFloat(Const.AD_BANNER_HIGHT)
+    }
+    
+    //MARK: MWFeedParserDelegate
+    
+    func feedParserDidStart(parser: MWFeedParser) {
+        SVProgressHUD.show()
+        self.items = [MWFeedItem]()
+    }
+    
+    func feedParserDidFinish(parser: MWFeedParser) {
+        SVProgressHUD.dismiss()
+        self.tableView.reloadData()
+    }
+    
+    func feedParser(parser: MWFeedParser, didParseFeedInfo info: MWFeedInfo) {
+#if DEBUG
+        println(info)
+#endif
+    }
+    
+    func feedParser(parser: MWFeedParser, didParseFeedItem item: MWFeedItem) {
+#if DEBUG
+        println(item)
+#endif
+        self.items.append(item)
+        
+//        SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
+//        Log.DLog("error \(error)")
+//        Log.DLog("error \(error.localizedDescription)")
     }
     
     

@@ -112,6 +112,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.rightBarButtonItem?.enabled = true
         if let row = self.tableView.indexPathForSelectedRow(){
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
@@ -139,9 +140,10 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
         var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
-        news.delegate = self
-        var navi0:UINavigationController = UINavigationController(rootViewController:news)
-        self.presentViewController(navi0, animated: true, completion: nil)
+//        news.delegate = self
+//        var navi0:UINavigationController = UINavigationController(rootViewController:news)
+//        self.presentViewController(navi0, animated: true, completion: nil)
+        self.navigationController?.pushViewController(news, animated: true)
     }
     
     // MARK: - Private Methods

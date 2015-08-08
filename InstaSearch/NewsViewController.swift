@@ -28,7 +28,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
         self.navigationItem.title = "インスタニュース"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.Plain, target: self, action: "pushedCloseButton")
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.Plain, target: self, action: "pushedCloseButton")
         
         showBannerAd()
         
@@ -41,12 +41,26 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if Const.ENABLE_ANALYTICS{
+            let screenName = reflect(self).summary
+            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         if let row = self.tableView.indexPathForSelectedRow(){
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        SVProgressHUD.dismiss()
+        super.viewWillDisappear(animated)
     }
 
     

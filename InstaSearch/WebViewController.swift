@@ -61,6 +61,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         initToolBar()
         
         if let url = urlStr{
+            SVProgressHUD.show()
             let req : NSURLRequest = NSURLRequest(URL: NSURL(string: url)!)
             self.webView.loadRequest(req)   
         }
@@ -93,6 +94,12 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     }
     
     override func viewWillDisappear(animated: Bool) {
+        SVProgressHUD.dismiss()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
         SVProgressHUD.dismiss()
         super.viewWillDisappear(animated)
     }
@@ -384,13 +391,15 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     
     func webViewDidStartLoad(webView: UIWebView) {
         Log.DLog("")
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         toggleBackForwardButtons()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
         Log.DLog("")
         SVProgressHUD.dismiss()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         toggleBackForwardButtons()
     }
     

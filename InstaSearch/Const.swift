@@ -11,7 +11,7 @@ import Foundation
 class Const {
     
     //TODO: 申請前にtrueにする
-    static let ENABLE_ANALYTICS = false
+    static let ENABLE_ANALYTICS = true
     //TODO: 申請前にtrueにする
     static let ENABLE_AD = true
     

@@ -11,9 +11,9 @@ import Foundation
 class Const {
     
     //TODO: 申請前にtrueにする
-    static let ENABLE_ANALYTICS = true
+    static let ENABLE_ANALYTICS = false
     //TODO: 申請前にtrueにする
-    static let ENABLE_AD = true
+    static let ENABLE_AD = false
     
     //TODO:申請時
     //サーバーのversion.jsonのバージョンを現状AppStoreに公開されてるバージョン(初の場合は0.0.0)にする。フラグも1にする。

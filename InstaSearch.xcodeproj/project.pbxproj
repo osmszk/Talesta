@@ -70,6 +70,16 @@
 		C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76620D11B1DDD4A003FFC7A /* Main2.storyboard */; };
 		C76620D41B1E830F003FFC7A /* FollowerRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */; };
 		C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76620D51B2126A8003FFC7A /* TalentUser.swift */; };
+		C772B1E11B75CC2000986F97 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B1E01B75CC2000986F97 /* NewsViewController.swift */; };
+		C772B1E31B75CDCC00986F97 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B1E21B75CDCC00986F97 /* NewsTableViewCell.swift */; };
+		C772B1E51B75D6C200986F97 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B1E41B75D6C200986F97 /* News.swift */; };
+		C772B1F61B75DA9E00986F97 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1E81B75DA9E00986F97 /* GTMNSString+HTML.m */; };
+		C772B1F71B75DA9E00986F97 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1EA1B75DA9E00986F97 /* MWFeedInfo.m */; };
+		C772B1F81B75DA9E00986F97 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1EC1B75DA9E00986F97 /* MWFeedItem.m */; };
+		C772B1F91B75DA9E00986F97 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1EE1B75DA9E00986F97 /* MWFeedParser.m */; };
+		C772B1FA1B75DA9E00986F97 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F11B75DA9E00986F97 /* NSDate+InternetDateTime.m */; };
+		C772B1FB1B75DA9E00986F97 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F31B75DA9E00986F97 /* NSString+HTML.m */; };
+		C772B1FC1B75DA9E00986F97 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -221,6 +231,24 @@
 		C76620D11B1DDD4A003FFC7A /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingTableViewCell.swift; sourceTree = "<group>"; };
 		C76620D51B2126A8003FFC7A /* TalentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentUser.swift; sourceTree = "<group>"; };
+		C772B1E01B75CC2000986F97 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		C772B1E21B75CDCC00986F97 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		C772B1E41B75D6C200986F97 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C772B1E71B75DA9E00986F97 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		C772B1E81B75DA9E00986F97 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		C772B1E91B75DA9E00986F97 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
+		C772B1EA1B75DA9E00986F97 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
+		C772B1EB1B75DA9E00986F97 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
+		C772B1EC1B75DA9E00986F97 /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
+		C772B1ED1B75DA9E00986F97 /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
+		C772B1EE1B75DA9E00986F97 /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
+		C772B1EF1B75DA9E00986F97 /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
+		C772B1F01B75DA9E00986F97 /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		C772B1F11B75DA9E00986F97 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		C772B1F21B75DA9E00986F97 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		C772B1F31B75DA9E00986F97 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		C772B1F41B75DA9E00986F97 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -332,6 +360,7 @@
 				C74A83491B4B574E00EDAE9D /* TalentModel.swift */,
 				C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */,
 				C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */,
+				C772B1E41B75D6C200986F97 /* News.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -356,6 +385,7 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C772B1E61B75DA9E00986F97 /* MWFeedParser */,
 				C7CFAE741B5C03AF00C6B67F /* GoogleAnalytics */,
 				C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */,
 				C70205091B108165004FAD19 /* SVProgressHUD */,
@@ -486,6 +516,7 @@
 				C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */,
 				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
 				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
+				C772B1E21B75CDCC00986F97 /* NewsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -509,6 +540,28 @@
 				C7640DEE1B4AC66E002C443F /* names.txt */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		C772B1E61B75DA9E00986F97 /* MWFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				C772B1E71B75DA9E00986F97 /* GTMNSString+HTML.h */,
+				C772B1E81B75DA9E00986F97 /* GTMNSString+HTML.m */,
+				C772B1E91B75DA9E00986F97 /* MWFeedInfo.h */,
+				C772B1EA1B75DA9E00986F97 /* MWFeedInfo.m */,
+				C772B1EB1B75DA9E00986F97 /* MWFeedItem.h */,
+				C772B1EC1B75DA9E00986F97 /* MWFeedItem.m */,
+				C772B1ED1B75DA9E00986F97 /* MWFeedParser.h */,
+				C772B1EE1B75DA9E00986F97 /* MWFeedParser.m */,
+				C772B1EF1B75DA9E00986F97 /* MWFeedParser_Private.h */,
+				C772B1F01B75DA9E00986F97 /* NSDate+InternetDateTime.h */,
+				C772B1F11B75DA9E00986F97 /* NSDate+InternetDateTime.m */,
+				C772B1F21B75DA9E00986F97 /* NSString+HTML.h */,
+				C772B1F31B75DA9E00986F97 /* NSString+HTML.m */,
+				C772B1F41B75DA9E00986F97 /* NSString+XMLEntities.h */,
+				C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */,
+			);
+			path = MWFeedParser;
 			sourceTree = "<group>";
 		};
 		C779ADB61B0379AB000F585A = {
@@ -544,6 +597,7 @@
 				971240A31B09FE6F00E25C2E /* SearchViewController.swift */,
 				971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */,
 				971240AF1B09FED400E25C2E /* UserDetailViewController.swift */,
+				C772B1E01B75CC2000986F97 /* NewsViewController.swift */,
 				C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */,
 				971240AB1B09FEA400E25C2E /* LikeRankingViewController.swift */,
 				971240B31B09FEE400E25C2E /* OtherViewController.swift */,
@@ -771,6 +825,7 @@
 				C70204F61B0A2070004FAD19 /* AFURLSessionManager.m in Sources */,
 				C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */,
 				C70204F31B0A2070004FAD19 /* AFURLConnectionOperation.m in Sources */,
+				C772B1F71B75DA9E00986F97 /* MWFeedInfo.m in Sources */,
 				C70204FD1B0A2070004FAD19 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C70204FA1B0A2070004FAD19 /* UIButton+AFNetworking.m in Sources */,
 				C7FBB5EA1B24350A00CEC6EB /* UIColor+HTColor.m in Sources */,
@@ -781,8 +836,10 @@
 				C70205FE1B1AD285004FAD19 /* ParseHelper.swift in Sources */,
 				C70205131B1090A6004FAD19 /* AFHTTPRequestOperationManager+TimeoutCategory.m in Sources */,
 				C70204F91B0A2070004FAD19 /* UIAlertView+AFNetworking.m in Sources */,
+				C772B1FC1B75DA9E00986F97 /* NSString+XMLEntities.m in Sources */,
 				C70204EF1B0A2070004FAD19 /* AFHTTPRequestOperationManager.m in Sources */,
 				C74A834A1B4B574E00EDAE9D /* TalentModel.swift in Sources */,
+				C772B1E51B75D6C200986F97 /* News.swift in Sources */,
 				C70205051B0AEA88004FAD19 /* HTMLParser.swift in Sources */,
 				9720D5361B0F4B4A00E258CE /* Reachability.m in Sources */,
 				971240B81B0A016300E25C2E /* TabBarController.swift in Sources */,
@@ -790,16 +847,20 @@
 				971240B51B09FEE400E25C2E /* OtherViewController.swift in Sources */,
 				C70204FB1B0A2070004FAD19 /* UIImageView+AFNetworking.m in Sources */,
 				C70204F01B0A2070004FAD19 /* AFHTTPSessionManager.m in Sources */,
+				C772B1E31B75CDCC00986F97 /* NewsTableViewCell.swift in Sources */,
 				C76368AE1B53F1F400F3EBCE /* TopTableViewCell.swift in Sources */,
+				C772B1F61B75DA9E00986F97 /* GTMNSString+HTML.m in Sources */,
 				C70204F81B0A2070004FAD19 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C7CFAE611B5B878500C6B67F /* SubTalentModel.swift in Sources */,
 				C702050F1B108165004FAD19 /* SVProgressHUD.m in Sources */,
 				C70204F71B0A2070004FAD19 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */,
+				C772B1F91B75DA9E00986F97 /* MWFeedParser.m in Sources */,
 				C70206021B1C8CF6004FAD19 /* Log.swift in Sources */,
 				E0353B611B26B68C002B2E32 /* LikeRankingTableViewCell.swift in Sources */,
 				C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
+				C772B1E11B75CC2000986F97 /* NewsViewController.swift in Sources */,
 				C74A83581B4EB8EA00EDAE9D /* IndexTitleTalent.swift in Sources */,
 				C70206001B1C15B1004FAD19 /* Util.swift in Sources */,
 				971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */,
@@ -811,8 +872,11 @@
 				C70204F41B0A2070004FAD19 /* AFURLRequestSerialization.m in Sources */,
 				C70204F11B0A2070004FAD19 /* AFNetworkReachabilityManager.m in Sources */,
 				C70204FE1B0A2070004FAD19 /* UIWebView+AFNetworking.m in Sources */,
+				C772B1F81B75DA9E00986F97 /* MWFeedItem.m in Sources */,
 				C70204F51B0A2070004FAD19 /* AFURLResponseSerialization.m in Sources */,
 				C7FBB5E91B24350A00CEC6EB /* HTPressableButtonPrefs.m in Sources */,
+				C772B1FB1B75DA9E00986F97 /* NSString+HTML.m in Sources */,
+				C772B1FA1B75DA9E00986F97 /* NSDate+InternetDateTime.m in Sources */,
 				C70205041B0AEA88004FAD19 /* HTMLNode.swift in Sources */,
 				C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */,
 				971240B11B09FED400E25C2E /* UserDetailViewController.swift in Sources */,

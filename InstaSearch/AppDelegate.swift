@@ -44,12 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
         var likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
         var other = storyboard1.instantiateViewControllerWithIdentifier("other") as! OtherViewController
+        var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
         
         var navi0:UINavigationController = UINavigationController(rootViewController:top)
         var navi1:UINavigationController = UINavigationController(rootViewController:search)
         var navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
         var navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
-        var navi4:UINavigationController = UINavigationController(rootViewController:other)
+        var navi4:UINavigationController = UINavigationController(rootViewController:news)
         var naviControllerList:Array<UINavigationController> =
         [
             navi0,

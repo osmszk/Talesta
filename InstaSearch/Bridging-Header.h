@@ -35,4 +35,13 @@
 #import <UIKit/UIKit.h>
 #import "ImobileSdkAds/ImobileSdkAds.h"
 
+
+#import "GTMNSString+HTML.h"
+#import "MWFeedInfo.h"
+#import "MWFeedItem.h"
+#import "MWFeedParser.h"
+#import "NSDate+InternetDateTime.h"
+#import "NSString+HTML.h"
+#import "NSString+XMLEntities.h"
+
 #endif

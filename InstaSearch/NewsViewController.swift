@@ -32,7 +32,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         showBannerAd()
         
-        SVProgressHUD.show()
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
         self.requestToGetNews()
     }
 
@@ -43,6 +43,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         if let row = self.tableView.indexPathForSelectedRow(){
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }

@@ -135,6 +135,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     }
     
     func pushedNewsButton(sender: AnyObject){
+        self.navigationItem.rightBarButtonItem?.enabled = false
+        
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
         var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
         news.delegate = self
@@ -347,6 +349,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     func newsFinish(viewControllr:NewsViewController){
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationItem.rightBarButtonItem?.enabled = true
     }
 
 }

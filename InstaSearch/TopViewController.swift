@@ -64,6 +64,17 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.guideTitleLabel.text = guide[0]
         self.guideLabel.text = guide[1]
         
+        if NSUserDefaults.standardUserDefaults().objectForKey(Const.KEY_HIDE_LAST_CAMPAIGN_TYPE) != nil {
+            var typeRawValue = Util.loadInteger(Const.KEY_HIDE_LAST_CAMPAIGN_TYPE)
+            var lastSavedType = CampaignType(rawValue: typeRawValue)
+            if type == lastSavedType {
+                //すでに前回、同じキャンペーンタイプの非表示ボタンを押してる人は非表示
+                self.guideViewHeightConstraint.constant = 0;
+                self.guideLabel.hidden = true
+                self.guideTitleLabel.hidden = true
+            }
+        }
+        
         self.talentModels = RealmHelper.subModelAll(type)
         
         let newsButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
@@ -133,6 +144,9 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         UIView.animateWithDuration(0.6) { () -> Void in
             self.view.layoutIfNeeded()
         }
+        var type = self.campaignTypeSaved()
+        Util.saveInteger(type.rawValue, forKey: Const.KEY_HIDE_LAST_CAMPAIGN_TYPE)
+        
     }
     
     func pushedNewsButton(sender: AnyObject){
@@ -257,6 +271,10 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         //        date = NSDate(timeIntervalSinceNow: -10*24*60*60)//terracehouse
         //        date = NSDate(timeIntervalSinceNow: -11*24*60*60)//singer
         
+        //起動時を起点として、24時間以内:0
+        //48時間以内:1
+        //72時間以内:2
+        //24*n時間以内:n-1 % 10
         let intervalSec = NSDate().timeIntervalSinceDate(date!)
         let fl = floor(intervalSec/(60*60*24))
         let s = Int(fl)

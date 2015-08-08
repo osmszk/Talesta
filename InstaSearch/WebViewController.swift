@@ -265,7 +265,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             let tweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")!
             let appName = Const.APP_NAME
-            let msgText = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
+            let msgText = " \(title) \(urlString) by \(appName)"
             tweetViewController.setInitialText(msgText)
             tweetViewController.addURL(NSURL(string: Const.URL_APP_STORE_SHORT))
             
@@ -298,7 +298,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             let tweetViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             let title = self.webView.stringByEvaluatingJavaScriptFromString("document.title")!
             let appName = Const.APP_NAME
-            let msgText = " \(title) \(urlString) by \(appName) \(Const.URL_APP_STORE_SHORT)"
+            let msgText = " \(title) \(urlString) by \(appName)"
             tweetViewController.setInitialText(msgText)
             tweetViewController.addURL(NSURL(string: Const.URL_APP_STORE_SHORT))
             

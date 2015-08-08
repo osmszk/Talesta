@@ -116,7 +116,15 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell  = tableView.dequeueReusableCellWithIdentifier("newsCell", forIndexPath: indexPath) as! NewsTableViewCell
         let item = self.items[indexPath.row] as MWFeedItem
-        cell.titleLabel.text = item.title
+        let itemTitle = item.title as NSString
+        let itemTitles = itemTitle.componentsSeparatedByString("-")
+        let articleTitle = itemTitles[0] as! String
+        cell.titleLabel.text = articleTitle
+        if itemTitles.count >= 1{
+            cell.sourceLabel.text = itemTitles[itemTitles.count-1] as? String
+        }else{
+            cell.sourceLabel.text = ""
+        }
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         cell.dateLabel.text = formatter.stringFromDate(item.date) as String

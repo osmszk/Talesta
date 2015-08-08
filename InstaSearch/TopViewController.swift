@@ -66,11 +66,11 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         self.talentModels = RealmHelper.subModelAll(type)
         
-        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        reloadButton.frame = CGRectMake(0, 0, 34, 34);
-        reloadButton.setImage(UIImage(named: "btn_news"), forState: UIControlState.Normal)
-        reloadButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
+        let newsButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        newsButton.frame = CGRectMake(0, 0, 34, 34);
+        newsButton.setImage(UIImage(named: "btn_news"), forState: UIControlState.Normal)
+        newsButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: newsButton)
         
         if let models = self.talentModels{
             if models.count == 0 {

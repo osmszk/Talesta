@@ -766,27 +766,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="G5o-Ci-Bvu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="G5o-Ci-Bvu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="66" id="oE3-4X-QXE" customClass="NewsTableViewCell" customModule="InstaSearch" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="74" id="oE3-4X-QXE" customClass="NewsTableViewCell" customModule="InstaSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oE3-4X-QXE" id="MJb-Ia-atb">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ニュースタイトル" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000000000000009" translatesAutoresizingMaskIntoConstraints="NO" id="cfZ-eY-AnT">
-                                                    <rect key="frame" x="10" y="8" width="300" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="きゃりーぱみゅぱみゅ FUkaseの画像をInstagramから削除" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000000000000009" translatesAutoresizingMaskIntoConstraints="NO" id="cfZ-eY-AnT">
+                                                    <rect key="frame" x="10" y="8" width="300" height="40"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ライブドアニュース" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000000000000009" translatesAutoresizingMaskIntoConstraints="NO" id="iOb-BR-XC4">
+                                                    <rect key="frame" x="10" y="56" width="180" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="vS3-Hs-RJ1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015/08/10 12:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6p-7P-eT6">
-                                                    <rect key="frame" x="167" y="43" width="145" height="18"/>
+                                                    <rect key="frame" x="192" y="56.5" width="120" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="145" id="2gg-1Y-Fnx"/>
-                                                        <constraint firstAttribute="height" constant="18" id="E35-Ai-V8D"/>
+                                                        <constraint firstAttribute="width" constant="120" id="2gg-1Y-Fnx"/>
+                                                        <constraint firstAttribute="height" constant="12" id="E35-Ai-V8D"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -795,15 +804,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cfZ-eY-AnT" firstAttribute="top" secondItem="MJb-Ia-atb" secondAttribute="top" constant="8" id="BDo-JP-a0z"/>
-                                                <constraint firstAttribute="bottom" secondItem="Y6p-7P-eT6" secondAttribute="bottom" constant="4.5" id="C81-uF-qyc"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y6p-7P-eT6" secondAttribute="bottom" constant="5" id="C81-uF-qyc"/>
                                                 <constraint firstItem="cfZ-eY-AnT" firstAttribute="leading" secondItem="MJb-Ia-atb" secondAttribute="leading" constant="10" id="LNL-uz-cj3"/>
-                                                <constraint firstItem="Y6p-7P-eT6" firstAttribute="top" secondItem="cfZ-eY-AnT" secondAttribute="bottom" constant="3" id="Tfm-Ko-xkP"/>
+                                                <constraint firstItem="Y6p-7P-eT6" firstAttribute="top" secondItem="cfZ-eY-AnT" secondAttribute="bottom" constant="8" id="Tfm-Ko-xkP"/>
                                                 <constraint firstAttribute="trailing" secondItem="cfZ-eY-AnT" secondAttribute="trailing" constant="10" id="WEE-OW-pfH"/>
                                                 <constraint firstAttribute="trailing" secondItem="Y6p-7P-eT6" secondAttribute="trailing" constant="8" id="Xvt-eg-dNJ"/>
+                                                <constraint firstItem="Y6p-7P-eT6" firstAttribute="leading" secondItem="iOb-BR-XC4" secondAttribute="trailing" constant="2" id="hWf-tt-tfB"/>
+                                                <constraint firstItem="iOb-BR-XC4" firstAttribute="leading" secondItem="MJb-Ia-atb" secondAttribute="leading" constant="10" id="y4l-qy-y4c"/>
+                                                <constraint firstAttribute="bottom" secondItem="iOb-BR-XC4" secondAttribute="bottom" constant="5" id="yqW-Jd-za9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="Y6p-7P-eT6" id="XCE-mx-zNE"/>
+                                            <outlet property="sourceLabel" destination="iOb-BR-XC4" id="VXv-YM-x35"/>
                                             <outlet property="titleLabel" destination="cfZ-eY-AnT" id="IFg-eo-HYP"/>
                                             <segue destination="6cA-uu-uIN" kind="push" identifier="news_to_web" id="6Iq-7u-BsP"/>
                                         </connections>

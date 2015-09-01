@@ -386,6 +386,16 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         Log.DLog("")
         println(request)
+        
+        
+        
+        //TODO: #opensafari はSafari開く
+        let urlStr = request.URL?.absoluteString
+        if Util.includedStringInString("#opensafari", inString: urlStr!) {
+            UIApplication.sharedApplication().openURL(request.URL!)
+            return false
+        }
+        
         return true
     }
     

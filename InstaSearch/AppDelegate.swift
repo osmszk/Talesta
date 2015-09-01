@@ -43,14 +43,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
         var search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
         var likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
-        var other = storyboard1.instantiateViewControllerWithIdentifier("other") as! OtherViewController
+        var ad = storyboard1.instantiateViewControllerWithIdentifier("web") as! WebViewController
         var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
+        
+        ad.urlStr = "http://tibetanmastiff.link/talesta/"
+        ad.mode = JOWebBrowserMode.Navigation
+        ad.showURLStringOnActionSheetTitle = false
+        ad.showPageTitleOnTitleBar = true
+        ad.showReloadButton = true
+        ad.showActionButton = false
+        ad.title = "おすすめ"
         
         var navi0:UINavigationController = UINavigationController(rootViewController:top)
         var navi1:UINavigationController = UINavigationController(rootViewController:search)
         var navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
         var navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
-        var navi4:UINavigationController = UINavigationController(rootViewController:other)
+        var navi4:UINavigationController = UINavigationController(rootViewController:ad)
         var naviControllerList:Array<UINavigationController> =
         [
             navi0,
@@ -65,14 +73,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (items[1] as! UITabBarItem).title = "芸能人検索"
             (items[2] as! UITabBarItem).title = "ﾌｫﾛﾜｰﾗﾝｷﾝｸﾞ"
             (items[3] as! UITabBarItem).title = "LIKEﾗﾝｷﾝｸﾞ"
-            (items[4] as! UITabBarItem).title = "その他"
+            (items[4] as! UITabBarItem).title = "おすすめ"
         }
         if let items = tab.tabBar.items {
             (items[0] as! UITabBarItem).image = UIImage(named: "tabbtn_t")
             (items[1] as! UITabBarItem).image = UIImage(named: "tabbtn_finduser")
             (items[2] as! UITabBarItem).image = UIImage(named: "tabbtn_group")
             (items[3] as! UITabBarItem).image = UIImage(named: "tabbtn_like")
-            (items[4] as! UITabBarItem).image = UIImage(named: "tabbtn_help")
+            (items[4] as! UITabBarItem).image = UIImage(named: "tabbtn_recommend")
         }
         
         self.window!.rootViewController = tab

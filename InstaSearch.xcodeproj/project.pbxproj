@@ -112,6 +112,8 @@
 		C7CFAE9A1B5D3BC000C6B67F /* ImobileSdkAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE991B5D3BC000C6B67F /* ImobileSdkAds.framework */; };
 		C7CFAE9C1B5D3BF900C6B67F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */; };
 		C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */; };
+		C7E9CDC51B9603A200709CD2 /* tabbtn_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDC31B9603A200709CD2 /* tabbtn_recommend@2x.png */; };
+		C7E9CDC61B9603A200709CD2 /* tabbtn_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDC41B9603A200709CD2 /* tabbtn_recommend@3x.png */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -297,6 +299,8 @@
 		C7CFAE991B5D3BC000C6B67F /* ImobileSdkAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImobileSdkAds.framework; sourceTree = "<group>"; };
 		C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C7E9CDC31B9603A200709CD2 /* tabbtn_recommend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbtn_recommend@2x.png"; sourceTree = "<group>"; };
+		C7E9CDC41B9603A200709CD2 /* tabbtn_recommend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbtn_recommend@3x.png"; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 				C7CFAE881B5CD13B00C6B67F /* tabbtn_like@2x.png */,
 				C7CFAE891B5CD13B00C6B67F /* tabbtn_t@2x.png */,
 				C7CFAE8F1B5CD35D00C6B67F /* tabbtn_t@3x.png */,
+				C7E9CDC31B9603A200709CD2 /* tabbtn_recommend@2x.png */,
+				C7E9CDC41B9603A200709CD2 /* tabbtn_recommend@3x.png */,
 				C7640DEA1B492C89002C443F /* loading@2x.png */,
 			);
 			path = images;
@@ -763,6 +769,8 @@
 				C7CFAE6C1B5BAF2A00C6B67F /* creator.txt in Resources */,
 				C7CFAE6E1B5BAF2A00C6B67F /* modelandbikini.txt in Resources */,
 				C7CFAE701B5BAF2A00C6B67F /* talentman.txt in Resources */,
+				C7E9CDC61B9603A200709CD2 /* tabbtn_recommend@3x.png in Resources */,
+				C7E9CDC51B9603A200709CD2 /* tabbtn_recommend@2x.png in Resources */,
 				C76368B01B540C0D00F3EBCE /* terracehouse.txt in Resources */,
 				C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */,
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,

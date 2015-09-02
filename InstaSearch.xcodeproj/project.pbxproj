@@ -114,6 +114,8 @@
 		C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */; };
 		C7E9CDC51B9603A200709CD2 /* tabbtn_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDC31B9603A200709CD2 /* tabbtn_recommend@2x.png */; };
 		C7E9CDC61B9603A200709CD2 /* tabbtn_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDC41B9603A200709CD2 /* tabbtn_recommend@3x.png */; };
+		C7E9CDCB1B96A53400709CD2 /* btn_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDC91B96A53400709CD2 /* btn_info@2x.png */; };
+		C7E9CDCC1B96A53400709CD2 /* btn_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDCA1B96A53400709CD2 /* btn_info@3x.png */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -301,6 +303,8 @@
 		C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C7E9CDC31B9603A200709CD2 /* tabbtn_recommend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbtn_recommend@2x.png"; sourceTree = "<group>"; };
 		C7E9CDC41B9603A200709CD2 /* tabbtn_recommend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbtn_recommend@3x.png"; sourceTree = "<group>"; };
+		C7E9CDC91B96A53400709CD2 /* btn_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_info@2x.png"; sourceTree = "<group>"; };
+		C7E9CDCA1B96A53400709CD2 /* btn_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_info@3x.png"; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -501,6 +505,8 @@
 				C7CFAE561B561A0000C6B67F /* btn_close@2x.png */,
 				C772B1FF1B75F46B00986F97 /* btn_news@2x.png */,
 				C772B2011B75F5A400986F97 /* btn_news@3x.png */,
+				C7E9CDC91B96A53400709CD2 /* btn_info@2x.png */,
+				C7E9CDCA1B96A53400709CD2 /* btn_info@3x.png */,
 				C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */,
 				C74A834E1B4D6D7F00EDAE9D /* barbtn_back@2x.png */,
 				C74A834F1B4D6D7F00EDAE9D /* barbtn_forward@2x.png */,
@@ -784,10 +790,12 @@
 				C7CFAE6F1B5BAF2A00C6B67F /* singer.txt in Resources */,
 				C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */,
 				97769B1B1B5E777100CC0D41 /* faq.txt in Resources */,
+				C7E9CDCB1B96A53400709CD2 /* btn_info@2x.png in Resources */,
 				C772B2001B75F46B00986F97 /* btn_news@2x.png in Resources */,
 				C7CFAE5D1B59441100C6B67F /* koreanidol.txt in Resources */,
 				C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */,
 				C7CFAE8D1B5CD13B00C6B67F /* tabbtn_like@2x.png in Resources */,
+				C7E9CDCC1B96A53400709CD2 /* btn_info@3x.png in Resources */,
 				C7CFAE8C1B5CD13B00C6B67F /* tabbtn_help@2x.png in Resources */,
 				C7CFAE6B1B5BAF2A00C6B67F /* comedian.txt in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,

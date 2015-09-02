@@ -83,6 +83,15 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         newsButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: newsButton)
         
+        //TODO:infoボタン追加→OtherViewController追加
+//        let infoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+//        infoButton.frame = CGRectMake(0, 0, 34, 34)
+        let infoImage = UIImage(named: "btn_info")
+//        infoButton.setImage(infoImage, forState: UIControlState.Normal)
+//        infoButton.addTarget(self, action: "pushedInfo:", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: infoButton)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedInfo:")
+        
         if let models = self.talentModels{
             if models.count == 0 {
                 SVProgressHUD.showWithStatus("データ読込中", maskType: SVProgressHUDMaskType.Gradient)
@@ -158,6 +167,13 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
 //        var navi0:UINavigationController = UINavigationController(rootViewController:news)
 //        self.presentViewController(navi0, animated: true, completion: nil)
         self.navigationController?.pushViewController(news, animated: true)
+    }
+    
+    func pushedInfo(sender: AnyObject){
+        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
+        var other = storyboard1.instantiateViewControllerWithIdentifier("other") as! OtherViewController
+        
+        self.navigationController?.pushViewController(other, animated: true)
     }
     
     // MARK: - Private Methods

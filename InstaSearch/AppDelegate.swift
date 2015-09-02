@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var ad = storyboard1.instantiateViewControllerWithIdentifier("web") as! WebViewController
         var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
         
-        ad.urlStr = "http://tibetanmastiff.link/talesta/"
+        ad.urlStr = Const.AD_ADCROPS_URL
         ad.mode = JOWebBrowserMode.Navigation
         ad.showURLStringOnActionSheetTitle = false
         ad.showPageTitleOnTitleBar = true

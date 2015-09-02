@@ -52,6 +52,9 @@ class Const {
     static let AD_IMOBILE_MEDIA_ID_NAKA       = "192049"
     static let AD_IMOBILE_SPOT_ID_BANNER_NAKA = "532508"
     
+    //adcrops 8crops
+    static let AD_ADCROPS_URL = "http://tibetanmastiff.link/talesta/"
+    
     //40degreeのやーつ
     //#define AD_IMOBILE_PUBLISHER_ID @"29411"
     //#define AD_IMOBILE_MEDIA_ID     @"106566"

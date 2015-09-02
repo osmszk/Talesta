@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ad.showReloadButton = true
         ad.showActionButton = false
         ad.showToolBar = false
+        ad.showAd = false
         ad.title = "おすすめ"
         
         var navi0:UINavigationController = UINavigationController(rootViewController:top)

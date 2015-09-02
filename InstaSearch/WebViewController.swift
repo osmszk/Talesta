@@ -26,12 +26,15 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     @IBOutlet var webView : UIWebView!
     @IBOutlet var toolBar : UIToolbar!
     
+    @IBOutlet var toolbarConstraint : NSLayoutConstraint!
+    
     var mode :JOWebBrowserMode?;
     var showURLStringOnActionSheetTitle :Bool = false
     var showPageTitleOnTitleBar : Bool = false
     var showReloadButton : Bool = false
     var showActionButton : Bool = false
     var showToolBar : Bool = true
+    var showAd : Bool = true
     var barStyle : UIBarStyle?
     var barTintColor : UIColor?
     var modalDismissButtonTitl : String?;
@@ -80,7 +83,9 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         self.view.addSubview(adView)
         self.adBannerView = adView;
         
-        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER5, view: self.adBannerView, sizeAdjust: true)
+        if self.showAd {
+            ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER5, view: self.adBannerView, sizeAdjust: true)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -91,7 +96,9 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
         
-        ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)
+        if self.showAd {
+            ImobileSdkAds.showBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -191,7 +198,11 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             toolBarButtons.addObject(buttonAction);
         }
         
-        self.toolBar.hidden = !self.showToolBar
+        
+        if !self.showToolBar {
+            self.toolBar.hidden = true
+            self.toolbarConstraint.constant = -44.0
+        }
         
         // Set buttons to tool bar
         self.toolBar.setItems(toolBarButtons as [AnyObject], animated: true)

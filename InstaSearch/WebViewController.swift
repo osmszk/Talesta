@@ -31,6 +31,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     var showPageTitleOnTitleBar : Bool = false
     var showReloadButton : Bool = false
     var showActionButton : Bool = false
+    var showToolBar : Bool = true
     var barStyle : UIBarStyle?
     var barTintColor : UIColor?
     var modalDismissButtonTitl : String?;
@@ -189,6 +190,8 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
             toolBarButtons.addObject(fixedSpace2);
             toolBarButtons.addObject(buttonAction);
         }
+        
+        self.toolBar.hidden = !self.showToolBar
         
         // Set buttons to tool bar
         self.toolBar.setItems(toolBarButtons as [AnyObject], animated: true)
@@ -386,10 +389,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         Log.DLog("")
         println(request)
-        
-        
-        
-        //TODO: #opensafari はSafari開く
+
         let urlStr = request.URL?.absoluteString
         if Util.includedStringInString("#opensafari", inString: urlStr!) {
             UIApplication.sharedApplication().openURL(request.URL!)

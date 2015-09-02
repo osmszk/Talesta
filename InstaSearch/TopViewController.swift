@@ -79,17 +79,12 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         let newsButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         newsButton.frame = CGRectMake(0, 0, 34, 34);
-        newsButton.setImage(UIImage(named: "btn_news"), forState: UIControlState.Normal)
+        let newsImage = UIImage(named: "btn_news")
+        newsButton.setImage(newsImage, forState: UIControlState.Normal)
         newsButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: newsButton)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: newsImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedNewsButton:")
         
-        //TODO:infoボタン追加→OtherViewController追加
-//        let infoButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-//        infoButton.frame = CGRectMake(0, 0, 34, 34)
         let infoImage = UIImage(named: "btn_info")
-//        infoButton.setImage(infoImage, forState: UIControlState.Normal)
-//        infoButton.addTarget(self, action: "pushedInfo:", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: infoButton)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedInfo:")
         
         if let models = self.talentModels{

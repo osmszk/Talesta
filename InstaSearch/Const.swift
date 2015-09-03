@@ -11,7 +11,7 @@ import Foundation
 class Const {
     
     //TODO: 申請前にtrueにする
-    static let ENABLE_ANALYTICS = true
+    static let ENABLE_ANALYTICS = false
     //TODO: 申請前にtrueにする
     static let ENABLE_AD = true
     
@@ -54,6 +54,10 @@ class Const {
     
     //adcrops 8crops
     static let AD_ADCROPS_URL = "http://tibetanmastiff.link/talesta/"
+    
+    //amoad nativead
+    static let AD_AMOAD_SID_1 = "62056d310111552c79b593da0b15f60d01f648c67def8d2b3c23e094110ee747"
+    
     
     //40degreeのやーつ
     //#define AD_IMOBILE_PUBLISHER_ID @"29411"

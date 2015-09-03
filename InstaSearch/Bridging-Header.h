@@ -35,6 +35,10 @@
 #import <UIKit/UIKit.h>
 #import "ImobileSdkAds/ImobileSdkAds.h"
 
+// AMoAd
+#import "AMoAdLogger.h"
+#import "AMoAdNativeView.h"
+
 
 #import "GTMNSString+HTML.h"
 #import "MWFeedInfo.h"

@@ -14,11 +14,18 @@ protocol NewsViewControllerDelegate:class{
 
 class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MWFeedParserDelegate {
 
+    let kSid = Const.AD_AMOAD_SID_1
+    let kTag = "Ad01"
+    let kNibName = "AdImageTextTableViewCellLarge"
+    let kBeginIndex = 1 // アプリリリース時は管理画面と同じ値を指定することを推奨します（0以上）
+    let kInterval = 4 // アプリリリース時は管理画面と同じ値を指定することを推奨します（2以上、もしくは、0:繰り返さない）
+
     @IBOutlet weak var tableView: UITableView!
 //    var newsModels : [News] = []
     var items :[MWFeedItem] = []
     var adBannerView : UIView?
     weak var delegate : NewsViewControllerDelegate? = nil
+    var tableArray : NSArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +38,28 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.Plain, target: self, action: "pushedCloseButton")
         
         showBannerAd()
+        
+        
+        if !Util.isOnline() {
+            SVProgressHUD.showErrorWithStatus("Network Error")
+            return
+        }
+        
+            // [SDL] ロガーの設定
+        AMoAdLogger.sharedLogger().logging = true
+        AMoAdLogger .sharedLogger().onLogging = { (message: String!, error: NSError!)  in
+            
+            print("message \(message) e:\(error)")
+        }
+        AMoAdLogger.sharedLogger().trace = true; // YES...トレースを出力する
+        AMoAdLogger.sharedLogger().onTrace =  { (message: String!, target: AnyObject!)  in
+            
+            print("message \(message) e:\(target)")
+        }
+
+        AMoAdNativeViewManager.sharedManager().prepareAdWithSid(kSid, defaultBeginIndex: kBeginIndex, defaultInterval: kInterval, iconPreloading: false ,imagePreloading:true)
+        // [SDK] 広告登録（registerTableView）
+        AMoAdNativeViewManager.sharedManager().registerTableView(self.tableView, sid: kSid, tag: kTag, nibName: kNibName)
         
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
         self.requestToGetNews()
@@ -123,13 +152,25 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+//        return self.items.count
+        println("self.tableArray!.count:\(self.tableArray!.count)")
+        return self.tableArray!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
+        if let item1 = self.tableArray![indexPath.row] as? AMoAdNativeViewItem  {
+            if item1.isKindOfClass(AMoAdNativeViewItem) {
+//            if item.is //isKindOfClass(AMoAdNativeViewItem)
+//            let item : AMoAdNativeViewItem = self.tableArray[indexPath.row] as! AMoAdNativeViewItem;
+                let cell = item1.tableView(tableView, cellForRowAtIndexPath: indexPath)
+                return cell;
+            }
+        }
+        
         let cell  = tableView.dequeueReusableCellWithIdentifier("newsCell", forIndexPath: indexPath) as! NewsTableViewCell
-        let item = self.items[indexPath.row] as MWFeedItem
+        let item = self.tableArray![indexPath.row] as! MWFeedItem
         let itemTitle = item.title as NSString
         let itemTitles = itemTitle.componentsSeparatedByString("-")
         let articleTitle = itemTitles[0] as! String
@@ -163,6 +204,10 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             //ref:http://qiita.com/mst/items/b18e9531ac0cbdf2f3c3
             return lItem.date.timeIntervalSinceDate(rItem.date)>0
         }
+        
+        //// [SDK] 広告取得（arrayWithSid）
+        self.tableArray = AMoAdNativeViewManager.sharedManager().arrayWithSid(kSid, tag: kTag, originalArray: self.items)
+        
         
         self.tableView.reloadData()
     }

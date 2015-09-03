@@ -116,6 +116,10 @@
 		C7E9CDCC1B96A53400709CD2 /* btn_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDCA1B96A53400709CD2 /* btn_info@3x.png */; };
 		C7E9CDCF1B96A68F00709CD2 /* btn_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDCD1B96A68F00709CD2 /* btn_news@2x.png */; };
 		C7E9CDD01B96A68F00709CD2 /* btn_news@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDCE1B96A68F00709CD2 /* btn_news@3x.png */; };
+		C7E9CDD51B97418100709CD2 /* libAMoAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E9CDD41B97418100709CD2 /* libAMoAd.a */; };
+		C7E9CDD71B9741F700709CD2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E9CDD61B9741F700709CD2 /* ImageIO.framework */; };
+		C7E9CDD91B97420600709CD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E9CDD81B97420600709CD2 /* StoreKit.framework */; };
+		C7E9CDDB1B97463A00709CD2 /* AdImageTextTableViewCellLarge.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E9CDDA1B97463A00709CD2 /* AdImageTextTableViewCellLarge.xib */; };
 		C7FBB5DC1B22EBA600CEC6EB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DB1B22EBA600CEC6EB /* Const.swift */; };
 		C7FBB5DE1B242BD800CEC6EB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */; };
 		C7FBB5E81B24350A00CEC6EB /* HTPressableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBB5E11B24350A00CEC6EB /* HTPressableButton.m */; };
@@ -305,6 +309,12 @@
 		C7E9CDCA1B96A53400709CD2 /* btn_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_info@3x.png"; sourceTree = "<group>"; };
 		C7E9CDCD1B96A68F00709CD2 /* btn_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_news@2x.png"; sourceTree = "<group>"; };
 		C7E9CDCE1B96A68F00709CD2 /* btn_news@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_news@3x.png"; sourceTree = "<group>"; };
+		C7E9CDD21B97418100709CD2 /* AMoAdLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdLogger.h; sourceTree = "<group>"; };
+		C7E9CDD31B97418100709CD2 /* AMoAdNativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdNativeView.h; sourceTree = "<group>"; };
+		C7E9CDD41B97418100709CD2 /* libAMoAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMoAd.a; sourceTree = "<group>"; };
+		C7E9CDD61B9741F700709CD2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C7E9CDD81B97420600709CD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C7E9CDDA1B97463A00709CD2 /* AdImageTextTableViewCellLarge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdImageTextTableViewCellLarge.xib; sourceTree = "<group>"; };
 		C7FBB5DB1B22EBA600CEC6EB /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C7FBB5DD1B242BD800CEC6EB /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C7FBB5E01B24350A00CEC6EB /* HTPressableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPressableButton.h; sourceTree = "<group>"; };
@@ -323,12 +333,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E9CDD91B97420600709CD2 /* StoreKit.framework in Frameworks */,
+				C7E9CDD71B9741F700709CD2 /* ImageIO.framework in Frameworks */,
 				97769B171B5E656300CC0D41 /* MessageUI.framework in Frameworks */,
 				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */,
 				C7CFAE9C1B5D3BF900C6B67F /* CoreLocation.framework in Frameworks */,
 				C7CFAE841B5C052800C6B67F /* libsqlite3.dylib in Frameworks */,
 				C7CFAE821B5C051E00C6B67F /* libz.dylib in Frameworks */,
+				C7E9CDD51B97418100709CD2 /* libAMoAd.a in Frameworks */,
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
 				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
@@ -380,6 +393,8 @@
 		9720D53E1B0F513400E258CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7E9CDD81B97420600709CD2 /* StoreKit.framework */,
+				C7E9CDD61B9741F700709CD2 /* ImageIO.framework */,
 				97769B161B5E656300CC0D41 /* MessageUI.framework */,
 				C7CFAE9D1B5D3C0200C6B67F /* AdSupport.framework */,
 				C7CFAE9B1B5D3BF900C6B67F /* CoreLocation.framework */,
@@ -397,6 +412,7 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C7E9CDD11B97418100709CD2 /* AMoAdSdk */,
 				C772B1E61B75DA9E00986F97 /* MWFeedParser */,
 				C7CFAE741B5C03AF00C6B67F /* GoogleAnalytics */,
 				C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */,
@@ -531,6 +547,7 @@
 		C7640DEC1B49372E002C443F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C7E9CDDA1B97463A00709CD2 /* AdImageTextTableViewCellLarge.xib */,
 				C76368AD1B53F1F400F3EBCE /* TopTableViewCell.swift */,
 				C76620D31B1E830F003FFC7A /* FollowerRankingTableViewCell.swift */,
 				E0353B601B26B68C002B2E32 /* LikeRankingTableViewCell.swift */,
@@ -674,6 +691,16 @@
 			path = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
+		C7E9CDD11B97418100709CD2 /* AMoAdSdk */ = {
+			isa = PBXGroup;
+			children = (
+				C7E9CDD21B97418100709CD2 /* AMoAdLogger.h */,
+				C7E9CDD31B97418100709CD2 /* AMoAdNativeView.h */,
+				C7E9CDD41B97418100709CD2 /* libAMoAd.a */,
+			);
+			path = AMoAdSdk;
+			sourceTree = "<group>";
+		};
 		C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E9CDD01B96A68F00709CD2 /* btn_news@3x.png in Resources */,
+				C7E9CDDB1B97463A00709CD2 /* AdImageTextTableViewCellLarge.xib in Resources */,
 				C74A83531B4D6D7F00EDAE9D /* barbtn_back@2x.png in Resources */,
 				C7CFAE6C1B5BAF2A00C6B67F /* creator.txt in Resources */,
 				C7CFAE6E1B5BAF2A00C6B67F /* modelandbikini.txt in Resources */,
@@ -1040,7 +1068,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstaSearch/Library/GoogleAnalytics",
+					"$(PROJECT_DIR)/InstaSearch/Library/AMoAdSdk",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "481b3e8c-dfb0-417e-b260-fc158d8506d3";
 			};
@@ -1062,7 +1092,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InstaSearch/Library/GoogleAnalytics",
+					"$(PROJECT_DIR)/InstaSearch/Library/AMoAdSdk",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "cec5feca-0f14-47c6-a6f1-2df61158aafe";
 			};

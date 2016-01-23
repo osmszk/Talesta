@@ -767,7 +767,7 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Plegineer Inc.";
 				TargetAttributes = {
 					C779ADBE1B0379AB000F585A = {
@@ -982,6 +982,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1077,6 +1078,7 @@
 					"$(PROJECT_DIR)/InstaSearch/Library/AMoAdSdk",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzukicreative.instasearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c4e7a228-17a1-4aad-a0ad-66fab6b47b9c";
 			};
@@ -1101,6 +1103,7 @@
 					"$(PROJECT_DIR)/InstaSearch/Library/AMoAdSdk",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzukicreative.instasearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f6005366-132b-45d8-90fa-26e9ee9eb101";
 			};
@@ -1121,6 +1124,7 @@
 				);
 				INFOPLIST_FILE = InstaSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzukicreative.instasearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaSearch.app/InstaSearch";
 			};
@@ -1137,6 +1141,7 @@
 				);
 				INFOPLIST_FILE = InstaSearchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzukicreative.instasearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaSearch.app/InstaSearch";
 			};

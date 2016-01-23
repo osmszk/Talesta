@@ -2,7 +2,7 @@ require 'anemone'
 require 'nokogiri'
 require 'kconv'
 
-#アカウント取得
+#アカウント取得 talentman
 # 名前,talentinstaのURL,アイコン画像URL,オフィシャルURL
 
 #singer 1..32

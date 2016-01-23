@@ -2,7 +2,7 @@ require 'anemone'
 require 'nokogiri'
 require 'kconv'
 
-#アカウント取得
+#アカウント取得 singer
 # 名前,talentinstaのURL,アイコン画像URL,オフィシャルURL
 
 #korean 1..24
@@ -15,7 +15,7 @@ id = 0
 talentUrls = []
 rows = []
 # page 1〜24
-range = 1..32
+range = 1..5 #32
 range.each{ |num|
 	Anemone.crawl("http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=2&p=#{num}",:depth_limit => 0) do |anemone|
 		anemone.on_every_page do |page|

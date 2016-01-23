@@ -2,26 +2,22 @@ require 'anemone'
 require 'nokogiri'
 require 'kconv'
 
-#アカウント取得 international
+#アカウント取得 KoreanIdol
 # 名前,talentinstaのURL,アイコン画像URL,オフィシャルURL
 
+#korean 1..24
+#http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=#{num}
 #singer 1..32
 #http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=2&p=#{num}
-
-#talentwoman 1..18
-# http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=1&p=#{num}
-# model and bikini 1..42(20)
-# http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=5&p=#{num}
-# MAXpage 20
-# http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=4&p=1
 
 id = 0
 
 talentUrls = []
 rows = []
-range = 1..3 #20
+# page 1〜24
+range = 1..3 #24
 range.each{ |num|
-	Anemone.crawl("http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=12&p=#{num}",:depth_limit => 0) do |anemone|
+	Anemone.crawl("http://www.talentinsta.com/tllink/tllink.php?mode=ct&ct=18&p=#{num}",:depth_limit => 0) do |anemone|
 		anemone.on_every_page do |page|
 			doc = Nokogiri::HTML.parse(page.body.toutf8)
 			body = doc.xpath('//p').each do |node|
@@ -67,7 +63,7 @@ talentUrls.each {|talentUrl|
 					index = index+1
 				end
 			end
-	    end
+		end
 	end
 }
 

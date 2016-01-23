@@ -83,8 +83,8 @@ class ParseHelper {
         let bodyNode :HTMLNode? = parser?.body
         
         let tdNodes : Array<HTMLNode>? = bodyNode?.findChildTags("td")
-        var k = 0
-        var trStartIndex  =  0
+//        var k = 0
+//        var trStartIndex  =  0
         
         var officialUrl : String?
         var displayName : String?

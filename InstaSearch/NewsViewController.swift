@@ -175,7 +175,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let articleTitle = itemTitles[0] 
         cell.titleLabel.text = articleTitle
         if itemTitles.count >= 1{
-            cell.sourceLabel.text = itemTitles[itemTitles.count-1] as? String
+            cell.sourceLabel.text = itemTitles[itemTitles.count-1]
         }else{
             cell.sourceLabel.text = ""
         }

@@ -49,12 +49,12 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         AMoAdLogger.sharedLogger().logging = true
         AMoAdLogger .sharedLogger().onLogging = { (message: String!, error: NSError!)  in
             
-            print("message \(message) e:\(error)")
+            print("message \(message) e:\(error)", terminator: "")
         }
         AMoAdLogger.sharedLogger().trace = true; // YES...トレースを出力する
         AMoAdLogger.sharedLogger().onTrace =  { (message: String!, target: AnyObject!)  in
             
-            print("message \(message) e:\(target)")
+            print("message \(message) e:\(target)", terminator: "")
         }
 
         AMoAdNativeViewManager.sharedManager().prepareAdWithSid(kSid, defaultBeginIndex: kBeginIndex, defaultInterval: kInterval, iconPreloading: false ,imagePreloading:true)
@@ -73,8 +73,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
@@ -82,7 +81,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let row = self.tableView.indexPathForSelectedRow(){
+        if let row = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
     }
@@ -126,8 +125,8 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if segue.identifier == "news_to_web"{
             let webController = segue.destinationViewController as! WebViewController
             
-            let cell = sender as! NewsTableViewCell
-            let indexPath = self.tableView.indexPathForSelectedRow()
+            _ = sender as! NewsTableViewCell
+            let indexPath = self.tableView.indexPathForSelectedRow
             let row = indexPath?.row
             
 //            if let models = self.newsModels {
@@ -153,7 +152,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return self.items.count
-        println("self.tableArray!.count:\(self.tableArray!.count)")
+        print("self.tableArray!.count:\(self.tableArray!.count)")
         return self.tableArray!.count
     }
     
@@ -173,7 +172,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let item = self.tableArray![indexPath.row] as! MWFeedItem
         let itemTitle = item.title as NSString
         let itemTitles = itemTitle.componentsSeparatedByString("-")
-        let articleTitle = itemTitles[0] as! String
+        let articleTitle = itemTitles[0] 
         cell.titleLabel.text = articleTitle
         if itemTitles.count >= 1{
             cell.sourceLabel.text = itemTitles[itemTitles.count-1] as? String
@@ -200,7 +199,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func feedParserDidFinish(parser: MWFeedParser) {
         SVProgressHUD.dismiss()
-        self.items.sort { (lItem, rItem) -> Bool in
+        self.items.sortInPlace { (lItem, rItem) -> Bool in
             //ref:http://qiita.com/mst/items/b18e9531ac0cbdf2f3c3
             return lItem.date.timeIntervalSinceDate(rItem.date)>0
         }
@@ -214,13 +213,13 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func feedParser(parser: MWFeedParser, didParseFeedInfo info: MWFeedInfo) {
 #if DEBUG
-        println(info)
+        print(info)
 #endif
     }
     
     func feedParser(parser: MWFeedParser, didParseFeedItem item: MWFeedItem) {
 #if DEBUG
-        println(item)
+        print(item)
 #endif
         self.items.append(item)
         

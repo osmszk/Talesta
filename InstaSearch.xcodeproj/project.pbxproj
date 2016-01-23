@@ -48,10 +48,6 @@
 		C70205FE1B1AD285004FAD19 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FD1B1AD285004FAD19 /* ParseHelper.swift */; };
 		C70206001B1C15B1004FAD19 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70205FF1B1C15B1004FAD19 /* Util.swift */; };
 		C70206021B1C8CF6004FAD19 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70206011B1C8CF6004FAD19 /* Log.swift */; };
-		C74A83441B4B4E8E00EDAE9D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83421B4B4E8E00EDAE9D /* Realm.framework */; };
-		C74A83451B4B4E8E00EDAE9D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83421B4B4E8E00EDAE9D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; };
-		C74A83471B4B4E8E00EDAE9D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C74A834A1B4B574E00EDAE9D /* TalentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A83491B4B574E00EDAE9D /* TalentModel.swift */; };
 		C74A834C1B4CD14C00EDAE9D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */; };
 		C74A83521B4D6D7F00EDAE9D /* barbtn_action@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */; };
@@ -80,6 +76,11 @@
 		C772B1FA1B75DA9E00986F97 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F11B75DA9E00986F97 /* NSDate+InternetDateTime.m */; };
 		C772B1FB1B75DA9E00986F97 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F31B75DA9E00986F97 /* NSString+HTML.m */; };
 		C772B1FC1B75DA9E00986F97 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */; };
+		C77979431C53B15200D6B22C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77979411C53B15200D6B22C /* Realm.framework */; };
+		C77979441C53B15200D6B22C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77979411C53B15200D6B22C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C77979451C53B15200D6B22C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77979421C53B15200D6B22C /* RealmSwift.framework */; };
+		C77979461C53B15200D6B22C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77979421C53B15200D6B22C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C77979481C53C60E00D6B22C /* NSObject+classname.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77979471C53C60E00D6B22C /* NSObject+classname.swift */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
 		C779ADDD1B0379AB000F585A /* InstaSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADDC1B0379AB000F585A /* InstaSearchTests.swift */; };
@@ -146,8 +147,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C74A83471B4B4E8E00EDAE9D /* RealmSwift.framework in Embed Frameworks */,
-				C74A83451B4B4E8E00EDAE9D /* Realm.framework in Embed Frameworks */,
+				C77979461C53B15200D6B22C /* RealmSwift.framework in Embed Frameworks */,
+				C77979441C53B15200D6B22C /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,8 +222,6 @@
 		C70205FD1B1AD285004FAD19 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		C70205FF1B1C15B1004FAD19 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C70206011B1C8CF6004FAD19 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		C74A83421B4B4E8E00EDAE9D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		C74A83491B4B574E00EDAE9D /* TalentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalentModel.swift; sourceTree = "<group>"; };
 		C74A834B1B4CD14C00EDAE9D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		C74A834D1B4D6D7F00EDAE9D /* barbtn_action@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbtn_action@2x.png"; sourceTree = "<group>"; };
@@ -259,6 +258,9 @@
 		C772B1F31B75DA9E00986F97 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		C772B1F41B75DA9E00986F97 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		C77979411C53B15200D6B22C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		C77979421C53B15200D6B22C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		C77979471C53C60E00D6B22C /* NSObject+classname.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+classname.swift"; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C779ADC41B0379AB000F585A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			files = (
 				C7E9CDD91B97420600709CD2 /* StoreKit.framework in Frameworks */,
 				C7E9CDD71B9741F700709CD2 /* ImageIO.framework in Frameworks */,
+				C77979451C53B15200D6B22C /* RealmSwift.framework in Frameworks */,
 				97769B171B5E656300CC0D41 /* MessageUI.framework in Frameworks */,
 				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */,
@@ -345,11 +348,10 @@
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
 				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
+				C77979431C53B15200D6B22C /* Realm.framework in Frameworks */,
 				C7CFAE9A1B5D3BC000C6B67F /* ImobileSdkAds.framework in Frameworks */,
 				C7CFAE801B5C03D900C6B67F /* libGoogleAnalyticsServices.a in Frameworks */,
-				C74A83461B4B4E8E00EDAE9D /* RealmSwift.framework in Frameworks */,
 				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
-				C74A83441B4B4E8E00EDAE9D /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +388,7 @@
 				C7CFAE601B5B878500C6B67F /* SubTalentModel.swift */,
 				C74A83571B4EB8EA00EDAE9D /* IndexTitleTalent.swift */,
 				C772B1E41B75D6C200986F97 /* News.swift */,
+				C77979471C53C60E00D6B22C /* NSObject+classname.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -602,9 +605,9 @@
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
+				C77979411C53B15200D6B22C /* Realm.framework */,
+				C77979421C53B15200D6B22C /* RealmSwift.framework */,
 				C7CFAE991B5D3BC000C6B67F /* ImobileSdkAds.framework */,
-				C74A83421B4B4E8E00EDAE9D /* Realm.framework */,
-				C74A83431B4B4E8E00EDAE9D /* RealmSwift.framework */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,
 				C779ADD91B0379AB000F585A /* InstaSearchTests */,
 				9720D53E1B0F513400E258CE /* Frameworks */,
@@ -762,6 +765,8 @@
 		C779ADB71B0379AB000F585A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Plegineer Inc.";
 				TargetAttributes = {
@@ -913,6 +918,7 @@
 				C76620D61B2126A8003FFC7A /* TalentUser.swift in Sources */,
 				971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */,
 				C772B1E11B75CC2000986F97 /* NewsViewController.swift in Sources */,
+				C77979481C53C60E00D6B22C /* NSObject+classname.swift in Sources */,
 				C74A83581B4EB8EA00EDAE9D /* IndexTitleTalent.swift in Sources */,
 				C70206001B1C15B1004FAD19 /* Util.swift in Sources */,
 				971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */,

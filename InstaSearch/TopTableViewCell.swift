@@ -41,7 +41,7 @@ class TopTableViewCell: UITableViewCell,UIWebViewDelegate {
         self.indicator.hidden = true
         
     }
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         self.indicator.stopAnimating()
         self.indicator.hidden = true
     }

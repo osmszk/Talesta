@@ -26,7 +26,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
-        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let reloadButton = UIButton(type: UIButtonType.Custom)
         reloadButton.frame = CGRectMake(0, 0, 34, 34);
         reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
         reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -43,15 +43,14 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let row = self.tableView.indexPathForSelectedRow(){
+        if let row = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
     }
@@ -84,7 +83,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         if segue.identifier == "followerraking_to_detail"{
             let controller = segue.destinationViewController as! UserDetailViewController
             
-            let indexPath = self.tableView.indexPathForSelectedRow()
+            let indexPath = self.tableView.indexPathForSelectedRow
             let row = indexPath?.row
             
             let followerRanking = self.followerRankings[row!] as! Talentinsta
@@ -126,7 +125,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
                     return
                 }
                 
-                let followerRankings = ParseHelper.convertFollowerRankingFromHtml(html: html! as String)
+                let followerRankings = ParseHelper.convertFollowerRankingFromHtml(html! as String)
                 
                 self.followerRankings.addObjectsFromArray(followerRankings as Array)
                 
@@ -158,7 +157,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if self.isReviewOver && !Util.loadBool(Const.KEY_REVIEW_DONE_FLG){
             if indexPath.row == INITIAL_ROW_NUM_MAX{
-                let cell = tableView.dequeueReusableCellWithIdentifier("reviewCell", forIndexPath: indexPath) as! UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("reviewCell", forIndexPath: indexPath) 
                 return cell
             }
         }
@@ -190,7 +189,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         if self.isReviewOver && !Util.loadBool(Const.KEY_REVIEW_DONE_FLG){
             if indexPath.row == INITIAL_ROW_NUM_MAX{
                 
-                var alertController = UIAlertController(title: "", message: "このアプリの良さをレビューで伝えて頂いた方に、「21位以降見れる機能」をプレゼント!\n星5つだと制作者として、とっても励みになります^^\n", preferredStyle: .Alert)
+                let alertController = UIAlertController(title: "", message: "このアプリの良さをレビューで伝えて頂いた方に、「21位以降見れる機能」をプレゼント!\n星5つだと制作者として、とっても励みになります^^\n", preferredStyle: .Alert)
                 
                 let otherAction = UIAlertAction(title: "レビューする", style: .Cancel) { action in
                     
@@ -215,7 +214,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
     
     func jumpToDetail(){
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
-        var detail  = storyboard1.instantiateViewControllerWithIdentifier("detail") as! UserDetailViewController
+        let detail  = storyboard1.instantiateViewControllerWithIdentifier("detail") as! UserDetailViewController
         self.navigationController?.pushViewController(detail, animated: true)
     }
 }

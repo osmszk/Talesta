@@ -58,15 +58,15 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
-        var type = self.campaignTypeSaved()
+        let type = self.campaignTypeSaved()
         var guide : [String] = CampaignType.guides(type)()
         
         self.guideTitleLabel.text = guide[0]
         self.guideLabel.text = guide[1]
         
         if NSUserDefaults.standardUserDefaults().objectForKey(Const.KEY_HIDE_LAST_CAMPAIGN_TYPE) != nil {
-            var typeRawValue = Util.loadInteger(Const.KEY_HIDE_LAST_CAMPAIGN_TYPE)
-            var lastSavedType = CampaignType(rawValue: typeRawValue)
+            let typeRawValue = Util.loadInteger(Const.KEY_HIDE_LAST_CAMPAIGN_TYPE)
+            let lastSavedType = CampaignType(rawValue: typeRawValue)
             if type == lastSavedType {
                 //すでに前回、同じキャンペーンタイプの非表示ボタンを押してる人は非表示
                 self.guideViewHeightConstraint.constant = 0;
@@ -77,7 +77,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         self.talentModels = RealmHelper.subModelAll(type)
         
-        let newsButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let newsButton = UIButton(type: UIButtonType.Custom)
         newsButton.frame = CGRectMake(0, 0, 34, 34);
         let newsImage = UIImage(named: "btn_news")
         newsButton.setImage(newsImage, forState: UIControlState.Normal)
@@ -119,8 +119,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-             let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
@@ -128,7 +127,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.rightBarButtonItem?.enabled = true
-        if let row = self.tableView.indexPathForSelectedRow(){
+        if let row = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
     }
@@ -148,7 +147,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         UIView.animateWithDuration(0.6) { () -> Void in
             self.view.layoutIfNeeded()
         }
-        var type = self.campaignTypeSaved()
+        let type = self.campaignTypeSaved()
         Util.saveInteger(type.rawValue, forKey: Const.KEY_HIDE_LAST_CAMPAIGN_TYPE)
         
     }
@@ -157,7 +156,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         self.navigationItem.rightBarButtonItem?.enabled = false
         
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
-        var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
+        let news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
 //        news.delegate = self
 //        var navi0:UINavigationController = UINavigationController(rootViewController:news)
 //        self.presentViewController(navi0, animated: true, completion: nil)
@@ -166,7 +165,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     
     func pushedInfo(sender: AnyObject){
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
-        var other = storyboard1.instantiateViewControllerWithIdentifier("other") as! OtherViewController
+        let other = storyboard1.instantiateViewControllerWithIdentifier("other") as! OtherViewController
         
         self.navigationController?.pushViewController(other, animated: true)
     }
@@ -210,7 +209,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             }
         },failure:{ (operation:AFHTTPRequestOperation! , error:NSError!) -> Void in
             Log.DLog("error!!!")
-            println(operation.responseObject);
+            print(operation.responseObject);
             SVProgressHUD.dismiss()
         })
     }
@@ -264,7 +263,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
     }
     
     func campaignTypeSaved()->CampaignType{
-        var date = Util.loadObject(Const.KEY_START_DATE) as? NSDate
+        let date = Util.loadObject(Const.KEY_START_DATE) as? NSDate
         if date == nil{
             Util.saveObject(NSDate(), forKey: Const.KEY_START_DATE)
             return CampaignType.TerraceHouse
@@ -301,8 +300,8 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         if segue.identifier == "top_to_web"{
             let webController = segue.destinationViewController as! WebViewController
             
-            let cell = sender as! TopTableViewCell
-            let indexPath = self.tableView.indexPathForSelectedRow()
+            _ = sender as! TopTableViewCell
+            let indexPath = self.tableView.indexPathForSelectedRow
             let row = indexPath?.row
             
             if let models = self.talentModels {
@@ -352,7 +351,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             let wCount : CGFloat = 3
             let hCount = 3
             let space : CGFloat = 5
-            let offset : CGFloat = 2
+//            let offset : CGFloat = 2
             let iconWidth = (Util.displaySize().width-space*(wCount-1.0))/wCount
             let iconWidthInt = Int(ceilf(Float(iconWidth)))
             

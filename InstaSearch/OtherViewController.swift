@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import Social
 
-class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComposeViewControllerDelegate,UIActionSheetDelegate{
+class OtherViewController: UITableViewController,MFMailComposeViewControllerDelegate,UIActionSheetDelegate{
     
     
     enum PLActionSheetTag: Int {
@@ -37,8 +37,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
@@ -50,7 +49,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let row = self.tableView.indexPathForSelectedRow(){
+        if let row = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
     }
@@ -150,7 +149,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
         let actionSheet = UIActionSheet(title: "友達にシェア", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil,otherButtonTitles:"LINE","Twitter","Facebook")
         actionSheet.tag = PLActionSheetTag.ShareToFriend.rawValue
         actionSheet.actionSheetStyle = UIActionSheetStyle.Default
-        actionSheet.showFromTabBar(self.tabBarController?.tabBar)
+        actionSheet.showFromTabBar((self.tabBarController?.tabBar)!)
     }
     
     func sendViaLine(text:String){
@@ -256,7 +255,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
             }else{
                 self.openUrl(Const.URL_SUPPORT_TWITTER)
             }
-            if let index = self.tableView.indexPathForSelectedRow(){
+            if let index = self.tableView.indexPathForSelectedRow{
                 self.tableView.deselectRowAtIndexPath(index, animated: true)
             }
         }else if(indexPath.section == self.tutorialSection){
@@ -284,15 +283,15 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
     
     //MARK: - MFMailComposeViewControllerDelegate
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        switch (result.value){
-        case MFMailComposeResultCancelled.value:
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch (result.rawValue){
+        case MFMailComposeResultCancelled.rawValue:
             Log.DLog("cancel")
-        case MFMailComposeResultSaved.value:
+        case MFMailComposeResultSaved.rawValue:
             Log.DLog("Saved")
-        case MFMailComposeResultSent.value:
+        case MFMailComposeResultSent.rawValue:
             Log.DLog("Saved")
-        case MFMailComposeResultFailed.value:
+        case MFMailComposeResultFailed.rawValue:
             let alertFailed = UIAlertView(title: "Failed", message: "", delegate: nil, cancelButtonTitle: "OK")
             alertFailed.show()
         default:
@@ -327,7 +326,7 @@ class OtherViewController: UITableViewController ,UITableViewDelegate,MFMailComp
             } else  {
                 //cancel
             }
-            if let index = self.tableView.indexPathForSelectedRow(){
+            if let index = self.tableView.indexPathForSelectedRow{
                 self.tableView.deselectRowAtIndexPath(index, animated: true)
             }
         }

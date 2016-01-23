@@ -24,7 +24,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
         self.navigationController?.navigationBar.translucent = Const.NAVI_BAR_TRANSLUCENT
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
-        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let reloadButton = UIButton(type: UIButtonType.Custom)
         reloadButton.frame = CGRectMake(0, 0, 34, 34);
         reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
         reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -38,8 +38,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
@@ -116,13 +115,13 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 
                 var error : NSError? = nil
-                var parser : HTMLParser = HTMLParser(html: html as! String , error:&error)
+                let parser : HTMLParser = HTMLParser(html: html as! String , error:&error)
                 
                 if (error != nil) {
-                    println(error)
+                    print(error)
                 }
                 
-                var bodyNode : HTMLNode? = parser.body
+                let bodyNode : HTMLNode? = parser.body
                 Log.DLog("bodyNode:\(bodyNode)")
                 if bodyNode == nil {
                     Log.DLog("bodyNode")
@@ -133,7 +132,7 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 let divs : [HTMLNode] = bodyNode!.findChildTagsAttr("div", attrName: "class", attrValue: "row hot-photo-row")
                 Log.DLog("divs.count:\(divs.count)")
                 for node : HTMLNode in divs {
-                    var dict : NSMutableDictionary = NSMutableDictionary()
+                    let dict : NSMutableDictionary = NSMutableDictionary()
                     
                     let photoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image img-thumbnail")
                     if photoImageNodes.count != 0 {
@@ -209,15 +208,15 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                         //number:(.*),
                         //[^,]*number:(.*?),[^number:]*
                         
-                        var regex = NSRegularExpression(pattern: "number:(.*),", options: NSRegularExpressionOptions.allZeros, error: nil)
+                        let regex = try? NSRegularExpression(pattern: "number:(.*),", options: NSRegularExpressionOptions())
                         //ref:
-                        if let result = regex?.matchesInString(nsSentence as String, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, nsSentence.length)){
+                        if let result = regex?.matchesInString(nsSentence as String, options: NSMatchingOptions(), range: NSMakeRange(0, nsSentence.length)){
                             for reg in result{
 //                                Log.DLog("reg:\(reg)")
                                 let expression = nsSentence.substringWithRange(reg.range)
 //                                Log.DLog("expression:\(expression)")
-                                let str1 = expression.stringByReplacingOccurrencesOfString("number: ", withString: "", options: nil, range: nil)
-                                let number = str1.stringByReplacingOccurrencesOfString(",", withString: "", options: nil, range: nil)
+                                let str1 = expression.stringByReplacingOccurrencesOfString("number: ", withString: "", options: [], range: nil)
+                                let number = str1.stringByReplacingOccurrencesOfString(",", withString: "", options: [], range: nil)
                                 Log.DLog("number:\(number)")
                                 
                                 self.likeNumbers.addObject(number as String)
@@ -263,13 +262,13 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 
                 var error : NSError? = nil
-                var parser : HTMLParser = HTMLParser(html: html as! String , error:&error)
+                let parser : HTMLParser = HTMLParser(html: html as! String , error:&error)
                 
                 if (error != nil) {
-                    println(error)
+                    print(error)
                 }
                 
-                var bodyNode : HTMLNode? = parser.body
+                let bodyNode : HTMLNode? = parser.body
                 Log.DLog("bodyNode:\(bodyNode)")
                 if bodyNode == nil {
                     Log.DLog("bodyNode")
@@ -383,10 +382,10 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func commaNumber(str:String?) -> String{
-        if let intNum = str?.toInt(){
-            var num = NSNumber(integer: intNum)
+        if let intNum = Int(str!){
+            let num = NSNumber(integer: intNum)
             
-            var formatter = NSNumberFormatter()
+            let formatter = NSNumberFormatter()
             formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
             formatter.groupingSeparator = ","
             formatter.groupingSize = 3

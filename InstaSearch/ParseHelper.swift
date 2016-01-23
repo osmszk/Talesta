@@ -12,10 +12,10 @@ import Foundation
 class ParseHelper {
     class func convertFollowerRankingFromHtml(html:String="") -> NSArray {
         
-        var followerRankings = NSMutableArray()
+        let followerRankings = NSMutableArray()
         var error : NSError? = nil
         //TODO: エラーログ修正
-        var parser : HTMLParser? = HTMLParser(html: html, encoding: NSUTF8StringEncoding, error: &error)//parse error
+        let parser : HTMLParser? = HTMLParser(html: html, encoding: NSUTF8StringEncoding, error: &error)//parse error
         let bodyNode :HTMLNode? = parser?.body
         
         let trNodes : Array<HTMLNode>? = bodyNode?.findChildTags("tr")
@@ -64,7 +64,7 @@ class ParseHelper {
                     Log.DLog("url:\(imgUrl)")
                     Log.DLog("profile:\(profileUrl)")
                     
-                    let ranking : Int! = rankingNumNode!.contents.toInt()
+                    let ranking : Int! = Int(rankingNumNode!.contents)
                     let followerRanking
                     = Talentinsta(rankingNo: ranking, name: nameNode!.contents, junre: junreNode!.contents, followerString: followerNumNode!.contents,imageUrl:imgUrl,profileUrl:profileUrl)
                     
@@ -79,7 +79,7 @@ class ParseHelper {
     class func convertTalentUserFromHtml(html:String="",talent talentUser:TalentUser) -> TalentUser {
         
         var error : NSError? = nil
-        var parser : HTMLParser? = HTMLParser(html: html as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
+        let parser : HTMLParser? = HTMLParser(html: html as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
         let bodyNode :HTMLNode? = parser?.body
         
         let tdNodes : Array<HTMLNode>? = bodyNode?.findChildTags("td")

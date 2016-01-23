@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GAI.sharedInstance().trackUncaughtExceptions = true;
             GAI.sharedInstance().dispatchInterval = 20
             GAI.sharedInstance().logger.logLevel = .Verbose
-            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            if let _ = UIApplication.sharedApplication().delegate as? AppDelegate {
                 self.tracker = GAI.sharedInstance().trackerWithTrackingId(Const.GOOGLE_ANALYTICS_TRACKING_ID)
             }
         }
@@ -39,12 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
         let storyboard2 = UIStoryboard(name: "Main2", bundle: nil)
-        var top = storyboard1.instantiateViewControllerWithIdentifier("top") as! TopViewController
-        var followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
-        var search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
-        var likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
-        var ad = storyboard1.instantiateViewControllerWithIdentifier("web") as! WebViewController
-        var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
+        let top = storyboard1.instantiateViewControllerWithIdentifier("top") as! TopViewController
+        let followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
+        let search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
+        let likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
+        let ad = storyboard1.instantiateViewControllerWithIdentifier("web") as! WebViewController
+//        var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
         
         ad.urlStr = Const.AD_ADCROPS_URL
         ad.mode = JOWebBrowserMode.Navigation
@@ -56,12 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ad.showAd = false
         ad.title = "おすすめ"
         
-        var navi0:UINavigationController = UINavigationController(rootViewController:top)
-        var navi1:UINavigationController = UINavigationController(rootViewController:search)
-        var navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
-        var navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
-        var navi4:UINavigationController = UINavigationController(rootViewController:ad)
-        var naviControllerList:Array<UINavigationController> =
+        let navi0:UINavigationController = UINavigationController(rootViewController:top)
+        let navi1:UINavigationController = UINavigationController(rootViewController:search)
+        let navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
+        let navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
+        let navi4:UINavigationController = UINavigationController(rootViewController:ad)
+        let naviControllerList:Array<UINavigationController> =
         [
             navi0,
             navi1,
@@ -71,18 +71,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         tab.setViewControllers(naviControllerList, animated: true)
         if let items = tab.tabBar.items {
-            (items[0] as! UITabBarItem).title = "トップ"
-            (items[1] as! UITabBarItem).title = "芸能人検索"
-            (items[2] as! UITabBarItem).title = "ﾌｫﾛﾜｰﾗﾝｷﾝｸﾞ"
-            (items[3] as! UITabBarItem).title = "LIKEﾗﾝｷﾝｸﾞ"
-            (items[4] as! UITabBarItem).title = "おすすめ"
+            (items[0] ).title = "トップ"
+            (items[1] ).title = "芸能人検索"
+            (items[2] ).title = "ﾌｫﾛﾜｰﾗﾝｷﾝｸﾞ"
+            (items[3] ).title = "LIKEﾗﾝｷﾝｸﾞ"
+            (items[4] ).title = "おすすめ"
         }
         if let items = tab.tabBar.items {
-            (items[0] as! UITabBarItem).image = UIImage(named: "tabbtn_t")
-            (items[1] as! UITabBarItem).image = UIImage(named: "tabbtn_finduser")
-            (items[2] as! UITabBarItem).image = UIImage(named: "tabbtn_group")
-            (items[3] as! UITabBarItem).image = UIImage(named: "tabbtn_like")
-            (items[4] as! UITabBarItem).image = UIImage(named: "tabbtn_recommend")
+            (items[0] ).image = UIImage(named: "tabbtn_t")
+            (items[1] ).image = UIImage(named: "tabbtn_finduser")
+            (items[2] ).image = UIImage(named: "tabbtn_group")
+            (items[3] ).image = UIImage(named: "tabbtn_like")
+            (items[4] ).image = UIImage(named: "tabbtn_recommend")
         }
         
         self.window!.rootViewController = tab

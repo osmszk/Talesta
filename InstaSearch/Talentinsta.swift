@@ -25,9 +25,9 @@ class Talentinsta {
         self.name = name
         self.junre = junre
         
-        var followerStr : String = followerString.stringByReplacingOccurrencesOfString(",", withString: "", options: nil, range: nil)
+        let followerStr : String = followerString.stringByReplacingOccurrencesOfString(",", withString: "", options: [], range: nil)
         
-        self.follower = followerStr.toInt()
+        self.follower = Int(followerStr)
         self.followerString = followerString
         self.imageUrl = imageUrl
         self.profileUrl = profileUrl

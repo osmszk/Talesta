@@ -128,7 +128,7 @@ class Util{
             resultString = NSString(format: "%d%02d%02d",array[0].integerValue, array[1].integerValue, array[2].integerValue)
             return NSNumber(integer: resultString.integerValue)
         }else{
-            return NSNumber(integer: appVersionString.toInt()!)
+            return NSNumber(integer: Int(appVersionString)!)
         }
     }
     
@@ -136,7 +136,7 @@ class Util{
         return (inStr as NSString).containsString(keyStr)
     }
     
-    class func hexColor(var hexStr : NSString, var alpha : CGFloat=1.0) -> UIColor {
+    class func hexColor(var hexStr : NSString, alpha : CGFloat=1.0) -> UIColor {
         hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
         let scanner = NSScanner(string: hexStr as String)
         var color: UInt32 = 0
@@ -146,7 +146,7 @@ class Util{
             let b = CGFloat(color & 0x0000FF) / 255.0
             return UIColor(red:r,green:g,blue:b,alpha:alpha)
         } else {
-            print("invalid hex string")
+            print("invalid hex string", terminator: "")
             return UIColor.whiteColor();
         }
     }
@@ -198,7 +198,7 @@ class Util{
     }
     
     class func loadWithUnarchiving(key:String) -> AnyObject? {
-        var data : AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey(key)
+        let data : AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey(key)
         
         if data != nil{
             return NSKeyedUnarchiver.unarchiveObjectWithData(data as! NSData)

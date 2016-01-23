@@ -84,8 +84,7 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
     }
@@ -154,10 +153,10 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
                 
 //                Log.DLog("html:\(html)")
                 
-                self.talentUser =  ParseHelper.convertTalentUserFromHtml(html: html as! String , talent: self.talentUser!)
+                self.talentUser =  ParseHelper.convertTalentUserFromHtml(html as! String , talent: self.talentUser!)
                 
                 if let offcialUrl = self.talentUser?.officialUrl{
-                    let userPath = offcialUrl.lastPathComponent
+                    let userPath = (offcialUrl as NSString).lastPathComponent
                     self.nameLabel.text = userPath
                     self.talentUser?.userName = userPath
                 }
@@ -182,7 +181,7 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
                     let wCount : CGFloat = 3
                     let hCount = 3
                     let space : CGFloat = 5
-                    let offset : CGFloat = 2
+//                    let offset : CGFloat = 2
                     let iconWidth = (Util.displaySize().width-space*(wCount-1.0))/wCount
                     let iconWidthInt = Int(ceilf(Float(iconWidth)))
                     
@@ -232,7 +231,7 @@ class UserDetailViewController: UIViewController,UIWebViewDelegate {
         
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         self.indicator.stopAnimating()
         self.indicator.hidden = true
     }

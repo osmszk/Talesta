@@ -53,7 +53,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let row = self.tableView.indexPathForSelectedRow(){
+        if let row = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRowAtIndexPath(row, animated: true)
         }
     }
@@ -88,7 +88,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             
             let controller = segue.destinationViewController as! UserDetailViewController
             
-            if let indexPath = self.tableView.indexPathForSelectedRow(){
+            if let indexPath = self.tableView.indexPathForSelectedRow{
                 if self.isFiltered{
                     let talentModel = self.filteredTableData[indexPath.row]
                     let url = talentModel.url
@@ -128,7 +128,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell  = tableView.dequeueReusableCellWithIdentifier("searchCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell  = tableView.dequeueReusableCellWithIdentifier("searchCell", forIndexPath: indexPath) 
 
         if self.isFiltered{
             let talent  = self.filteredTableData[indexPath.row]
@@ -154,7 +154,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
     }
     
-    func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
         if self.isFiltered {
             return nil
         }else{

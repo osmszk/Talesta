@@ -25,29 +25,29 @@ class RealmHelper: NSObject {
         let fileName = "names"
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
 //        let data = NSData(contentsOfFile: path)
-        var error : NSError
-        let text = NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+        var _ : NSError
+        let text = try? NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
         
-        let outputArray = NSMutableArray()
+        _ = NSMutableArray()
         let lines : [AnyObject]? = text?.componentsSeparatedByString("\n")
         
         let keysStr: AnyObject? = lines?[0]
-        let keys = keysStr?.componentsSeparatedByString(",")
+        _ = keysStr?.componentsSeparatedByString(",")
         
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         if lines != nil{
             for i in 1..<lines!.count {
                 let itemsStr : AnyObject? = lines![i]
                 let items = itemsStr?.componentsSeparatedByString(",")
-                let content = NSDictionary()
+                _ = NSDictionary()
                 if items == nil || items?.count<3{
                     continue
                 }
                 let id: AnyObject = items![0]
                 let name: AnyObject = items![1]
                 let url: AnyObject = items![2]
-                let talentModel : TalentModel = TalentModel()
+//                _; : TalentModel = TalentModel()
 
                 realm.create(TalentModel.self, value: [
                     "id": id as! String,
@@ -56,7 +56,7 @@ class RealmHelper: NSObject {
                     ])
             }
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
         Log.DLog("[end] convert! \(NSDate().timeIntervalSinceDate(start)))")
         
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html
@@ -74,7 +74,6 @@ class RealmHelper: NSObject {
         case .AkbGroup:        return "akbgroup"
         case .Comedian:        return "comedian"
         case .Creator:         return "creator"
-        default:               return "terracehouse"
         }
     }
     
@@ -87,22 +86,22 @@ class RealmHelper: NSObject {
         let fileName = self.fileNameWithType(type)
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
         //        let data = NSData(contentsOfFile: path)
-        var error : NSError
-        let text = NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+//        var error : NSError
+        let text = try? NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
         
-        let outputArray = NSMutableArray()
+//        let outputArray = NSMutableArray()
         let lines : [AnyObject]? = text?.componentsSeparatedByString("\n")
         
-        let keysStr: AnyObject? = lines?[0]
-        let keys = keysStr?.componentsSeparatedByString(",")
+//        let keysStr: AnyObject? = lines?[0]
+//        let keys = keysStr?.componentsSeparatedByString(",")
         
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         if lines != nil{
             for i in 1..<lines!.count {
                 let itemsStr : AnyObject? = lines![i]
                 let items = itemsStr?.componentsSeparatedByString(",")
-                let content = NSDictionary()
+//                let content = NSDictionary()
                 if items == nil || items?.count<3{
                     continue
                 }
@@ -112,7 +111,7 @@ class RealmHelper: NSObject {
                 let imageUrl : AnyObject = items![3]
                 let officialUrl : AnyObject = items![4]
 //                Log.DLog("i:\(i)")
-                let talentModel : SubTalentModel = SubTalentModel()
+//                let talentModel : SubTalentModel = SubTalentModel()
                 realm.create(SubTalentModel.self, value: [
                     "id": id as! String,
                     "name": name as! String,
@@ -123,7 +122,7 @@ class RealmHelper: NSObject {
                     ])
             }
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
         Log.DLog("[end]terrace convert! type:\(type.rawValue) \(NSDate().timeIntervalSinceDate(start))")
         
         //ref:http://samekard.blogspot.jp/2014/09/swifterror.html
@@ -131,8 +130,8 @@ class RealmHelper: NSObject {
     }
     
     class func deleteAll(){
-        let realm = Realm()
-        realm.write { () -> Void in
+        let realm = try! Realm()
+        try! realm.write { () -> Void in
             realm.deleteAll()
         }
         
@@ -140,16 +139,16 @@ class RealmHelper: NSObject {
     
     class func talentModelAll() -> Results<TalentModel> {
         let start = NSDate()
-        let realm = Realm()
-        var results = realm.objects(TalentModel).sorted("name", ascending: true) as Results<TalentModel>
+        let realm = try! Realm()
+        let results = realm.objects(TalentModel).sorted("name", ascending: true) as Results<TalentModel>
         Log.DLog("talentModelAll \(NSDate().timeIntervalSinceDate(start))")
         return results
     }
     
     class func subModelAll(type:CampaignType) -> Results<SubTalentModel> {
-        let realm = Realm()
+        let realm = try! Realm()
         let filterString = "type == \(type.rawValue)"
-        var results = realm.objects(SubTalentModel).filter(filterString) as Results<SubTalentModel>
+        let results = realm.objects(SubTalentModel).filter(filterString) as Results<SubTalentModel>
         return results
     }
     

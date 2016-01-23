@@ -91,8 +91,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if Const.ENABLE_ANALYTICS{
-            let screenName = reflect(self).summary
-            let build = GAIDictionaryBuilder.createScreenView().set(screenName, forKey: kGAIScreenName).build() as NSDictionary
+            let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
         
@@ -137,12 +136,12 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         //        _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, viewSize.height+(49-kToolBarHeight), viewSize.width, kToolBarHeight)];
         //
         
-        self.toolBar.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        self.toolBar.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleTopMargin]
         if let style =  self.barStyle {self.toolBar.barStyle = style}
         self.toolBar.tintColor = UIColor.blackColor()
         self.toolBar.translucent = false//osuzuki 透明さ
         
-        let backButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let backButton = UIButton(type: UIButtonType.Custom)
         backButton.frame = CGRectMake(0, 0, 34, 34);
         backButton.setImage(UIImage(named: "barbtn_back"), forState: UIControlState.Normal)
         backButton.addTarget(self, action: "backButtonTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -151,7 +150,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         let fixedSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         fixedSpace.width = 30;
         
-        let forwardButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let forwardButton = UIButton(type: UIButtonType.Custom)
         forwardButton.frame = CGRectMake(0, 0, 34, 34);
         forwardButton.setImage(UIImage(named: "barbtn_forward"), forState: UIControlState.Normal)
         forwardButton.addTarget(self, action: "forwardButtonTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -159,7 +158,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         
-        let reloadButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let reloadButton = UIButton(type: UIButtonType.Custom)
         reloadButton.frame = CGRectMake(0, 0, 34, 34);
         reloadButton.setImage(UIImage(named: "barbtn_reload"), forState: UIControlState.Normal)
         reloadButton.addTarget(self, action: "reloadButtonTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -168,7 +167,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         let fixedSpace2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         fixedSpace2.width = 20;
         
-        let actionButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let actionButton = UIButton(type: UIButtonType.Custom)
 //        actionButton.s
         actionButton.frame = CGRectMake(0, 0, 34, 34);
         actionButton.setImage(UIImage(named: "barbtn_action"), forState: UIControlState.Normal)
@@ -184,18 +183,18 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         let buttonContainer = UIBarButtonItem(customView: containerView)
         
         // Add butons to an array
-        let toolBarButtons = NSMutableArray()
-        toolBarButtons.addObject(self.buttonGoBack!)
-        toolBarButtons.addObject(fixedSpace)
-        toolBarButtons.addObject(self.buttonGoForward!)
-        toolBarButtons.addObject(flexibleSpace)
-        toolBarButtons.addObject(buttonContainer)
+        var toolBarButtons = [UIBarButtonItem]()
+        toolBarButtons.append(self.buttonGoBack!)
+        toolBarButtons.append(fixedSpace)
+        toolBarButtons.append(self.buttonGoForward!)
+        toolBarButtons.append(flexibleSpace)
+        toolBarButtons.append(buttonContainer)
         if (self.showReloadButton) {
-            toolBarButtons.addObject(buttonReload)
+            toolBarButtons.append(buttonReload)
         }
         if (self.showActionButton) {
-            toolBarButtons.addObject(fixedSpace2);
-            toolBarButtons.addObject(buttonAction);
+            toolBarButtons.append(fixedSpace2);
+            toolBarButtons.append(buttonAction);
         }
         
         
@@ -205,7 +204,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         }
         
         // Set buttons to tool bar
-        self.toolBar.setItems(toolBarButtons as [AnyObject], animated: true)
+        self.toolBar.setItems(toolBarButtons, animated: true)
         
         // Tint toolBar
         if let color = self.barTintColor {self.toolBar.tintColor = color};
@@ -364,9 +363,9 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent;
 
         if (self.mode == JOWebBrowserMode.TabBar) {
-            actionSheet.showFromTabBar(self.tabBarController?.tabBar);
+            actionSheet.showFromTabBar((self.tabBarController?.tabBar)!);
         }else if (self.mode == JOWebBrowserMode.Navigation && self.navigationController?.tabBarController != nil) {
-            actionSheet.showFromTabBar(self.navigationController?.tabBarController?.tabBar);
+            actionSheet.showFromTabBar((self.navigationController?.tabBarController?.tabBar)!);
         }else {
             actionSheet.showInView(self.view);
         }
@@ -399,7 +398,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         Log.DLog("")
-        println(request)
+        print(request)
 
         let urlStr = request.URL?.absoluteString
         if Util.includedStringInString("#opensafari", inString: urlStr!) {
@@ -424,7 +423,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         toggleBackForwardButtons()
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
     }
 }

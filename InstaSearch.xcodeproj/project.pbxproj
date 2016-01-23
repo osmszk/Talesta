@@ -1006,7 +1006,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PROVISIONING_PROFILE = "481b3e8c-dfb0-417e-b260-fc158d8506d3";
+				PROVISIONING_PROFILE = "c4e7a228-17a1-4aad-a0ad-66fab6b47b9c";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "InstaSearch/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1051,7 +1051,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "cec5feca-0f14-47c6-a6f1-2df61158aafe";
+				PROVISIONING_PROFILE = "f6005366-132b-45d8-90fa-26e9ee9eb101";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "InstaSearch/Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
@@ -1078,7 +1078,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "481b3e8c-dfb0-417e-b260-fc158d8506d3";
+				PROVISIONING_PROFILE = "c4e7a228-17a1-4aad-a0ad-66fab6b47b9c";
 			};
 			name = Debug;
 		};
@@ -1102,7 +1102,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cec5feca-0f14-47c6-a6f1-2df61158aafe";
+				PROVISIONING_PROFILE = "f6005366-132b-45d8-90fa-26e9ee9eb101";
 			};
 			name = Release;
 		};

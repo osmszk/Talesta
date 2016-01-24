@@ -11,7 +11,7 @@ import Foundation
 class Const {
     
     //TODO: 申請前にtrueにする
-    static let ENABLE_ANALYTICS = true
+    static let ENABLE_ANALYTICS = false
     //TODO: 申請前にtrueにする
     static let ENABLE_AD = true
     
@@ -96,6 +96,9 @@ class Const {
     static let KEY_REVIEW_DONE_FLG = "keyReviewDoneFlg"//レビュー催促→インセンティブ制限　が解除されたフラグ
     static let KEY_HIDE_LAST_CAMPAIGN_TYPE = "keyHideCampaignLastCampaignType"//最後に非表示ボタンおしたときのCampaignType
     
+    static let URL_FOLLOWER_RANKING = "http://www.talentinsta.com/follower/99/";
+    static let URL_LIKE_RANKING_JP = "http://websta.me/hot/jp_posts";
+    static let URL_LIKE_RANKING_US = "http://websta.me/hot/posts";
     static let URL_RSS_NEWS_INSTA = "https://news.google.com/news?hl=ja&ned=us&ie=UTF-8&oe=UTF-8&output=rss&q=instagram"
     /*
     スマートフォンバナー広告 テストID

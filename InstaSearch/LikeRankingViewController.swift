@@ -397,10 +397,10 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func didValueChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.getLikeRanking("http://websta.me/hot/jp_posts")
+            self.getLikeRanking(Const.URL_LIKE_RANKING_JP)
             
         case 1:
-            self.getLikeRanking("http://websta.me/hot/posts")
+            self.getLikeRanking(Const.URL_LIKE_RANKING_US)
             
         default:
             Log.DLog("default")

@@ -424,6 +424,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        SVProgressHUD.showErrorWithStatus("情報取得に失敗しました")
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        SVProgressHUD.showErrorWithStatus("情報取得に失敗しました\(error?.localizedDescription) \(error?.code)")
     }
 }

@@ -134,17 +134,25 @@ class LikeRankingViewController: UIViewController, UITableViewDataSource, UITabl
                 for node : HTMLNode in divs {
                     let dict : NSMutableDictionary = NSMutableDictionary()
                     
-                    let photoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image img-thumbnail")
-                    if photoImageNodes.count != 0 {
-                        let photoImagePath:NSString = photoImageNodes[0].getAttributeNamed("src")
-                        dict["photoImage"] = photoImagePath
-                        Log.DLog("photoImagePath:\(photoImagePath)")
-                    } else {
-                        let smallPhotoImageNodes:[HTMLNode] = node.findChildTagsAttr("img", attrName: "class", attrValue: "hot-photo-image-small img-thumbnail")
-                        if smallPhotoImageNodes.count != 0 {
-                            let photoImagePath:NSString = smallPhotoImageNodes[0].getAttributeNamed("src")
-                            dict["photoImage"] = photoImagePath
-                            Log.DLog("photoImagePath:\(photoImagePath)")
+                    // 画像のURL取得
+                    let photoImageNodes:[HTMLNode] = node.findChildTagsAttr("div", attrName: "class", attrValue: "img-cover hot-photo-image img-thumbnail")
+                    
+                    for photoImageNode : HTMLNode in photoImageNodes {
+                        let style : NSString = photoImageNode.getAttributeNamed("style")
+                        Log.DLog("style:\(style)")
+                        
+                        // 正規表現でURLを抽出
+                        let pattern : String = "https://.*jpg"
+                        let regexp = try? NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions())
+                        let matches = regexp?.matchesInString(style as String, options:[], range:NSMakeRange(0, style.length))
+                        Log.DLog("matches:\(matches)")
+                        if matches != nil {
+                            var results: [String] = []
+                            for reg in matches! {
+                                results.append( (style as NSString).substringWithRange(reg.range) )
+                            }
+                            dict["photoImage"] = results[0]
+                            Log.DLog("photoImagePath:\(results)")
                         }
                     }
                     

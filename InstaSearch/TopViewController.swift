@@ -77,12 +77,12 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         self.talentModels = RealmHelper.subModelAll(type)
         
-        let newsButton = UIButton(type: UIButtonType.Custom)
-        newsButton.frame = CGRectMake(0, 0, 34, 34);
-        let newsImage = UIImage(named: "btn_news")
-        newsButton.setImage(newsImage, forState: UIControlState.Normal)
-        newsButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: newsImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedNewsButton:")
+//        let newsButton = UIButton(type: UIButtonType.Custom)
+//        newsButton.frame = CGRectMake(0, 0, 34, 34);
+//        let newsImage = UIImage(named: "btn_news")
+//        newsButton.setImage(newsImage, forState: UIControlState.Normal)
+//        newsButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: newsImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedNewsButton:")
         
         let infoImage = UIImage(named: "btn_info")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedInfo:")
@@ -152,16 +152,13 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
     }
     
-    func pushedNewsButton(sender: AnyObject){
-        self.navigationItem.rightBarButtonItem?.enabled = false
-        
-        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
-        let news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
-//        news.delegate = self
-//        var navi0:UINavigationController = UINavigationController(rootViewController:news)
-//        self.presentViewController(navi0, animated: true, completion: nil)
-        self.navigationController?.pushViewController(news, animated: true)
-    }
+//    func pushedNewsButton(sender: AnyObject){
+//        self.navigationItem.rightBarButtonItem?.enabled = false
+//        
+//        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
+//        let news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
+//        self.navigationController?.pushViewController(news, animated: true)
+//    }
     
     func pushedInfo(sender: AnyObject){
         let storyboard1 = UIStoryboard(name: "Main", bundle: nil)

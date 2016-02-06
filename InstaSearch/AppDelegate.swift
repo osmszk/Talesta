@@ -43,24 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let followerRank  = storyboard1.instantiateViewControllerWithIdentifier("followerranking") as! FollowerRankingViewController
         let search = storyboard1.instantiateViewControllerWithIdentifier("search") as! SearchViewController
         let likeRank = storyboard2.instantiateViewControllerWithIdentifier("likeranking") as! LikeRankingViewController
-        let ad = storyboard1.instantiateViewControllerWithIdentifier("web") as! WebViewController
-//        var news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
-        
-        ad.urlStr = Const.AD_ADCROPS_URL
-        ad.mode = JOWebBrowserMode.Navigation
-        ad.showURLStringOnActionSheetTitle = false
-        ad.showPageTitleOnTitleBar = true
-        ad.showReloadButton = true
-        ad.showActionButton = false
-        ad.showToolBar = false
-        ad.showAd = false
-        ad.title = "おすすめ"
+        let news = storyboard1.instantiateViewControllerWithIdentifier("news") as! NewsViewController
         
         let navi0:UINavigationController = UINavigationController(rootViewController:top)
         let navi1:UINavigationController = UINavigationController(rootViewController:search)
         let navi2:UINavigationController = UINavigationController(rootViewController:followerRank)
         let navi3:UINavigationController = UINavigationController(rootViewController:likeRank)
-        let navi4:UINavigationController = UINavigationController(rootViewController:ad)
+        let navi4:UINavigationController = UINavigationController(rootViewController:news)
         let naviControllerList:Array<UINavigationController> =
         [
             navi0,
@@ -75,14 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (items[1] ).title = "芸能人検索"
             (items[2] ).title = "ﾌｫﾛﾜｰﾗﾝｷﾝｸﾞ"
             (items[3] ).title = "LIKEﾗﾝｷﾝｸﾞ"
-            (items[4] ).title = "おすすめ"
+            (items[4] ).title = "ニュース"
         }
         if let items = tab.tabBar.items {
             (items[0] ).image = UIImage(named: "tabbtn_t")
             (items[1] ).image = UIImage(named: "tabbtn_finduser")
             (items[2] ).image = UIImage(named: "tabbtn_group")
             (items[3] ).image = UIImage(named: "tabbtn_like")
-            (items[4] ).image = UIImage(named: "tabbtn_recommend")
+            (items[4] ).image = UIImage(named: "tabbtn_news")
         }
         
         self.window!.rootViewController = tab

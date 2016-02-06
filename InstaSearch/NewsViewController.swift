@@ -40,8 +40,11 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return
         }
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
-        self.requestToGetNews()
-        
+        //0.5秒遅らせて実行
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.requestToGetNews()
+        }
     }
 
     override func didReceiveMemoryWarning() {

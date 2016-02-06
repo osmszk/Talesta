@@ -15,7 +15,7 @@ class ParseHelper {
         let followerRankings = NSMutableArray()
         var error : NSError? = nil
         //TODO: エラーログ修正
-        let parser : HTMLParser? = HTMLParser(html: html, encoding: NSUTF8StringEncoding, error: &error)//parse error
+        let parser : HTMLParser? = HTMLParser(html: html, encoding: NSJapaneseEUCStringEncoding, error: &error)//parse error
         let bodyNode :HTMLNode? = parser?.body
         
         let trNodes : Array<HTMLNode>? = bodyNode?.findChildTags("tr")
@@ -78,8 +78,13 @@ class ParseHelper {
     
     class func convertTalentUserFromHtml(html:String="",talent talentUser:TalentUser) -> TalentUser {
         
+        //TODO: エラーログ修正
         var error : NSError? = nil
-        let parser : HTMLParser? = HTMLParser(html: html as String, encoding: NSUTF8StringEncoding, error: &error)//parse error
+        let parser : HTMLParser? = HTMLParser(html: html as String, encoding: NSJapaneseEUCStringEncoding, error: &error)//parse error
+        if error != nil{
+            print(error)
+        }
+        
         let bodyNode :HTMLNode? = parser?.body
         
         let tdNodes : Array<HTMLNode>? = bodyNode?.findChildTags("td")

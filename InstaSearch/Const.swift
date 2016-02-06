@@ -46,6 +46,7 @@ class Const {
     static let AD_IMOBILE_SPOT_ID_BANNER4 = "531583"//talent detail mideam rectangle
     static let AD_IMOBILE_SPOT_ID_BANNER5 = "531584"//web
     static let AD_IMOBILE_SPOT_ID_TEXT = "531585"//web
+    static let AD_IMOBILE_SPOT_ID_NATIVE_LIST = "742228"//list
     
     //中司さんのアイモバアカウント
     static let AD_IMOBILE_PUBLISHER_ID_NAKA   = "42085"
@@ -56,8 +57,7 @@ class Const {
     static let AD_ADCROPS_URL = "http://tibetanmastiff.link/talesta/"
     
     //amoad nativead
-    static let AD_AMOAD_SID_1 = "62056d310111552c79b593da0b15f60d01f648c67def8d2b3c23e094110ee747"
-    
+//    static let AD_AMOAD_SID_1 = "62056d310111552c79b593da0b15f60d01f648c67def8d2b3c23e094110ee747"
     
     //40degreeのやーつ
     //#define AD_IMOBILE_PUBLISHER_ID @"29411"

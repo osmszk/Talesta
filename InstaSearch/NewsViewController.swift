@@ -14,14 +14,9 @@ protocol NewsViewControllerDelegate:class{
 
 class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MWFeedParserDelegate {
 
-    let kSid = Const.AD_AMOAD_SID_1
-    let kTag = "Ad01"
-    let kNibName = "AdImageTextTableViewCellLarge"
-    let kBeginIndex = 1 // アプリリリース時は管理画面と同じ値を指定することを推奨します（0以上）
-    let kInterval = 4 // アプリリリース時は管理画面と同じ値を指定することを推奨します（2以上、もしくは、0:繰り返さない）
-
     @IBOutlet weak var tableView: UITableView!
-//    var newsModels : [News] = []
+    var imobileSdkAdsTableController : ImobileSdkAdsTableController!
+
     var items :[MWFeedItem] = []
     var adBannerView : UIView?
     weak var delegate : NewsViewControllerDelegate? = nil
@@ -38,31 +33,15 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.Plain, target: self, action: "pushedCloseButton")
         
         showBannerAd()
-        
+        showNativeListAd()
         
         if !Util.isOnline() {
             SVProgressHUD.showErrorWithStatus("Network Error")
             return
         }
-        
-            // [SDL] ロガーの設定
-        AMoAdLogger.sharedLogger().logging = true
-        AMoAdLogger .sharedLogger().onLogging = { (message: String!, error: NSError!)  in
-            
-            print("message \(message) e:\(error)", terminator: "")
-        }
-        AMoAdLogger.sharedLogger().trace = true; // YES...トレースを出力する
-        AMoAdLogger.sharedLogger().onTrace =  { (message: String!, target: AnyObject!)  in
-            
-            print("message \(message) e:\(target)", terminator: "")
-        }
-
-        AMoAdNativeViewManager.sharedManager().prepareAdWithSid(kSid, defaultBeginIndex: kBeginIndex, defaultInterval: kInterval, iconPreloading: false ,imagePreloading:true)
-        // [SDK] 広告登録（registerTableView）
-        AMoAdNativeViewManager.sharedManager().registerTableView(self.tableView, sid: kSid, tag: kTag, nibName: kNibName)
-        
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
         self.requestToGetNews()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +55,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let build = GAIDictionaryBuilder.createScreenView().set(theClassName, forKey: kGAIScreenName).build() as NSDictionary
             GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,6 +73,12 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     
     //MARK: Custom Methods
+    
+    func showNativeListAd(){
+        if Const.ENABLE_AD {
+            imobileSdkAdsTableController = ImobileSdkAds.getTableController(Const.AD_IMOBILE_SPOT_ID_NATIVE_LIST, tableView: self.tableView, nib: UINib(nibName: "AdCellLayout", bundle: nil))
+        }
+    }
     
     func showBannerAd(){
         let w = Util.displaySize().width
@@ -125,20 +111,17 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if segue.identifier == "news_to_web"{
             let webController = segue.destinationViewController as! WebViewController
             
-            _ = sender as! NewsTableViewCell
             let indexPath = self.tableView.indexPathForSelectedRow
-            let row = indexPath?.row
+            let row = imobileSdkAdsTableController.getOriginalCellPostion(indexPath!)
             
-//            if let models = self.newsModels {
-                let talent = self.items[row!] as MWFeedItem
-                webController.urlStr = talent.link
-                
-                webController.mode = JOWebBrowserMode.Navigation
-                webController.showURLStringOnActionSheetTitle = false
-                webController.showPageTitleOnTitleBar = true
-                webController.showReloadButton = true
-                webController.showActionButton = true
-//            }
+            let talent = self.items[row] as MWFeedItem
+            webController.urlStr = talent.link
+            
+            webController.mode = JOWebBrowserMode.Navigation
+            webController.showURLStringOnActionSheetTitle = false
+            webController.showPageTitleOnTitleBar = true
+            webController.showReloadButton = true
+            webController.showActionButton = true
         }
     }
     
@@ -151,25 +134,13 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.items.count
-        print("self.tableArray!.count:\(self.tableArray!.count)")
-        return self.tableArray!.count
+        return self.items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
-        if let item1 = self.tableArray![indexPath.row] as? AMoAdNativeViewItem  {
-            if item1.isKindOfClass(AMoAdNativeViewItem) {
-//            if item.is //isKindOfClass(AMoAdNativeViewItem)
-//            let item : AMoAdNativeViewItem = self.tableArray[indexPath.row] as! AMoAdNativeViewItem;
-                let cell = item1.tableView(tableView, cellForRowAtIndexPath: indexPath)
-                return cell;
-            }
-        }
-        
         let cell  = tableView.dequeueReusableCellWithIdentifier("newsCell", forIndexPath: indexPath) as! NewsTableViewCell
-        let item = self.tableArray![indexPath.row] as! MWFeedItem
+        let item = self.items[indexPath.row] as! MWFeedItem
         let itemTitle = item.title as NSString
         let itemTitles = itemTitle.componentsSeparatedByString("-")
         let articleTitle = itemTitles[0] 
@@ -204,9 +175,8 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return lItem.date.timeIntervalSinceDate(rItem.date)>0
         }
         
-        //// [SDK] 広告取得（arrayWithSid）
-        self.tableArray = AMoAdNativeViewManager.sharedManager().arrayWithSid(kSid, tag: kTag, originalArray: self.items)
-        
+    
+        self.tableArray = self.items    
         
         self.tableView.reloadData()
     }

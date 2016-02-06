@@ -82,12 +82,6 @@
 		C77979451C53B15200D6B22C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77979421C53B15200D6B22C /* RealmSwift.framework */; };
 		C77979461C53B15200D6B22C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77979421C53B15200D6B22C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C77979481C53C60E00D6B22C /* NSObject+classname.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77979471C53C60E00D6B22C /* NSObject+classname.swift */; };
-		C77979581C54B5EA00D6B22C /* amoad_close_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C779794B1C54B5EA00D6B22C /* amoad_close_btn.png */; };
-		C77979591C54B5EA00D6B22C /* amoad_close_btn_h.png in Resources */ = {isa = PBXBuildFile; fileRef = C779794C1C54B5EA00D6B22C /* amoad_close_btn_h.png */; };
-		C779795A1C54B5EA00D6B22C /* amoad_link_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C779794D1C54B5EA00D6B22C /* amoad_link_btn.png */; };
-		C779795B1C54B5EA00D6B22C /* amoad_link_btn_h.png in Resources */ = {isa = PBXBuildFile; fileRef = C779794E1C54B5EA00D6B22C /* amoad_link_btn_h.png */; };
-		C779795C1C54B5EA00D6B22C /* amoad_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = C779794F1C54B5EA00D6B22C /* amoad_panel.png */; };
-		C779795D1C54B5EA00D6B22C /* libAMoAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C77979571C54B5EA00D6B22C /* libAMoAd.a */; };
 		C779795F1C54DB7800D6B22C /* ImobileSdkAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C779795E1C54DB7800D6B22C /* ImobileSdkAds.framework */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
 		C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C779ADCD1B0379AB000F585A /* Images.xcassets */; };
@@ -267,20 +261,6 @@
 		C77979411C53B15200D6B22C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		C77979421C53B15200D6B22C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		C77979471C53C60E00D6B22C /* NSObject+classname.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+classname.swift"; sourceTree = "<group>"; };
-		C779794A1C54B5EA00D6B22C /* AMoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAd.h; sourceTree = "<group>"; };
-		C779794B1C54B5EA00D6B22C /* amoad_close_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amoad_close_btn.png; sourceTree = "<group>"; };
-		C779794C1C54B5EA00D6B22C /* amoad_close_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amoad_close_btn_h.png; sourceTree = "<group>"; };
-		C779794D1C54B5EA00D6B22C /* amoad_link_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amoad_link_btn.png; sourceTree = "<group>"; };
-		C779794E1C54B5EA00D6B22C /* amoad_link_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amoad_link_btn_h.png; sourceTree = "<group>"; };
-		C779794F1C54B5EA00D6B22C /* amoad_panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amoad_panel.png; sourceTree = "<group>"; };
-		C77979501C54B5EA00D6B22C /* AMoAdAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdAnalytics.h; sourceTree = "<group>"; };
-		C77979511C54B5EA00D6B22C /* AMoAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdInterstitial.h; sourceTree = "<group>"; };
-		C77979521C54B5EA00D6B22C /* AMoAdLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdLogger.h; sourceTree = "<group>"; };
-		C77979531C54B5EA00D6B22C /* AMoAdNativePreRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdNativePreRoll.h; sourceTree = "<group>"; };
-		C77979541C54B5EA00D6B22C /* AMoAdNativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdNativeView.h; sourceTree = "<group>"; };
-		C77979551C54B5EA00D6B22C /* AMoAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdView.h; sourceTree = "<group>"; };
-		C77979561C54B5EA00D6B22C /* AMoAdWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdWeb.h; sourceTree = "<group>"; };
-		C77979571C54B5EA00D6B22C /* libAMoAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAMoAd.a; sourceTree = "<group>"; };
 		C779795E1C54DB7800D6B22C /* ImobileSdkAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImobileSdkAds.framework; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C779ADC31B0379AB000F585A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -362,7 +342,6 @@
 				C7CFAE821B5C051E00C6B67F /* libz.dylib in Frameworks */,
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
 				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
-				C779795D1C54B5EA00D6B22C /* libAMoAd.a in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
 				C779795F1C54DB7800D6B22C /* ImobileSdkAds.framework in Frameworks */,
 				C77979431C53B15200D6B22C /* Realm.framework in Frameworks */,
@@ -431,7 +410,6 @@
 		C70204C71B0A2070004FAD19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				C77979491C54B5EA00D6B22C /* AmoAd */,
 				C772B1E61B75DA9E00986F97 /* MWFeedParser */,
 				C7CFAE741B5C03AF00C6B67F /* GoogleAnalytics */,
 				C7FBB5DF1B24350A00CEC6EB /* HTPressableButton */,
@@ -616,27 +594,6 @@
 				C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */,
 			);
 			path = MWFeedParser;
-			sourceTree = "<group>";
-		};
-		C77979491C54B5EA00D6B22C /* AmoAd */ = {
-			isa = PBXGroup;
-			children = (
-				C779794A1C54B5EA00D6B22C /* AMoAd.h */,
-				C779794B1C54B5EA00D6B22C /* amoad_close_btn.png */,
-				C779794C1C54B5EA00D6B22C /* amoad_close_btn_h.png */,
-				C779794D1C54B5EA00D6B22C /* amoad_link_btn.png */,
-				C779794E1C54B5EA00D6B22C /* amoad_link_btn_h.png */,
-				C779794F1C54B5EA00D6B22C /* amoad_panel.png */,
-				C77979501C54B5EA00D6B22C /* AMoAdAnalytics.h */,
-				C77979511C54B5EA00D6B22C /* AMoAdInterstitial.h */,
-				C77979521C54B5EA00D6B22C /* AMoAdLogger.h */,
-				C77979531C54B5EA00D6B22C /* AMoAdNativePreRoll.h */,
-				C77979541C54B5EA00D6B22C /* AMoAdNativeView.h */,
-				C77979551C54B5EA00D6B22C /* AMoAdView.h */,
-				C77979561C54B5EA00D6B22C /* AMoAdWeb.h */,
-				C77979571C54B5EA00D6B22C /* libAMoAd.a */,
-			);
-			path = AmoAd;
 			sourceTree = "<group>";
 		};
 		C779ADB61B0379AB000F585A = {
@@ -836,11 +793,9 @@
 				C7CFAE6C1B5BAF2A00C6B67F /* creator.txt in Resources */,
 				C7CFAE6E1B5BAF2A00C6B67F /* modelandbikini.txt in Resources */,
 				C7CFAE701B5BAF2A00C6B67F /* talentman.txt in Resources */,
-				C779795B1C54B5EA00D6B22C /* amoad_link_btn_h.png in Resources */,
 				C7E9CDC61B9603A200709CD2 /* tabbtn_recommend@3x.png in Resources */,
 				C7E9CDC51B9603A200709CD2 /* tabbtn_recommend@2x.png in Resources */,
 				C76368B01B540C0D00F3EBCE /* terracehouse.txt in Resources */,
-				C77979591C54B5EA00D6B22C /* amoad_close_btn_h.png in Resources */,
 				C74A83561B4D6D7F00EDAE9D /* barbtn_reload@2x.png in Resources */,
 				C76620D01B1DDB05003FFC7A /* Main.storyboard in Resources */,
 				C7CFAE971B5CD6AB00C6B67F /* logo_white@2x.png in Resources */,
@@ -856,14 +811,12 @@
 				C7CFAE5D1B59441100C6B67F /* koreanidol.txt in Resources */,
 				C7CFAE711B5BAF2A00C6B67F /* talentwoman.txt in Resources */,
 				C7CFAE8D1B5CD13B00C6B67F /* tabbtn_like@2x.png in Resources */,
-				C77979581C54B5EA00D6B22C /* amoad_close_btn.png in Resources */,
 				C7E9CDCC1B96A53400709CD2 /* btn_info@3x.png in Resources */,
 				C7CFAE8C1B5CD13B00C6B67F /* tabbtn_help@2x.png in Resources */,
 				C7CFAE6B1B5BAF2A00C6B67F /* comedian.txt in Resources */,
 				C70204C61B0A1F6A004FAD19 /* LaunchScreen.xib in Resources */,
 				C7CFAE6D1B5BAF2A00C6B67F /* international.txt in Resources */,
 				C7CFAE8B1B5CD13B00C6B67F /* tabbtn_group@2x.png in Resources */,
-				C779795C1C54B5EA00D6B22C /* amoad_panel.png in Resources */,
 				C7E9CDCF1B96A68F00709CD2 /* btn_news@2x.png in Resources */,
 				C76620D21B1DDD4A003FFC7A /* Main2.storyboard in Resources */,
 				C74A83541B4D6D7F00EDAE9D /* barbtn_forward@2x.png in Resources */,
@@ -871,7 +824,6 @@
 				C7CFAE901B5CD35D00C6B67F /* tabbtn_t@3x.png in Resources */,
 				C779ADCE1B0379AB000F585A /* Images.xcassets in Resources */,
 				97769B1C1B5E777100CC0D41 /* license.txt in Resources */,
-				C779795A1C54B5EA00D6B22C /* amoad_link_btn.png in Resources */,
 				C7CFAE8A1B5CD13B00C6B67F /* tabbtn_finduser@2x.png in Resources */,
 				C74A83551B4D6D7F00EDAE9D /* barbtn_gear@2x.png in Resources */,
 				C7CFAE571B561A0000C6B67F /* btn_close@2x.png in Resources */,

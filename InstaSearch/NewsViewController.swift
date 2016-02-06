@@ -140,7 +140,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell  = tableView.dequeueReusableCellWithIdentifier("newsCell", forIndexPath: indexPath) as! NewsTableViewCell
-        let item = self.items[indexPath.row] as! MWFeedItem
+        let item = self.items[indexPath.row]
         let itemTitle = item.title as NSString
         let itemTitles = itemTitle.componentsSeparatedByString("-")
         let articleTitle = itemTitles[0] 

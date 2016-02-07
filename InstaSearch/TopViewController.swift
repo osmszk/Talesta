@@ -75,17 +75,18 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
             }
         }
         
-        self.talentModels = RealmHelper.subModelAll(type)
-        
-//        let newsButton = UIButton(type: UIButtonType.Custom)
-//        newsButton.frame = CGRectMake(0, 0, 34, 34);
-//        let newsImage = UIImage(named: "btn_news")
-//        newsButton.setImage(newsImage, forState: UIControlState.Normal)
-//        newsButton.addTarget(self, action: "pushedNewsButton:", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: newsImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedNewsButton:")
-        
         let infoImage = UIImage(named: "btn_info")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedInfo:")
+        
+        showBannerAd()
+        
+        //バージョンアップ時は、一度データをすべて削除
+        if  Util.appVersionState() == Util.AppVersionState.BumpedUp {
+            print("BumpedUp -> delete all of realm models")
+            RealmHelper.deleteAll()
+        }
+    
+        self.talentModels = RealmHelper.subModelAll(type)
         
         if let models = self.talentModels{
             if models.count == 0 {
@@ -104,8 +105,6 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
                 }
             }
         }
-        
-        showBannerAd()
         
         let appversionState = Util.appVersionState()
         if (appversionState == Util.AppVersionState.First || appversionState == Util.AppVersionState.BumpedUp) {

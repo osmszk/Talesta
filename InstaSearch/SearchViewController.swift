@@ -30,6 +30,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
         
+        //TODO:遅らせる
         self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(self.talentModels)
         
         let label = UILabel()

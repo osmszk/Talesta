@@ -188,7 +188,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer.acceptableContentTypes = NSSet(object: "text/plain") as Set<NSObject>
-        manager.GET(url, parameters:nil,timeoutInterval:3.0, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
+        manager.GET(url, parameters:nil,timeoutInterval:2.0, success: { (operation:AFHTTPRequestOperation!, responseObject:AnyObject!) -> Void in
             
             SVProgressHUD.dismiss()
             Util.saveTrackingAppVersion()

@@ -80,7 +80,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         
         showBannerAd()
         
-        //バージョンアップ時は、一度データをすべて削除
+        //バージョンアップ時は、一度データをすべて削除(v1.2.0にアップデート時は。)
         if  Util.appVersionState() == Util.AppVersionState.BumpedUp {
             print("BumpedUp -> delete all of realm models")
             RealmHelper.deleteAll()

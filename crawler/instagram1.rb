@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'kconv'
 
 id = 0
-range = 1..100
+range = 1..112
 range.each{ |num|
   Anemone.crawl("http://www.talentinsta.com/ichiran/#{num}/",:depth_limit => 0) do |anemone|
 	anemone.on_every_page do |page|

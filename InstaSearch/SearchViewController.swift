@@ -30,9 +30,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.tableView.sectionIndexColor = Const.APP_COLOR1;
         
-        //TODO:遅らせる
-        self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(self.talentModels)
-        
         let label = UILabel()
         label.text = "芸能人検索"
         label.textColor = Const.APP_COLOR8
@@ -45,6 +42,15 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.navigationItem.titleView = label
         
         showBannerAd()
+        
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+        //遅らせて実行
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.cellDataIndexTalents = RealmHelper.cellDataIndexTalents(self.talentModels)
+            SVProgressHUD.dismiss()
+            self.tableView.reloadData()
+        }
     }
     
     func tapped(tapGestureRecognizer: UITapGestureRecognizer) {

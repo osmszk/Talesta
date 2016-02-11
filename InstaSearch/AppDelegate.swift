@@ -143,6 +143,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_BANNER5)
         ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_BANNER5)
         
+        ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_NATIVE_LIST)
+        ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_NATIVE_LIST)
+        
         //text
         ImobileSdkAds.registerWithPublisherID(Const.AD_IMOBILE_PUBLISHER_ID, mediaID:Const.AD_IMOBILE_MEDIA_ID, spotID:Const.AD_IMOBILE_SPOT_ID_TEXT)
         ImobileSdkAds.startBySpotID(Const.AD_IMOBILE_SPOT_ID_TEXT)

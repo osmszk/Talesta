@@ -144,7 +144,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         let backButton = UIButton(type: UIButtonType.Custom)
         backButton.frame = CGRectMake(0, 0, 34, 34);
         backButton.setImage(UIImage(named: "barbtn_back"), forState: UIControlState.Normal)
-        backButton.addTarget(self, action: "backButtonTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
+        backButton.addTarget(self, action: #selector(WebViewController.backButtonTouchUp(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.buttonGoBack = UIBarButtonItem(customView: backButton)
         
         let fixedSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
@@ -153,7 +153,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         let forwardButton = UIButton(type: UIButtonType.Custom)
         forwardButton.frame = CGRectMake(0, 0, 34, 34);
         forwardButton.setImage(UIImage(named: "barbtn_forward"), forState: UIControlState.Normal)
-        forwardButton.addTarget(self, action: "forwardButtonTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
+        forwardButton.addTarget(self, action: #selector(WebViewController.forwardButtonTouchUp(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.buttonGoForward = UIBarButtonItem(customView: forwardButton)
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
@@ -161,7 +161,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
         let reloadButton = UIButton(type: UIButtonType.Custom)
         reloadButton.frame = CGRectMake(0, 0, 34, 34);
         reloadButton.setImage(UIImage(named: "barbtn_reload"), forState: UIControlState.Normal)
-        reloadButton.addTarget(self, action: "reloadButtonTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
+        reloadButton.addTarget(self, action: #selector(WebViewController.reloadButtonTouchUp(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         let buttonReload = UIBarButtonItem(customView: reloadButton)
         
         let fixedSpace2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
@@ -171,7 +171,7 @@ class WebViewController: UIViewController,UIActionSheetDelegate,UIWebViewDelegat
 //        actionButton.s
         actionButton.frame = CGRectMake(0, 0, 34, 34);
         actionButton.setImage(UIImage(named: "barbtn_action"), forState: UIControlState.Normal)
-        actionButton.addTarget(self, action: "buttonActionTouchUp:", forControlEvents: UIControlEvents.TouchUpInside)
+        actionButton.addTarget(self, action: #selector(WebViewController.buttonActionTouchUp(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         let buttonAction = UIBarButtonItem(customView: actionButton)
         
         

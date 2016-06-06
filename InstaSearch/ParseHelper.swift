@@ -35,7 +35,7 @@ class ParseHelper {
                         }
                     }
                 }
-                k++
+                k += 1
             }
         }
         

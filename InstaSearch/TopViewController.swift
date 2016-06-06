@@ -76,7 +76,7 @@ class TopViewController:UIViewController,UITableViewDataSource,UITableViewDelega
         }
         
         let infoImage = UIImage(named: "btn_info")
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage, style: UIBarButtonItemStyle.Plain, target: self, action: "pushedInfo:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage, style: UIBarButtonItemStyle.Plain, target: self, action: #selector(TopViewController.pushedInfo(_:)))
         
         showBannerAd()
         

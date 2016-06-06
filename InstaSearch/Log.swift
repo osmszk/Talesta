@@ -10,7 +10,7 @@ import Foundation
 
 class Log {
     
-    class func DLog(message: String, function: String = __FUNCTION__) {
+    class func DLog(message: String, function: String = #function) {
         #if DEBUG
             print("\(function): \(message)")
         #endif

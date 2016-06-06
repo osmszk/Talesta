@@ -35,7 +35,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         label.textColor = Const.APP_COLOR8
         label.font = UIFont.boldSystemFontOfSize(18)
         label.sizeToFit()
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped:")
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.tapped(_:)))
+        
         label.addGestureRecognizer(gestureRecognizer)
         
         label.userInteractionEnabled = true

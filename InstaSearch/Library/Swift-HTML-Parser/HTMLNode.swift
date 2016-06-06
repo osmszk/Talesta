@@ -292,7 +292,7 @@ public class HTMLNode {
         
         var nodes : [HTMLNode] = []
         let size = Int(nodeSet.memory.nodeNr)
-        for var i = 0; i < size; ++i {
+        for i in 0 ..< size {
 //            let n = nodeSet.memory
             let node = nodeSet.memory.nodeTab[i]
             let htmlNode = HTMLNode(doc: self.doc, node: node)

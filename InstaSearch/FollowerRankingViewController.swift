@@ -29,7 +29,7 @@ class FollowerRankingViewController: UIViewController , UITableViewDataSource, U
         let reloadButton = UIButton(type: UIButtonType.Custom)
         reloadButton.frame = CGRectMake(0, 0, 34, 34);
         reloadButton.setImage(UIImage(named: "barbtn_reload_white"), forState: UIControlState.Normal)
-        reloadButton.addTarget(self, action: "pushedReloadButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        reloadButton.addTarget(self, action: #selector(FollowerRankingViewController.pushedReloadButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
         
         showBannerAd()

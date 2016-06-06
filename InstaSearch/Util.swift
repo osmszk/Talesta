@@ -136,9 +136,9 @@ class Util{
         return (inStr as NSString).containsString(keyStr)
     }
     
-    class func hexColor(var hexStr : NSString, alpha : CGFloat=1.0) -> UIColor {
-        hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
-        let scanner = NSScanner(string: hexStr as String)
+    class func hexColor(hexStr : NSString, alpha : CGFloat=1.0) -> UIColor {
+        let hex = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
+        let scanner = NSScanner(string: hex as String)
         var color: UInt32 = 0
         if scanner.scanHexInt(&color) {
             let r = CGFloat((color & 0xFF0000) >> 16) / 255.0

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B10AF4A1D050D7200D5CC8E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B10AF481D050D7200D5CC8E /* Realm.framework */; };
+		7B10AF4B1D050D7200D5CC8E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B10AF481D050D7200D5CC8E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7B10AF4C1D050D7200D5CC8E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B10AF491D050D7200D5CC8E /* RealmSwift.framework */; };
+		7B10AF4D1D050D7200D5CC8E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B10AF491D050D7200D5CC8E /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		971240A11B09FE3200E25C2E /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9712409F1B09FE3200E25C2E /* TopViewController.swift */; };
 		971240A51B09FE6F00E25C2E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A31B09FE6F00E25C2E /* SearchViewController.swift */; };
 		971240A91B09FE8400E25C2E /* FollowerRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */; };
@@ -79,10 +83,6 @@
 		C772B1FA1B75DA9E00986F97 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F11B75DA9E00986F97 /* NSDate+InternetDateTime.m */; };
 		C772B1FB1B75DA9E00986F97 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F31B75DA9E00986F97 /* NSString+HTML.m */; };
 		C772B1FC1B75DA9E00986F97 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */; };
-		C77979431C53B15200D6B22C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77979411C53B15200D6B22C /* Realm.framework */; };
-		C77979441C53B15200D6B22C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77979411C53B15200D6B22C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C77979451C53B15200D6B22C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77979421C53B15200D6B22C /* RealmSwift.framework */; };
-		C77979461C53B15200D6B22C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C77979421C53B15200D6B22C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C77979481C53C60E00D6B22C /* NSObject+classname.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77979471C53C60E00D6B22C /* NSObject+classname.swift */; };
 		C779795F1C54DB7800D6B22C /* ImobileSdkAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C779795E1C54DB7800D6B22C /* ImobileSdkAds.framework */; };
 		C779ADC51B0379AB000F585A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779ADC41B0379AB000F585A /* AppDelegate.swift */; };
@@ -148,8 +148,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C77979461C53B15200D6B22C /* RealmSwift.framework in Embed Frameworks */,
-				C77979441C53B15200D6B22C /* Realm.framework in Embed Frameworks */,
+				7B10AF4D1D050D7200D5CC8E /* RealmSwift.framework in Embed Frameworks */,
+				7B10AF4B1D050D7200D5CC8E /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +157,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B10AF481D050D7200D5CC8E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		7B10AF491D050D7200D5CC8E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		9712409F1B09FE3200E25C2E /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		971240A31B09FE6F00E25C2E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		971240A71B09FE8400E25C2E /* FollowerRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerRankingViewController.swift; sourceTree = "<group>"; };
@@ -262,8 +264,6 @@
 		C772B1F31B75DA9E00986F97 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		C772B1F41B75DA9E00986F97 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		C772B1F51B75DA9E00986F97 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
-		C77979411C53B15200D6B22C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		C77979421C53B15200D6B22C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		C77979471C53C60E00D6B22C /* NSObject+classname.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+classname.swift"; sourceTree = "<group>"; };
 		C779795E1C54DB7800D6B22C /* ImobileSdkAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImobileSdkAds.framework; sourceTree = "<group>"; };
 		C779ADBF1B0379AB000F585A /* InstaSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,7 +337,6 @@
 			files = (
 				C7E9CDD91B97420600709CD2 /* StoreKit.framework in Frameworks */,
 				C7E9CDD71B9741F700709CD2 /* ImageIO.framework in Frameworks */,
-				C77979451C53B15200D6B22C /* RealmSwift.framework in Frameworks */,
 				97769B171B5E656300CC0D41 /* MessageUI.framework in Frameworks */,
 				9720D5381B0F4B6C00E258CE /* SystemConfiguration.framework in Frameworks */,
 				C7CFAE9E1B5D3C0200C6B67F /* AdSupport.framework in Frameworks */,
@@ -345,11 +344,12 @@
 				C7CFAE841B5C052800C6B67F /* libsqlite3.dylib in Frameworks */,
 				C7CFAE821B5C051E00C6B67F /* libz.dylib in Frameworks */,
 				C7640DF11B4ACD28002C443F /* CoreData.framework in Frameworks */,
+				7B10AF4A1D050D7200D5CC8E /* Realm.framework in Frameworks */,
 				C7CFAE591B575FED00C6B67F /* Social.framework in Frameworks */,
 				C7640E261B4AD1D5002C443F /* libc++.dylib in Frameworks */,
 				C779795F1C54DB7800D6B22C /* ImobileSdkAds.framework in Frameworks */,
-				C77979431C53B15200D6B22C /* Realm.framework in Frameworks */,
 				C7CFAE801B5C03D900C6B67F /* libGoogleAnalyticsServices.a in Frameworks */,
+				7B10AF4C1D050D7200D5CC8E /* RealmSwift.framework in Frameworks */,
 				C70205071B0AEAFB004FAD19 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,9 +605,9 @@
 		C779ADB61B0379AB000F585A = {
 			isa = PBXGroup;
 			children = (
+				7B10AF481D050D7200D5CC8E /* Realm.framework */,
+				7B10AF491D050D7200D5CC8E /* RealmSwift.framework */,
 				C779795E1C54DB7800D6B22C /* ImobileSdkAds.framework */,
-				C77979411C53B15200D6B22C /* Realm.framework */,
-				C77979421C53B15200D6B22C /* RealmSwift.framework */,
 				C779ADC11B0379AB000F585A /* InstaSearch */,
 				C779ADD91B0379AB000F585A /* InstaSearchTests */,
 				9720D53E1B0F513400E258CE /* Frameworks */,
